@@ -1,0 +1,15 @@
+env
+*.rdb
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.swp
+*.swo
+/out/
+/out2/
+node_modules/
+.DS_Store
+Thumbs.db
