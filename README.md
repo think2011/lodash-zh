@@ -1,6 +1,6 @@
 # lodash doc
 
-https://jldec.github.io/lodash-doc-2
+http://think2011.net/lodash-zh/
 
 This is a trial doc website for lodash, generated from markdown using [pub-server](http://jldec.github.io/pub-doc)
 
