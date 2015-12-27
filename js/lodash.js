@@ -216,7 +216,7 @@
   /** Used to detect strings that need a more robust regexp to match words. */
   var reHasComplexWord = /[a-z][A-Z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
 
-  /** Used to assign default `context` object Properties. */
+  /** Used to assign default `context` object properties. */
   var contextProps = [
     'Array', 'Date', 'Error', 'Float32Array', 'Float64Array', 'Function',
     'Int8Array', 'Int16Array', 'Int32Array', 'Map', 'Math', 'Object',
@@ -996,7 +996,7 @@
   }
 
   /**
-   * Used by `_.orderBy` to compare multiple Properties of a value to another
+   * Used by `_.orderBy` to compare multiple properties of a value to another
    * and stable sort them.
    *
    * If `orders` is unspecified, all values are sorted in ascending order. Otherwise,
@@ -1056,12 +1056,12 @@
   }
 
   /**
-   * Copies Properties of `source` to `object`.
+   * Copies properties of `source` to `object`.
    *
    * @private
-   * @param {Object} source The object to copy Properties from.
+   * @param {Object} source The object to copy properties from.
    * @param {Array} props The property names to copy.
-   * @param {Object} [object={}] The object to copy Properties to.
+   * @param {Object} [object={}] The object to copy properties to.
    * @returns {Object} Returns `object`.
    */
   function copyObject(source, props, object) {
@@ -1073,9 +1073,9 @@
    * customize copied values.
    *
    * @private
-   * @param {Object} source The object to copy Properties from.
+   * @param {Object} source The object to copy properties from.
    * @param {Array} props The property names to copy.
-   * @param {Object} [object={}] The object to copy Properties to.
+   * @param {Object} [object={}] The object to copy properties to.
    * @param {Function} [customizer] The function to customize copied values.
    * @returns {Object} Returns `object`.
    */
@@ -1347,7 +1347,7 @@
    *
    * @static
    * @memberOf _
-   * @category 实用工具(Utility)
+   * @category Utility
    * @param {Object} [context=root] The context object.
    * @returns {Function} Returns a new `lodash` function.
    * @example
@@ -1395,7 +1395,7 @@
     /** Used to resolve the decompiled source of functions. */
     var fnToString = context.Function.prototype.toString;
 
-    /** Used to check objects for own Properties. */
+    /** Used to check objects for own properties. */
     var hasOwnProperty = objectProto.hasOwnProperty;
 
     /** Used to generate unique IDs. */
@@ -1550,7 +1550,7 @@
      *
      * @name _
      * @constructor
-     * @category 链式语法(Chain)
+     * @category Chain
      * @param {*} value The value to wrap in a `lodash` instance.
      * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
@@ -2337,7 +2337,7 @@
 
     /**
      * The base implementation of `_.create` without support for assigning
-     * Properties to the created object.
+     * properties to the created object.
      *
      * @private
      * @param {Object} prototype The object to inherit from.
@@ -2555,7 +2555,7 @@
 
     /**
      * The base implementation of `baseForIn` and `baseForOwn` which iterates
-     * over `object` Properties returned by `keysFunc` invoking `iteratee` for
+     * over `object` properties returned by `keysFunc` invoking `iteratee` for
      * each property. Iteratee functions may exit iteration early by explicitly
      * returning `false`.
      *
@@ -2568,7 +2568,7 @@
     var baseFor = createBaseFor();
 
     /**
-     * This function is like `baseFor` except that it iterates over Properties
+     * This function is like `baseFor` except that it iterates over properties
      * in the opposite order.
      *
      * @private
@@ -2660,7 +2660,7 @@
      */
     function baseHas(object, key) {
       // Avoid a bug in IE 10-11 where objects with a [[Prototype]] of `null`,
-      // that are composed entirely of index Properties, return `false` for
+      // that are composed entirely of index properties, return `false` for
       // `hasOwnProperty` checks of them.
       return hasOwnProperty.call(object, key) ||
         (typeof object == 'object' && key in object && getPrototypeOf(object) === null);
@@ -4442,7 +4442,7 @@
       if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
         return false;
       }
-      // Ignore non-index Properties.
+      // Ignore non-index properties.
       while (++index < arrLength) {
         var arrValue = array[index],
             othValue = other[index];
@@ -4746,7 +4746,7 @@
      * @private
      * @param {Object} object The object to query.
      * @param {Array|string} path The path to check.
-     * @param {Function} hasFunc The function to check Properties.
+     * @param {Function} hasFunc The function to check properties.
      * @returns {boolean} Returns `true` if `path` exists, else `false`.
      */
     function hasPath(object, path, hasFunc) {
@@ -4777,7 +4777,7 @@
       var length = array.length,
           result = new array.constructor(length);
 
-      // Add array Properties assigned by `RegExp#exec`.
+      // Add array properties assigned by `RegExp#exec`.
       if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {
         result.index = array.index;
         result.input = array.input;
@@ -5175,7 +5175,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to process.
      * @param {number} [size=0] The length of each chunk.
      * @returns {Array} Returns the new array containing chunks.
@@ -5210,7 +5210,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to compact.
      * @returns {Array} Returns the new array of filtered values.
      * @example
@@ -5239,7 +5239,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to concatenate.
      * @param {...*} [values] The values to concatenate.
      * @returns {Array} Returns the new concatenated array.
@@ -5266,7 +5266,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to inspect.
      * @param {...Array} [values] The values to exclude.
      * @returns {Array} Returns the new array of filtered values.
@@ -5288,7 +5288,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to inspect.
      * @param {...Array} [values] The values to exclude.
      * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
@@ -5319,7 +5319,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to inspect.
      * @param {...Array} [values] The values to exclude.
      * @param {Function} [comparator] The comparator invoked per element.
@@ -5346,7 +5346,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to query.
      * @param {number} [n=1] The number of elements to drop.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -5378,7 +5378,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to query.
      * @param {number} [n=1] The number of elements to drop.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -5414,7 +5414,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to query.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @returns {Array} Returns the slice of `array`.
@@ -5456,7 +5456,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to query.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @returns {Array} Returns the slice of `array`.
@@ -5499,7 +5499,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to fill.
      * @param {*} value The value to fill `array` with.
      * @param {number} [start=0] The start position.
@@ -5537,7 +5537,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to search.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @returns {number} Returns the index of the found element, else `-1`.
@@ -5576,7 +5576,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to search.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @returns {number} Returns the index of the found element, else `-1`.
@@ -5616,7 +5616,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to iterate over.
      * @param {Function|Object|string} [iteratee=_.identity] The function invoked per iteration.
      * @returns {Array} Returns the new array.
@@ -5639,7 +5639,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to flatten.
      * @returns {Array} Returns the new flattened array.
      * @example
@@ -5657,7 +5657,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to recursively flatten.
      * @returns {Array} Returns the new flattened array.
      * @example
@@ -5676,7 +5676,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} pairs The key-value pairs.
      * @returns {Object} Returns the new object.
      * @example
@@ -5702,7 +5702,7 @@
      * @static
      * @memberOf _
      * @alias first
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to query.
      * @returns {*} Returns the first element of `array`.
      * @example
@@ -5726,7 +5726,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to search.
      * @param {*} value The value to search for.
      * @param {number} [fromIndex=0] The index to search from.
@@ -5757,7 +5757,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to query.
      * @returns {Array} Returns the slice of `array`.
      * @example
@@ -5776,7 +5776,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {...Array} [arrays] The arrays to inspect.
      * @returns {Array} Returns the new array of shared values.
      * @example
@@ -5797,7 +5797,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {...Array} [arrays] The arrays to inspect.
      * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
      * @returns {Array} Returns the new array of shared values.
@@ -5831,7 +5831,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {...Array} [arrays] The arrays to inspect.
      * @param {Function} [comparator] The comparator invoked per element.
      * @returns {Array} Returns the new array of shared values.
@@ -5862,7 +5862,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to convert.
      * @param {string} [separator=','] The element separator.
      * @returns {string} Returns the joined string.
@@ -5880,7 +5880,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to query.
      * @returns {*} Returns the last element of `array`.
      * @example
@@ -5899,7 +5899,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to search.
      * @param {*} value The value to search for.
      * @param {number} [fromIndex=array.length-1] The index to search from.
@@ -5943,7 +5943,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to modify.
      * @param {...*} [values] The values to remove.
      * @returns {Array} Returns `array`.
@@ -5964,7 +5964,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to modify.
      * @param {Array} values The values to remove.
      * @returns {Array} Returns `array`.
@@ -5991,7 +5991,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to modify.
      * @param {Array} values The values to remove.
      * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
@@ -6018,7 +6018,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to modify.
      * @param {...(number|number[])} [indexes] The indexes of elements to remove,
      *  specified individually or in arrays.
@@ -6051,7 +6051,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to modify.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @returns {Array} Returns the new array of removed elements.
@@ -6097,7 +6097,7 @@
      * [`Array#reverse`](https://mdn.io/Array/reverse).
      *
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @returns {Array} Returns `array`.
      * @example
      *
@@ -6121,7 +6121,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to slice.
      * @param {number} [start=0] The start position.
      * @param {number} [end=array.length] The end position.
@@ -6145,7 +6145,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The sorted array to inspect.
      * @param {*} value The value to evaluate.
      * @returns {number} Returns the index at which `value` should be inserted into `array`.
@@ -6168,7 +6168,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The sorted array to inspect.
      * @param {*} value The value to evaluate.
      * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
@@ -6194,7 +6194,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to search.
      * @param {*} value The value to search for.
      * @returns {number} Returns the index of the matched value, else `-1`.
@@ -6222,7 +6222,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The sorted array to inspect.
      * @param {*} value The value to evaluate.
      * @returns {number} Returns the index at which `value` should be inserted into `array`.
@@ -6242,7 +6242,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The sorted array to inspect.
      * @param {*} value The value to evaluate.
      * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
@@ -6263,7 +6263,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to search.
      * @param {*} value The value to search for.
      * @returns {number} Returns the index of the matched value, else `-1`.
@@ -6291,7 +6291,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to inspect.
      * @returns {Array} Returns the new duplicate free array.
      * @example
@@ -6311,7 +6311,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to inspect.
      * @param {Function} [iteratee] The iteratee invoked per element.
      * @returns {Array} Returns the new duplicate free array.
@@ -6331,7 +6331,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to query.
      * @returns {Array} Returns the slice of `array`.
      * @example
@@ -6348,7 +6348,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to query.
      * @param {number} [n=1] The number of elements to take.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -6380,7 +6380,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to query.
      * @param {number} [n=1] The number of elements to take.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -6416,7 +6416,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to query.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @returns {Array} Returns the slice of `array`.
@@ -6458,7 +6458,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to query.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @returns {Array} Returns the slice of `array`.
@@ -6500,7 +6500,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {...Array} [arrays] The arrays to inspect.
      * @returns {Array} Returns the new array of combined values.
      * @example
@@ -6519,7 +6519,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {...Array} [arrays] The arrays to inspect.
      * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
      * @returns {Array} Returns the new array of combined values.
@@ -6547,7 +6547,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {...Array} [arrays] The arrays to inspect.
      * @param {Function} [comparator] The comparator invoked per element.
      * @returns {Array} Returns the new array of combined values.
@@ -6575,7 +6575,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to inspect.
      * @returns {Array} Returns the new duplicate free array.
      * @example
@@ -6596,7 +6596,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to inspect.
      * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
      * @returns {Array} Returns the new duplicate free array.
@@ -6622,7 +6622,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to inspect.
      * @param {Function} [comparator] The comparator invoked per element.
      * @returns {Array} Returns the new duplicate free array.
@@ -6646,7 +6646,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array of grouped elements to process.
      * @returns {Array} Returns the new array of regrouped elements.
      * @example
@@ -6681,7 +6681,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array of grouped elements to process.
      * @param {Function} [iteratee=_.identity] The function to combine regrouped values.
      * @returns {Array} Returns the new array of regrouped elements.
@@ -6713,7 +6713,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} array The array to filter.
      * @param {...*} [values] The values to exclude.
      * @returns {Array} Returns the new array of filtered values.
@@ -6734,7 +6734,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {...Array} [arrays] The arrays to inspect.
      * @returns {Array} Returns the new array of values.
      * @example
@@ -6753,7 +6753,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {...Array} [arrays] The arrays to inspect.
      * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
      * @returns {Array} Returns the new array of values.
@@ -6781,7 +6781,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {...Array} [arrays] The arrays to inspect.
      * @param {Function} [comparator] The comparator invoked per element.
      * @returns {Array} Returns the new array of values.
@@ -6808,7 +6808,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {...Array} [arrays] The arrays to process.
      * @returns {Array} Returns the new array of grouped elements.
      * @example
@@ -6824,7 +6824,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {Array} [props=[]] The property names.
      * @param {Array} [values=[]] The property values.
      * @returns {Object} Returns the new object.
@@ -6853,7 +6853,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数组(Array)
+     * @category Array
      * @param {...Array} [arrays] The arrays to process.
      * @param {Function} [iteratee=_.identity] The function to combine grouped values.
      * @returns {Array} Returns the new array of grouped elements.
@@ -6878,7 +6878,7 @@
      *
      * @static
      * @memberOf _
-     * @category 链式语法(Chain)
+     * @category Chain
      * @param {*} value The value to wrap.
      * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
@@ -6913,7 +6913,7 @@
      *
      * @static
      * @memberOf _
-     * @category 链式语法(Chain)
+     * @category Chain
      * @param {*} value The value to provide to `interceptor`.
      * @param {Function} interceptor The function to invoke.
      * @returns {*} Returns `value`.
@@ -6937,7 +6937,7 @@
      *
      * @static
      * @memberOf _
-     * @category 链式语法(Chain)
+     * @category Chain
      * @param {*} value The value to provide to `interceptor`.
      * @param {Function} interceptor The function to invoke.
      * @returns {*} Returns the result of `interceptor`.
@@ -6961,7 +6961,7 @@
      *
      * @name at
      * @memberOf _
-     * @category 链式语法(Chain)
+     * @category Chain
      * @param {...(string|string[])} [paths] The property paths of elements to pick,
      *  specified individually or in arrays.
      * @returns {Object} Returns the new `lodash` wrapper instance.
@@ -7000,7 +7000,7 @@
      *
      * @name chain
      * @memberOf _
-     * @category 链式语法(Chain)
+     * @category Chain
      * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
@@ -7030,7 +7030,7 @@
      *
      * @name commit
      * @memberOf _
-     * @category 链式语法(Chain)
+     * @category Chain
      * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
@@ -7059,7 +7059,7 @@
      *
      * @static
      * @memberOf _
-     * @category 链式语法(Chain)
+     * @category Chain
      * @param {Function|Object|string} [iteratee=_.identity] The function invoked per iteration.
      * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
@@ -7081,7 +7081,7 @@
      *
      * @name next
      * @memberOf _
-     * @category 链式语法(Chain)
+     * @category Chain
      * @returns {Object} Returns the next iterator value.
      * @example
      *
@@ -7111,7 +7111,7 @@
      *
      * @name Symbol.iterator
      * @memberOf _
-     * @category 链式语法(Chain)
+     * @category Chain
      * @returns {Object} Returns the wrapper object.
      * @example
      *
@@ -7132,7 +7132,7 @@
      *
      * @name plant
      * @memberOf _
-     * @category 链式语法(Chain)
+     * @category Chain
      * @param {*} value The value to plant.
      * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
@@ -7177,7 +7177,7 @@
      *
      * @name reverse
      * @memberOf _
-     * @category 链式语法(Chain)
+     * @category Chain
      * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
@@ -7209,7 +7209,7 @@
      * @name value
      * @memberOf _
      * @alias run, toJSON, valueOf
-     * @category 链式语法(Chain)
+     * @category Chain
      * @returns {*} Returns the resolved unwrapped value.
      * @example
      *
@@ -7230,7 +7230,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
      * @returns {Object} Returns the composed aggregate object.
@@ -7253,7 +7253,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -7295,7 +7295,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @returns {Array} Returns the new filtered array.
@@ -7335,7 +7335,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to search.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @returns {*} Returns the matched element, else `undefined`.
@@ -7379,7 +7379,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to search.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @returns {*} Returns the matched element, else `undefined`.
@@ -7411,7 +7411,7 @@
      * @static
      * @memberOf _
      * @alias each
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Function} [iteratee=_.identity] The function invoked per iteration.
      * @returns {Array|Object} Returns `collection`.
@@ -7440,7 +7440,7 @@
      * @static
      * @memberOf _
      * @alias eachRight
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Function} [iteratee=_.identity] The function invoked per iteration.
      * @returns {Array|Object} Returns `collection`.
@@ -7465,7 +7465,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
      * @returns {Object} Returns the composed aggregate object.
@@ -7494,7 +7494,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object|string} collection The collection to search.
      * @param {*} value The value to search for.
      * @param {number} [fromIndex=0] The index to search from.
@@ -7535,7 +7535,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Array|Function|string} path The path of the method to invoke or
      *  the function invoked per iteration.
@@ -7570,7 +7570,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
      * @returns {Object} Returns the composed aggregate object.
@@ -7609,7 +7609,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Function|Object|string} [iteratee=_.identity] The function invoked per iteration.
      * @returns {Array} Returns the new mapped array.
@@ -7647,7 +7647,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Function[]|Object[]|string[]} [iteratees=[_.identity]] The iteratees to sort by.
      * @param {string[]} [orders] The sort orders of `iteratees`.
@@ -7690,7 +7690,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @returns {Array} Returns the array of grouped elements.
@@ -7742,7 +7742,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Function} [iteratee=_.identity] The function invoked per iteration.
      * @param {*} [accumulator] The initial value.
@@ -7773,7 +7773,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Function} [iteratee=_.identity] The function invoked per iteration.
      * @param {*} [accumulator] The initial value.
@@ -7800,7 +7800,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @returns {Array} Returns the new filtered array.
@@ -7841,7 +7841,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to sample.
      * @returns {*} Returns the random element.
      * @example
@@ -7861,7 +7861,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to sample.
      * @param {number} [n=0] The number of elements to sample.
      * @returns {Array} Returns the random elements.
@@ -7894,7 +7894,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to shuffle.
      * @returns {Array} Returns the new shuffled array.
      * @example
@@ -7908,11 +7908,11 @@
 
     /**
      * Gets the size of `collection` by returning its length for array-like
-     * values or the number of own enumerable Properties for objects.
+     * values or the number of own enumerable properties for objects.
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to inspect.
      * @returns {number} Returns the collection size.
      * @example
@@ -7944,7 +7944,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -7987,7 +7987,7 @@
      *
      * @static
      * @memberOf _
-     * @category 集合(Collection)
+     * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
      * @param {...(Function|Function[]|Object|Object[]|string|string[])} [iteratees=[_.identity]]
      *  The iteratees to sort by, specified individually or in arrays.
@@ -8036,7 +8036,7 @@
      * @static
      * @memberOf _
      * @type Function
-     * @category 日期(Date)
+     * @category Date
      * @returns {number} Returns the timestamp.
      * @example
      *
@@ -8055,7 +8055,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {number} n The number of calls before `func` is invoked.
      * @param {Function} func The function to restrict.
      * @returns {Function} Returns the new restricted function.
@@ -8090,7 +8090,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to cap arguments for.
      * @param {number} [n=func.length] The arity cap.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -8113,7 +8113,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {number} n The number of calls at which `func` is no longer invoked.
      * @param {Function} func The function to restrict.
      * @returns {Function} Returns the new restricted function.
@@ -8152,7 +8152,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to bind.
      * @param {*} thisArg The `this` binding of `func`.
      * @param {...*} [partials] The arguments to be partially applied.
@@ -8191,7 +8191,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Object} object The object to bind and assign the bound methods to.
      * @param {...(string|string[])} methodNames The object method names to bind,
      *  specified individually or in arrays.
@@ -8230,7 +8230,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Object} object The object to invoke the method on.
      * @param {string} key The key of the method.
      * @param {...*} [partials] The arguments to be partially applied.
@@ -8283,7 +8283,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to curry.
      * @param {number} [arity=func.length] The arity of `func`.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -8327,7 +8327,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to curry.
      * @param {number} [arity=func.length] The arity of `func`.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -8379,7 +8379,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to debounce.
      * @param {number} [wait=0] The number of milliseconds to delay.
      * @param {Object} [options] The options object.
@@ -8530,7 +8530,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to defer.
      * @param {...*} [args] The arguments to invoke `func` with.
      * @returns {number} Returns the timer id.
@@ -8551,7 +8551,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to delay.
      * @param {number} wait The number of milliseconds to delay invocation.
      * @param {...*} [args] The arguments to invoke `func` with.
@@ -8572,7 +8572,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to flip arguments for.
      * @returns {Function} Returns the new function.
      * @example
@@ -8597,12 +8597,12 @@
      *
      * **Note:** The cache is exposed as the `cache` property on the memoized
      * function. Its creation may be customized by replacing the `_.memoize.Cache`
-     * constructor with one whose instances implement the [`Map`](http://ecma-international.org/ecma-262/6.0/#sec-Properties-of-the-map-prototype-object)
+     * constructor with one whose instances implement the [`Map`](http://ecma-international.org/ecma-262/6.0/#sec-properties-of-the-map-prototype-object)
      * method interface of `delete`, `get`, `has`, and `set`.
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to have its output memoized.
      * @param {Function} [resolver] The function to resolve the cache key.
      * @returns {Function} Returns the new memoizing function.
@@ -8657,7 +8657,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} predicate The predicate to negate.
      * @returns {Function} Returns the new function.
      * @example
@@ -8685,7 +8685,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to restrict.
      * @returns {Function} Returns the new restricted function.
      * @example
@@ -8705,7 +8705,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to wrap.
      * @param {...(Function|Function[])} [transforms] The functions to transform
      * arguments, specified individually or in arrays.
@@ -8758,7 +8758,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to partially apply arguments to.
      * @param {...*} [partials] The arguments to be partially applied.
      * @returns {Function} Returns the new partially applied function.
@@ -8794,7 +8794,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to partially apply arguments to.
      * @param {...*} [partials] The arguments to be partially applied.
      * @returns {Function} Returns the new partially applied function.
@@ -8826,7 +8826,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to rearrange arguments for.
      * @param {...(number|number[])} indexes The arranged argument indexes,
      *  specified individually or in arrays.
@@ -8852,7 +8852,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to apply a rest parameter to.
      * @param {number} [start=func.length-1] The start position of the rest parameter.
      * @returns {Function} Returns the new function.
@@ -8903,7 +8903,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to spread arguments over.
      * @returns {Function} Returns the new function.
      * @example
@@ -8954,7 +8954,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to throttle.
      * @param {number} [wait=0] The number of milliseconds to throttle invocations to.
      * @param {Object} [options] The options object.
@@ -8995,7 +8995,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {Function} func The function to cap arguments for.
      * @returns {Function} Returns the new function.
      * @example
@@ -9015,7 +9015,7 @@
      *
      * @static
      * @memberOf _
-     * @category 函数(Function)
+     * @category Function
      * @param {*} value The value to wrap.
      * @param {Function} wrapper The wrapper function.
      * @returns {Function} Returns the new function.
@@ -9040,14 +9040,14 @@
      *
      * **Note:** This method is loosely based on the
      * [structured clone algorithm](http://www.w3.org/TR/html5/infrastructure.html#internal-structured-cloning-algorithm).
-     * The enumerable Properties of `arguments` objects and objects created by
+     * The enumerable properties of `arguments` objects and objects created by
      * constructors other than `Object` are cloned to plain `Object` objects. An
      * empty object is returned for uncloneable values such as functions, DOM nodes,
      * Maps, Sets, and WeakMaps.
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to clone.
      * @returns {*} Returns the cloned value.
      * @example
@@ -9073,7 +9073,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to clone.
      * @param {Function} [customizer] The function to customize cloning.
      * @returns {*} Returns the cloned value.
@@ -9103,7 +9103,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to recursively clone.
      * @returns {*} Returns the deep cloned value.
      * @example
@@ -9126,7 +9126,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to recursively clone.
      * @param {Function} [customizer] The function to customize cloning.
      * @returns {*} Returns the deep cloned value.
@@ -9157,7 +9157,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to compare.
      * @param {*} other The other value to compare.
      * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
@@ -9190,7 +9190,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to compare.
      * @param {*} other The other value to compare.
      * @returns {boolean} Returns `true` if `value` is greater than `other`, else `false`.
@@ -9214,7 +9214,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to compare.
      * @param {*} other The other value to compare.
      * @returns {boolean} Returns `true` if `value` is greater than or equal to `other`, else `false`.
@@ -9238,7 +9238,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
      * @example
@@ -9261,7 +9261,7 @@
      * @static
      * @memberOf _
      * @type Function
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
      * @example
@@ -9288,7 +9288,7 @@
      * @static
      * @memberOf _
      * @type Function
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
      * @example
@@ -9317,7 +9317,7 @@
      * @static
      * @memberOf _
      * @type Function
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is an array-like object, else `false`.
      * @example
@@ -9343,7 +9343,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
      * @example
@@ -9364,7 +9364,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
      * @example
@@ -9384,7 +9384,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is a DOM element, else `false`.
      * @example
@@ -9402,11 +9402,11 @@
     /**
      * Checks if `value` is empty. A value is considered empty unless it's an
      * `arguments` object, array, string, or jQuery-like collection with a length
-     * greater than `0` or an object with own enumerable Properties.
+     * greater than `0` or an object with own enumerable properties.
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {Array|Object|string} value The value to inspect.
      * @returns {boolean} Returns `true` if `value` is empty, else `false`.
      * @example
@@ -9438,12 +9438,12 @@
      *
      * **Note:** This method supports comparing arrays, booleans, `Date` objects,
      * numbers, `Object` objects, regexes, and strings. Objects are compared by
-     * their own, not inherited, enumerable Properties. Functions and DOM nodes
+     * their own, not inherited, enumerable properties. Functions and DOM nodes
      * are **not** supported.
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to compare.
      * @param {*} other The other value to compare.
      * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
@@ -9470,7 +9470,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to compare.
      * @param {*} other The other value to compare.
      * @param {Function} [customizer] The function to customize comparisons.
@@ -9505,7 +9505,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is an error object, else `false`.
      * @example
@@ -9528,7 +9528,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is a finite number, else `false`.
      * @example
@@ -9554,7 +9554,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
      * @example
@@ -9580,7 +9580,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is an integer, else `false`.
      * @example
@@ -9608,7 +9608,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
      * @example
@@ -9635,7 +9635,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is an object, else `false`.
      * @example
@@ -9665,7 +9665,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
      * @example
@@ -9690,14 +9690,14 @@
      * Performs a deep comparison between `object` and `source` to determine if
      * `object` contains equivalent property values.
      *
-     * **Note:** This method supports comparing Properties of arrays, booleans,
+     * **Note:** This method supports comparing properties of arrays, booleans,
      * `Date` objects, numbers, `Object` objects, regexes, and strings. Functions
      * and DOM nodes are **not** supported. Provide a customizer function to extend
      * support for comparing other values.
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {Object} object The object to inspect.
      * @param {Object} source The object of property values to match.
      * @returns {boolean} Returns `true` if `object` is a match, else `false`.
@@ -9723,7 +9723,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {Object} object The object to inspect.
      * @param {Object} source The object of property values to match.
      * @param {Function} [customizer] The function to customize comparisons.
@@ -9759,7 +9759,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is `NaN`, else `false`.
      * @example
@@ -9787,7 +9787,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is a native function, else `false`.
      * @example
@@ -9814,7 +9814,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is `null`, else `false`.
      * @example
@@ -9834,7 +9834,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is nullish, else `false`.
      * @example
@@ -9860,7 +9860,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
      * @example
@@ -9888,7 +9888,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
      * @example
@@ -9930,7 +9930,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
      * @example
@@ -9953,7 +9953,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is a safe integer, else `false`.
      * @example
@@ -9979,7 +9979,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
      * @example
@@ -10000,7 +10000,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
      * @example
@@ -10020,7 +10020,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` is `undefined`, else `false`.
      * @example
@@ -10040,7 +10040,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to compare.
      * @param {*} other The other value to compare.
      * @returns {boolean} Returns `true` if `value` is less than `other`, else `false`.
@@ -10064,7 +10064,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to compare.
      * @param {*} other The other value to compare.
      * @returns {boolean} Returns `true` if `value` is less than or equal to `other`, else `false`.
@@ -10088,7 +10088,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to convert.
      * @returns {Array} Returns the converted array.
      * @example
@@ -10121,7 +10121,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to convert.
      * @returns {number} Returns the converted integer.
      * @example
@@ -10159,7 +10159,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to convert.
      * @return {number} Returns the converted integer.
      * @example
@@ -10188,7 +10188,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to process.
      * @returns {number} Returns the number.
      * @example
@@ -10225,11 +10225,11 @@
 
     /**
      * Converts `value` to a plain object flattening inherited enumerable
-     * Properties of `value` to own Properties of the plain object.
+     * properties of `value` to own properties of the plain object.
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to convert.
      * @returns {Object} Returns the converted plain object.
      * @example
@@ -10256,7 +10256,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to convert.
      * @returns {number} Returns the converted integer.
      * @example
@@ -10286,7 +10286,7 @@
      *
      * @static
      * @memberOf _
-     * @category 其他(Lang)
+     * @category Lang
      * @param {*} value The value to process.
      * @returns {string} Returns the string.
      * @example
@@ -10312,7 +10312,7 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Assigns own enumerable Properties of source objects to the destination
+     * Assigns own enumerable properties of source objects to the destination
      * object. Source objects are applied from left to right. Subsequent sources
      * overwrite property assignments of previous sources.
      *
@@ -10321,7 +10321,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The destination object.
      * @param {...Object} [sources] The source objects.
      * @returns {Object} Returns `object`.
@@ -10347,14 +10347,14 @@
 
     /**
      * This method is like `_.assign` except that it iterates over own and
-     * inherited source Properties.
+     * inherited source properties.
      *
      * **Note:** This method mutates `object`.
      *
      * @static
      * @memberOf _
      * @alias extend
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The destination object.
      * @param {...Object} [sources] The source objects.
      * @returns {Object} Returns `object`.
@@ -10389,7 +10389,7 @@
      * @static
      * @memberOf _
      * @alias extendWith
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The destination object.
      * @param {...Object} sources The source objects.
      * @param {Function} [customizer] The function to customize assigned values.
@@ -10419,7 +10419,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The destination object.
      * @param {...Object} sources The source objects.
      * @param {Function} [customizer] The function to customize assigned values.
@@ -10444,7 +10444,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to iterate over.
      * @param {...(string|string[])} [paths] The property paths of elements to pick,
      *  specified individually or in arrays.
@@ -10464,14 +10464,14 @@
     });
 
     /**
-     * Creates an object that inherits from the `prototype` object. If a `Properties`
-     * object is provided its own enumerable Properties are assigned to the created object.
+     * Creates an object that inherits from the `prototype` object. If a `properties`
+     * object is provided its own enumerable properties are assigned to the created object.
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} prototype The object to inherit from.
-     * @param {Object} [Properties] The Properties to assign to the object.
+     * @param {Object} [properties] The properties to assign to the object.
      * @returns {Object} Returns the new object.
      * @example
      *
@@ -10495,14 +10495,14 @@
      * circle instanceof Shape;
      * // => true
      */
-    function create(prototype, Properties) {
+    function create(prototype, properties) {
       var result = baseCreate(prototype);
-      return Properties ? baseAssign(result, Properties) : result;
+      return properties ? baseAssign(result, properties) : result;
     }
 
     /**
-     * Assigns own and inherited enumerable Properties of source objects to the
-     * destination object for all destination Properties that resolve to `undefined`.
+     * Assigns own and inherited enumerable properties of source objects to the
+     * destination object for all destination properties that resolve to `undefined`.
      * Source objects are applied from left to right. Once a property is set,
      * additional values of the same property are ignored.
      *
@@ -10510,7 +10510,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The destination object.
      * @param {...Object} [sources] The source objects.
      * @returns {Object} Returns `object`.
@@ -10526,13 +10526,13 @@
 
     /**
      * This method is like `_.defaults` except that it recursively assigns
-     * default Properties.
+     * default properties.
      *
      * **Note:** This method mutates `object`.
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The destination object.
      * @param {...Object} [sources] The source objects.
      * @returns {Object} Returns `object`.
@@ -10553,7 +10553,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to search.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @returns {string|undefined} Returns the key of the matched element, else `undefined`.
@@ -10590,7 +10590,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to search.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
      * @returns {string|undefined} Returns the key of the matched element, else `undefined`.
@@ -10622,14 +10622,14 @@
     }
 
     /**
-     * Iterates over own and inherited enumerable Properties of an object invoking
+     * Iterates over own and inherited enumerable properties of an object invoking
      * `iteratee` for each property. The iteratee is invoked with three arguments:
      * (value, key, object). Iteratee functions may exit iteration early by explicitly
      * returning `false`.
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to iterate over.
      * @param {Function} [iteratee=_.identity] The function invoked per iteration.
      * @returns {Object} Returns `object`.
@@ -10652,12 +10652,12 @@
     }
 
     /**
-     * This method is like `_.forIn` except that it iterates over Properties of
+     * This method is like `_.forIn` except that it iterates over properties of
      * `object` in the opposite order.
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to iterate over.
      * @param {Function} [iteratee=_.identity] The function invoked per iteration.
      * @returns {Object} Returns `object`.
@@ -10680,14 +10680,14 @@
     }
 
     /**
-     * Iterates over own enumerable Properties of an object invoking `iteratee`
+     * Iterates over own enumerable properties of an object invoking `iteratee`
      * for each property. The iteratee is invoked with three arguments:
      * (value, key, object). Iteratee functions may exit iteration early by
      * explicitly returning `false`.
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to iterate over.
      * @param {Function} [iteratee=_.identity] The function invoked per iteration.
      * @returns {Object} Returns `object`.
@@ -10710,12 +10710,12 @@
     }
 
     /**
-     * This method is like `_.forOwn` except that it iterates over Properties of
+     * This method is like `_.forOwn` except that it iterates over properties of
      * `object` in the opposite order.
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to iterate over.
      * @param {Function} [iteratee=_.identity] The function invoked per iteration.
      * @returns {Object} Returns `object`.
@@ -10738,12 +10738,12 @@
     }
 
     /**
-     * Creates an array of function property names from own enumerable Properties
+     * Creates an array of function property names from own enumerable properties
      * of `object`.
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to inspect.
      * @returns {Array} Returns the new array of property names.
      * @example
@@ -10764,11 +10764,11 @@
 
     /**
      * Creates an array of function property names from own and inherited
-     * enumerable Properties of `object`.
+     * enumerable properties of `object`.
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to inspect.
      * @returns {Array} Returns the new array of property names.
      * @example
@@ -10793,7 +10793,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to query.
      * @param {Array|string} path The path of the property to get.
      * @param {*} [defaultValue] The value returned if the resolved value is `undefined`.
@@ -10821,7 +10821,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to query.
      * @param {Array|string} path The path to check.
      * @returns {boolean} Returns `true` if `path` exists, else `false`.
@@ -10851,7 +10851,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to query.
      * @param {Array|string} path The path to check.
      * @returns {boolean} Returns `true` if `path` exists, else `false`.
@@ -10882,7 +10882,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to invert.
      * @param {boolean} [multiVal] Allow multiple values per key.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -10920,7 +10920,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to query.
      * @param {Array|string} path The path of the method to invoke.
      * @param {...*} [args] The arguments to invoke the method with.
@@ -10943,7 +10943,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to query.
      * @returns {Array} Returns the array of property names.
      * @example
@@ -10988,7 +10988,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to query.
      * @returns {Array} Returns the array of property names.
      * @example
@@ -11030,7 +11030,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to iterate over.
      * @param {Function|Object|string} [iteratee=_.identity] The function invoked per iteration.
      * @returns {Object} Returns the new mapped object.
@@ -11058,7 +11058,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to iterate over.
      * @param {Function|Object|string} [iteratee=_.identity] The function invoked per iteration.
      * @returns {Object} Returns the new mapped object.
@@ -11087,9 +11087,9 @@
     }
 
     /**
-     * Recursively merges own and inherited enumerable Properties of source
-     * objects into the destination object, skipping source Properties that resolve
-     * to `undefined`. Array and plain object Properties are merged recursively.
+     * Recursively merges own and inherited enumerable properties of source
+     * objects into the destination object, skipping source properties that resolve
+     * to `undefined`. Array and plain object properties are merged recursively.
      * Other objects and value types are overriden by assignment. Source objects
      * are applied from left to right. Subsequent sources overwrite property
      * assignments of previous sources.
@@ -11098,7 +11098,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The destination object.
      * @param {...Object} [sources] The source objects.
      * @returns {Object} Returns `object`.
@@ -11122,13 +11122,13 @@
     /**
      * This method is like `_.merge` except that it accepts `customizer` which
      * is invoked to produce the merged values of the destination and source
-     * Properties. If `customizer` returns `undefined` merging is handled by the
+     * properties. If `customizer` returns `undefined` merging is handled by the
      * method instead. The `customizer` is invoked with seven arguments:
      * (objValue, srcValue, key, object, source, stack).
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The destination object.
      * @param {...Object} sources The source objects.
      * @param {Function} customizer The function to customize assigned values.
@@ -11160,11 +11160,11 @@
 
     /**
      * The opposite of `_.pick`; this method creates an object composed of the
-     * own and inherited enumerable Properties of `object` that are not omitted.
+     * own and inherited enumerable properties of `object` that are not omitted.
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The source object.
      * @param {...(string|string[])} [props] The property names to omit, specified
      *  individually or in arrays..
@@ -11186,12 +11186,12 @@
 
     /**
      * The opposite of `_.pickBy`; this method creates an object composed of the
-     * own and inherited enumerable Properties of `object` that `predicate`
+     * own and inherited enumerable properties of `object` that `predicate`
      * doesn't return truthy for.
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The source object.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per property.
      * @returns {Object} Returns the new object.
@@ -11210,11 +11210,11 @@
     }
 
     /**
-     * Creates an object composed of the picked `object` Properties.
+     * Creates an object composed of the picked `object` properties.
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The source object.
      * @param {...(string|string[])} [props] The property names to pick, specified
      *  individually or in arrays.
@@ -11231,12 +11231,12 @@
     });
 
     /**
-     * Creates an object composed of the `object` Properties `predicate` returns
+     * Creates an object composed of the `object` properties `predicate` returns
      * truthy for. The predicate is invoked with one argument: (value).
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The source object.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked per property.
      * @returns {Object} Returns the new object.
@@ -11258,7 +11258,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to query.
      * @param {Array|string} path The path of the property to resolve.
      * @param {*} [defaultValue] The value returned if the resolved value is `undefined`.
@@ -11295,13 +11295,13 @@
 
     /**
      * Sets the value at `path` of `object`. If a portion of `path` doesn't exist
-     * it's created. Arrays are created for missing index Properties while objects
-     * are created for all other missing Properties. Use `_.setWith` to customize
+     * it's created. Arrays are created for missing index properties while objects
+     * are created for all other missing properties. Use `_.setWith` to customize
      * `path` creation.
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to modify.
      * @param {Array|string} path The path of the property to set.
      * @param {*} value The value to set.
@@ -11330,7 +11330,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to modify.
      * @param {Array|string} path The path of the property to set.
      * @param {*} value The value to set.
@@ -11351,7 +11351,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to query.
      * @returns {Array} Returns the new array of key-value pairs.
      * @example
@@ -11375,7 +11375,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to query.
      * @returns {Array} Returns the new array of key-value pairs.
      * @example
@@ -11397,14 +11397,14 @@
     /**
      * An alternative to `_.reduce`; this method transforms `object` to a new
      * `accumulator` object which is the result of running each of its own enumerable
-     * Properties through `iteratee`, with each invocation potentially mutating
+     * properties through `iteratee`, with each invocation potentially mutating
      * the `accumulator` object. The iteratee is invoked with four arguments:
      * (accumulator, value, key, object). Iteratee functions may exit iteration
      * early by explicitly returning `false`.
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Array|Object} object The object to iterate over.
      * @param {Function} [iteratee=_.identity] The function invoked per iteration.
      * @param {*} [accumulator] The custom accumulator value.
@@ -11449,7 +11449,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to modify.
      * @param {Array|string} path The path of the property to unset.
      * @returns {boolean} Returns `true` if the property is deleted, else `false`.
@@ -11479,7 +11479,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to query.
      * @returns {Array} Returns the array of property values.
      * @example
@@ -11508,7 +11508,7 @@
      *
      * @static
      * @memberOf _
-     * @category 对象(Object)
+     * @category Object
      * @param {Object} object The object to query.
      * @returns {Array} Returns the array of property values.
      * @example
@@ -11535,7 +11535,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数字(Number)
+     * @category Number
      * @param {number} number The number whose value is to be limited.
      * @param {number} [min] The minimum possible value.
      * @param {number} max The maximum possible value.
@@ -11577,7 +11577,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数字(Number)
+     * @category Number
      * @param {number} number The number to check.
      * @param {number} [start=0] The start of the range.
      * @param {number} end The end of the range.
@@ -11628,7 +11628,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数字(Number)
+     * @category Number
      * @param {number} [min=0] The minimum possible value.
      * @param {number} [max=1] The maximum possible value.
      * @param {boolean} [floating] Specify returning a floating-point number.
@@ -11693,7 +11693,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to convert.
      * @returns {string} Returns the camel cased string.
      * @example
@@ -11718,7 +11718,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to capitalize.
      * @returns {string} Returns the capitalized string.
      * @example
@@ -11736,7 +11736,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to deburr.
      * @returns {string} Returns the deburred string.
      * @example
@@ -11754,7 +11754,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to search.
      * @param {string} [target] The string to search for.
      * @param {number} [position=string.length] The position to search from.
@@ -11807,7 +11807,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to escape.
      * @returns {string} Returns the escaped string.
      * @example
@@ -11828,7 +11828,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to escape.
      * @returns {string} Returns the escaped string.
      * @example
@@ -11848,7 +11848,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to convert.
      * @returns {string} Returns the kebab cased string.
      * @example
@@ -11871,7 +11871,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to convert.
      * @returns {string} Returns the lower cased string.
      * @example
@@ -11894,7 +11894,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to convert.
      * @returns {string} Returns the converted string.
      * @example
@@ -11912,7 +11912,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to convert.
      * @returns {string} Returns the converted string.
      * @example
@@ -11931,7 +11931,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to pad.
      * @param {number} [length=0] The padding length.
      * @param {string} [chars=' '] The string used as padding.
@@ -11968,7 +11968,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to pad.
      * @param {number} [length=0] The padding length.
      * @param {string} [chars=' '] The string used as padding.
@@ -11995,7 +11995,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to pad.
      * @param {number} [length=0] The padding length.
      * @param {string} [chars=' '] The string used as padding.
@@ -12026,7 +12026,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} string The string to convert.
      * @param {number} [radix] The radix to interpret `value` by.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -12056,7 +12056,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to repeat.
      * @param {number} [n=0] The number of times to repeat the string.
      * @returns {string} Returns the repeated string.
@@ -12099,7 +12099,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to modify.
      * @param {RegExp|string} pattern The pattern to replace.
      * @param {Function|string} replacement The match replacement.
@@ -12121,7 +12121,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to convert.
      * @returns {string} Returns the snake cased string.
      * @example
@@ -12146,7 +12146,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to split.
      * @param {RegExp|string} separator The separator pattern to split by.
      * @param {number} [limit] The length to truncate results to.
@@ -12165,7 +12165,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to convert.
      * @returns {string} Returns the start cased string.
      * @example
@@ -12188,7 +12188,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to search.
      * @param {string} [target] The string to search for.
      * @param {number} [position=0] The position to search from.
@@ -12211,10 +12211,10 @@
     }
 
     /**
-     * Creates a compiled template function that can interpolate data Properties
-     * in "interpolate" delimiters, HTML-escape interpolated data Properties in
+     * Creates a compiled template function that can interpolate data properties
+     * in "interpolate" delimiters, HTML-escape interpolated data properties in
      * "escape" delimiters, and execute JavaScript in "evaluate" delimiters. Data
-     * Properties may be accessed as free variables in the template. If a setting
+     * properties may be accessed as free variables in the template. If a setting
      * object is provided it takes precedence over `_.templateSettings` values.
      *
      * **Note:** In the development build `_.template` utilizes
@@ -12229,7 +12229,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The template string.
      * @param {Object} [options] The options object.
      * @param {RegExp} [options.escape] The HTML "escape" delimiter.
@@ -12417,7 +12417,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to convert.
      * @returns {string} Returns the lower cased string.
      * @example
@@ -12440,7 +12440,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to convert.
      * @returns {string} Returns the upper cased string.
      * @example
@@ -12463,7 +12463,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to trim.
      * @param {string} [chars=whitespace] The characters to trim.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -12502,7 +12502,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to trim.
      * @param {string} [chars=whitespace] The characters to trim.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -12536,7 +12536,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to trim.
      * @param {string} [chars=whitespace] The characters to trim.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -12572,7 +12572,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to truncate.
      * @param {Object} [options] The options object.
      * @param {number} [options.length=30] The maximum string length.
@@ -12667,7 +12667,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to unescape.
      * @returns {string} Returns the unescaped string.
      * @example
@@ -12687,7 +12687,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to convert.
      * @returns {string} Returns the upper cased string.
      * @example
@@ -12710,7 +12710,7 @@
      *
      * @static
      * @memberOf _
-     * @category 字符串(String)
+     * @category String
      * @param {string} [string=''] The string to inspect.
      * @param {RegExp|string} [pattern] The pattern to match words.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
@@ -12741,7 +12741,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {Function} func The function to attempt.
      * @returns {*} Returns the `func` result or error object.
      * @example
@@ -12764,13 +12764,13 @@
     });
 
     /**
-     * Creates a function that invokes the predicate Properties of `source` with
+     * Creates a function that invokes the predicate properties of `source` with
      * the corresponding property values of a given object, returning `true` if
      * all predicates return truthy, else `false`.
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {Object} source The object of property predicates to conform to.
      * @returns {Function} Returns the new function.
      * @example
@@ -12792,7 +12792,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {*} value The value to return from the new function.
      * @returns {Function} Returns the new function.
      * @example
@@ -12816,7 +12816,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {...(Function|Function[])} [funcs] Functions to invoke.
      * @returns {Function} Returns the new function.
      * @example
@@ -12837,7 +12837,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {...(Function|Function[])} [funcs] Functions to invoke.
      * @returns {Function} Returns the new function.
      * @example
@@ -12857,7 +12857,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {*} value Any value.
      * @returns {*} Returns `value`.
      * @example
@@ -12875,11 +12875,11 @@
      * Creates a function that invokes `func` with the arguments of the created
      * function. If `func` is a property name the created callback returns the
      * property value for a given element. If `func` is an object the created
-     * callback returns `true` for elements that contain the equivalent object Properties, otherwise it returns `false`.
+     * callback returns `true` for elements that contain the equivalent object properties, otherwise it returns `false`.
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {*} [func=_.identity] The value to convert to a callback.
      * @returns {Function} Returns the callback.
      * @example
@@ -12918,12 +12918,12 @@
      *
      * **Note:** This method supports comparing arrays, booleans, `Date` objects,
      * numbers, `Object` objects, regexes, and strings. Objects are compared by
-     * their own and inherited enumerable Properties. For comparing a single
+     * their own and inherited enumerable properties. For comparing a single
      * value see `_.matchesProperty`.
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {Object} source The object of property values to match.
      * @returns {Function} Returns the new function.
      * @example
@@ -12950,7 +12950,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {Array|string} path The path of the property to get.
      * @param {*} srcValue The value to match.
      * @returns {Function} Returns the new function.
@@ -12974,7 +12974,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {Array|string} path The path of the method to invoke.
      * @param {...*} [args] The arguments to invoke the method with.
      * @returns {Function} Returns the new function.
@@ -13004,7 +13004,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {Object} object The object to query.
      * @param {...*} [args] The arguments to invoke the method with.
      * @returns {Function} Returns the new function.
@@ -13026,7 +13026,7 @@
     });
 
     /**
-     * Adds all own enumerable function Properties of a source object to the
+     * Adds all own enumerable function properties of a source object to the
      * destination object. If `object` is a function then methods are added to
      * its prototype as well.
      *
@@ -13035,7 +13035,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {Function|Object} [object=lodash] The destination object.
      * @param {Object} source The object of functions to add.
      * @param {Object} [options] The options object.
@@ -13103,7 +13103,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @returns {Function} Returns the `lodash` function.
      * @example
      *
@@ -13120,7 +13120,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @example
      *
      * var object = { 'user': 'fred' };
@@ -13137,7 +13137,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {number} [n=0] The index of the argument to return.
      * @returns {Function} Returns the new function.
      * @example
@@ -13160,7 +13160,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {...(Function|Function[])} iteratees The iteratees to invoke.
      * @returns {Function} Returns the new function.
      * @example
@@ -13178,7 +13178,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {...(Function|Function[])} predicates The predicates to check.
      * @returns {Function} Returns the new function.
      * @example
@@ -13202,7 +13202,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {...(Function|Function[])} predicates The predicates to check.
      * @returns {Function} Returns the new function.
      * @example
@@ -13225,7 +13225,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {Array|string} path The path of the property to get.
      * @returns {Function} Returns the new function.
      * @example
@@ -13251,7 +13251,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {Object} object The object to query.
      * @returns {Function} Returns the new function.
      * @example
@@ -13283,7 +13283,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {number} [start=0] The start of the range.
      * @param {number} end The end of the range.
      * @param {number} [step=1] The value to increment or decrement by.
@@ -13324,7 +13324,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {number} [start=0] The start of the range.
      * @param {number} end The end of the range.
      * @param {number} [step=1] The value to increment or decrement by.
@@ -13365,7 +13365,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {number} n The number of times to invoke `iteratee`.
      * @param {Function} [iteratee=_.identity] The function invoked per iteration.
      * @returns {Array} Returns the array of results.
@@ -13402,7 +13402,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {*} value The value to convert.
      * @returns {Array} Returns the new property path array.
      * @example
@@ -13431,7 +13431,7 @@
      *
      * @static
      * @memberOf _
-     * @category 实用工具(Utility)
+     * @category Utility
      * @param {string} [prefix] The value to prefix the ID with.
      * @returns {string} Returns the unique ID.
      * @example
@@ -13454,7 +13454,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数学(Math)
+     * @category Math
      * @param {number} augend The first number in an addition.
      * @param {number} addend The second number in an addition.
      * @returns {number} Returns the total.
@@ -13479,7 +13479,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数学(Math)
+     * @category Math
      * @param {number} number The number to round up.
      * @param {number} [precision=0] The precision to round up to.
      * @returns {number} Returns the rounded up number.
@@ -13501,7 +13501,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数学(Math)
+     * @category Math
      * @param {number} number The number to round down.
      * @param {number} [precision=0] The precision to round down to.
      * @returns {number} Returns the rounded down number.
@@ -13524,7 +13524,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数学(Math)
+     * @category Math
      * @param {Array} array The array to iterate over.
      * @returns {*} Returns the maximum value.
      * @example
@@ -13548,7 +13548,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数学(Math)
+     * @category Math
      * @param {Array} array The array to iterate over.
      * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
      * @returns {*} Returns the maximum value.
@@ -13577,7 +13577,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数学(Math)
+     * @category Math
      * @param {Array} array The array to iterate over.
      * @returns {number} Returns the mean.
      * @example
@@ -13595,7 +13595,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数学(Math)
+     * @category Math
      * @param {Array} array The array to iterate over.
      * @returns {*} Returns the minimum value.
      * @example
@@ -13619,7 +13619,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数学(Math)
+     * @category Math
      * @param {Array} array The array to iterate over.
      * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
      * @returns {*} Returns the minimum value.
@@ -13648,7 +13648,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数学(Math)
+     * @category Math
      * @param {number} number The number to round.
      * @param {number} [precision=0] The precision to round to.
      * @returns {number} Returns the rounded number.
@@ -13670,7 +13670,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数学(Math)
+     * @category Math
      * @param {number} minuend The first number in a subtraction.
      * @param {number} subtrahend The second number in a subtraction.
      * @returns {number} Returns the difference.
@@ -13695,7 +13695,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数学(Math)
+     * @category Math
      * @param {Array} array The array to iterate over.
      * @returns {number} Returns the sum.
      * @example
@@ -13716,7 +13716,7 @@
      *
      * @static
      * @memberOf _
-     * @category 数学(Math)
+     * @category Math
      * @param {Array} array The array to iterate over.
      * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
      * @returns {number} Returns the sum.
