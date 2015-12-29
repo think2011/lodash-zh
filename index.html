@@ -399,7 +399,7 @@ _<span class="token punctuation" >.</span><span class="token function" >map</spa
 <li><a href="./ary">_.ary</a> &amp; <a href="./rearg">_.rearg</a> 改变函数的实参个数和顺序</li>
 <li><a href="./at">_.at</a> 更方便的获取数组或对象的值</li>
 <li><a href="./attempt">_.attempt</a> 无需 try-catch 来处理可能会出错的执行函数</li>
-<li><a href="./before">_.before</a> 与 <a href="./after">_.after</a> 搭配 </li>
+<li><a href="./before">_.before</a> 与 <a href="./after">_.after</a> 互补</li>
 <li><a href="./bindKey">_.bindKey</a> 实现 <a href="http://michaux.ca/articles/lazy-function-definition-pattern" target="_blank"><em>“懒传参”</em></a></li>
 <li><a href="./chunk">_.chunk</a> 按给定个数来拆分数组</li>
 <li><a href="./clone">_.clone</a> 支持对 <code>Date</code> &amp; <code>RegExp</code> 对象的浅拷贝</li>
@@ -413,40 +413,40 @@ _<span class="token punctuation" >.</span><span class="token function" >map</spa
 <li><a href="./forEach">_.forEach</a> 支持提前中断</li>
 <li><a href="./forIn">_.forIn</a> 遍历对象所有的可枚举属性</li>
 <li><a href="./forOwn">_.forOwn</a> 遍历对象的所有属性</li>
-<li><a href="./get">_.get</a> &amp; <a href="./set">_.set</a> for deep property getting &amp; setting</li>
-<li><a href="./gt">_.gt</a>, <a href="./gte">_.gte</a>, <a href="./lt">_.lt</a>, &amp; <a href="./lte">_.lte</a> relational methods</li>
-<li><a href="./inRange">_.inRange</a> for checking whether a number is within a given range</li>
-<li><a href="./isNative">_.isNative</a> to check for native functions</li>
-<li><a href="./isPlainObject">_.isPlainObject</a> &amp; <a href="./toPlainObject">_.toPlainObject</a> to check for &amp; convert to <code>Object</code> objects</li>
-<li><a href="./isTypedArray">_.isTypedArray</a> to check for typed arrays</li>
-<li><a href="./mapKeys">_.mapKeys</a> for mapping keys to an object</li>
-<li><a href="./matches">_.matches</a> supports deep object comparisons</li>
-<li><a href="./matchesProperty">_.matchesProperty</a> to complement <a href="./matches">_.matches</a> &amp; <a href="./property">_.property</a></li>
-<li><a href="./merge">_.merge</a> for a deep <a href="./extend">_.extend</a></li>
-<li><a href="./method">_.method</a> &amp; <a href="./methodOf">_.methodOf</a> to create functions that invoke methods</li>
-<li><a href="./modArgs">_.modArgs</a> for more advanced functional composition</li>
-<li><a href="./parseInt">_.parseInt</a> for consistent cross-environment behavior</li>
-<li><a href="./pull">_.pull</a>, <a href="./pullAt">_.pullAt</a>, &amp; <a href="./remove">_.remove</a> for mutating arrays</li>
-<li><a href="./random">_.random</a> supports returning floating-point numbers</li>
-<li><a href="./restParam">_.restParam</a> &amp; <a href="./spread">_.spread</a> for applying rest parameters &amp; spreading arguments to functions</li>
-<li><a href="./runInContext">_.runInContext</a> for collisionless mixins &amp; easier mocking</li>
-<li><a href="./slice">_.slice</a> for creating subsets of array-like values</li>
-<li><a href="./sortByAll">_.sortByAll</a> &amp; <a href="./sortByOrder">_.sortByOrder</a> for sorting by multiple Properties &amp; orders</li>
-<li><a href="./support">_.support</a> for flagging environment features</li>
-<li><a href="./template">_.template</a> supports <a href="./templateSettings-imports"><em>“imports”</em></a> options &amp; <a href="http://people.mozilla.org/%7Ejorendorff/es6-draft.html#sec-template-literal-lexical-components" target="_blank">ES template delimiters</a></li>
-<li><a href="./transform">_.transform</a> as a powerful alternative to <a href="./reduce">_.reduce</a> for transforming objects</li>
-<li><a href="./unzipWith">_.unzipWith</a> &amp; <a href="./zipWith">_.zipWith</a> to specify how grouped values should be combined</li>
-<li><a href="./valuesIn">_.valuesIn</a> for getting values of all enumerable Properties</li>
-<li><a href="./xor">_.xor</a> to complement <a href="./difference">_.difference</a>, <a href="./intersection">_.intersection</a>, &amp; <a href="./union">_.union</a></li>
-<li><a href="./add">_.add</a>, <a href="./round">_.round</a>, <a href="./sum">_.sum</a>, &amp; <a href="./docs" title="_.ceil &amp; _.floor">more</a> math methods</li>
-<li><a href="./bind">_.bind</a>, <a href="./curry">_.curry</a>, <a href="./partial">_.partial</a>, &amp; <a href="./docs" title="_.bindKey, _.curryRight, _.partialRight">more</a> support customizable argument placeholders</li>
-<li><a href="./capitalize">_.capitalize</a>, <a href="./trim">_.trim</a>, &amp; <a href="./docs" title="_.camelCase, _.deburr, _.endsWith, _.escapeRegExp, _.kebabCase, _.pad, _.padLeft, _.padRight, _.repeat, _.snakeCase, _.startsWith, _.trimLeft, _.trimRight, _.trunc, _.words">more</a> string methods</li>
-<li><a href="./clone">_.clone</a>, <a href="./isEqual">_.isEqual</a>, &amp; <a href="./docs" title="_.assign, _.cloneDeep, _.merge">more</a> accept customizer callbacks</li>
-<li><a href="./dropWhile">_.dropWhile</a>, <a href="./takeWhile">_.takeWhile</a>, &amp; <a href="./docs" title="_.drop, _.dropRight, _.dropRightWhile, _.take, _.takeRight, _.takeRightWhile">more</a> to complement <a href="./first">_.first</a>, <a href="./initial">_.initial</a>, <a href="./last">_.last</a>, &amp; <a href="./rest">_.rest</a></li>
-<li><a href="./findLast">_.findLast</a>, <a href="./findLastKey">_.findLastKey</a>, &amp; <a href="./docs" title="_.curryRight, _.dropRight, _.dropRightWhile, _.flowRight, _.forEachRight, _.forInRight, _.forOwnRight, _.padRight, partialRight, _.takeRight, _.trimRight, _.takeRightWhile">more</a> right-associative methods</li>
-<li><a href="./includes">_.includes</a>, <a href="./toArray">_.toArray</a>, &amp; <a href="./docs" title="_.at, _.countBy, _.every, _.filter, _.find, _.findLast, _.findWhere, _.forEach, _.forEachRight, _.groupBy, _.indexBy, _.invoke, _.map, _.max, _.min, _.partition, _.pluck, _.reduce, _.reduceRight, _.reject, _.shuffle, _.size, _.some, _.sortBy, _.sortByAll, _.sortByOrder, _.sum, _.where">more</a> accept strings</li>
-<li><a href="./prototype-commit">_#commit</a> &amp; <a href="./prototype-plant">_#plant</a> for working with chain sequences</li>
-<li><a href="./thru">_#thru</a> to pass values thru a chain sequence</li>
+<li><a href="./get">_.get</a> &amp; <a href="./set">_.set</a> 以 path 的方式获取和设置对象属性</li>
+<li><a href="./gt">_.gt</a>, <a href="./gte">_.gte</a>, <a href="./lt">_.lt</a>, &amp; <a href="./lte">_.lte</a> 关系比较方法</li>
+<li><a href="./inRange">_.inRange</a> 检测给定的数值是否在指定范围内</li>
+<li><a href="./isNative">_.isNative</a> 检测是否是原生函数</li>
+<li><a href="./isPlainObject">_.isPlainObject</a> &amp; <a href="./toPlainObject">_.toPlainObject</a> 检测是否是普通对象以及转换为普通对象</li>
+<li><a href="./isTypedArray">_.isTypedArray</a> 检测是否是类型数组</li>
+<li><a href="./mapKeys">_.mapKeys</a> 按对象的 key 迭代，并返回新 key 的对象</li>
+<li><a href="./matches">_.matches</a> 支持深匹配对象</li>
+<li><a href="./matchesProperty">_.matchesProperty</a> &amp; <a href="./matches">_.matches</a> &amp; <a href="./property">_.property</a> 互补</li>
+<li><a href="./merge">_.merge</a> 相当于递归版 <a href="./extend">_.extend</a></li>
+<li><a href="./method">_.method</a> &amp; <a href="./methodOf">_.methodOf</a> 创建一个调用方法的函数</li>
+<li><a href="./modArgs">_.modArgs</a> 更高级的功能组合</li>
+<li><a href="./parseInt">_.parseInt</a> 兼容各环境</li>
+<li><a href="./pull">_.pull</a>, <a href="./pullAt">_.pullAt</a>, &amp; <a href="./remove">_.remove</a> 方便调整数组</li>
+<li><a href="./random">_.random</a> 支持返回浮点数</li>
+<li><a href="./restParam">_.restParam</a> &amp; <a href="./spread">_.spread</a> 应用一个 rest arguments 和 Spread operator 参数传递给函数</li>
+<li><a href="./runInContext">_.runInContext</a> 无碰撞的 mixins 且更方便模拟</li>
+<li><a href="./slice">_.slice</a> 支持裁剪类数组</li>
+<li><a href="./sortByAll">_.sortByAll</a> &amp; <a href="./sortByOrder">_.sortByOrder</a> 多个属性排序</li>
+<li><a href="./support">_.support</a> 标记环境功能</li>
+<li><a href="./template">_.template</a> 支持 <a href="./templateSettings-imports"><em>“imports”</em></a> 方式 &amp; <a href="http://people.mozilla.org/%7Ejorendorff/es6-draft.html#sec-template-literal-lexical-components" target="_blank">ES 字符串模板</a></li>
+<li><a href="./transform">_.transform</a> 更强大的 <a href="./reduce">_.reduce</a> 代替方法</li>
+<li><a href="./unzipWith">_.unzipWith</a> &amp; <a href="./zipWith">_.zipWith</a> 指定如何重组分解后的数组</li>
+<li><a href="./valuesIn">_.valuesIn</a> 获取所有可枚举属性的值</li>
+<li><a href="./xor">_.xor</a> &amp; <a href="./difference">_.difference</a>, <a href="./intersection">_.intersection</a>, &amp; <a href="./union">_.union</a> 互补</li>
+<li><a href="./add">_.add</a>, <a href="./round">_.round</a>, <a href="./sum">_.sum</a>, <a href="./doc" title="_.ceil, _.floor">及更多</a> 数学方法</li>
+<li><a href="./bind">_.bind</a>, <a href="./curry">_.curry</a>, <a href="./partial">_.partial</a>, &amp; <a href="./docs" title="_.bindKey, _.curryRight, _.partialRight">及更多</a> 支持自定参数占位</li>
+<li><a href="./capitalize">_.capitalize</a>, <a href="./trim">_.trim</a>, &amp; <a href="./docs" title="_.camelCase, _.deburr, _.endsWith, _.escapeRegExp, _.kebabCase, _.pad, _.padLeft, _.padRight, _.repeat, _.snakeCase, _.startsWith, _.trimLeft, _.trimRight, _.trunc, _.words">及更多</a> string 方法</li>
+<li><a href="./clone">_.clone</a>, <a href="./isEqual">_.isEqual</a>, &amp; <a href="./docs" title="_.assign, _.cloneDeep, _.merge">及更多</a> 接受自定回调函数</li>
+<li><a href="./dropWhile">_.dropWhile</a>, <a href="./takeWhile">_.takeWhile</a>, &amp; <a href="./docs" title="_.drop, _.dropRight, _.dropRightWhile, _.take, _.takeRight, _.takeRightWhile">及更多</a> 互补 <a href="./first">_.first</a>, <a href="./initial">_.initial</a>, <a href="./last">_.last</a>, &amp; <a href="./rest">_.rest</a></li>
+<li><a href="./findLast">_.findLast</a>, <a href="./findLastKey">_.findLastKey</a>, &amp; <a href="./docs" title="_.curryRight, _.dropRight, _.dropRightWhile, _.flowRight, _.forEachRight, _.forInRight, _.forOwnRight, _.padRight, partialRight, _.takeRight, _.trimRight, _.takeRightWhile">及更多</a> 右结合方法</li>
+<li><a href="./includes">_.includes</a>, <a href="./toArray">_.toArray</a>, &amp; <a href="./docs" title="_.at, _.countBy, _.every, _.filter, _.find, _.findLast, _.findWhere, _.forEach, _.forEachRight, _.groupBy, _.indexBy, _.invoke, _.map, _.max, _.min, _.partition, _.pluck, _.reduce, _.reduceRight, _.reject, _.shuffle, _.size, _.some, _.sortBy, _.sortByAll, _.sortByOrder, _.sum, _.where">及更多</a> 接受字符串方式</li>
+<li><a href="./prototype-commit">_#commit</a> &amp; <a href="./prototype-plant">_#plant</a> 配合链式队列</li>
+<li><a href="./thru">_#thru</a> 传递链式队列的值</li>
 </ul>
 <h2 id="-">关于翻译</h2>
 <ul>
