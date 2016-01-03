@@ -19,6 +19,9 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <!-- 腾讯分析 -->
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=53829628" charset="UTF-8"></script>
 </head>
 <body>
 
@@ -499,29 +502,29 @@ var chunk = require(&#39;lodash/array/chunk&#39;);
 </div>
 <div data-render-page="default"><div data-render-html="/custom-builds"><h2 id="-">版本定制</h2>
 <p>通过版本定制可以很轻松的定制仅包含你所需功能的 lodash 版本 。更棒的是，我们已经帮你处理好了函数依赖和别名对应，查看 <a href="https://github.com/lodash/lodash/wiki/build-differences" target="_blank">版本区别</a> &amp; 选择一个适合你的版本。</p>
-<p>Using Grunt? We also provide a <a href="https://npmjs.org/package/grunt-lodash" target="_blank">Grunt plugin</a> to build lodash as part of your Gruntfile.</p>
-<p>The <code>lodash</code> command-line utility is available when <a href="https://npmjs.org/package/lodash-cli" target="_blank">lodash-cli</a> is installed as a global package:</p>
+<p>使用 Grunt? 我们准备了 <a href="https://npmjs.org/package/grunt-lodash" target="_blank">Grunt plugin</a> 协助构建 lodash。</p>
+<p>安装 <a href="https://npmjs.org/package/lodash-cli" target="_blank">lodash-cli</a> 来作为 <code>lodash</code> 全局命令行工具:</p>
 <pre><code>$ {sudo -H} npm i -g npm
 $ {sudo -H} npm i -g lodash-cli
 $ lodash -h
-</code></pre><p><strong>Note:</strong> Uninstall older versions <em>before</em> installing <code>lodash-cli</code>.</p>
+</code></pre><p><strong>注意:</strong> 请先卸载旧版本，再安装 <code>lodash-cli</code>。</p>
 <ul>
-<li>Compat builds, with support for old &amp; new environments, are created using the <code>compat</code> modifier. <em>(default)</em></li>
+<li>兼容版本构建，同时支持新旧运行环境，使用 <code>compat</code> 修饰。 <em>(默认)</em></li>
 </ul>
 <pre><code>lodash compat
 </code></pre><ul>
-<li>Modern builds, tailored for newer environments with <a href="https://es5.github.io/" target="_blank">ES5</a>/<a href="ttps://people.mozilla.org/~jorendorff/es6-draft.html">ES6</a> support, are created using the <code>modern</code> modifier.</li>
+<li>现代版本构建，针对新的环境，包括 <a href="https://es5.github.io/" target="_blank">ES5</a>/<a href="ttps://people.mozilla.org/~jorendorff/es6-draft.html">ES6</a> 支持，使用 <code>modern</code> 修饰。</li>
 </ul>
 <pre><code>lodash modern
 </code></pre><ul>
-<li>Strict builds, with <a href="https://es5.github.io/#C" target="_blank">ES strict mode</a> enabled, are created using the <code>strict</code> modifier.</li>
+<li>严格模式版本构建, 开启 <a href="https://es5.github.io/#C" target="_blank">ES 严格模式</a>，使用 <code>strict</code> 修饰。</li>
 </ul>
 <pre><code>lodash strict
 </code></pre><ul>
-<li>Modularized builds, splitting lodash into modules, are created using the <code>modularize</code> modifier.</li>
+<li>模块化版本构建，拆散 lodash 为各个模块，使用 <code>modularize</code> 修饰。</li>
 </ul>
 <pre><code>lodash modularize
-</code></pre><p>Build commands:</p>
+</code></pre><p>构建命令:</p>
 <ul>
 <li>Use the <code>category</code> command to pass comma separated categories of functions to include in the build. Valid categories are <em>“array”</em>, <em>“chain”</em>, <em>“collection”</em>, <em>“date”</em>, <em>“function”</em>, <em>“lang”</em>, <em>“object”</em>, <em>“number”</em>, <em>“string”</em>, &amp; <em>“utility”</em>.</li>
 </ul>
