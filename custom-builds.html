@@ -416,27 +416,27 @@ $ lodash -h
 <pre><code>lodash modularize
 </code></pre><p>构建命令:</p>
 <ul>
-<li>Use the <code>category</code> command to pass comma separated categories of functions to include in the build. Valid categories are <em>“array”</em>, <em>“chain”</em>, <em>“collection”</em>, <em>“date”</em>, <em>“function”</em>, <em>“lang”</em>, <em>“object”</em>, <em>“number”</em>, <em>“string”</em>, &amp; <em>“utility”</em>.</li>
+<li>使用 <code>category</code> 命令以逗号分隔的方式传入需要的函数分类。可用的函数分类有： <em>“array”</em>, <em>“chain”</em>, <em>“collection”</em>, <em>“date”</em>, <em>“function”</em>, <em>“lang”</em>, <em>“object”</em>, <em>“number”</em>, <em>“string”</em>, &amp; <em>“utility”</em>=。</li>
 </ul>
 <pre><code>lodash category=collection,function
 </code></pre><ul>
-<li>Use the <code>exports</code> command to pass comma separated names of ways to export the <code>lodash</code> function. Valid exports are <em>“amd”</em>, <em>“commonjs”</em>, <em>“es”</em>, <em>“global”</em>, <em>“iojs”</em>, <em>“node”</em>, <em>“npm”</em>, <em>“none”</em>, &amp; <em>“umd”</em>.</li>
+<li>使用 <code>exports</code> 命令以逗号分隔的方式传入导出 <code>lodash</code> 函数的方式，可用的方式有： <em>“amd”</em>, <em>“commonjs”</em>, <em>“es”</em>, <em>“global”</em>, <em>“iojs”</em>, <em>“node”</em>, <em>“npm”</em>, <em>“none”</em>, &amp; <em>“umd”</em>.</li>
 </ul>
 <pre><code>lodash exports=amd,commonjs,iojs
 </code></pre><ul>
-<li>Use the <code>iife</code> command to specify code to replace the <a href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/" target="_blank">IIFE</a> that wraps lodash.</li>
+<li>使用 <code>iife</code> 命令指定代码替换 包裹 lodash 的 <a href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/" target="_blank">IIFE</a>。</li>
 </ul>
 <pre><code>lodash iife=&quot;!function(window,undefined){%output%}(this)&quot;
 </code></pre><ul>
-<li>Use the <code>include</code> command to pass comma separated names of functions to include in the build.</li>
+<li>使用 <code>include</code> 命令以逗号分隔的方式传入需要包含的函数。</li>
 </ul>
 <pre><code>lodash include=each,filter,map
 </code></pre><ul>
-<li>Use the <code>minus</code> command to pass comma separated function/category names to remove from the build.</li>
+<li>使用 <code>minus</code> 命令以逗号分隔的方式传入需要删减的函数/分类。</li>
 </ul>
 <pre><code>lodash modern minus=result,shuffle
 </code></pre><ul>
-<li>Use the <code>plus</code> command to pass comma separated function/category names to add to the build.</li>
+<li>使用 <code>plus</code> 命令以逗号分隔的方式传入需要补充的函数/分类。</li>
 </ul>
 <pre><code>lodash category=array plus=random,template
 </code></pre><ul>
@@ -444,30 +444,30 @@ $ lodash -h
 </ul>
 <pre><code>lodash template=&quot;./*.jst&quot;
 </code></pre><ul>
-<li>Use the <code>settings</code> command to pass template settings used when precompiling templates.</li>
+<li>使用 <code>settings</code> 命令设置预编译模板时的模板语法。</li>
 </ul>
 <pre><code>lodash settings=&quot;{interpolate:/\{\{([\s\S]+?)\}\}/g}&quot;
 </code></pre><ul>
 <li>Use the <code>moduleId</code> command to specify the AMD module ID for lodash or the module ID used to include lodash in compiled templates. Use “none” as the module ID to create compiled templates without a dependency on lodash.</li>
 </ul>
 <pre><code>lodash moduleId=underscore
-</code></pre><p><strong>Notes:</strong></p>
+</code></pre><p><strong>注意:</strong></p>
 <ul>
-<li>All commands except <code>compat</code> &amp; <code>modern</code> may be combined</li>
-<li>The <code>exports</code> values <em>“es”</em> &amp; <em>“npm”</em> may only be used in conjunction with the <code>modularize</code> command</li>
-<li>The <code>modularize</code> command uses the first <code>exports</code> values as its module format, ignoring subsequent values.</li>
-<li>Unless specified by <code>-o</code> or <code>--output</code> all files created are saved to the current working directory</li>
-<li>Node.js 0.10.8-0.10.11 <a href="https://github.com/joyent/node/issues/5622" target="_blank">have</a> <a href="https://github.com/joyent/node/issues/5688" target="_blank">bugs</a> preventing minified builds</li>
+<li>所有命令可以组合（除了 <code>compat</code> &amp; <code>modern</code>）</li>
+<li><code>exports</code> 的值 <em>“es”</em> &amp; <em>“npm”</em> 只能与 <code>modularize</code> 命令联用。</li>
+<li><code>modularize</code> 命令使用最先的 <code>exports</code> 的值作为模块格式，忽略后续的值。</li>
+<li>除非指定 <code>-o</code> 或 <code>--output</code>，不然所有文件会保存在当前工作目录。</li>
+<li>Node.js 0.10.8-0.10.11 <a href="https://github.com/joyent/node/issues/5622" target="_blank">存在</a> <a href="https://github.com/joyent/node/issues/5688" target="_blank">bugs</a> 导致无法最小化构建。</li>
 </ul>
-<p>The following options are also supported:</p>
-<pre><code>-c, --stdout .......... Write output to standard output
--d, --development ..... Write only the non-minified development output
--h, --help ............ Display help information
--m, --source-map ...... Generate a source map using an optional source map URL
--o, --output .......... Write output to a given path/filename
--p, --production ...... Write only the minified production output
--s, --silent .......... Skip status updates normally logged to the console
--V, --version ......... Output current version of lodash
+<p>另外还支持以下选项：</p>
+<pre><code>-c, --stdout .......... 输出到stdout(译注：类似直接输出在终端那样)
+-d, --development ..... 输出非最小化的开发代码
+-h, --help ............ 显示帮助信息
+-m, --source-map ...... 生成source-map文件
+-o, --output .......... 指定输出的路径/文件名
+-p, --production ...... 输出最小化后的产品代码
+-s, --silent .......... 不显示常规的日志输出
+-V, --version ......... 显示当前的 lodash 版本号
 </code></pre></div>
 </div>
     </div>
