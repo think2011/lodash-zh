@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>http://lodash.think2011.net/</loc></url>
-<url><loc>http://lodash.think2011.net/1.</loc></url>
-<url><loc>http://lodash.think2011.net/2.</loc></url>
+<url><loc>http://lodash.think2011.net/getting-started</loc></url>
+<url><loc>http://lodash.think2011.net/custom-builds</loc></url>
 <url><loc>http://lodash.think2011.net/all</loc></url>
 <url><loc>http://lodash.think2011.net/chunk</loc></url>
 <url><loc>http://lodash.think2011.net/compact</loc></url>
