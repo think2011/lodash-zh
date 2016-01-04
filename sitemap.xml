@@ -105,7 +105,6 @@
 <url><loc>http://lodash.think2011.net/ary</loc></url>
 <url><loc>http://lodash.think2011.net/before</loc></url>
 <url><loc>http://lodash.think2011.net/bind</loc></url>
-<url><loc>http://lodash.think2011.net/bindAll</loc></url>
 <url><loc>http://lodash.think2011.net/bindKey</loc></url>
 <url><loc>http://lodash.think2011.net/curry</loc></url>
 <url><loc>http://lodash.think2011.net/curryRight</loc></url>
@@ -160,6 +159,7 @@
 <url><loc>http://lodash.think2011.net/isRegExp</loc></url>
 <url><loc>http://lodash.think2011.net/isSafeInteger</loc></url>
 <url><loc>http://lodash.think2011.net/isString</loc></url>
+<url><loc>http://lodash.think2011.net/isSymbol</loc></url>
 <url><loc>http://lodash.think2011.net/isTypedArray</loc></url>
 <url><loc>http://lodash.think2011.net/isUndefined</loc></url>
 <url><loc>http://lodash.think2011.net/lt</loc></url>
@@ -266,6 +266,8 @@
 <url><loc>http://lodash.think2011.net/upperFirst</loc></url>
 <url><loc>http://lodash.think2011.net/words</loc></url>
 <url><loc>http://lodash.think2011.net/attempt</loc></url>
+<url><loc>http://lodash.think2011.net/bindAll</loc></url>
+<url><loc>http://lodash.think2011.net/cond</loc></url>
 <url><loc>http://lodash.think2011.net/conforms</loc></url>
 <url><loc>http://lodash.think2011.net/constant</loc></url>
 <url><loc>http://lodash.think2011.net/flow</loc></url>
