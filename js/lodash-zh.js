@@ -7,7 +7,6 @@
  * Available under MIT license <https://lodash.com/license>
  */
 ;(function () {
-
   /** Used as a safe reference for `undefined` in pre-ES5 environments. */
   var undefined;
 
@@ -2282,7 +2281,7 @@
      * @returns {Function} Returns the new function.
      */
     function baseConforms (source) {
-      var props  = keysIn(source),
+      var props = keys(source),
           length = props.length;
 
       return function (object) {
@@ -4868,7 +4867,7 @@
      */
     function initCloneArray (array) {
       var length = array.length,
-          result = new array.constructor(length);
+          result = array.constructor(length);
 
       // Add properties assigned by `RegExp#exec`.
       if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {
@@ -4887,7 +4886,7 @@
      */
     function initCloneObject (object) {
       var Ctor = object.constructor;
-      return (typeof Ctor == 'function' && Ctor instanceof Ctor) ? new Ctor : {};
+      return baseCreate(isFunction(Ctor) ? Ctor.prototype : undefined);
     }
 
     /**
@@ -5270,8 +5269,8 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * 将 array 拆分成多个 size 长度的块，并组成一个新数组。
-     * 如果 array 无法被分割成全部等长的块，那么最后剩余的元素将组成一个块。
+     * 将数组拆分成多个 size 长度的块，并组成一个新数组。
+     * 如果数组无法被分割成全部等长的块，那么最后剩余的元素将组成一个块。
      *
      * @static
      * @memberOf _
@@ -5305,14 +5304,14 @@
     }
 
     /**
-     * Creates an array with all falsey values removed. The values `false`, `null`,
-     * `0`, `""`, `undefined`, and `NaN` are falsey.
+     * 创建一个移除了所有假值的数组。例如：`false`、`null`、
+     * `0`、`""`、`undefined`， 以及`NaN` 都是 “假值”.
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to compact.
-     * @returns {Array} Returns the new array of filtered values.
+     * @param {Array} array 需要被处理的数组。
+     * @returns {Array} 返回移除了假值的数组。
      * @example
      *
      * _.compact([0, 1, false, 2, '', 3]);
@@ -5334,15 +5333,14 @@
     }
 
     /**
-     * Creates a new array concatenating `array` with any additional arrays
-     * and/or values.
+     * 创建一个用任何数组 或 值连接的新数组。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to concatenate.
-     * @param {...*} [values] The values to concatenate.
-     * @returns {Array} Returns the new concatenated array.
+     * @param {Array} array 需要被连接的数组
+     * @param {...*} [values] 需要被连接的值的队列 
+     * @returns {Array} 返回连接后的新数组
      * @example
      *
      * var array = [1];
@@ -5360,16 +5358,14 @@
     });
 
     /**
-     * Creates an array of unique `array` values not included in the other
-     * provided arrays using [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
-     * for equality comparisons.
+     * 创建一个差异化后的数组，不包括使用 [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero) 方法提供的数组。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to inspect.
-     * @param {...Array} [values] The values to exclude.
-     * @returns {Array} Returns the new array of filtered values.
+     * @param {Array} array 需要处理的数组
+     * @param {...Array} [values] 用于对比差异的数组
+     * @returns {Array} 返回一个差异化后的新数组
      * @example
      *
      * _.difference([3, 2, 1], [4, 2]);
@@ -5382,23 +5378,21 @@
     });
 
     /**
-     * This method is like `_.difference` except that it accepts `iteratee` which
-     * is invoked for each element of `array` and `values` to generate the criterion
-     * by which uniqueness is computed. The iteratee is invoked with one argument: (value).
+     * 这个方法类似 `_.difference`，除了它接受一个 iteratee 调用每一个数组和值。iteratee 会传入一个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to inspect.
-     * @param {...Array} [values] The values to exclude.
-     * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
-     * @returns {Array} Returns the new array of filtered values.
+     * @param {Array} array 需要处理的数组
+     * @param {...Array} [values] 用于对比差异的数组
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @returns {Array} 返回一个差异化后的新数组
      * @example
      *
      * _.differenceBy([3.1, 2.2, 1.3], [4.4, 2.5], Math.floor);
      * // => [3.1, 1.3]
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.differenceBy([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], 'x');
      * // => [{ 'x': 2 }]
      */
@@ -5413,17 +5407,15 @@
     });
 
     /**
-     * This method is like `_.difference` except that it accepts `comparator`
-     * which is invoked to compare elements of `array` to `values`. The comparator
-     * is invoked with two arguments: (arrVal, othVal).
+     * 这个方法类似 `_.difference`，除了它接受一个 comparator 调用每一个数组元素的值。 comparator 会传入2个参数：(arrVal, othVal)。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to inspect.
-     * @param {...Array} [values] The values to exclude.
-     * @param {Function} [comparator] The comparator invoked per element.
-     * @returns {Array} Returns the new array of filtered values.
+     * @param {Array} array 需要处理的数组
+     * @param {...Array} [values] 用于对比差异的数组
+     * @param {Function} [comparator] 这个函数会调用每一个元素
+     * @returns {Array} 返回一个差异化后的新数组
      * @example
      *
      * var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
@@ -5442,15 +5434,15 @@
     });
 
     /**
-     * Creates a slice of `array` with `n` elements dropped from the beginning.
+     * 裁剪数组中的前 N 个数组，返回剩余的部分。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to query.
-     * @param {number} [n=1] The number of elements to drop.
+     * @param {Array} array 需要处理的数组
+     * @param {number} [n=1] 裁剪的个数
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {Array} Returns the slice of `array`.
+     * @returns {Array} 返回数组的剩余的部分。
      * @example
      *
      * _.drop([1, 2, 3]);
@@ -5474,15 +5466,15 @@
     }
 
     /**
-     * Creates a slice of `array` with `n` elements dropped from the end.
+     * 从右边开始裁剪数组中的 N 个数组，返回剩余的部分。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to query.
-     * @param {number} [n=1] The number of elements to drop.
+     * @param {Array} array 需要处理的数组
+     * @param {number} [n=1] 裁剪的个数
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {Array} Returns the slice of `array`.
+     * @returns {Array} 返回数组的剩余的部分。
      * @example
      *
      * _.dropRight([1, 2, 3]);
@@ -5508,16 +5500,14 @@
     }
 
     /**
-     * Creates a slice of `array` excluding elements dropped from the end.
-     * Elements are dropped until `predicate` returns falsey. The predicate is
-     * invoked with three arguments: (value, index, array).
+     * 从右边开始裁剪数组，起点从 `predicate` 返回假值开始。`predicate` 会传入3个参数：(value, index, array)。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to query.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
-     * @returns {Array} Returns the slice of `array`.
+     * @param {Array} array 需要处理的数组
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会在每一次迭代调用
+     * @returns {Array} 返回裁剪后的数组
      * @example
      *
      * var resolve = _.partial(_.map, _, 'user');
@@ -5531,15 +5521,15 @@
      * resolve( _.dropRightWhile(users, function(o) { return !o.active; }) );
      * // => ['barney']
      *
-     * // using the `_.matches` callback shorthand
+     * // 使用了 `_.matches` 的回调结果
      * resolve( _.dropRightWhile(users, { 'user': 'pebbles', 'active': false }) );
      * // => ['barney', 'fred']
      *
-     * // using the `_.matchesProperty` callback shorthand
+     * // 使用了 `_.matchesProperty` 的回调结果
      * resolve( _.dropRightWhile(users, ['active', false]) );
      * // => ['barney']
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * resolve( _.dropRightWhile(users, 'active') );
      * // => ['barney', 'fred', 'pebbles']
      */
@@ -5550,15 +5540,13 @@
     }
 
     /**
-     * Creates a slice of `array` excluding elements dropped from the beginning.
-     * Elements are dropped until `predicate` returns falsey. The predicate is
-     * invoked with three arguments: (value, index, array).
+     * 裁剪数组，起点从 `predicate` 返回假值开始。`predicate` 会传入3个参数：(value, index, array)。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to query.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
+     * @param {Array} array array 需要处理的数组
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会在每一次迭代调用
      * @returns {Array} Returns the slice of `array`.
      * @example
      *
@@ -5573,15 +5561,15 @@
      * resolve( _.dropWhile(users, function(o) { return !o.active; }) );
      * // => ['pebbles']
      *
-     * // using the `_.matches` callback shorthand
+     * // 使用了 `_.matches` 的回调结果
      * resolve( _.dropWhile(users, { 'user': 'barney', 'active': false }) );
      * // => ['fred', 'pebbles']
      *
-     * // using the `_.matchesProperty` callback shorthand
+     * // 使用了 `_.matchesProperty` 的回调结果
      * resolve( _.dropWhile(users, ['active', false]) );
      * // => ['pebbles']
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * resolve( _.dropWhile(users, 'active') );
      * // => ['barney', 'fred', 'pebbles']
      */
@@ -5592,19 +5580,18 @@
     }
 
     /**
-     * Fills elements of `array` with `value` from `start` up to, but not
-     * including, `end`.
+     * 指定 `值` 填充数组，从 `start` 到 `end` 的位置，但不包括 `end` 本身的位置。
      *
-     * **Note:** This method mutates `array`.
+     * **注意:** 这个方法会改变数组
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to fill.
-     * @param {*} value The value to fill `array` with.
-     * @param {number} [start=0] The start position.
-     * @param {number} [end=array.length] The end position.
-     * @returns {Array} Returns `array`.
+     * @param {Array} array 需要填充的数组
+     * @param {*} value 填充的值
+     * @param {number} [start=0] 开始位置
+     * @param {number} [end=array.length] 结束位置
+     * @returns {Array} 返回数组
      * @example
      *
      * var array = [1, 2, 3];
@@ -5632,15 +5619,14 @@
     }
 
     /**
-     * This method is like `_.find` except that it returns the index of the first
-     * element `predicate` returns truthy for instead of the element itself.
-     *
+     * 这个方法类似 `_.find`。除了它返回最先通过 `predicate` 判断为真值的元素的 index ，而不是元素本身。
+     * 
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to search.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
-     * @returns {number} Returns the index of the found element, else `-1`.
+     * @param {Array} array 需要搜索的数组
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会在每一次迭代调用
+     * @returns {number} 返回符合元素的 index，否则返回 `-1`。
      * @example
      *
      * var users = [
@@ -5652,15 +5638,15 @@
      * _.findIndex(users, function(o) { return o.user == 'barney'; });
      * // => 0
      *
-     * // using the `_.matches` callback shorthand
+     * // 使用了 `_.matches` 的回调结果
      * _.findIndex(users, { 'user': 'fred', 'active': false });
      * // => 1
      *
-     * // using the `_.matchesProperty` callback shorthand
+     * // 使用了 `_.matchesProperty` 的回调结果
      * _.findIndex(users, ['active', false]);
      * // => 0
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.findIndex(users, 'active');
      * // => 2
      */
@@ -5671,15 +5657,14 @@
     }
 
     /**
-     * This method is like `_.findIndex` except that it iterates over elements
-     * of `collection` from right to left.
+     * 这个方式类似 `_.findIndex` ， 不过它是从右到左迭代的。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to search.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
-     * @returns {number} Returns the index of the found element, else `-1`.
+     * @param {Array} array 需要搜索的数组
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会在每一次迭代调用
+     * @returns {number} 返回符合元素的 index，否则返回 `-1`。
      * @example
      *
      * var users = [
@@ -5691,15 +5676,15 @@
      * _.findLastIndex(users, function(o) { return o.user == 'pebbles'; });
      * // => 2
      *
-     * // using the `_.matches` callback shorthand
+     * // 使用了 `_.matches` 的回调结果
      * _.findLastIndex(users, { 'user': 'barney', 'active': true });
      * // => 0
      *
-     * // using the `_.matchesProperty` callback shorthand
+     * // 使用了 `_.matchesProperty` 的回调结果
      * _.findLastIndex(users, ['active', false]);
      * // => 2
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.findLastIndex(users, 'active');
      * // => 0
      */
@@ -5710,16 +5695,14 @@
     }
 
     /**
-     * Creates an array of flattened values by running each element in `array`
-     * through `iteratee` and concating its result to the other mapped values.
-     * The iteratee is invoked with three arguments: (value, index|key, array).
-     *
+     * 创建一个扁平化的数组，每一个值会传入 `iteratee` 处理，处理结果会与值合并。
+     * iteratee 会传入3个参数：(value, index|key, array)。
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] The function invoked per iteration.
-     * @returns {Array} Returns the new array.
+     * @param {Array} array 遍历用的数组
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会在每一次迭代调用
+     * @returns {Array} 返回新数组
      * @example
      *
      * function duplicate(n) {
@@ -9113,11 +9096,10 @@
      * **Note:** This method is loosely based on the
      * [structured clone algorithm](https://mdn.io/Structured_clone_algorithm)
      * and supports cloning arrays, array buffers, booleans, date objects, maps,
-     * numbers, `Object` objects, regexes, sets, strings, symbols, and typed arrays.
-     * The own enumerable properties of `arguments` objects and objects created
-     * by constructors other than `Object` are cloned as plain `Object` objects.
-     * An empty object is returned for uncloneable values such as error objects,
-     * functions, DOM nodes, and WeakMaps.
+     * numbers, `Object` objects, regexes, sets, strings, symbols, and typed
+     * arrays. The own enumerable properties of `arguments` objects are cloned
+     * as plain objects. An empty object is returned for uncloneable values such
+     * as error objects, functions, DOM nodes, and WeakMaps.
      *
      * @static
      * @memberOf _
@@ -12330,7 +12312,7 @@
      * @param {RegExp} [options.interpolate] The "interpolate" delimiter.
      * @param {string} [options.sourceURL] The sourceURL of the template's compiled source.
      * @param {string} [options.variable] The data object variable name.
-     * @param- {Object} [otherOptions] Enables the legacy `options` param signature.
+     * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
      * @returns {Function} Returns the compiled template function.
      * @example
      *
@@ -12398,16 +12380,16 @@
      *   };\
      * ');
      */
-    function template (string, options, otherOptions) {
+    function template(string, options, guard) {
       // Based on John Resig's `tmpl` implementation (http://ejohn.org/blog/javascript-micro-templating/)
       // and Laura Doktorova's doT.js (https://github.com/olado/doT).
       var settings = lodash.templateSettings;
 
-      if (otherOptions && isIterateeCall(string, options, otherOptions)) {
-        options = otherOptions = undefined;
+      if (guard && isIterateeCall(string, options, guard)) {
+        options = undefined;
       }
       string  = toString(string);
-      options = assignInWith({}, otherOptions || options, settings, assignInDefaults);
+      options = assignInWith({}, options, settings, assignInDefaults);
 
       var imports       = assignInWith({}, options.imports, settings.imports, assignInDefaults),
           importsKeys   = keys(imports),
@@ -14482,7 +14464,7 @@
   else if (freeExports && freeModule) {
     // Export for Node.js.
     if (moduleExports) {
-      (freeModule.exports = _)._ = _
+      (freeModule.exports = _)._ = _;
     }
     // Export for CommonJS support.
     freeExports._ = _;

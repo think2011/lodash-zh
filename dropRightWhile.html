@@ -392,23 +392,21 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>dropRightWhile <a class="fa-link" href="./dropRightWhile" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L5546" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.droprightwhile" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>dropRightWhile <a class="fa-link" href="./dropRightWhile" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L5536" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.droprightwhile" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.dropRightWhile(array, [predicate&#x3D;_.identity])</div>
 
-<div data-render-html="/dropRightWhile"><p>Creates a slice of <code>array</code> excluding elements dropped from the end.
-Elements are dropped until <code>predicate</code> returns falsey. The predicate is
-invoked with three arguments: (value, index, array).</p>
+<div data-render-html="/dropRightWhile"><p>从右边开始裁剪数组，起点从 <code>predicate</code> 返回假值开始。<code>predicate</code> 会传入3个参数：(value, index, array)。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">array</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>The array to query. </p>
+<li><span class="param-name">array</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>需要处理的数组 </p>
 </div></li>
-<li><span class="param-name">[predicate&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>The function invoked per iteration. </p>
+<li><span class="param-name">[predicate&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>这个函数会在每一次迭代调用 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Array)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the slice of <code>array</code>.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回裁剪后的数组</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> resolve <span class="token operator" >=</span> _<span class="token punctuation" >.</span><span class="token function" >partial</span><span class="token punctuation" >(</span>_<span class="token punctuation" >.</span>map<span class="token punctuation" >,</span> _<span class="token punctuation" >,</span> <span class="token string" >'user'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
@@ -422,15 +420,15 @@ invoked with three arguments: (value, index, array).</p>
 <span class="token function" >resolve</span><span class="token punctuation" >(</span> _<span class="token punctuation" >.</span><span class="token function" >dropRightWhile</span><span class="token punctuation" >(</span>users<span class="token punctuation" >,</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>o<span class="token punctuation" >)</span> <span class="token punctuation" >{</span> <span class="token keyword" >return</span> <span class="token operator" >!</span>o<span class="token punctuation" >.</span>active<span class="token punctuation" >;</span> <span class="token punctuation" >}</span><span class="token punctuation" >)</span> <span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => ['barney']</span>
 
-<span class="token comment" spellcheck="true">// using the `_.matches` callback shorthand</span>
+<span class="token comment" spellcheck="true">// 使用了 `_.matches` 的回调结果</span>
 <span class="token function" >resolve</span><span class="token punctuation" >(</span> _<span class="token punctuation" >.</span><span class="token function" >dropRightWhile</span><span class="token punctuation" >(</span>users<span class="token punctuation" >,</span> <span class="token punctuation" >{</span> <span class="token string" >'user'</span><span class="token punctuation" >:</span> <span class="token string" >'pebbles'</span><span class="token punctuation" >,</span> <span class="token string" >'active'</span><span class="token punctuation" >:</span> <span class="token keyword" >false</span> <span class="token punctuation" >}</span><span class="token punctuation" >)</span> <span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => ['barney', 'fred']</span>
 
-<span class="token comment" spellcheck="true">// using the `_.matchesProperty` callback shorthand</span>
+<span class="token comment" spellcheck="true">// 使用了 `_.matchesProperty` 的回调结果</span>
 <span class="token function" >resolve</span><span class="token punctuation" >(</span> _<span class="token punctuation" >.</span><span class="token function" >dropRightWhile</span><span class="token punctuation" >(</span>users<span class="token punctuation" >,</span> <span class="token punctuation" >[</span><span class="token string" >'active'</span><span class="token punctuation" >,</span> <span class="token keyword" >false</span><span class="token punctuation" >]</span><span class="token punctuation" >)</span> <span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => ['barney']</span>
 
-<span class="token comment" spellcheck="true">// using the `_.property` callback shorthand</span>
+<span class="token comment" spellcheck="true">// 使用了 `_.property` 的回调结果</span>
 <span class="token function" >resolve</span><span class="token punctuation" >(</span> _<span class="token punctuation" >.</span><span class="token function" >dropRightWhile</span><span class="token punctuation" >(</span>users<span class="token punctuation" >,</span> <span class="token string" >'active'</span><span class="token punctuation" >)</span> <span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => ['barney', 'fred', 'pebbles']</span>
 </code></pre>

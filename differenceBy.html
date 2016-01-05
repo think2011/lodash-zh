@@ -392,31 +392,29 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>differenceBy <a class="fa-link" href="./differenceBy" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L5405" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.differenceby" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>differenceBy <a class="fa-link" href="./differenceBy" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L5399" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.differenceby" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.differenceBy(array, [values], [iteratee&#x3D;_.identity])</div>
 
-<div data-render-html="/differenceBy"><p>This method is like <code>_.difference</code> except that it accepts <code>iteratee</code> which
-is invoked for each element of <code>array</code> and <code>values</code> to generate the criterion
-by which uniqueness is computed. The iteratee is invoked with one argument: (value).</p>
+<div data-render-html="/differenceBy"><p>这个方法类似 <code>_.difference</code>，除了它接受一个 iteratee 调用每一个数组和值。iteratee 会传入一个参数：(value)。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">array</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>The array to inspect. </p>
+<li><span class="param-name">array</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>需要处理的数组 </p>
 </div></li>
-<li><span class="param-name">[values]</span> <span class="param-type">(...Array)</span> <div data-render-html="/#synthetic"><p>The values to exclude. </p>
+<li><span class="param-name">[values]</span> <span class="param-type">(...Array)</span> <div data-render-html="/#synthetic"><p>用于对比差异的数组 </p>
 </div></li>
-<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>The iteratee invoked per element. </p>
+<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>这个函数会调用每一个元素 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Array)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new array of filtered values.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回一个差异化后的新数组</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >differenceBy</span><span class="token punctuation" >(</span><span class="token punctuation" >[</span><span class="token number" >3.1</span><span class="token punctuation" >,</span> <span class="token number" >2.2</span><span class="token punctuation" >,</span> <span class="token number" >1.3</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> <span class="token punctuation" >[</span><span class="token number" >4.4</span><span class="token punctuation" >,</span> <span class="token number" >2.5</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> Math<span class="token punctuation" >.</span>floor<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => [3.1, 1.3]</span>
 
-<span class="token comment" spellcheck="true">// using the `_.property` callback shorthand</span>
+<span class="token comment" spellcheck="true">// 使用了 `_.property` 的回调结果</span>
 _<span class="token punctuation" >.</span><span class="token function" >differenceBy</span><span class="token punctuation" >(</span><span class="token punctuation" >[</span><span class="token punctuation" >{</span> <span class="token string" >'x'</span><span class="token punctuation" >:</span> <span class="token number" >2</span> <span class="token punctuation" >}</span><span class="token punctuation" >,</span> <span class="token punctuation" >{</span> <span class="token string" >'x'</span><span class="token punctuation" >:</span> <span class="token number" >1</span> <span class="token punctuation" >}</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> <span class="token punctuation" >[</span><span class="token punctuation" >{</span> <span class="token string" >'x'</span><span class="token punctuation" >:</span> <span class="token number" >1</span> <span class="token punctuation" >}</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> <span class="token string" >'x'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => [{ 'x': 2 }]</span>
 </code></pre>

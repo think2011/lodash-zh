@@ -392,25 +392,23 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>differenceWith <a class="fa-link" href="./differenceWith" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L5434" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.differencewith" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>differenceWith <a class="fa-link" href="./differenceWith" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L5426" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.differencewith" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.differenceWith(array, [values], [comparator])</div>
 
-<div data-render-html="/differenceWith"><p>This method is like <code>_.difference</code> except that it accepts <code>comparator</code>
-which is invoked to compare elements of <code>array</code> to <code>values</code>. The comparator
-is invoked with two arguments: (arrVal, othVal).</p>
+<div data-render-html="/differenceWith"><p>这个方法类似 <code>_.difference</code>，除了它接受一个 comparator 调用每一个数组元素的值。 comparator 会传入2个参数：(arrVal, othVal)。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">array</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>The array to inspect. </p>
+<li><span class="param-name">array</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>需要处理的数组 </p>
 </div></li>
-<li><span class="param-name">[values]</span> <span class="param-type">(...Array)</span> <div data-render-html="/#synthetic"><p>The values to exclude. </p>
+<li><span class="param-name">[values]</span> <span class="param-type">(...Array)</span> <div data-render-html="/#synthetic"><p>用于对比差异的数组 </p>
 </div></li>
-<li><span class="param-name">[comparator]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The comparator invoked per element. </p>
+<li><span class="param-name">[comparator]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>这个函数会调用每一个元素 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Array)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new array of filtered values.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回一个差异化后的新数组</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> objects <span class="token operator" >=</span> <span class="token punctuation" >[</span><span class="token punctuation" >{</span> <span class="token string" >'x'</span><span class="token punctuation" >:</span> <span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token string" >'y'</span><span class="token punctuation" >:</span> <span class="token number" >2</span> <span class="token punctuation" >}</span><span class="token punctuation" >,</span> <span class="token punctuation" >{</span> <span class="token string" >'x'</span><span class="token punctuation" >:</span> <span class="token number" >2</span><span class="token punctuation" >,</span> <span class="token string" >'y'</span><span class="token punctuation" >:</span> <span class="token number" >1</span> <span class="token punctuation" >}</span><span class="token punctuation" >]</span><span class="token punctuation" >;</span>

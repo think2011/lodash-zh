@@ -392,7 +392,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>clone <a class="fa-link" href="./clone" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L9138" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.clone" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>clone <a class="fa-link" href="./clone" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L9120" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.clone" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.clone(value)</div>
 
 <div data-render-html="/clone"><p>Creates a shallow clone of <code>value</code>.
@@ -401,11 +401,10 @@ var _hmt = _hmt || [];
 <strong>Note:</strong> This method is loosely based on the
 <a href="https://mdn.io/Structured_clone_algorithm" target="_blank">structured clone algorithm</a>
 and supports cloning arrays, array buffers, booleans, date objects, maps,
-numbers, <code>Object</code> objects, regexes, sets, strings, symbols, and typed arrays.
-The own enumerable properties of <code>arguments</code> objects and objects created
-by constructors other than <code>Object</code> are cloned as plain <code>Object</code> objects.
-An empty object is returned for uncloneable values such as error objects,
-functions, DOM nodes, and WeakMaps.</p>
+numbers, <code>Object</code> objects, regexes, sets, strings, symbols, and typed
+arrays. The own enumerable properties of <code>arguments</code> objects are cloned
+as plain objects. An empty object is returned for uncloneable values such
+as error objects, functions, DOM nodes, and WeakMaps.</p>
 </div>
 
 <h3>参数</h3>

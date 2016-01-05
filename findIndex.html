@@ -392,22 +392,21 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>findIndex <a class="fa-link" href="./findIndex" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L5667" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.findindex" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>findIndex <a class="fa-link" href="./findIndex" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L5653" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.findindex" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.findIndex(array, [predicate&#x3D;_.identity])</div>
 
-<div data-render-html="/findIndex"><p>This method is like <code>_.find</code> except that it returns the index of the first
-element <code>predicate</code> returns truthy for instead of the element itself.</p>
+<div data-render-html="/findIndex"><p>这个方法类似 <code>_.find</code>。除了它返回最先通过 <code>predicate</code> 判断为真值的元素的 index ，而不是元素本身。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">array</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>The array to search. </p>
+<li><span class="param-name">array</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>需要搜索的数组 </p>
 </div></li>
-<li><span class="param-name">[predicate&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>The function invoked per iteration. </p>
+<li><span class="param-name">[predicate&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>这个函数会在每一次迭代调用 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(number)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the index of the found element, else <code>-1</code>.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回符合元素的 index，否则返回 <code>-1</code>。</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> users <span class="token operator" >=</span> <span class="token punctuation" >[</span>
@@ -419,15 +418,15 @@ element <code>predicate</code> returns truthy for instead of the element itself.
 _<span class="token punctuation" >.</span><span class="token function" >findIndex</span><span class="token punctuation" >(</span>users<span class="token punctuation" >,</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>o<span class="token punctuation" >)</span> <span class="token punctuation" >{</span> <span class="token keyword" >return</span> o<span class="token punctuation" >.</span>user <span class="token operator" >==</span> <span class="token string" >'barney'</span><span class="token punctuation" >;</span> <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => 0</span>
 
-<span class="token comment" spellcheck="true">// using the `_.matches` callback shorthand</span>
+<span class="token comment" spellcheck="true">// 使用了 `_.matches` 的回调结果</span>
 _<span class="token punctuation" >.</span><span class="token function" >findIndex</span><span class="token punctuation" >(</span>users<span class="token punctuation" >,</span> <span class="token punctuation" >{</span> <span class="token string" >'user'</span><span class="token punctuation" >:</span> <span class="token string" >'fred'</span><span class="token punctuation" >,</span> <span class="token string" >'active'</span><span class="token punctuation" >:</span> <span class="token keyword" >false</span> <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => 1</span>
 
-<span class="token comment" spellcheck="true">// using the `_.matchesProperty` callback shorthand</span>
+<span class="token comment" spellcheck="true">// 使用了 `_.matchesProperty` 的回调结果</span>
 _<span class="token punctuation" >.</span><span class="token function" >findIndex</span><span class="token punctuation" >(</span>users<span class="token punctuation" >,</span> <span class="token punctuation" >[</span><span class="token string" >'active'</span><span class="token punctuation" >,</span> <span class="token keyword" >false</span><span class="token punctuation" >]</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => 0</span>
 
-<span class="token comment" spellcheck="true">// using the `_.property` callback shorthand</span>
+<span class="token comment" spellcheck="true">// 使用了 `_.property` 的回调结果</span>
 _<span class="token punctuation" >.</span><span class="token function" >findIndex</span><span class="token punctuation" >(</span>users<span class="token punctuation" >,</span> <span class="token string" >'active'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => 2</span>
 </code></pre>
