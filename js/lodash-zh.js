@@ -5718,13 +5718,13 @@
     }
 
     /**
-     * Flattens `array` a single level.
+     * 向上一级展平数组嵌套
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to flatten.
-     * @returns {Array} Returns the new flattened array.
+     * @param {Array} array 需要展平的数组
+     * @returns {Array} 返回一个展平后的数组
      * @example
      *
      * _.flatten([1, [2, 3, [4]]]);
@@ -5736,13 +5736,12 @@
     }
 
     /**
-     * This method is like `_.flatten` except that it recursively flattens `array`.
-     *
+     * 这个方法类似 `_.flatten`， 但它会递归展平数组。
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to recursively flatten.
-     * @returns {Array} Returns the new flattened array.
+     * @param {Array} array 需要展平的数组
+     * @returns {Array} 返回一个展平后的数组
      * @example
      *
      * _.flattenDeep([1, [2, 3, [4]]]);
@@ -5754,14 +5753,13 @@
     }
 
     /**
-     * The inverse of `_.toPairs`; this method returns an object composed
-     * from key-value `pairs`.
+     * 反向版 `_.toPairs`，这个方法返回一个由键值对构成的对象。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} pairs The key-value pairs.
-     * @returns {Object} Returns the new object.
+     * @param {Array} pairs 键值对
+     * @returns {Object} 返回一个新对象
      * @example
      *
      * _.fromPairs([['fred', 30], ['barney', 40]]);
@@ -5780,14 +5778,14 @@
     }
 
     /**
-     * Gets the first element of `array`.
+     * 获得数组的首个元素
      *
      * @static
      * @memberOf _
      * @alias first
      * @category Array
-     * @param {Array} array The array to query.
-     * @returns {*} Returns the first element of `array`.
+     * @param {Array} array 要检索的数组
+     * @returns {*} 返回数组中的首个元素
      * @example
      *
      * _.head([1, 2, 3]);
@@ -5801,25 +5799,21 @@
     }
 
     /**
-     * Gets the index at which the first occurrence of `value` is found in `array`
-     * using [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
-     * for equality comparisons. If `fromIndex` is negative, it's used as the offset
-     * from the end of `array`. If `array` is sorted providing `true` for `fromIndex`
-     * performs a faster binary search.
+     * 根据 value 使用 SameValueZero 等值比较返回数组中首次匹配的 index， 如果 fromIndex 为负值，将从数组尾端索引进行匹配，如果将 fromIndex 设置为 true，将使用更快的二进制检索机制。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to search.
-     * @param {*} value The value to search for.
-     * @param {number} [fromIndex=0] The index to search from.
-     * @returns {number} Returns the index of the matched value, else `-1`.
+     * @param {Array} array 要检索的数组
+     * @param {*} value 要检索的值
+     * @param {number} [fromIndex=0] 需要检索的起始位置，如果为 true 将使用二进制检索方式。
+     * @returns {number} 返回匹配值的index，否则返回 -1。
      * @example
      *
      * _.indexOf([1, 2, 1, 2], 2);
      * // => 1
      *
-     * // using `fromIndex`
+     * // 使用了 `fromIndex`
      * _.indexOf([1, 2, 1, 2], 2, 2);
      * // => 3
      */

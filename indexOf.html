@@ -392,33 +392,29 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>indexOf <a class="fa-link" href="./indexOf" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L5826" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.indexof" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>indexOf <a class="fa-link" href="./indexOf" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L5820" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.indexof" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.indexOf(array, value, [fromIndex&#x3D;0])</div>
 
-<div data-render-html="/indexOf"><p>Gets the index at which the first occurrence of <code>value</code> is found in <code>array</code>
-using <a href="http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero" target="_blank"><code>SameValueZero</code></a>
-for equality comparisons. If <code>fromIndex</code> is negative, it&#39;s used as the offset
-from the end of <code>array</code>. If <code>array</code> is sorted providing <code>true</code> for <code>fromIndex</code>
-performs a faster binary search.</p>
+<div data-render-html="/indexOf"><p>根据 value 使用 SameValueZero 等值比较返回数组中首次匹配的 index， 如果 fromIndex 为负值，将从数组尾端索引进行匹配，如果将 fromIndex 设置为 true，将使用更快的二进制检索机制。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">array</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>The array to search. </p>
+<li><span class="param-name">array</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>要检索的数组 </p>
 </div></li>
-<li><span class="param-name">value</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>The value to search for. </p>
+<li><span class="param-name">value</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>要检索的值 </p>
 </div></li>
-<li><span class="param-name">[fromIndex&#x3D;0]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>The index to search from. </p>
+<li><span class="param-name">[fromIndex&#x3D;0]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>需要检索的起始位置，如果为 true 将使用二进制检索方式。 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(number)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the index of the matched value, else <code>-1</code>.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回匹配值的index，否则返回 -1。</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >indexOf</span><span class="token punctuation" >(</span><span class="token punctuation" >[</span><span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >,</span> <span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => 1</span>
 
-<span class="token comment" spellcheck="true">// using `fromIndex`</span>
+<span class="token comment" spellcheck="true">// 使用了 `fromIndex`</span>
 _<span class="token punctuation" >.</span><span class="token function" >indexOf</span><span class="token punctuation" >(</span><span class="token punctuation" >[</span><span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >,</span> <span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => 3</span>
 </code></pre>
