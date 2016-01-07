@@ -78,7 +78,7 @@ var _hmt = _hmt || [];
 <li><a href="./fromPairs" title="_.fromPairs(pairs)">fromPairs</a></li>
 <li><a href="./head" title="_.head(array)">head <span class="aliases">first</span></a></li>
 <li><a href="./indexOf" title="_.indexOf(array, value, [fromIndex=0])">indexOf</a></li>
-<li><a href="./initial" title="_.initial(array)">initial</a></li>
+<li><a href="./initial" title="_.initial(需要检索的数组)">initial</a></li>
 <li><a href="./intersection" title="_.intersection([arrays])">intersection</a></li>
 <li><a href="./intersectionBy" title="_.intersectionBy([arrays], [iteratee=_.identity])">intersectionBy</a></li>
 <li><a href="./intersectionWith" title="_.intersectionWith([arrays], [comparator])">intersectionWith</a></li>
@@ -392,33 +392,52 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>sortedLastIndexBy <a class="fa-link" href="./sortedLastIndexBy" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L6332" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.sortedlastindexby" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>sortedLastIndexBy <a class="fa-link" href="./sortedLastIndexBy" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L6313" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.sortedlastindexby" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.sortedLastIndexBy(array, value, [iteratee&#x3D;_.identity])</div>
 
-<div data-render-html="/sortedLastIndexBy"><p>This method is like <code>_.sortedLastIndex</code> except that it accepts <code>iteratee</code>
-which is invoked for <code>value</code> and each element of <code>array</code> to compute their
-sort ranking. The iteratee is invoked with one argument: (value).</p>
+<div data-render-html="/sortedLastIndexBy"><p>这个方法类似 <code>_.sortedLastIndex</code>，除了它接受一个 iteratee 调用每一个数组和值来计算排序。iteratee 会传入一个参数：(value)。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">array</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>The sorted array to inspect. </p>
+<li><span class="param-name">array</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>需要检索的已排序数组 </p>
 </div></li>
-<li><span class="param-name">value</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>The value to evaluate. </p>
+<li><span class="param-name">value</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>要评估位置的值 </p>
 </div></li>
-<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>The iteratee invoked per element. </p>
+<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>这个函数会调用每一个元素 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(number)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the index at which <code>value</code> should be inserted into <code>array</code>.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回 value 应该在数组中插入的 index。</p>
 </div></div>
 <h3>示例</h3>
-    <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token comment" spellcheck="true">// using the `_.property` callback shorthand</span>
+    <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token comment" spellcheck="true">// 使用了 `_.property` 的回调结果</span>
 _<span class="token punctuation" >.</span><span class="token function" >sortedLastIndexBy</span><span class="token punctuation" >(</span><span class="token punctuation" >[</span><span class="token punctuation" >{</span> <span class="token string" >'x'</span><span class="token punctuation" >:</span> <span class="token number" >4</span> <span class="token punctuation" >}</span><span class="token punctuation" >,</span> <span class="token punctuation" >{</span> <span class="token string" >'x'</span><span class="token punctuation" >:</span> <span class="token number" >5</span> <span class="token punctuation" >}</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> <span class="token punctuation" >{</span> <span class="token string" >'x'</span><span class="token punctuation" >:</span> <span class="token number" >4</span> <span class="token punctuation" >}</span><span class="token punctuation" >,</span> <span class="token string" >'x'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => 1</span>
 </code></pre>
 </div>
-</div>
+<div id="disqus_thread" style="margin-top:50px;"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//lodash-zh.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div>
     </div>
 </div>
 </div>

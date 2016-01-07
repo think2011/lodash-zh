@@ -78,7 +78,7 @@ var _hmt = _hmt || [];
 <li><a href="./fromPairs" title="_.fromPairs(pairs)">fromPairs</a></li>
 <li><a href="./head" title="_.head(array)">head <span class="aliases">first</span></a></li>
 <li><a href="./indexOf" title="_.indexOf(array, value, [fromIndex=0])">indexOf</a></li>
-<li><a href="./initial" title="_.initial(array)">initial</a></li>
+<li><a href="./initial" title="_.initial(需要检索的数组)">initial</a></li>
 <li><a href="./intersection" title="_.intersection([arrays])">intersection</a></li>
 <li><a href="./intersectionBy" title="_.intersectionBy([arrays], [iteratee=_.identity])">intersectionBy</a></li>
 <li><a href="./intersectionWith" title="_.intersectionWith([arrays], [comparator])">intersectionWith</a></li>
@@ -392,29 +392,50 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>slice <a class="fa-link" href="./slice" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L6207" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.slice" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>slice <a class="fa-link" href="./slice" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L6195" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.slice" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.slice(array, [start&#x3D;0], [end&#x3D;array.length])</div>
 
-<div data-render-html="/slice"><p>Creates a slice of <code>array</code> from <code>start</code> up to, but not including, <code>end</code>.
+<div data-render-html="/slice"><p>创建一个裁剪后的数组，从 start 到 end 的位置，但不包括 end 本身的位置。
 <br>
 <br>
-<strong>Note:</strong> This method is used instead of <a href="https://mdn.io/Array/slice" target="_blank"><code>Array#slice</code></a>
-to ensure dense arrays are returned.</p>
+<strong>注意:</strong> 这个方法用于代替 <a href="https://mdn.io/Array/slice" target="_blank"><code>Array#slice</code></a>
+来确保数组正确返回</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">array</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>The array to slice. </p>
+<li><span class="param-name">array</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>需要裁剪的数组 </p>
 </div></li>
-<li><span class="param-name">[start&#x3D;0]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>The start position. </p>
+<li><span class="param-name">[start&#x3D;0]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>开始位置 </p>
 </div></li>
-<li><span class="param-name">[end&#x3D;array.length]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>The end position. </p>
+<li><span class="param-name">[end&#x3D;array.length]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>结束位置 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Array)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the slice of <code>array</code>.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回裁剪后的数组</p>
 </div></div>
-</div>
+<div id="disqus_thread" style="margin-top:50px;"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//lodash-zh.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div>
     </div>
 </div>
 </div>

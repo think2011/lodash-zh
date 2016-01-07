@@ -528,7 +528,7 @@
    * @private
    * @param {Array} array The array to search.
    * @param {*} target The value to search for.
-   * @param {Function} comparator The comparator invoked per element.
+   * @param {Function} comparator 这个函数会调用每一个元素
    * @returns {boolean} Returns `true` if `target` is found, else `false`.
    */
   function arrayIncludesWith (array, value, comparator) {
@@ -2350,8 +2350,8 @@
      * @private
      * @param {Array} array The array to inspect.
      * @param {Array} values The values to exclude.
-     * @param {Function} [iteratee] The iteratee invoked per element.
-     * @param {Function} [comparator] The comparator invoked per element.
+     * @param {Function} [iteratee] 这个函数会调用每一个元素
+     * @param {Function} [comparator] 这个函数会调用每一个元素
      * @returns {Array} Returns the new array of filtered values.
      */
     function baseDifference (array, values, iteratee, comparator) {
@@ -2655,8 +2655,8 @@
      *
      * @private
      * @param {Array} arrays The arrays to inspect.
-     * @param {Function} [iteratee] The iteratee invoked per element.
-     * @param {Function} [comparator] The comparator invoked per element.
+     * @param {Function} [iteratee] 这个函数会调用每一个元素
+     * @param {Function} [comparator] 这个函数会调用每一个元素
      * @returns {Array} Returns the new array of shared values.
      */
     function baseIntersection (arrays, iteratee, comparator) {
@@ -3185,7 +3185,7 @@
      * @private
      * @param {Array} array The array to modify.
      * @param {Array} values The values to remove.
-     * @param {Function} [iteratee] The iteratee invoked per element.
+     * @param {Function} [iteratee] 这个函数会调用每一个元素
      * @returns {Array} Returns `array`.
      */
     function basePullAllBy (array, values, iteratee) {
@@ -3433,7 +3433,7 @@
      * @private
      * @param {Array} array The sorted array to inspect.
      * @param {*} value The value to evaluate.
-     * @param {Function} iteratee The iteratee invoked per element.
+     * @param {Function} iteratee 这个函数会调用每一个元素
      * @param {boolean} [retHighest] Specify returning the highest qualified index.
      * @returns {number} Returns the index at which `value` should be inserted into `array`.
      */
@@ -3489,7 +3489,7 @@
      *
      * @private
      * @param {Array} array The array to inspect.
-     * @param {Function} [iteratee] The iteratee invoked per element.
+     * @param {Function} [iteratee] 这个函数会调用每一个元素
      * @returns {Array} Returns the new duplicate free array.
      */
     function baseSortedUniqBy (array, iteratee) {
@@ -3530,8 +3530,8 @@
      *
      * @private
      * @param {Array} array The array to inspect.
-     * @param {Function} [iteratee] The iteratee invoked per element.
-     * @param {Function} [comparator] The comparator invoked per element.
+     * @param {Function} [iteratee] 这个函数会调用每一个元素
+     * @param {Function} [comparator] 这个函数会调用每一个元素
      * @returns {Array} Returns the new duplicate free array.
      */
     function baseUniq (array, iteratee, comparator) {
@@ -3650,8 +3650,8 @@
      *
      * @private
      * @param {Array} arrays The arrays to inspect.
-     * @param {Function} [iteratee] The iteratee invoked per element.
-     * @param {Function} [comparator] The comparator invoked per element.
+     * @param {Function} [iteratee] 这个函数会调用每一个元素
+     * @param {Function} [comparator] 这个函数会调用每一个元素
      * @returns {Array} Returns the new array of values.
      */
     function baseXor (arrays, iteratee, comparator) {
@@ -4542,7 +4542,7 @@
      * A specialized version of `baseIsEqualDeep` for comparing objects of
      * the same `toStringTag`.
      *
-     * **Note:** This function only supports comparing values with tags of
+     * **注意:** This function only supports comparing values with tags of
      * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
      *
      * @private
@@ -4716,7 +4716,7 @@
     /**
      * Gets the "length" property value of `object`.
      *
-     * **Note:** This function is used to avoid a [JIT bug](https://bugs.webkit.org/show_bug.cgi?id=142792)
+     * **注意:** This function is used to avoid a [JIT bug](https://bugs.webkit.org/show_bug.cgi?id=142792)
      * that affects Safari on at least iOS 8.1-8.3 ARM64.
      *
      * @private
@@ -4892,7 +4892,7 @@
     /**
      * Initializes an object clone based on its `toStringTag`.
      *
-     * **Note:** This function only supports cloning values with tags of
+     * **注意:** This function only supports cloning values with tags of
      * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
      *
      * @private
@@ -5181,7 +5181,7 @@
     /**
      * Sets metadata for `func`.
      *
-     * **Note:** If this function becomes hot, i.e. is invoked a lot in a short
+     * **注意:** If this function becomes hot, i.e. is invoked a lot in a short
      * period of time, it will trip its breaker and transition to an identity function
      * to avoid garbage collection pauses in V8. See [V8 issue 2070](https://code.google.com/p/v8/issues/detail?id=2070)
      * for more details.
@@ -5830,13 +5830,13 @@
     }
 
     /**
-     * Gets all but the last element of `array`.
+     * 获取数组中除了最后一个元素之外的所有元素
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to query.
-     * @returns {Array} Returns the slice of `array`.
+     * @param {Array} 需要检索的数组
+     * @returns {Array} 返回没有最后一个元素的数组
      * @example
      *
      * _.initial([1, 2, 3]);
@@ -5847,15 +5847,13 @@
     }
 
     /**
-     * Creates an array of unique values that are included in all of the provided
-     * arrays using [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
-     * for equality comparisons.
+     * 创建一个包含所有使用 [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero) 进行等值比较后筛选的唯一值数组。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {...Array} [arrays] The arrays to inspect.
-     * @returns {Array} Returns the new array of shared values.
+     * @param {...Array} [arrays] 需要处理的数组队列
+     * @returns {Array} 返回数组中所有数组共享元素的新数组
      * @example
      * _.intersection([2, 1], [4, 2], [1, 2]);
      * // => [2]
@@ -5868,22 +5866,20 @@
     });
 
     /**
-     * This method is like `_.intersection` except that it accepts `iteratee`
-     * which is invoked for each element of each `arrays` to generate the criterion
-     * by which uniqueness is computed. The iteratee is invoked with one argument: (value).
+     * 这个方法类似 `_.intersection`，除了它接受一个 iteratee 调用每一个数组和值。iteratee 会传入一个参数：(value)
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {...Array} [arrays] The arrays to inspect.
-     * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
-     * @returns {Array} Returns the new array of shared values.
+     * @param {...Array} [arrays] 需要检索的数组
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @returns {Array} 返回数组中共享元素的新数组
      * @example
      *
      * _.intersectionBy([2.1, 1.2], [4.3, 2.4], Math.floor);
      * // => [2.1]
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.intersectionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x');
      * // => [{ 'x': 1 }]
      */
@@ -5902,16 +5898,14 @@
     });
 
     /**
-     * This method is like `_.intersection` except that it accepts `comparator`
-     * which is invoked to compare elements of `arrays`. The comparator is invoked
-     * with two arguments: (arrVal, othVal).
+     * 这个方法类似 `_.intersection`，除了它接受一个 comparator 调用每一个数组和值。iteratee 会传入2个参数：((arrVal, othVal)
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {...Array} [arrays] The arrays to inspect.
-     * @param {Function} [comparator] The comparator invoked per element.
-     * @returns {Array} Returns the new array of shared values.
+     * @param {...Array} [arrays] 需要检索的数组
+     * @param {Function} [comparator] 这个函数会调用每一个元素
+     * @returns {Array} 返回数组中共享元素的新数组
      * @example
      *
      * var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
@@ -5935,14 +5929,14 @@
     });
 
     /**
-     * Converts all elements in `array` into a string separated by `separator`.
+     * 将数组中的所有元素转换为由 `separator` 分隔的字符串。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to convert.
-     * @param {string} [separator=','] The element separator.
-     * @returns {string} Returns the joined string.
+     * @param {Array} array 需要转换的数组
+     * @param {string} [separator=','] 分隔符
+     * @returns {string} 返回连接好的字符串
      * @example
      *
      * _.join(['a', 'b', 'c'], '~');
@@ -5953,13 +5947,13 @@
     }
 
     /**
-     * Gets the last element of `array`.
+     * 获取数组中的最后一个元素
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to query.
-     * @returns {*} Returns the last element of `array`.
+     * @param {Array} array 要检索的数组
+     * @returns {*} 返回数组中的最后一个元素
      * @example
      *
      * _.last([1, 2, 3]);
@@ -5971,22 +5965,25 @@
     }
 
     /**
+     * 这个方法类似  `_.indexOf`，除了它是从右到左遍历元素的。
      * This method is like `_.indexOf` except that it iterates over elements of
      * `array` from right to left.
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to search.
-     * @param {*} value The value to search for.
-     * @param {number} [fromIndex=array.length-1] The index to search from.
-     * @returns {number} Returns the index of the matched value, else `-1`.
+     * @param {Array} array 需要检索的数组
+     * @param {*} value 要检索的值
+     * @param {number} [fromIndex=array.length-1] 检索 index 的起点
+     * 
+     * @returns {number} 返回匹配元素的 index，否则返回 -1
+     * 
      * @example
      *
      * _.lastIndexOf([1, 2, 1, 2], 2);
      * // => 3
      *
-     * // using `fromIndex`
+     * // 使用了 `fromIndex`
      * _.lastIndexOf([1, 2, 1, 2], 2, 2);
      * // => 1
      */
@@ -6012,18 +6009,16 @@
     }
 
     /**
-     * Removes all provided values from `array` using
-     * [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
-     * for equality comparisons.
+     * 移除所有经过 [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero) 等值比较为 true 的元素
      *
-     * **Note:** Unlike `_.without`, this method mutates `array`.
+     * **注意:** 不同于 `_.without`，这个方法会改变数组。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to modify.
-     * @param {...*} [values] The values to remove.
-     * @returns {Array} Returns `array`.
+     * @param {Array} array 需要调整的数组
+     * @param {...*} [values] 要移除的值
+     * @returns {Array} 返回数组本身
      * @example
      *
      * var array = [1, 2, 3, 1, 2, 3];
@@ -6035,16 +6030,16 @@
     var pull = rest(pullAll);
 
     /**
-     * This method is like `_.pull` except that it accepts an array of values to remove.
+     * 这个方式类似 `_.pull`，除了它接受数组形式的一系列值。
      *
-     * **Note:** Unlike `_.difference`, this method mutates `array`.
+     * **注意:** 不同于 `_.difference`，这个方法会改变数组。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to modify.
-     * @param {Array} values The values to remove.
-     * @returns {Array} Returns `array`.
+     * @param {Array} array 需要调整的数组
+     * @param {Array} values 要移除的值
+     * @returns {Array} 返回数组本身
      * @example
      *
      * var array = [1, 2, 3, 1, 2, 3];
@@ -6060,19 +6055,17 @@
     }
 
     /**
-     * This method is like `_.pullAll` except that it accepts `iteratee` which is
-     * invoked for each element of `array` and `values` to to generate the criterion
-     * by which uniqueness is computed. The iteratee is invoked with one argument: (value).
+     * 这个方法类似 `_.pullAll`，除了它接受一个 comparator 调用每一个数组元素的值。 comparator 会传入一个参数：(value)。
      *
-     * **Note:** Unlike `_.differenceBy`, this method mutates `array`.
+     * **注意:** 不同于 `_.differenceBy`，这个方法会改变数组。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to modify.
-     * @param {Array} values The values to remove.
-     * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
-     * @returns {Array} Returns `array`.
+     * @param {Array} array 需要调整的数组
+     * @param {Array} values 要移除的值
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @returns {Array} 返回数组本身
      * @example
      *
      * var array = [{ 'x': 1 }, { 'x': 2 }, { 'x': 3 }, { 'x': 1 }];
@@ -6088,18 +6081,17 @@
     }
 
     /**
-     * Removes elements from `array` corresponding to `indexes` and returns an
-     * array of removed elements.
+     * 根据给的 `indexes` 移除对应的数组元素并返回被移除的元素。
      *
-     * **Note:** Unlike `_.at`, this method mutates `array`.
+     * **注意:** 不同于 `_.at`，这个方法会改变数组。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to modify.
-     * @param {...(number|number[])} [indexes] The indexes of elements to remove,
-     *  specified individually or in arrays.
-     * @returns {Array} Returns the new array of removed elements.
+     * @param {Array} array 需要调整的数组
+     * @param {...(number|number[])} [indexes] indexes 可以是特殊的数组队列，或者个别的单个或多个参数
+     * 
+     * @returns {Array} 返回被移除的元素数组
      * @example
      *
      * var array = [5, 10, 15, 20];
@@ -6120,18 +6112,16 @@
     });
 
     /**
-     * Removes all elements from `array` that `predicate` returns truthy for
-     * and returns an array of the removed elements. The predicate is invoked with
-     * three arguments: (value, index, array).
+     * 移除经过 `predicate` 处理为真值的元素，并返回被移除的元素。predicate 会传入3个参数：(value, index, array)
      *
-     * **Note:** Unlike `_.filter`, this method mutates `array`.
+     * **注意:** Unlike `_.filter`，这个方法会改变数组。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to modify.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
-     * @returns {Array} Returns the new array of removed elements.
+     * @param {Array} array 需要调整的数组
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会调用每一个元素
+     * @returns {Array} 返回被移除的元素的数组
      * @example
      *
      * var array = [1, 2, 3, 4];
@@ -6167,15 +6157,13 @@
     }
 
     /**
-     * Reverses `array` so that the first element becomes the last, the second
-     * element becomes the second to last, and so on.
+     * 反转数组，第一个元素移动到最后一位，第二个元素移动到倒数第二，类似这样。
      *
-     * **Note:** This method mutates `array` and is based on
-     * [`Array#reverse`](https://mdn.io/Array/reverse).
+     * **注意:** 这个方法会改变数组，根据 [`Array#reverse`](https://mdn.io/Array/reverse)
      *
      * @memberOf _
      * @category Array
-     * @returns {Array} Returns `array`.
+     * @returns {Array} 返回原数组
      * @example
      *
      * var array = [1, 2, 3];
@@ -6191,18 +6179,18 @@
     }
 
     /**
-     * Creates a slice of `array` from `start` up to, but not including, `end`.
-     *
-     * **Note:** This method is used instead of [`Array#slice`](https://mdn.io/Array/slice)
-     * to ensure dense arrays are returned.
+     * 创建一个裁剪后的数组，从 start 到 end 的位置，但不包括 end 本身的位置。
+     * 
+     * **注意:** 这个方法用于代替 [`Array#slice`](https://mdn.io/Array/slice)
+     * 来确保数组正确返回
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to slice.
-     * @param {number} [start=0] The start position.
-     * @param {number} [end=array.length] The end position.
-     * @returns {Array} Returns the slice of `array`.
+     * @param {Array} array 需要裁剪的数组
+     * @param {number} [start=0] 开始位置
+     * @param {number} [end=array.length] 结束位置
+     * @returns {Array} 返回裁剪后的数组
      */
     function slice (array, start, end) {
       var length = array ? array.length : 0;
@@ -6217,15 +6205,15 @@
     }
 
     /**
-     * Uses a binary search to determine the lowest index at which `value` should
-     * be inserted into `array` in order to maintain its sort order.
+     * 使用二进制的方式检索来决定 value 应该插入在数组中位置。它的 index 应该尽可能的小以保证数组的排序。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The sorted array to inspect.
-     * @param {*} value The value to evaluate.
-     * @returns {number} Returns the index at which `value` should be inserted into `array`.
+     * @param {Array} array 需要检索的已排序数组
+     * @param {*} value 要评估位置的值
+     * @returns {number} 返回 value 应该在数组中插入的 index。
+     * 
      * @example
      *
      * _.sortedIndex([30, 50], 40);
@@ -6239,17 +6227,15 @@
     }
 
     /**
-     * This method is like `_.sortedIndex` except that it accepts `iteratee`
-     * which is invoked for `value` and each element of `array` to compute their
-     * sort ranking. The iteratee is invoked with one argument: (value).
+     * 这个方法类似 `_.sortedIndex`，除了它接受一个 iteratee 调用每一个数组和值来计算排序。iteratee 会传入一个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The sorted array to inspect.
-     * @param {*} value The value to evaluate.
-     * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
-     * @returns {number} Returns the index at which `value` should be inserted into `array`.
+     * @param {Array} array 需要检索的已排序数组
+     * @param {*} value 要评估位置的值
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @returns {number} 返回 value 应该在数组中插入的 index。
      * @example
      *
      * var dict = { 'thirty': 30, 'forty': 40, 'fifty': 50 };
@@ -6257,7 +6243,7 @@
      * _.sortedIndexBy(['thirty', 'fifty'], 'forty', _.propertyOf(dict));
      * // => 1
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 回调结果
      * _.sortedIndexBy([{ 'x': 4 }, { 'x': 5 }], { 'x': 4 }, 'x');
      * // => 0
      */
@@ -6266,15 +6252,14 @@
     }
 
     /**
-     * This method is like `_.indexOf` except that it performs a binary
-     * search on a sorted `array`.
+     * 这个方法类似 `_.indexOf`，除了它是执行二进制来检索已经排序的数组的。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to search.
-     * @param {*} value The value to search for.
-     * @returns {number} Returns the index of the matched value, else `-1`.
+     * @param {Array} array 需要检索的数组
+     * @param {*} value 要评估位置的值
+     * @returns {number} 返回匹配值的 index ，否则返回 `-1`.
      * @example
      *
      * _.sortedIndexOf([1, 1, 2, 2], 2);
@@ -6292,16 +6277,14 @@
     }
 
     /**
-     * This method is like `_.sortedIndex` except that it returns the highest
-     * index at which `value` should be inserted into `array` in order to
-     * maintain its sort order.
+     * 这个方法类似 `_.sortedIndex`，除了它返回在 value 中尽可能大的 index 位置。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The sorted array to inspect.
-     * @param {*} value The value to evaluate.
-     * @returns {number} Returns the index at which `value` should be inserted into `array`.
+     * @param {Array} array 需要检索的已排序数组
+     * @param {*} value 要评估位置的值
+     * @returns {number} 返回 value 应该在数组中插入的 index。
      * @example
      *
      * _.sortedLastIndex([4, 5], 4);
@@ -6312,20 +6295,18 @@
     }
 
     /**
-     * This method is like `_.sortedLastIndex` except that it accepts `iteratee`
-     * which is invoked for `value` and each element of `array` to compute their
-     * sort ranking. The iteratee is invoked with one argument: (value).
+     * 这个方法类似 `_.sortedLastIndex`，除了它接受一个 iteratee 调用每一个数组和值来计算排序。iteratee 会传入一个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The sorted array to inspect.
-     * @param {*} value The value to evaluate.
-     * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
-     * @returns {number} Returns the index at which `value` should be inserted into `array`.
+     * @param {Array} array 需要检索的已排序数组
+     * @param {*} value 要评估位置的值
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @returns {number} 返回 value 应该在数组中插入的 index。
      * @example
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.sortedLastIndexBy([{ 'x': 4 }, { 'x': 5 }], { 'x': 4 }, 'x');
      * // => 1
      */
@@ -6334,15 +6315,14 @@
     }
 
     /**
-     * This method is like `_.lastIndexOf` except that it performs a binary
-     * search on a sorted `array`.
+     * 这个方法类似 `_.lastIndexOf`，除了它是执行二进制来检索已经排序的数组的。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to search.
-     * @param {*} value The value to search for.
-     * @returns {number} Returns the index of the matched value, else `-1`.
+     * @param {Array} array 需要检索的数组
+     * @param {*} value 要评估位置的值
+     * @returns {number} 返回匹配值的 index ，否则返回 -1.
      * @example
      *
      * _.sortedLastIndexOf([1, 1, 2, 2], 2);
@@ -6360,14 +6340,13 @@
     }
 
     /**
-     * This method is like `_.uniq` except that it's designed and optimized
-     * for sorted arrays.
+     * 这个方法类似 `_.uniq`，除了它会排序并优化数组。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to inspect.
-     * @returns {Array} Returns the new duplicate free array.
+     * @param {Array} array 要调整的数组
+     * @returns {Array} 返回一个不重复的数组
      * @example
      *
      * _.sortedUniq([1, 1, 2]);
@@ -6380,15 +6359,14 @@
     }
 
     /**
-     * This method is like `_.uniqBy` except that it's designed and optimized
-     * for sorted arrays.
+     * 这个方法类似 `_.uniqBy`，除了它接受一个 iteratee 调用每一个数组和值来排序并优化数组。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to inspect.
-     * @param {Function} [iteratee] The iteratee invoked per element.
-     * @returns {Array} Returns the new duplicate free array.
+     * @param {Array} array 要调整的数组
+     * @param {Function} [iteratee] 这个函数会调用每一个元素
+     * @returns {Array} 返回一个不重复的数组
      * @example
      *
      * _.sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor);
@@ -6401,13 +6379,13 @@
     }
 
     /**
-     * Gets all but the first element of `array`.
+     * 获取数组中除了第一个元素的剩余数组
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to query.
-     * @returns {Array} Returns the slice of `array`.
+     * @param {Array} array 要检索的数组
+     * @returns {Array} 返回数组中除了第一个元素的剩余数组
      * @example
      *
      * _.tail([1, 2, 3]);
@@ -6418,15 +6396,15 @@
     }
 
     /**
-     * Creates a slice of `array` with `n` elements taken from the beginning.
+     * 从数组的起始元素开始提取 N 个元素。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to query.
-     * @param {number} [n=1] The number of elements to take.
+     * @param {Array} array 需要处理的数组
+     * @param {number} [n=1] 要提取的个数
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {Array} Returns the slice of `array`.
+     * @returns {Array} 返回提取的元素数组
      * @example
      *
      * _.take([1, 2, 3]);
@@ -6450,15 +6428,15 @@
     }
 
     /**
-     * Creates a slice of `array` with `n` elements taken from the end.
+     * 从数组的结束元素开始提取 N 个数组
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to query.
-     * @param {number} [n=1] The number of elements to take.
+     * @param {Array} array 需要处理的数组
+     * @param {number} [n=1] 要提取的个数
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {Array} Returns the slice of `array`.
+     * @returns {Array} 返回提取的元素数组
      * @example
      *
      * _.takeRight([1, 2, 3]);
@@ -6484,16 +6462,14 @@
     }
 
     /**
-     * Creates a slice of `array` with elements taken from the end. Elements are
-     * taken until `predicate` returns falsey. The predicate is invoked with three
-     * arguments: (value, index, array).
+     * 从数组的最右边开始提取数组，直到 `predicate` 返回假值。`predicate` 会传入三个参数：(value, index, array)。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to query.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
-     * @returns {Array} Returns the slice of `array`.
+     * @param {Array} array 需要处理的数组
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会调用每一个元素
+     * @returns {Array} 返回提取的元素数组
      * @example
      *
      * var resolve = _.partial(_.map, _, 'user');
@@ -6507,15 +6483,15 @@
      * resolve( _.takeRightWhile(users, function(o) { return !o.active; }) );
      * // => ['fred', 'pebbles']
      *
-     * // using the `_.matches` callback shorthand
+     * // 使用了 `_.matches` 的回调结果
      * resolve( _.takeRightWhile(users, { 'user': 'pebbles', 'active': false }) );
      * // => ['pebbles']
      *
-     * // using the `_.matchesProperty` callback shorthand
+     * // 使用了 `_.matchesProperty` 的回调结果
      * resolve( _.takeRightWhile(users, ['active', false]) );
      * // => ['fred', 'pebbles']
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * resolve( _.takeRightWhile(users, 'active') );
      * // => []
      */
@@ -6526,16 +6502,14 @@
     }
 
     /**
-     * Creates a slice of `array` with elements taken from the beginning. Elements
-     * are taken until `predicate` returns falsey. The predicate is invoked with
-     * three arguments: (value, index, array).
+     * 从数组的开始提取数组，直到 predicate 返回假值。predicate 会传入三个参数：(value, index, array)。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to query.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
-     * @returns {Array} Returns the slice of `array`.
+     * @param {Array} array 需要处理的数组
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会调用每一个元素
+     * @returns {Array} 返回提取的元素数组
      * @example
      *
      * var resolve = _.partial(_.map, _, 'user');
@@ -6549,15 +6523,15 @@
      * resolve( _.takeWhile(users, function(o) { return !o.active; }) );
      * // => ['barney', 'fred']
      *
-     * // using the `_.matches` callback shorthand
+     * // 使用了 `_.matches` 的回调结果
      * resolve( _.takeWhile(users, { 'user': 'barney', 'active': false }) );
      * // => ['barney']
      *
-     * // using the `_.matchesProperty` callback shorthand
+     * // 使用了 `_.matchesProperty` 的回调结果
      * resolve( _.takeWhile(users, ['active', false]) );
      * // => ['barney', 'fred']
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * resolve( _.takeWhile(users, 'active') );
      * // => []
      */
@@ -6568,15 +6542,13 @@
     }
 
     /**
-     * Creates an array of unique values, in order, from all of the provided arrays
-     * using [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
-     * for equality comparisons.
+     * 创建顺序排列的唯一值组成的数组。所有值经过 [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero) 等值比较。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {...Array} [arrays] The arrays to inspect.
-     * @returns {Array} Returns the new array of combined values.
+     * @param {...Array} [arrays] 需要处理的数组队列
+     * @returns {Array} 返回处理好的数组
      * @example
      *
      * _.union([2, 1], [4, 2], [1, 2]);
@@ -6587,22 +6559,20 @@
     });
 
     /**
-     * This method is like `_.union` except that it accepts `iteratee` which is
-     * invoked for each element of each `arrays` to generate the criterion by which
-     * uniqueness is computed. The iteratee is invoked with one argument: (value).
+     * 这个方法类似 `_.union`，除了它接受一个 iteratee 调用每一个数组和值。iteratee 会传入一个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {...Array} [arrays] The arrays to inspect.
-     * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
-     * @returns {Array} Returns the new array of combined values.
+     * @param {...Array} [arrays] 需要处理的数组队列
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @returns {Array} 返回处理好的数组
      * @example
      *
      * _.unionBy([2.1, 1.2], [4.3, 2.4], Math.floor);
      * // => [2.1, 1.2, 4.3]
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.unionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x');
      * // => [{ 'x': 1 }, { 'x': 2 }]
      */
@@ -6615,16 +6585,15 @@
     });
 
     /**
-     * This method is like `_.union` except that it accepts `comparator` which
-     * is invoked to compare elements of `arrays`. The comparator is invoked
-     * with two arguments: (arrVal, othVal).
+     * 这个方法类似 `_.union`，
+* 除了它接受一个 comparator 调用每一个数组元素的值。 comparator 会传入2个参数：(arrVal, othVal)。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {...Array} [arrays] The arrays to inspect.
-     * @param {Function} [comparator] The comparator invoked per element.
-     * @returns {Array} Returns the new array of combined values.
+     * @param {...Array} [arrays] 需要处理的数组队列
+     * @param {Function} [comparator] 这个函数会调用每一个元素
+     * @returns {Array} 返回处理好的数组
      * @example
      *
      * var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
@@ -6642,16 +6611,13 @@
     });
 
     /**
-     * Creates a duplicate-free version of an array, using
-     * [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
-     * for equality comparisons, in which only the first occurrence of each element
-     * is kept.
+     * 创建一个不重复的数组副本。使用了 [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero) 等值比较。只有首次出现的元素才会被保留。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to inspect.
-     * @returns {Array} Returns the new duplicate free array.
+     * @param {Array} array 需要处理的数组
+     * @returns {Array} 返回不重复的数组
      * @example
      *
      * _.uniq([2, 1, 2]);
@@ -6664,22 +6630,20 @@
     }
 
     /**
-     * This method is like `_.uniq` except that it accepts `iteratee` which is
-     * invoked for each element in `array` to generate the criterion by which
-     * uniqueness is computed. The iteratee is invoked with one argument: (value).
+     * 这个方法类似 `_.uniq`，除了它接受一个 iteratee 调用每一个数组和值来计算唯一性。iteratee 会传入一个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to inspect.
-     * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
-     * @returns {Array} Returns the new duplicate free array.
+     * @param {Array} array 需要处理的数组
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @returns {Array} 返回不重复的数组
      * @example
      *
      * _.uniqBy([2.1, 1.2, 2.3], Math.floor);
      * // => [2.1, 1.2]
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.uniqBy([{ 'x': 1 }, { 'x': 2 }, { 'x': 1 }], 'x');
      * // => [{ 'x': 1 }, { 'x': 2 }]
      */
@@ -6690,16 +6654,14 @@
     }
 
     /**
-     * This method is like `_.uniq` except that it accepts `comparator` which
-     * is invoked to compare elements of `array`. The comparator is invoked with
-     * two arguments: (arrVal, othVal).
+     * 这个方法类似 `_.uniq`，除了它接受一个 `comparator` 来比较计算唯一性。 `comparator` 会传入2个参数：(arrVal, othVal)
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to inspect.
-     * @param {Function} [comparator] The comparator invoked per element.
-     * @returns {Array} Returns the new duplicate free array.
+     * @param {Array} array 需要处理的数组
+     * @param {Function} [comparator] 这个函数会调用每一个元素
+     * @returns {Array} 返回不重复的数组
      * @example
      *
      * var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 },  { 'x': 1, 'y': 2 }];
@@ -6714,15 +6676,13 @@
     }
 
     /**
-     * This method is like `_.zip` except that it accepts an array of grouped
-     * elements and creates an array regrouping the elements to their pre-zip
-     * configuration.
+     * 这个方法类似 `_.zip`，除了它接收一个打包后的数组并且还原为打包前的状态。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array of grouped elements to process.
-     * @returns {Array} Returns the new array of regrouped elements.
+     * @param {Array} array 需要解包的已打包数组
+     * @returns {Array} 返回一个解包后的数组
      * @example
      *
      * var zipped = _.zip(['fred', 'barney'], [30, 40], [true, false]);
@@ -6748,17 +6708,14 @@
     }
 
     /**
-     * This method is like `_.unzip` except that it accepts `iteratee` to specify
-     * how regrouped values should be combined. The iteratee is invoked with four
-     * arguments: (accumulator, value, index, group). The first element of each
-     * group is used as the initial `accumulator` value.
+     * 这个方法类似 `_.unzip`，除了它接受一个 iteratee 来决定如何重组解包后的数组。iteratee 会传入4个参数：(accumulator, value, index, group)。每组的第一个元素作为初始化的值
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array of grouped elements to process.
-     * @param {Function} [iteratee=_.identity] The function to combine regrouped values.
-     * @returns {Array} Returns the new array of regrouped elements.
+     * @param {Array} array 需要解包的已打包数组
+     * @param {Function} [iteratee=_.identity] 决定如何重组解包后的元素
+     * @returns {Array} 返回一个解包后的数组
      * @example
      *
      * var zipped = _.zip([1, 2], [10, 20], [100, 200]);
@@ -6781,16 +6738,14 @@
     }
 
     /**
-     * Creates an array excluding all provided values using
-     * [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
-     * for equality comparisons.
+     * 创建一个移除了所有提供的 values 的数组。使用了 [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero) 等值比较。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} array The array to filter.
-     * @param {...*} [values] The values to exclude.
-     * @returns {Array} Returns the new array of filtered values.
+     * @param {Array} array 要处理的数组
+     * @param {...*} [values] 要排除的值
+     * @returns {Array} 返回一个处理好的新数组
      * @example
      *
      * _.without([1, 2, 1, 3], 1, 2);
@@ -6803,14 +6758,13 @@
     });
 
     /**
-     * Creates an array of unique values that is the [symmetric difference](https://en.wikipedia.org/wiki/Symmetric_difference)
-     * of the provided arrays.
+     * 创建一个包含了所有唯一值的数组。使用了 [symmetric difference](https://en.wikipedia.org/wiki/Symmetric_difference) 等值比较。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {...Array} [arrays] The arrays to inspect.
-     * @returns {Array} Returns the new array of values.
+     * @param {...Array} [arrays] 要处理的数组
+     * @returns {Array} 包含了所有唯一值的新数组
      * @example
      *
      * _.xor([2, 1], [4, 2]);
@@ -6821,22 +6775,20 @@
     });
 
     /**
-     * This method is like `_.xor` except that it accepts `iteratee` which is
-     * invoked for each element of each `arrays` to generate the criterion by which
-     * uniqueness is computed. The iteratee is invoked with one argument: (value).
+     * 这个方法类似 `_.xor`，除了它接受一个 iteratee 调用每一个数组和值。iteratee 会传入一个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {...Array} [arrays] The arrays to inspect.
-     * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
-     * @returns {Array} Returns the new array of values.
+     * @param {...Array} [arrays] 要处理的数组
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @returns {Array} 包含了所有唯一值的新数组
      * @example
      *
      * _.xorBy([2.1, 1.2], [4.3, 2.4], Math.floor);
      * // => [1.2, 4.3]
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.xorBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x');
      * // => [{ 'x': 2 }]
      */
@@ -6849,16 +6801,14 @@
     });
 
     /**
-     * This method is like `_.xor` except that it accepts `comparator` which is
-     * invoked to compare elements of `arrays`. The comparator is invoked with
-     * two arguments: (arrVal, othVal).
+     * 这个方法类似 `_.xor`，除了它接受一个 comparator 调用每一个数组元素的值。 comparator 会传入2个参数：(arrVal, othVal)。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {...Array} [arrays] The arrays to inspect.
-     * @param {Function} [comparator] The comparator invoked per element.
-     * @returns {Array} Returns the new array of values.
+     * @param {...Array} [arrays] 要处理的数组
+     * @param {Function} [comparator] 这个函数会调用每一个元素
+     * @returns {Array} 包含了所有唯一值的新数组
      * @example
      *
      * var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
@@ -6876,15 +6826,13 @@
     });
 
     /**
-     * Creates an array of grouped elements, the first of which contains the first
-     * elements of the given arrays, the second of which contains the second elements
-     * of the given arrays, and so on.
+     * 创建一个打包所有元素后的数组。第一个元素包含所有提供数组的第一个元素，第二个包含所有提供数组的第二个元素，以此类推。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {...Array} [arrays] The arrays to process.
-     * @returns {Array} Returns the new array of grouped elements.
+     * @param {...Array} [arrays] 要处理的数组队列
+     * @returns {Array} 返回一个打包后的数组
      * @example
      *
      * _.zip(['fred', 'barney'], [30, 40], [true, false]);
@@ -6893,15 +6841,14 @@
     var zip = rest(unzip);
 
     /**
-     * This method is like `_.fromPairs` except that it accepts two arrays,
-     * one of property names and one of corresponding values.
+     * 这个方法类似 `_.fromPairs`，除了它接受2个数组，一个作为属性名，一个作为属性值。
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {Array} [props=[]] The property names.
-     * @param {Array} [values=[]] The property values.
-     * @returns {Object} Returns the new object.
+     * @param {Array} [props=[]] 属性名
+     * @param {Array} [values=[]] 属性值
+     * @returns {Object} 返回一个新的对象
      * @example
      *
      * _.zipObject(['fred', 'barney'], [30, 40]);
@@ -6920,17 +6867,14 @@
     }
 
     /**
-     * This method is like `_.zip` except that it accepts `iteratee` to specify
-     * how grouped values should be combined. The iteratee is invoked with four
-     * arguments: (accumulator, value, index, group). The first element of each
-     * group is used as the initial `accumulator` value.
+     * 这个方法类似 `_.zip`，除了它接受一个 iteratee 决定如何重组值。iteratee 会传入4个参数：(accumulator, value, index, group)。每组的第一个元素作为初始化的值
      *
      * @static
      * @memberOf _
      * @category Array
-     * @param {...Array} [arrays] The arrays to process.
-     * @param {Function} [iteratee=_.identity] The function to combine grouped values.
-     * @returns {Array} Returns the new array of grouped elements.
+     * @param {...Array} [arrays] 要处理的数组队列
+     * @param {Function} [iteratee=_.identity] 这个函数决定如何重组值
+     * @returns {Array} 返回一个打包后的数组
      * @example
      *
      * _.zipWith([1, 2], [10, 20], [100, 200], _.add);
@@ -7249,7 +7193,7 @@
     /**
      * This method is the wrapper version of `_.reverse`.
      *
-     * **Note:** This method mutates the wrapped array.
+     * **注意:** This method mutates the wrapped array.
      *
      * @name reverse
      * @memberOf _
@@ -7308,7 +7252,7 @@
      * @memberOf _
      * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
      * @returns {Object} Returns the composed aggregate object.
      * @example
      *
@@ -7344,15 +7288,15 @@
      *   { 'user': 'fred',   'active': false }
      * ];
      *
-     * // using the `_.matches` callback shorthand
+     * // 使用了 `_.matches` 的回调结果
      * _.every(users, { 'user': 'barney', 'active': false });
      * // => false
      *
-     * // using the `_.matchesProperty` callback shorthand
+     * // 使用了 `_.matchesProperty` 的回调结果
      * _.every(users, ['active', false]);
      * // => true
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.every(users, 'active');
      * // => false
      */
@@ -7387,15 +7331,15 @@
      * resolve( _.filter(users, function(o) { return !o.active; }) );
      * // => ['fred']
      *
-     * // using the `_.matches` callback shorthand
+     * // 使用了 `_.matches` 的回调结果
      * resolve( _.filter(users, { 'age': 36, 'active': true }) );
      * // => ['barney']
      *
-     * // using the `_.matchesProperty` callback shorthand
+     * // 使用了 `_.matchesProperty` 的回调结果
      * resolve( _.filter(users, ['active', false]) );
      * // => ['fred']
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * resolve( _.filter(users, 'active') );
      * // => ['barney']
      */
@@ -7428,15 +7372,15 @@
      * resolve( _.find(users, function(o) { return o.age < 40; }) );
      * // => 'barney'
      *
-     * // using the `_.matches` callback shorthand
+     * // 使用了 `_.matches` 的回调结果
      * resolve( _.find(users, { 'age': 1, 'active': true }) );
      * // => 'pebbles'
      *
-     * // using the `_.matchesProperty` callback shorthand
+     * // 使用了 `_.matchesProperty` 的回调结果
      * resolve( _.find(users, ['active', false]) );
      * // => 'fred'
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * resolve( _.find(users, 'active') );
      * // => 'barney'
      */
@@ -7480,7 +7424,7 @@
      * The iteratee is invoked with three arguments: (value, index|key, collection).
      * Iteratee functions may exit iteration early by explicitly returning `false`.
      *
-     * **Note:** As with other "Collections" methods, objects with a "length" property
+     * **注意:** As with other "Collections" methods, objects with a "length" property
      * are iterated like arrays. To avoid this behavior use `_.forIn` or `_.forOwn`
      * for object iteration.
      *
@@ -7543,14 +7487,14 @@
      * @memberOf _
      * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
      * @returns {Object} Returns the composed aggregate object.
      * @example
      *
      * _.groupBy([6.1, 4.2, 6.3], Math.floor);
      * // => { '4': [4.2], '6': [6.1, 6.3] }
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.groupBy(['one', 'two', 'three'], 'length');
      * // => { '3': ['one', 'two'], '5': ['three'] }
      */
@@ -7648,7 +7592,7 @@
      * @memberOf _
      * @category Collection
      * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
      * @returns {Object} Returns the composed aggregate object.
      * @example
      *
@@ -7706,7 +7650,7 @@
      *   { 'user': 'fred' }
      * ];
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.map(users, 'user');
      * // => ['barney', 'fred']
      */
@@ -7785,15 +7729,15 @@
      * resolve( _.partition(users, function(o) { return o.active; }) );
      * // => [['fred'], ['barney', 'pebbles']]
      *
-     * // using the `_.matches` callback shorthand
+     * // 使用了 `_.matches` 的回调结果
      * resolve( _.partition(users, { 'age': 1, 'active': false }) );
      * // => [['pebbles'], ['barney', 'fred']]
      *
-     * // using the `_.matchesProperty` callback shorthand
+     * // 使用了 `_.matchesProperty` 的回调结果
      * resolve( _.partition(users, ['active', false]) );
      * // => [['barney', 'pebbles'], ['fred']]
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * resolve( _.partition(users, 'active') );
      * // => [['fred'], ['barney', 'pebbles']]
      */
@@ -7894,15 +7838,15 @@
      * resolve( _.reject(users, function(o) { return !o.active; }) );
      * // => ['fred']
      *
-     * // using the `_.matches` callback shorthand
+     * // 使用了 `_.matches` 的回调结果
      * resolve( _.reject(users, { 'age': 40, 'active': true }) );
      * // => ['barney']
      *
-     * // using the `_.matchesProperty` callback shorthand
+     * // 使用了 `_.matchesProperty` 的回调结果
      * resolve( _.reject(users, ['active', false]) );
      * // => ['fred']
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * resolve( _.reject(users, 'active') );
      * // => ['barney']
      */
@@ -8037,15 +7981,15 @@
      *   { 'user': 'fred',   'active': false }
      * ];
      *
-     * // using the `_.matches` callback shorthand
+     * // 使用了 `_.matches` 的回调结果
      * _.some(users, { 'user': 'barney', 'active': false });
      * // => false
      *
-     * // using the `_.matchesProperty` callback shorthand
+     * // 使用了 `_.matchesProperty` 的回调结果
      * _.some(users, ['active', false]);
      * // => true
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.some(users, 'active');
      * // => true
      */
@@ -8225,7 +8169,7 @@
      * The `_.bind.placeholder` value, which defaults to `_` in monolithic builds,
      * may be used as a placeholder for partially applied arguments.
      *
-     * **Note:** Unlike native `Function#bind` this method doesn't set the "length"
+     * **注意:** Unlike native `Function#bind` this method doesn't set the "length"
      * property of bound functions.
      *
      * @static
@@ -8324,7 +8268,7 @@
      * The `_.curry.placeholder` value, which defaults to `_` in monolithic builds,
      * may be used as a placeholder for provided arguments.
      *
-     * **Note:** This method doesn't set the "length" property of curried functions.
+     * **注意:** This method doesn't set the "length" property of curried functions.
      *
      * @static
      * @memberOf _
@@ -8368,7 +8312,7 @@
      * The `_.curryRight.placeholder` value, which defaults to `_` in monolithic
      * builds, may be used as a placeholder for provided arguments.
      *
-     * **Note:** This method doesn't set the "length" property of curried functions.
+     * **注意:** This method doesn't set the "length" property of curried functions.
      *
      * @static
      * @memberOf _
@@ -8415,7 +8359,7 @@
      * with the last arguments provided to the debounced function. Subsequent calls
      * to the debounced function return the result of the last `func` invocation.
      *
-     * **Note:** If `leading` and `trailing` options are `true`, `func` is invoked
+     * **注意:** If `leading` and `trailing` options are `true`, `func` is invoked
      * on the trailing edge of the timeout only if the the debounced function is
      * invoked more than once during the `wait` timeout.
      *
@@ -8641,7 +8585,7 @@
      * provided to the memoized function is used as the map cache key. The `func`
      * is invoked with the `this` binding of the memoized function.
      *
-     * **Note:** The cache is exposed as the `cache` property on the memoized
+     * **注意:** The cache is exposed as the `cache` property on the memoized
      * function. Its creation may be customized by replacing the `_.memoize.Cache`
      * constructor with one whose instances implement the [`Map`](http://ecma-international.org/ecma-262/6.0/#sec-properties-of-the-map-prototype-object)
      * method interface of `delete`, `get`, `has`, and `set`.
@@ -8799,7 +8743,7 @@
      * The `_.partial.placeholder` value, which defaults to `_` in monolithic
      * builds, may be used as a placeholder for partially applied arguments.
      *
-     * **Note:** This method doesn't set the "length" property of partially
+     * **注意:** This method doesn't set the "length" property of partially
      * applied functions.
      *
      * @static
@@ -8835,7 +8779,7 @@
      * The `_.partialRight.placeholder` value, which defaults to `_` in monolithic
      * builds, may be used as a placeholder for partially applied arguments.
      *
-     * **Note:** This method doesn't set the "length" property of partially
+     * **注意:** This method doesn't set the "length" property of partially
      * applied functions.
      *
      * @static
@@ -8894,7 +8838,7 @@
      * Creates a function that invokes `func` with the `this` binding of the
      * created function and arguments from `start` and beyond provided as an array.
      *
-     * **Note:** This method is based on the [rest parameter](https://mdn.io/rest_parameters).
+     * **注意:** This method is based on the [rest parameter](https://mdn.io/rest_parameters).
      *
      * @static
      * @memberOf _
@@ -8948,7 +8892,7 @@
      * Creates a function that invokes `func` with the `this` binding of the created
      * function and an array of arguments much like [`Function#apply`](https://es5.github.io/#x15.3.4.3).
      *
-     * **Note:** This method is based on the [spread operator](https://mdn.io/spread_operator).
+     * **注意:** This method is based on the [spread operator](https://mdn.io/spread_operator).
      *
      * @static
      * @memberOf _
@@ -8994,7 +8938,7 @@
      * throttled function. Subsequent calls to the throttled function return the
      * result of the last `func` invocation.
      *
-     * **Note:** If `leading` and `trailing` options are `true`, `func` is invoked
+     * **注意:** If `leading` and `trailing` options are `true`, `func` is invoked
      * on the trailing edge of the timeout only if the the throttled function is
      * invoked more than once during the `wait` timeout.
      *
@@ -9087,7 +9031,7 @@
     /**
      * Creates a shallow clone of `value`.
      *
-     * **Note:** This method is loosely based on the
+     * **注意:** This method is loosely based on the
      * [structured clone algorithm](https://mdn.io/Structured_clone_algorithm)
      * and supports cloning arrays, array buffers, booleans, date objects, maps,
      * numbers, `Object` objects, regexes, sets, strings, symbols, and typed
@@ -9485,7 +9429,7 @@
      * Performs a deep comparison between two values to determine if they are
      * equivalent.
      *
-     * **Note:** This method supports comparing arrays, array buffers, booleans,
+     * **注意:** This method supports comparing arrays, array buffers, booleans,
      * date objects, error objects, maps, numbers, `Object` objects, regexes,
      * sets, strings, symbols, and typed arrays. `Object` objects are compared
      * by their own, not inherited, enumerable properties. Functions and DOM
@@ -9574,7 +9518,7 @@
     /**
      * Checks if `value` is a finite primitive number.
      *
-     * **Note:** This method is based on [`Number.isFinite`](https://mdn.io/Number/isFinite).
+     * **注意:** This method is based on [`Number.isFinite`](https://mdn.io/Number/isFinite).
      *
      * @static
      * @memberOf _
@@ -9626,7 +9570,7 @@
     /**
      * Checks if `value` is an integer.
      *
-     * **Note:** This method is based on [`Number.isInteger`](https://mdn.io/Number/isInteger).
+     * **注意:** This method is based on [`Number.isInteger`](https://mdn.io/Number/isInteger).
      *
      * @static
      * @memberOf _
@@ -9654,7 +9598,7 @@
     /**
      * Checks if `value` is a valid array-like length.
      *
-     * **Note:** This function is loosely based on [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
+     * **注意:** This function is loosely based on [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
      *
      * @static
      * @memberOf _
@@ -9740,7 +9684,7 @@
      * Performs a deep comparison between `object` and `source` to determine if
      * `object` contains equivalent property values.
      *
-     * **Note:** This method supports comparing the same values as `_.isEqual`.
+     * **注意:** This method supports comparing the same values as `_.isEqual`.
      *
      * @static
      * @memberOf _
@@ -9801,7 +9745,7 @@
     /**
      * Checks if `value` is `NaN`.
      *
-     * **Note:** This method is not the same as [`isNaN`](https://es5.github.io/#x15.1.2.4)
+     * **注意:** This method is not the same as [`isNaN`](https://es5.github.io/#x15.1.2.4)
      * which returns `true` for `undefined` and other non-numeric values.
      *
      * @static
@@ -9902,7 +9846,7 @@
     /**
      * Checks if `value` is classified as a `Number` primitive or object.
      *
-     * **Note:** To exclude `Infinity`, `-Infinity`, and `NaN`, which are classified
+     * **注意:** To exclude `Infinity`, `-Infinity`, and `NaN`, which are classified
      * as numbers, use the `_.isFinite` method.
      *
      * @static
@@ -9996,7 +9940,7 @@
      * Checks if `value` is a safe integer. An integer is safe if it's an IEEE-754
      * double precision number which isn't the result of a rounded unsafe integer.
      *
-     * **Note:** This method is based on [`Number.isSafeInteger`](https://mdn.io/Number/isSafeInteger).
+     * **注意:** This method is based on [`Number.isSafeInteger`](https://mdn.io/Number/isSafeInteger).
      *
      * @static
      * @memberOf _
@@ -10185,7 +10129,7 @@
     /**
      * Converts `value` to an integer.
      *
-     * **Note:** This function is loosely based on [`ToInteger`](http://www.ecma-international.org/ecma-262/6.0/#sec-tointeger).
+     * **注意:** This function is loosely based on [`ToInteger`](http://www.ecma-international.org/ecma-262/6.0/#sec-tointeger).
      *
      * @static
      * @memberOf _
@@ -10223,7 +10167,7 @@
      * Converts `value` to an integer suitable for use as the length of an
      * array-like object.
      *
-     * **Note:** This method is based on [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
+     * **注意:** This method is based on [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
      *
      * @static
      * @memberOf _
@@ -10387,7 +10331,7 @@
      * object. Source objects are applied from left to right. Subsequent sources
      * overwrite property assignments of previous sources.
      *
-     * **Note:** This method mutates `object` and is loosely based on
+     * **注意:** This method mutates `object` and is loosely based on
      * [`Object.assign`](https://mdn.io/Object/assign).
      *
      * @static
@@ -10420,7 +10364,7 @@
      * This method is like `_.assign` except that it iterates over own and
      * inherited source properties.
      *
-     * **Note:** This method mutates `object`.
+     * **注意:** This method mutates `object`.
      *
      * @static
      * @memberOf _
@@ -10455,7 +10399,7 @@
      * assignment is handled by the method instead. The `customizer` is invoked
      * with five arguments: (objValue, srcValue, key, object, source).
      *
-     * **Note:** This method mutates `object`.
+     * **注意:** This method mutates `object`.
      *
      * @static
      * @memberOf _
@@ -10486,7 +10430,7 @@
      * assignment is handled by the method instead. The `customizer` is invoked
      * with five arguments: (objValue, srcValue, key, object, source).
      *
-     * **Note:** This method mutates `object`.
+     * **注意:** This method mutates `object`.
      *
      * @static
      * @memberOf _
@@ -10577,7 +10521,7 @@
      * Source objects are applied from left to right. Once a property is set,
      * additional values of the same property are ignored.
      *
-     * **Note:** This method mutates `object`.
+     * **注意:** This method mutates `object`.
      *
      * @static
      * @memberOf _
@@ -10599,7 +10543,7 @@
      * This method is like `_.defaults` except that it recursively assigns
      * default properties.
      *
-     * **Note:** This method mutates `object`.
+     * **注意:** This method mutates `object`.
      *
      * @static
      * @memberOf _
@@ -10639,15 +10583,15 @@
      * _.findKey(users, function(o) { return o.age < 40; });
      * // => 'barney' (iteration order is not guaranteed)
      *
-     * // using the `_.matches` callback shorthand
+     * // 使用了 `_.matches` 的回调结果
      * _.findKey(users, { 'age': 1, 'active': true });
      * // => 'pebbles'
      *
-     * // using the `_.matchesProperty` callback shorthand
+     * // 使用了 `_.matchesProperty` 的回调结果
      * _.findKey(users, ['active', false]);
      * // => 'fred'
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.findKey(users, 'active');
      * // => 'barney'
      */
@@ -10676,15 +10620,15 @@
      * _.findLastKey(users, function(o) { return o.age < 40; });
      * // => returns 'pebbles' assuming `_.findKey` returns 'barney'
      *
-     * // using the `_.matches` callback shorthand
+     * // 使用了 `_.matches` 的回调结果
      * _.findLastKey(users, { 'age': 36, 'active': true });
      * // => 'barney'
      *
-     * // using the `_.matchesProperty` callback shorthand
+     * // 使用了 `_.matchesProperty` 的回调结果
      * _.findLastKey(users, ['active', false]);
      * // => 'fred'
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.findLastKey(users, 'active');
      * // => 'pebbles'
      */
@@ -11008,7 +10952,7 @@
     /**
      * Creates an array of the own enumerable property names of `object`.
      *
-     * **Note:** Non-object values are coerced to objects. See the
+     * **注意:** Non-object values are coerced to objects. See the
      * [ES spec](http://ecma-international.org/ecma-262/6.0/#sec-object.keys)
      * for more details.
      *
@@ -11053,7 +10997,7 @@
     /**
      * Creates an array of the own and inherited enumerable property names of `object`.
      *
-     * **Note:** Non-object values are coerced to objects.
+     * **注意:** Non-object values are coerced to objects.
      *
      * @static
      * @memberOf _
@@ -11140,7 +11084,7 @@
      * _.mapValues(users, function(o) { return o.age; });
      * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.mapValues(users, 'age');
      * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
      */
@@ -11162,7 +11106,7 @@
      * are applied from left to right. Subsequent sources overwrite property
      * assignments of previous sources.
      *
-     * **Note:** This method mutates `object`.
+     * **注意:** This method mutates `object`.
      *
      * @static
      * @memberOf _
@@ -11543,7 +11487,7 @@
     /**
      * Creates an array of the own enumerable property values of `object`.
      *
-     * **Note:** Non-object values are coerced to objects.
+     * **注意:** Non-object values are coerced to objects.
      *
      * @static
      * @memberOf _
@@ -11572,7 +11516,7 @@
     /**
      * Creates an array of the own and inherited enumerable property values of `object`.
      *
-     * **Note:** Non-object values are coerced to objects.
+     * **注意:** Non-object values are coerced to objects.
      *
      * @static
      * @memberOf _
@@ -11691,7 +11635,7 @@
      * If `floating` is `true`, or either `min` or `max` are floats, a
      * floating-point number is returned instead of an integer.
      *
-     * **Note:** JavaScript follows the IEEE-754 standard for resolving
+     * **注意:** JavaScript follows the IEEE-754 standard for resolving
      * floating-point values which can produce unexpected results.
      *
      * @static
@@ -11855,7 +11799,7 @@
      * Converts the characters "&", "<", ">", '"', "'", and "\`" in `string` to
      * their corresponding HTML entities.
      *
-     * **Note:** No other characters are escaped. To escape additional
+     * **注意:** No other characters are escaped. To escape additional
      * characters use a third-party library like [_he_](https://mths.be/he).
      *
      * Though the ">" character is escaped for symmetry, characters like
@@ -12089,7 +12033,7 @@
      * `undefined` or `0`, a `radix` of `10` is used unless `value` is a hexadecimal,
      * in which case a `radix` of `16` is used.
      *
-     * **Note:** This method aligns with the [ES5 implementation](https://es5.github.io/#E)
+     * **注意:** This method aligns with the [ES5 implementation](https://es5.github.io/#E)
      * of `parseInt`.
      *
      * @static
@@ -12163,7 +12107,7 @@
     /**
      * Replaces matches for `pattern` in `string` with `replacement`.
      *
-     * **Note:** This method is based on [`String#replace`](https://mdn.io/String/replace).
+     * **注意:** This method is based on [`String#replace`](https://mdn.io/String/replace).
      *
      * @static
      * @memberOf _
@@ -12210,7 +12154,7 @@
     /**
      * Splits `string` by `separator`.
      *
-     * **Note:** This method is based on [`String#split`](https://mdn.io/String/split).
+     * **注意:** This method is based on [`String#split`](https://mdn.io/String/split).
      *
      * @static
      * @memberOf _
@@ -12285,7 +12229,7 @@
      * properties may be accessed as free variables in the template. If a setting
      * object is provided it takes precedence over `_.templateSettings` values.
      *
-     * **Note:** In the development build `_.template` utilizes
+     * **注意:** In the development build `_.template` utilizes
      * [sourceURLs](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl)
      * for easier debugging.
      *
@@ -12730,7 +12674,7 @@
      * `&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#39;`, and `&#96;` in `string` to their
      * corresponding characters.
      *
-     * **Note:** No other HTML entities are unescaped. To unescape additional HTML
+     * **注意:** No other HTML entities are unescaped. To unescape additional HTML
      * entities use a third-party library like [_he_](https://mths.be/he).
      *
      * @static
@@ -12835,7 +12779,7 @@
      * Binds methods of an object to the object itself, overwriting the existing
      * method.
      *
-     * **Note:** This method doesn't set the "length" property of bound functions.
+     * **注意:** This method doesn't set the "length" property of bound functions.
      *
      * @static
      * @memberOf _
@@ -13067,7 +13011,7 @@
      * object and `source`, returning `true` if the given object has equivalent
      * property values, else `false`.
      *
-     * **Note:** This method supports comparing the same values as `_.isEqual`.
+     * **注意:** This method supports comparing the same values as `_.isEqual`.
      *
      * @static
      * @memberOf _
@@ -13093,7 +13037,7 @@
      * value at `path` of a given object to `srcValue`, returning `true` if the
      * object value is equivalent, else `false`.
      *
-     * **Note:** This method supports comparing the same values as `_.isEqual`.
+     * **注意:** This method supports comparing the same values as `_.isEqual`.
      *
      * @static
      * @memberOf _
@@ -13177,7 +13121,7 @@
      * destination object. If `object` is a function then methods are added to
      * its prototype as well.
      *
-     * **Note:** Use `_.runInContext` to create a pristine `lodash` function to
+     * **注意:** Use `_.runInContext` to create a pristine `lodash` function to
      * avoid conflicts caused by modifying the original.
      *
      * @static
@@ -13424,7 +13368,7 @@
      * it's set to `start` with `start` then set to `0`.  If `end` is less than
      * `start` a zero-length range is created unless a negative `step` is specified.
      *
-     * **Note:** JavaScript follows the IEEE-754 standard for resolving
+     * **注意:** JavaScript follows the IEEE-754 standard for resolving
      * floating-point values which can produce unexpected results.
      *
      * @static
@@ -13694,7 +13638,7 @@
      * @memberOf _
      * @category Math
      * @param {Array} array The array to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
      * @returns {*} Returns the maximum value.
      * @example
      *
@@ -13706,7 +13650,7 @@
      * _.maxBy(users, function(o) { return o.age; });
      * // => { 'user': 'fred', 'age': 40 }
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.maxBy(users, 'age');
      * // => { 'user': 'fred', 'age': 40 }
      */
@@ -13765,7 +13709,7 @@
      * @memberOf _
      * @category Math
      * @param {Array} array The array to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
      * @returns {*} Returns the minimum value.
      * @example
      *
@@ -13777,7 +13721,7 @@
      * _.minBy(users, function(o) { return o.age; });
      * // => { 'user': 'barney', 'age': 36 }
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.minBy(users, 'age');
      * // => { 'user': 'barney', 'age': 36 }
      */
@@ -13862,7 +13806,7 @@
      * @memberOf _
      * @category Math
      * @param {Array} array The array to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] The iteratee invoked per element.
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
      * @returns {number} Returns the sum.
      * @example
      *
@@ -13871,7 +13815,7 @@
      * _.sumBy(objects, function(o) { return o.n; });
      * // => 20
      *
-     * // using the `_.property` callback shorthand
+     * // 使用了 `_.property` 的回调结果
      * _.sumBy(objects, 'n');
      * // => 20
      */

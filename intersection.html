@@ -78,7 +78,7 @@ var _hmt = _hmt || [];
 <li><a href="./fromPairs" title="_.fromPairs(pairs)">fromPairs</a></li>
 <li><a href="./head" title="_.head(array)">head <span class="aliases">first</span></a></li>
 <li><a href="./indexOf" title="_.indexOf(array, value, [fromIndex=0])">indexOf</a></li>
-<li><a href="./initial" title="_.initial(array)">initial</a></li>
+<li><a href="./initial" title="_.initial(需要检索的数组)">initial</a></li>
 <li><a href="./intersection" title="_.intersection([arrays])" class = "open">intersection</a></li>
 <li><a href="./intersectionBy" title="_.intersectionBy([arrays], [iteratee=_.identity])">intersectionBy</a></li>
 <li><a href="./intersectionWith" title="_.intersectionWith([arrays], [comparator])">intersectionWith</a></li>
@@ -392,28 +392,47 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>intersection <a class="fa-link" href="./intersection" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L5863" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.intersection" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>intersection <a class="fa-link" href="./intersection" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L5861" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.intersection" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.intersection([arrays])</div>
 
-<div data-render-html="/intersection"><p>Creates an array of unique values that are included in all of the provided
-arrays using <a href="http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero" target="_blank"><code>SameValueZero</code></a>
-for equality comparisons.</p>
+<div data-render-html="/intersection"><p>创建一个包含所有使用 <a href="http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero" target="_blank"><code>SameValueZero</code></a> 进行等值比较后筛选的唯一值数组。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">[arrays]</span> <span class="param-type">(...Array)</span> <div data-render-html="/#synthetic"><p>The arrays to inspect. </p>
+<li><span class="param-name">[arrays]</span> <span class="param-type">(...Array)</span> <div data-render-html="/#synthetic"><p>需要处理的数组队列 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Array)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new array of shared values.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回数组中所有数组共享元素的新数组</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >intersection</span><span class="token punctuation" >(</span><span class="token punctuation" >[</span><span class="token number" >2</span><span class="token punctuation" >,</span> <span class="token number" >1</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> <span class="token punctuation" >[</span><span class="token number" >4</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> <span class="token punctuation" >[</span><span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >]</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => [2]</span>
 </code></pre>
 </div>
-</div>
+<div id="disqus_thread" style="margin-top:50px;"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//lodash-zh.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div>
     </div>
 </div>
 </div>
