@@ -392,23 +392,17 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>_ <a class="fa-link" href="./_" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L1498" title="View in source." target="github">source</a> </h2>
+        <div data-render-page="entry"><h2>_ <a class="fa-link" href="./_" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L1491" title="View in source." target="github">source</a> </h2>
 <div class="signature">_(value)</div>
 
-<div data-render-html="/_"><p>Creates a <code>lodash</code> object which wraps <code>value</code> to enable implicit method
-chaining. Methods that operate on and return arrays, collections, and
-functions can be chained together. Methods that retrieve a single value or
-may return a primitive value will automatically end the chain sequence and
-return the unwrapped value. Otherwise, the value must be unwrapped with
-<code>_#value</code>.
+<div data-render-html="/_"><p>创建一个经 <code>lodash</code> 包装后的对象会启用隐式链。返回的数组、集合、方法相互之间能够链式调用。
+检索唯一值或返回原始值会自动解除链条并返回计算后的值，否则需要调用 <code>_#value</code> 方法解除链(即获得计算结果)。
 <br>
 <br>
-Explicit chaining, which must be unwrapped with <code>_#value</code> in all cases,
-may be enabled using <code>_.chain</code>.
+显式链式调用，在任何情况下需要先用 <code>_#value</code> 解除链后，才能使用 <code>_.chain</code> 开启。
 <br>
 <br>
-The execution of chained methods is lazy, that is, it&#39;s deferred until
-<code>_#value</code> is implicitly or explicitly called.
+链式方法是惰性计算的，直到隐式或者显式调用了 <code>_#value</code> 才会执行计算。
 <br>
 <br>
 Lazy evaluation allows several methods to support shortcut fusion. Shortcut
@@ -420,18 +414,17 @@ accept only one argument. The heuristic for whether a section qualifies
 for shortcut fusion is subject to change.
 <br>
 <br>
-Chaining is supported in custom builds as long as the <code>_#value</code> method is
-directly or indirectly included in the build.
+链式方法支持定制版本，只要 <code>_#value</code> 包含或者间接包含在版本中。
 <br>
 <br>
-In addition to lodash methods, wrappers have <code>Array</code> and <code>String</code> methods.
+除了 lodash 的自身方法，包装后的对象还支持  <code>Array</code> 的 <code>String</code> 的方法。
 <br>
 <br>
-The wrapper <code>Array</code> methods are:<br>
+支持 <code>Array</code> 的方法:<br>
 <code>concat</code>, <code>join</code>, <code>pop</code>, <code>push</code>, <code>shift</code>, <code>sort</code>, <code>splice</code>, and <code>unshift</code>
 <br>
 <br>
-The wrapper <code>String</code> methods are:<br>
+支持 <code>String</code> 的方法:<br>
 <code>replace</code> and <code>split</code>
 <br>
 <br>

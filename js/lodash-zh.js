@@ -1386,18 +1386,12 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a `lodash` object which wraps `value` to enable implicit method
-     * chaining. Methods that operate on and return arrays, collections, and
-     * functions can be chained together. Methods that retrieve a single value or
-     * may return a primitive value will automatically end the chain sequence and
-     * return the unwrapped value. Otherwise, the value must be unwrapped with
-     * `_#value`.
+     * 创建一个经 `lodash` 包装后的对象会启用隐式链。返回的数组、集合、方法相互之间能够链式调用。
+     * 检索唯一值或返回原始值会自动解除链条并返回计算后的值，否则需要调用 `_#value` 方法解除链(即获得计算结果)。
      *
-     * Explicit chaining, which must be unwrapped with `_#value` in all cases,
-     * may be enabled using `_.chain`.
+     * 显式链式调用，在任何情况下需要先用 `_#value` 解除链后，才能使用 `_.chain` 开启。
      *
-     * The execution of chained methods is lazy, that is, it's deferred until
-     * `_#value` is implicitly or explicitly called.
+     * 链式方法是惰性计算的，直到隐式或者显式调用了 `_#value` 才会执行计算。
      *
      * Lazy evaluation allows several methods to support shortcut fusion. Shortcut
      * fusion is an optimization to merge iteratee calls; this avoids the creation
@@ -1407,15 +1401,14 @@
      * accept only one argument. The heuristic for whether a section qualifies
      * for shortcut fusion is subject to change.
      *
-     * Chaining is supported in custom builds as long as the `_#value` method is
-     * directly or indirectly included in the build.
+     * 链式方法支持定制版本，只要 `_#value` 包含或者间接包含在版本中。
      *
-     * In addition to lodash methods, wrappers have `Array` and `String` methods.
+     * 除了 lodash 的自身方法，包装后的对象还支持  `Array` 的 `String` 的方法。
      *
-     * The wrapper `Array` methods are:
+     * 支持 `Array` 的方法:
      * `concat`, `join`, `pop`, `push`, `shift`, `sort`, `splice`, and `unshift`
      *
-     * The wrapper `String` methods are:
+     * 支持 `String` 的方法:
      * `replace` and `split`
      *
      * The wrapper methods that support shortcut fusion are:
