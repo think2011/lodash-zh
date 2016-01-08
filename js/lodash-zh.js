@@ -1411,12 +1411,12 @@
      * 支持 `String` 的方法:
      * `replace` and `split`
      *
-     * The wrapper methods that support shortcut fusion are:
+     * 支持 shortcut fusion 的方法:
      * `at`, `compact`, `drop`, `dropRight`, `dropWhile`, `filter`, `find`,
      * `findLast`, `head`, `initial`, `last`, `map`, `reject`, `reverse`, `slice`,
      * `tail`, `take`, `takeRight`, `takeRightWhile`, `takeWhile`, and `toArray`
      *
-     * The chainable wrapper methods are:
+     * 支持 链式调用 的方法:
      * `after`, `ary`, `assign`, `assignIn`, `assignInWith`, `assignWith`,
      * `at`, `before`, `bind`, `bindAll`, `bindKey`, `chain`, `chunk`, `commit`,
      * `compact`, `concat`, `conforms`,  `constant`, `countBy`, `create`, `curry`,
@@ -1440,7 +1440,7 @@
      * `unset`, `unshift`, `unzip`, `unzipWith`, `values`, `valuesIn`, `without`,
      * `wrap`, `xor`, `xorBy`, `xorWith`, `zip`, `zipObject`, and `zipWith`
      *
-     * The wrapper methods that are **not** chainable by default are:
+     * 默认不支持 链式调用 的方法:
      * `add`, `attempt`, `camelCase`, `capitalize`, `ceil`, `clamp`, `clone`,
      * `cloneDeep`, `cloneDeepWith`, `cloneWith`, `deburr`, `endsWith`, `eq`,
      * `escape`, `escapeRegExp`, `every`, `find`, `findIndex`, `findKey`,
@@ -1465,8 +1465,8 @@
      * @name _
      * @constructor
      * @category Chain
-     * @param {*} value The value to wrap in a `lodash` instance.
-     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @param {*} value 需要被包装为 `lodash` 实例的值.
+     * @returns {Object} 返回 `lodash` 包装后的实例
      * @example
      *
      * function square(n) {
@@ -1475,11 +1475,11 @@
      *
      * var wrapped = _([1, 2, 3]);
      *
-     * // returns an unwrapped value
+     * // 返回未包装的值
      * wrapped.reduce(_.add);
      * // => 6
      *
-     * // returns a wrapped value
+     * // 返回链式包装的值
      * var squares = wrapped.map(square);
      *
      * _.isArray(squares);
