@@ -392,26 +392,24 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>invokeMap <a class="fa-link" href="./invokeMap" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7560" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.invokemap" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>invokeMap <a class="fa-link" href="./invokeMap" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7542" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.invokemap" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.invokeMap(collection, path, [args])</div>
 
-<div data-render-html="/invokeMap"><p>Invokes the method at <code>path</code> of each element in <code>collection</code>, returning
-an array of the results of each invoked method. Any additional arguments
-are provided to each invoked method. If <code>methodName</code> is a function it&#39;s
-invoked for, and <code>this</code> bound to, each element in <code>collection</code>.</p>
+<div data-render-html="/invokeMap"><p>调用 <code>path</code> 的方法处理集合中的每一个元素，返回处理的数组。
+如何附加的参数会传入到调用方法中。如果方法名是个函数，集合中的每个元素都会被调用到。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>The collection to iterate over. </p>
+<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>需要遍历的集合 </p>
 </div></li>
-<li><span class="param-name">path</span> <span class="param-type">(Array|Function|string)</span> <div data-render-html="/#synthetic"><p>The path of the method to invoke or the function invoked per iteration. </p>
+<li><span class="param-name">path</span> <span class="param-type">(Array|Function|string)</span> <div data-render-html="/#synthetic"><p>要调用的方法名 或者 这个函数会处理每一个元素 </p>
 </div></li>
 <li><span class="param-name">[args]</span> <span class="param-type">(...*)</span> <div data-render-html="/#synthetic"><p>The arguments to invoke each method with. </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Array)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the array of results.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回数组结果</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >invokeMap</span><span class="token punctuation" >(</span><span class="token punctuation" >[</span><span class="token punctuation" >[</span><span class="token number" >5</span><span class="token punctuation" >,</span> <span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token number" >7</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> <span class="token punctuation" >[</span><span class="token number" >3</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >,</span> <span class="token number" >1</span><span class="token punctuation" >]</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> <span class="token string" >'sort'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>

@@ -392,28 +392,27 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>forEachRight <span class="aliases">eachRight</span> <a class="fa-link" href="./forEachRight" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7462" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.foreachright" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>forEachRight <span class="aliases">eachRight</span> <a class="fa-link" href="./forEachRight" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7449" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.foreachright" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.forEachRight(collection, [iteratee&#x3D;_.identity])</div>
 
-<div data-render-html="/forEachRight"><p>This method is like <code>_.forEach</code> except that it iterates over elements of
-<code>collection</code> from right to left.</p>
+<div data-render-html="/forEachRight"><p>这个方法类似 <code>_.forEach</code>，除了它是从右到左遍历的集合中的元素的。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>The collection to iterate over. </p>
+<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>需要遍历的集合 </p>
 </div></li>
-<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function invoked per iteration. </p>
+<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>这个函数会处理每一个元素 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Array|Object)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns <code>collection</code>.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回集合</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >forEachRight</span><span class="token punctuation" >(</span><span class="token punctuation" >[</span><span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>value<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
   console<span class="token punctuation" >.</span><span class="token function" >log</span><span class="token punctuation" >(</span>value<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => logs `2` then `1`</span>
+<span class="token comment" spellcheck="true">// => 输出 `2` 和 `1`</span>
 </code></pre>
 </div>
 <div id="disqus_thread" style="margin-top:50px;"></div>

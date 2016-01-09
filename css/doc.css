@@ -49,7 +49,7 @@ header a.build { float:right; font-size:8px; color:#aaa; margin:1px; line-height
 #toc ul { list-style:none; padding:0; margin:0; }
 
 span.aliases { font-size:0.7em; color:#999; font-style:italic; }
-#content span.aliases:before { content:" (alias: "; }
+#content span.aliases:before { content:" (别名: "; }
 #content span.aliases:after { content:")"; }
 
 #tochead a { margin:10px 0 0 0; }

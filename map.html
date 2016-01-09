@@ -392,34 +392,33 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>map <a class="fa-link" href="./map" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7645" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.map" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>map <a class="fa-link" href="./map" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7624" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.map" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.map(collection, [iteratee&#x3D;_.identity])</div>
 
-<div data-render-html="/map"><p>Creates an array of values by running each element in <code>collection</code> through
-<code>iteratee</code>. The iteratee is invoked with three arguments:<br>
-(value, index|key, collection).
+<div data-render-html="/map"><p>创建一个经过 <code>iteratee</code> 处理的集合中每一个元素的结果数组。
+iteratee 会传入3个参数：(value, index|key, collection)。
 <br>
 <br>
-Many lodash methods are guarded to work as iteratees for methods like
-<code>_.every</code>, <code>_.filter</code>, <code>_.map</code>, <code>_.mapValues</code>, <code>_.reject</code>, and <code>_.some</code>.
+有许多 lodash 的方法以 iteratees 的身份守护其工作，例如：
+<code>_.every</code>, <code>_.filter</code>, <code>_.map</code>, <code>_.mapValues</code>, <code>_.reject</code>, 以及 <code>_.some</code>
 <br>
 <br>
-The guarded methods are:<br>
+被守护的有:<br>
 <code>ary</code>, <code>curry</code>, <code>curryRight</code>, <code>drop</code>, <code>dropRight</code>, <code>every</code>, <code>fill</code>,
 <code>invert</code>, <code>parseInt</code>, <code>random</code>, <code>range</code>, <code>rangeRight</code>, <code>slice</code>, <code>some</code>,
 <code>sortBy</code>, <code>take</code>, <code>takeRight</code>, <code>template</code>, <code>trim</code>, <code>trimEnd</code>, <code>trimStart</code>,
-and <code>words</code></p>
+以及 <code>words</code></p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>The collection to iterate over. </p>
+<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>需要遍历的集合 </p>
 </div></li>
-<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>The function invoked per iteration. </p>
+<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>这个函数会处理每一个元素 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Array)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new mapped array.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回映射后的新数组</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >function</span> <span class="token function" >square</span><span class="token punctuation" >(</span>n<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
@@ -430,7 +429,7 @@ _<span class="token punctuation" >.</span><span class="token function" >map</spa
 <span class="token comment" spellcheck="true">// => [3, 6]</span>
 
 _<span class="token punctuation" >.</span><span class="token function" >map</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span> <span class="token string" >'a'</span><span class="token punctuation" >:</span> <span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token string" >'b'</span><span class="token punctuation" >:</span> <span class="token number" >2</span> <span class="token punctuation" >}</span><span class="token punctuation" >,</span> square<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => [3, 6] (iteration order is not guaranteed)</span>
+<span class="token comment" spellcheck="true">// => [3, 6] (无法保证遍历的顺序)</span>
 
 <span class="token keyword" >var</span> users <span class="token operator" >=</span> <span class="token punctuation" >[</span>
   <span class="token punctuation" >{</span> <span class="token string" >'user'</span><span class="token punctuation" >:</span> <span class="token string" >'barney'</span> <span class="token punctuation" >}</span><span class="token punctuation" >,</span>

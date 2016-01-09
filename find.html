@@ -392,23 +392,21 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>find <a class="fa-link" href="./find" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7375" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.find" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>find <a class="fa-link" href="./find" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7367" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.find" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.find(collection, [predicate&#x3D;_.identity])</div>
 
-<div data-render-html="/find"><p>Iterates over elements of <code>collection</code>, returning the first element
-<code>predicate</code> returns truthy for. The predicate is invoked with three arguments:<br>
-(value, index|key, collection).</p>
+<div data-render-html="/find"><p>遍历集合中的元素，返回最先经 <code>predicate</code> 检查为真值的元素。 predicate 会传入3个元素：(value, index|key, collection)。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>The collection to search. </p>
+<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>要检索的集合 </p>
 </div></li>
-<li><span class="param-name">[predicate&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>The function invoked per iteration. </p>
+<li><span class="param-name">[predicate&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>这个函数会处理每一个元素 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(*)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the matched element, else <code>undefined</code>.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回匹配元素，否则返回 <code>undefined</code></p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> resolve <span class="token operator" >=</span> _<span class="token punctuation" >.</span><span class="token function" >partial</span><span class="token punctuation" >(</span>_<span class="token punctuation" >.</span>result<span class="token punctuation" >,</span> _<span class="token punctuation" >,</span> <span class="token string" >'user'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>

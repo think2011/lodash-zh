@@ -392,7 +392,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>reduce <a class="fa-link" href="./reduce" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7773" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.reduce" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>reduce <a class="fa-link" href="./reduce" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7751" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.reduce" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.reduce(collection, [iteratee&#x3D;_.identity], [accumulator])</div>
 
 <div data-render-html="/reduce"><p>Reduces <code>collection</code> to a value which is the accumulated result of running
@@ -414,9 +414,9 @@ and <code>sortBy</code></p>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>The collection to iterate over. </p>
+<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>需要遍历的集合 </p>
 </div></li>
-<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function invoked per iteration. </p>
+<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>这个函数会处理每一个元素 </p>
 </div></li>
 <li><span class="param-name">[accumulator]</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>The initial value. </p>
 </div></li>
@@ -434,7 +434,7 @@ _<span class="token punctuation" >.</span><span class="token function" >reduce</
   <span class="token punctuation" >(</span>result<span class="token punctuation" >[</span>value<span class="token punctuation" >]</span> <span class="token operator" >||</span> <span class="token punctuation" >(</span>result<span class="token punctuation" >[</span>value<span class="token punctuation" >]</span> <span class="token operator" >=</span> <span class="token punctuation" >[</span><span class="token punctuation" >]</span><span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >.</span><span class="token function" >push</span><span class="token punctuation" >(</span>key<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
   <span class="token keyword" >return</span> result<span class="token punctuation" >;</span>
 <span class="token punctuation" >}</span><span class="token punctuation" >,</span> <span class="token punctuation" >{</span><span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => { '1': ['a', 'c'], '2': ['b'] } (iteration order is not guaranteed)</span>
+<span class="token comment" spellcheck="true">// => { '1': ['a', 'c'], '2': ['b'] } (无法保证遍历的顺序)</span>
 </code></pre>
 </div>
 <div id="disqus_thread" style="margin-top:50px;"></div>

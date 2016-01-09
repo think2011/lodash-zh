@@ -392,26 +392,25 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>orderBy <a class="fa-link" href="./orderBy" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7679" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.orderby" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>orderBy <a class="fa-link" href="./orderBy" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7657" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.orderby" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.orderBy(collection, [iteratees&#x3D;[_.identity]], [orders])</div>
 
-<div data-render-html="/orderBy"><p>This method is like <code>_.sortBy</code> except that it allows specifying the sort
-orders of the iteratees to sort by. If <code>orders</code> is unspecified, all values
-are sorted in ascending order. Otherwise, specify an order of &quot;desc&quot; for
-descending or &quot;asc&quot; for ascending sort order of corresponding values.</p>
+<div data-render-html="/orderBy"><p>这个方法类似 <code>_.sortBy</code>，除了它允许以 iteratees 来指定排序规则。
+如果没指定 <code>orders</code>，所有值以升序排序。
+其他情况，指定 &quot;desc&quot; 降序，指定 &quot;asc&quot; 升序其对应值。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>The collection to iterate over. </p>
+<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>需要遍历的集合 </p>
 </div></li>
-<li><span class="param-name">[iteratees&#x3D;[_.identity]]</span> <span class="param-type">(Function[]|Object[]|string[])</span> <div data-render-html="/#synthetic"><p>The iteratees to sort by. </p>
+<li><span class="param-name">[iteratees&#x3D;[_.identity]]</span> <span class="param-type">(Function[]|Object[]|string[])</span> <div data-render-html="/#synthetic"><p>通过 iteratees 决定排序 </p>
 </div></li>
-<li><span class="param-name">[orders]</span> <span class="param-type">(string[])</span> <div data-render-html="/#synthetic"><p>The sort orders of <code>iteratees</code>. </p>
+<li><span class="param-name">[orders]</span> <span class="param-type">(string[])</span> <div data-render-html="/#synthetic"><p>决定 iteratees 的排序方法 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Array)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new sorted array.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 排序排序后的新数组</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> resolve <span class="token operator" >=</span> _<span class="token punctuation" >.</span><span class="token function" >partial</span><span class="token punctuation" >(</span>_<span class="token punctuation" >.</span>map<span class="token punctuation" >,</span> _<span class="token punctuation" >,</span> _<span class="token punctuation" >.</span>values<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
@@ -423,7 +422,7 @@ descending or &quot;asc&quot; for ascending sort order of corresponding values.<
   <span class="token punctuation" >{</span> <span class="token string" >'user'</span><span class="token punctuation" >:</span> <span class="token string" >'barney'</span><span class="token punctuation" >,</span> <span class="token string" >'age'</span><span class="token punctuation" >:</span> <span class="token number" >36</span> <span class="token punctuation" >}</span>
 <span class="token punctuation" >]</span><span class="token punctuation" >;</span>
 
-<span class="token comment" spellcheck="true">// sort by `user` in ascending order and by `age` in descending order</span>
+<span class="token comment" spellcheck="true">// 以 `user` 升序排序 再 以 `age` 降序排序。</span>
 <span class="token function" >resolve</span><span class="token punctuation" >(</span> _<span class="token punctuation" >.</span><span class="token function" >orderBy</span><span class="token punctuation" >(</span>users<span class="token punctuation" >,</span> <span class="token punctuation" >[</span><span class="token string" >'user'</span><span class="token punctuation" >,</span> <span class="token string" >'age'</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> <span class="token punctuation" >[</span><span class="token string" >'asc'</span><span class="token punctuation" >,</span> <span class="token string" >'desc'</span><span class="token punctuation" >]</span><span class="token punctuation" >)</span> <span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 42]]</span>
 </code></pre>

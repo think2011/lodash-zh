@@ -428,7 +428,7 @@
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} iteratee The function invoked per iteration.
+   * @param {Function} iteratee 这个函数会处理每一个元素
    * @returns {Array} Returns `array`.
    */
   function arrayEach (array, iteratee) {
@@ -449,7 +449,7 @@
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} iteratee The function invoked per iteration.
+   * @param {Function} iteratee 这个函数会处理每一个元素
    * @returns {Array} Returns `array`.
    */
   function arrayEachRight (array, iteratee) {
@@ -469,7 +469,7 @@
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} predicate The function invoked per iteration.
+   * @param {Function} predicate 这个函数会处理每一个元素
    * @returns {boolean} Returns `true` if all elements pass the predicate check, else `false`.
    */
   function arrayEvery (array, predicate) {
@@ -490,7 +490,7 @@
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} predicate The function invoked per iteration.
+   * @param {Function} predicate 这个函数会处理每一个元素
    * @returns {Array} Returns the new filtered array.
    */
   function arrayFilter (array, predicate) {
@@ -514,7 +514,7 @@
    *
    * @private
    * @param {Array} array The array to search.
-   * @param {*} target The value to search for.
+   * @param {*} target 要检索的值
    * @returns {boolean} Returns `true` if `target` is found, else `false`.
    */
   function arrayIncludes (array, value) {
@@ -527,8 +527,8 @@
    *
    * @private
    * @param {Array} array The array to search.
-   * @param {*} target The value to search for.
-   * @param {Function} comparator 这个函数会调用每一个元素
+   * @param {*} target 要检索的值
+   * @param {Function} comparator 这个函数会处理每一个元素
    * @returns {boolean} Returns `true` if `target` is found, else `false`.
    */
   function arrayIncludesWith (array, value, comparator) {
@@ -549,7 +549,7 @@
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} iteratee The function invoked per iteration.
+   * @param {Function} iteratee 这个函数会处理每一个元素
    * @returns {Array} Returns the new mapped array.
    */
   function arrayMap (array, iteratee) {
@@ -588,7 +588,7 @@
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} iteratee The function invoked per iteration.
+   * @param {Function} iteratee 这个函数会处理每一个元素
    * @param {*} [accumulator] The initial value.
    * @param {boolean} [initFromArray] Specify using the first element of `array` as the initial value.
    * @returns {*} Returns the accumulated value.
@@ -612,7 +612,7 @@
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} iteratee The function invoked per iteration.
+   * @param {Function} iteratee 这个函数会处理每一个元素
    * @param {*} [accumulator] The initial value.
    * @param {boolean} [initFromArray] Specify using the last element of `array` as the initial value.
    * @returns {*} Returns the accumulated value.
@@ -634,7 +634,7 @@
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} predicate The function invoked per iteration.
+   * @param {Function} predicate 这个函数会处理每一个元素
    * @returns {boolean} Returns `true` if any element passes the predicate check, else `false`.
    */
   function arraySome (array, predicate) {
@@ -684,8 +684,8 @@
    * the provided `eachFunc`.
    *
    * @private
-   * @param {Array|Object} collection The collection to search.
-   * @param {Function} predicate The function invoked per iteration.
+   * @param {Array|Object} collection 要检索的集合
+   * @param {Function} predicate 这个函数会处理每一个元素
    * @param {Function} eachFunc The function to iterate over `collection`.
    * @param {boolean} [retKey] Specify returning the key of the found element instead of the element itself.
    * @returns {*} Returns the found element or its key, else `undefined`.
@@ -707,7 +707,7 @@
    *
    * @private
    * @param {Array} array The array to search.
-   * @param {Function} predicate The function invoked per iteration.
+   * @param {Function} predicate 这个函数会处理每一个元素
    * @param {boolean} [fromRight] Specify iterating from right to left.
    * @returns {number} Returns the index of the matched value, else `-1`.
    */
@@ -728,7 +728,7 @@
    *
    * @private
    * @param {Array} array The array to search.
-   * @param {*} value The value to search for.
+   * @param {*} value 要检索的值
    * @param {number} fromIndex The index to search from.
    * @returns {number} Returns the index of the matched value, else `-1`.
    */
@@ -753,8 +753,8 @@
    * `eachFunc`.
    *
    * @private
-   * @param {Array|Object} collection The collection to iterate over.
-   * @param {Function} iteratee The function invoked per iteration.
+   * @param {Array|Object} collection 需要遍历的集合
+   * @param {Function} iteratee 这个函数会处理每一个元素
    * @param {*} accumulator The initial value.
    * @param {boolean} initFromCollection Specify using the first or last element of `collection` as the initial value.
    * @param {Function} eachFunc The function to iterate over `collection`.
@@ -794,7 +794,7 @@
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} iteratee The function invoked per iteration.
+   * @param {Function} iteratee 这个函数会处理每一个元素
    * @returns {number} Returns the sum.
    */
   function baseSum (array, iteratee) {
@@ -817,7 +817,7 @@
    *
    * @private
    * @param {number} n The number of times to invoke `iteratee`.
-   * @param {Function} iteratee The function invoked per iteration.
+   * @param {Function} iteratee 这个函数会处理每一个元素
    * @returns {Array} Returns the array of results.
    */
   function baseTimes (n, iteratee) {
@@ -1887,7 +1887,7 @@
      *
      * @private
      * @param {Object} cache The set cache to search.
-     * @param {*} value The value to search for.
+     * @param {*} value 要检索的值
      * @returns {number} Returns `true` if `value` is found, else `false`.
      */
     function cacheHas (cache, value) {
@@ -2341,8 +2341,8 @@
      * @private
      * @param {Array} array The array to inspect.
      * @param {Array} values The values to exclude.
-     * @param {Function} [iteratee] 这个函数会调用每一个元素
-     * @param {Function} [comparator] 这个函数会调用每一个元素
+     * @param {Function} [iteratee] 这个函数会处理每一个元素
+     * @param {Function} [comparator] 这个函数会处理每一个元素
      * @returns {Array} Returns the new array of filtered values.
      */
     function baseDifference (array, values, iteratee, comparator) {
@@ -2393,8 +2393,8 @@
      * The base implementation of `_.forEach` without support for callback shorthands.
      *
      * @private
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function} iteratee The function invoked per iteration.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function} iteratee 这个函数会处理每一个元素
      * @returns {Array|Object} Returns `collection`.
      */
     var baseEach = createBaseEach(baseForOwn);
@@ -2403,8 +2403,8 @@
      * The base implementation of `_.forEachRight` without support for callback shorthands.
      *
      * @private
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function} iteratee The function invoked per iteration.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function} iteratee 这个函数会处理每一个元素
      * @returns {Array|Object} Returns `collection`.
      */
     var baseEachRight = createBaseEach(baseForOwnRight, true);
@@ -2413,8 +2413,8 @@
      * The base implementation of `_.every` without support for callback shorthands.
      *
      * @private
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function} predicate The function invoked per iteration.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function} predicate 这个函数会处理每一个元素
      * @returns {boolean} Returns `true` if all elements pass the predicate check, else `false`
      */
     function baseEvery (collection, predicate) {
@@ -2458,8 +2458,8 @@
      * The base implementation of `_.filter` without support for callback shorthands.
      *
      * @private
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function} predicate The function invoked per iteration.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function} predicate 这个函数会处理每一个元素
      * @returns {Array} Returns the new filtered array.
      */
     function baseFilter (collection, predicate) {
@@ -2523,7 +2523,7 @@
      *
      * @private
      * @param {Object} object The object to iterate over.
-     * @param {Function} iteratee The function invoked per iteration.
+     * @param {Function} iteratee 这个函数会处理每一个元素
      * @param {Function} keysFunc The function to get the keys of `object`.
      * @returns {Object} Returns `object`.
      */
@@ -2535,7 +2535,7 @@
      *
      * @private
      * @param {Object} object The object to iterate over.
-     * @param {Function} iteratee The function invoked per iteration.
+     * @param {Function} iteratee 这个函数会处理每一个元素
      * @param {Function} keysFunc The function to get the keys of `object`.
      * @returns {Object} Returns `object`.
      */
@@ -2546,7 +2546,7 @@
      *
      * @private
      * @param {Object} object The object to iterate over.
-     * @param {Function} iteratee The function invoked per iteration.
+     * @param {Function} iteratee 这个函数会处理每一个元素
      * @returns {Object} Returns `object`.
      */
     function baseForIn (object, iteratee) {
@@ -2558,7 +2558,7 @@
      *
      * @private
      * @param {Object} object The object to iterate over.
-     * @param {Function} iteratee The function invoked per iteration.
+     * @param {Function} iteratee 这个函数会处理每一个元素
      * @returns {Object} Returns `object`.
      */
     function baseForOwn (object, iteratee) {
@@ -2570,7 +2570,7 @@
      *
      * @private
      * @param {Object} object The object to iterate over.
-     * @param {Function} iteratee The function invoked per iteration.
+     * @param {Function} iteratee 这个函数会处理每一个元素
      * @returns {Object} Returns `object`.
      */
     function baseForOwnRight (object, iteratee) {
@@ -2646,8 +2646,8 @@
      *
      * @private
      * @param {Array} arrays The arrays to inspect.
-     * @param {Function} [iteratee] 这个函数会调用每一个元素
-     * @param {Function} [comparator] 这个函数会调用每一个元素
+     * @param {Function} [iteratee] 这个函数会处理每一个元素
+     * @param {Function} [comparator] 这个函数会处理每一个元素
      * @returns {Array} Returns the new array of shared values.
      */
     function baseIntersection (arrays, iteratee, comparator) {
@@ -2925,8 +2925,8 @@
      * The base implementation of `_.map` without support for callback shorthands.
      *
      * @private
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function} iteratee The function invoked per iteration.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function} iteratee 这个函数会处理每一个元素
      * @returns {Array} Returns the new mapped array.
      */
     function baseMap (collection, iteratee) {
@@ -3069,7 +3069,7 @@
      * The base implementation of `_.orderBy` without param guards.
      *
      * @private
-     * @param {Array|Object} collection The collection to iterate over.
+     * @param {Array|Object} collection 需要遍历的集合
      * @param {Function[]|Object[]|string[]} iteratees The iteratees to sort by.
      * @param {string[]} orders The sort orders of `iteratees`.
      * @returns {Array} Returns the new sorted array.
@@ -3176,7 +3176,7 @@
      * @private
      * @param {Array} array The array to modify.
      * @param {Array} values The values to remove.
-     * @param {Function} [iteratee] 这个函数会调用每一个元素
+     * @param {Function} [iteratee] 这个函数会处理每一个元素
      * @returns {Array} Returns `array`.
      */
     function basePullAllBy (array, values, iteratee) {
@@ -3370,8 +3370,8 @@
      * The base implementation of `_.some` without support for callback shorthands.
      *
      * @private
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function} predicate The function invoked per iteration.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function} predicate 这个函数会处理每一个元素
      * @returns {boolean} Returns `true` if any element passes the predicate check, else `false`.
      */
     function baseSome (collection, predicate) {
@@ -3424,7 +3424,7 @@
      * @private
      * @param {Array} array The sorted array to inspect.
      * @param {*} value The value to evaluate.
-     * @param {Function} iteratee 这个函数会调用每一个元素
+     * @param {Function} iteratee 这个函数会处理每一个元素
      * @param {boolean} [retHighest] Specify returning the highest qualified index.
      * @returns {number} Returns the index at which `value` should be inserted into `array`.
      */
@@ -3480,7 +3480,7 @@
      *
      * @private
      * @param {Array} array The array to inspect.
-     * @param {Function} [iteratee] 这个函数会调用每一个元素
+     * @param {Function} [iteratee] 这个函数会处理每一个元素
      * @returns {Array} Returns the new duplicate free array.
      */
     function baseSortedUniqBy (array, iteratee) {
@@ -3521,8 +3521,8 @@
      *
      * @private
      * @param {Array} array The array to inspect.
-     * @param {Function} [iteratee] 这个函数会调用每一个元素
-     * @param {Function} [comparator] 这个函数会调用每一个元素
+     * @param {Function} [iteratee] 这个函数会处理每一个元素
+     * @param {Function} [comparator] 这个函数会处理每一个元素
      * @returns {Array} Returns the new duplicate free array.
      */
     function baseUniq (array, iteratee, comparator) {
@@ -3597,7 +3597,7 @@
      *
      * @private
      * @param {Array} array The array to query.
-     * @param {Function} predicate The function invoked per iteration.
+     * @param {Function} predicate 这个函数会处理每一个元素
      * @param {boolean} [isDrop] Specify dropping elements instead of taking them.
      * @param {boolean} [fromRight] Specify iterating from right to left.
      * @returns {Array} Returns the slice of `array`.
@@ -3641,8 +3641,8 @@
      *
      * @private
      * @param {Array} arrays The arrays to inspect.
-     * @param {Function} [iteratee] 这个函数会调用每一个元素
-     * @param {Function} [comparator] 这个函数会调用每一个元素
+     * @param {Function} [iteratee] 这个函数会处理每一个元素
+     * @param {Function} [comparator] 这个函数会处理每一个元素
      * @returns {Array} Returns the new array of values.
      */
     function baseXor (arrays, iteratee, comparator) {
@@ -5376,7 +5376,7 @@
      * @category Array
      * @param {Array} array 需要处理的数组
      * @param {...Array} [values] 用于对比差异的数组
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Array} 返回一个差异化后的新数组
      * @example
      *
@@ -5405,7 +5405,7 @@
      * @category Array
      * @param {Array} array 需要处理的数组
      * @param {...Array} [values] 用于对比差异的数组
-     * @param {Function} [comparator] 这个函数会调用每一个元素
+     * @param {Function} [comparator] 这个函数会处理每一个元素
      * @returns {Array} 返回一个差异化后的新数组
      * @example
      *
@@ -5863,7 +5863,7 @@
      * @memberOf _
      * @category Array
      * @param {...Array} [arrays] 需要检索的数组
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Array} 返回数组中共享元素的新数组
      * @example
      *
@@ -5895,7 +5895,7 @@
      * @memberOf _
      * @category Array
      * @param {...Array} [arrays] 需要检索的数组
-     * @param {Function} [comparator] 这个函数会调用每一个元素
+     * @param {Function} [comparator] 这个函数会处理每一个元素
      * @returns {Array} 返回数组中共享元素的新数组
      * @example
      *
@@ -6055,7 +6055,7 @@
      * @category Array
      * @param {Array} array 需要调整的数组
      * @param {Array} values 要移除的值
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Array} 返回数组本身
      * @example
      *
@@ -6111,7 +6111,7 @@
      * @memberOf _
      * @category Array
      * @param {Array} array 需要调整的数组
-     * @param {Function|Object|string} [predicate=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
      * @returns {Array} 返回被移除的元素的数组
      * @example
      *
@@ -6225,7 +6225,7 @@
      * @category Array
      * @param {Array} array 需要检索的已排序数组
      * @param {*} value 要评估位置的值
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {number} 返回 value 应该在数组中插入的 index。
      * @example
      *
@@ -6293,7 +6293,7 @@
      * @category Array
      * @param {Array} array 需要检索的已排序数组
      * @param {*} value 要评估位置的值
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {number} 返回 value 应该在数组中插入的 index。
      * @example
      *
@@ -6356,7 +6356,7 @@
      * @memberOf _
      * @category Array
      * @param {Array} array 要调整的数组
-     * @param {Function} [iteratee] 这个函数会调用每一个元素
+     * @param {Function} [iteratee] 这个函数会处理每一个元素
      * @returns {Array} 返回一个不重复的数组
      * @example
      *
@@ -6459,7 +6459,7 @@
      * @memberOf _
      * @category Array
      * @param {Array} array 需要处理的数组
-     * @param {Function|Object|string} [predicate=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
      * @returns {Array} 返回提取的元素数组
      * @example
      *
@@ -6499,7 +6499,7 @@
      * @memberOf _
      * @category Array
      * @param {Array} array 需要处理的数组
-     * @param {Function|Object|string} [predicate=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
      * @returns {Array} 返回提取的元素数组
      * @example
      *
@@ -6556,7 +6556,7 @@
      * @memberOf _
      * @category Array
      * @param {...Array} [arrays] 需要处理的数组队列
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Array} 返回处理好的数组
      * @example
      *
@@ -6583,7 +6583,7 @@
      * @memberOf _
      * @category Array
      * @param {...Array} [arrays] 需要处理的数组队列
-     * @param {Function} [comparator] 这个函数会调用每一个元素
+     * @param {Function} [comparator] 这个函数会处理每一个元素
      * @returns {Array} 返回处理好的数组
      * @example
      *
@@ -6627,7 +6627,7 @@
      * @memberOf _
      * @category Array
      * @param {Array} array 需要处理的数组
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Array} 返回不重复的数组
      * @example
      *
@@ -6651,7 +6651,7 @@
      * @memberOf _
      * @category Array
      * @param {Array} array 需要处理的数组
-     * @param {Function} [comparator] 这个函数会调用每一个元素
+     * @param {Function} [comparator] 这个函数会处理每一个元素
      * @returns {Array} 返回不重复的数组
      * @example
      *
@@ -6772,7 +6772,7 @@
      * @memberOf _
      * @category Array
      * @param {...Array} [arrays] 要处理的数组
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Array} 包含了所有唯一值的新数组
      * @example
      *
@@ -6798,7 +6798,7 @@
      * @memberOf _
      * @category Array
      * @param {...Array} [arrays] 要处理的数组
-     * @param {Function} [comparator] 这个函数会调用每一个元素
+     * @param {Function} [comparator] 这个函数会处理每一个元素
      * @returns {Array} 包含了所有唯一值的新数组
      * @example
      *
@@ -7068,7 +7068,7 @@
      * @static
      * @memberOf _
      * @category Chain
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Object} 返回 `lodash` 的包装实例
      * @example
      *
@@ -7231,17 +7231,14 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates an object composed of keys generated from the results of running
-     * each element of `collection` through `iteratee`. The corresponding value
-     * of each key is the number of times the key was returned by `iteratee`.
-     * The iteratee is invoked with one argument: (value).
+     * 创建一个组成对象，key是经过 `iteratee` 处理的集合的结果，value 是处理结果的次数。 `iteratee` 会传入一个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
-     * @returns {Object} Returns the composed aggregate object.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
+     * @returns {Object} 返回一个组成汇总的对象
      * @example
      *
      * _.countBy([6.1, 4.2, 6.3], Math.floor);
@@ -7255,17 +7252,16 @@
     });
 
     /**
-     * Checks if `predicate` returns truthy for **all** elements of `collection`.
-     * Iteration is stopped once `predicate` returns falsey. The predicate is
-     * invoked with three arguments: (value, index|key, collection).
+     * 通过 `predicate` 检查集合中的元素是否都返回 真值，只要 `predicate` 返回一次假值，遍历就停止，并返回 false。  
+     * `predicate` 会传入3个参数：(value, index|key, collection)
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {boolean} Returns `true` if all elements pass the predicate check, else `false`.
+     * @returns {boolean} 返回 true，如果所有元素经 predicate 检查都为真值，否则返回 false。
      * @example
      *
      * _.every([true, 1, null, 'yes'], Boolean);
@@ -7297,16 +7293,14 @@
     }
 
     /**
-     * Iterates over elements of `collection`, returning an array of all elements
-     * `predicate` returns truthy for. The predicate is invoked with three arguments:
-     * (value, index|key, collection).
+     * 遍历集合中的元素，筛选出一个经过 `predicate` 检查结果为真值的数组，predicate 会传入3个参数：(value, index|key, collection)。
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
-     * @returns {Array} Returns the new filtered array.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
+     * @returns {Array} 返回筛选结果的新数组
      * @example
      *
      * var resolve = _.partial(_.map, _, 'user');
@@ -7337,16 +7331,14 @@
     }
 
     /**
-     * Iterates over elements of `collection`, returning the first element
-     * `predicate` returns truthy for. The predicate is invoked with three arguments:
-     * (value, index|key, collection).
+     * 遍历集合中的元素，返回最先经 `predicate` 检查为真值的元素。 predicate 会传入3个元素：(value, index|key, collection)。
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to search.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
-     * @returns {*} Returns the matched element, else `undefined`.
+     * @param {Array|Object} collection 要检索的集合
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
+     * @returns {*} 返回匹配元素，否则返回 `undefined`
      * @example
      *
      * var resolve = _.partial(_.result, _, 'user');
@@ -7382,15 +7374,14 @@
     }
 
     /**
-     * This method is like `_.find` except that it iterates over elements of
-     * `collection` from right to left.
+     * 这个方法类似 `_.find`，除了它是从右至左遍历集合的。
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to search.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
-     * @returns {*} Returns the matched element, else `undefined`.
+     * @param {Array|Object} collection 要检索的集合
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
+     * @returns {*} 返回匹配元素，否则返回 `undefined`
      * @example
      *
      * _.findLast([1, 2, 3, 4], function(n) {
@@ -7408,32 +7399,29 @@
     }
 
     /**
-     * Iterates over elements of `collection` invoking `iteratee` for each element.
-     * The iteratee is invoked with three arguments: (value, index|key, collection).
-     * Iteratee functions may exit iteration early by explicitly returning `false`.
+     * 调用 `iteratee` 遍历集合中的元素，iteratee 会传入3个参数：(value, index|key, collection)。
+     * 如果显式的返回 false ，`iteratee` 会提前退出。
      *
-     * **注意:** As with other "Collections" methods, objects with a "length" property
-     * are iterated like arrays. To avoid this behavior use `_.forIn` or `_.forOwn`
-     * for object iteration.
+     * **注意:** 与其他集合方法一样，对象的 `length` 属性也会被遍历，避免这种情况，可以用 `_.forIn` 或者 `_.forOwn` 代替。
      *
      * @static
      * @memberOf _
      * @alias each
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
-     * @returns {Array|Object} Returns `collection`.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
+     * @returns {Array|Object} 返回集合
      * @example
      *
      * _([1, 2]).forEach(function(value) {
      *   console.log(value);
      * });
-     * // => logs `1` then `2`
+     * // => 输出 `1` 和 `2`
      *
      * _.forEach({ 'a': 1, 'b': 2 }, function(value, key) {
      *   console.log(key);
      * });
-     * // => logs 'a' then 'b' (iteration order is not guaranteed)
+     * // => 输出 'a' 和 'b' (不保证遍历的顺序)
      */
     function forEach (collection, iteratee) {
       return (typeof iteratee == 'function' && isArray(collection))
@@ -7442,22 +7430,21 @@
     }
 
     /**
-     * This method is like `_.forEach` except that it iterates over elements of
-     * `collection` from right to left.
+     * 这个方法类似 `_.forEach`，除了它是从右到左遍历的集合中的元素的。
      *
      * @static
      * @memberOf _
      * @alias eachRight
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
-     * @returns {Array|Object} Returns `collection`.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
+     * @returns {Array|Object} 返回集合
      * @example
      *
      * _.forEachRight([1, 2], function(value) {
      *   console.log(value);
      * });
-     * // => logs `2` then `1`
+     * // => 输出 `2` 和 `1`
      */
     function forEachRight (collection, iteratee) {
       return (typeof iteratee == 'function' && isArray(collection))
@@ -7466,17 +7453,14 @@
     }
 
     /**
-     * Creates an object composed of keys generated from the results of running
-     * each element of `collection` through `iteratee`. The corresponding value
-     * of each key is an array of the elements responsible for generating the key.
-     * The iteratee is invoked with one argument: (value).
+     * 创建一个对象组成，key 是经 iteratee 处理的结果， value 是产生 key 的元素数组。 iteratee 会传入1个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
-     * @returns {Object} Returns the composed aggregate object.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
+     * @returns {Object} 返回一个组成汇总的对象
      * @example
      *
      * _.groupBy([6.1, 4.2, 6.3], Math.floor);
@@ -7495,19 +7479,19 @@
     });
 
     /**
-     * Checks if `value` is in `collection`. If `collection` is a string it's checked
-     * for a substring of `value`, otherwise [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
-     * is used for equality comparisons. If `fromIndex` is negative, it's used as
-     * the offset from the end of `collection`.
+     * 检查 值 是否在 集合中，如果集合是字符串，那么检查 值 是否在字符串中。
+     * 其他情况用 [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero) 等值比较。
+     * 如果指定 `fromIndex` 是负数，从结尾开始检索。
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object|string} collection The collection to search.
-     * @param {*} value The value to search for.
-     * @param {number} [fromIndex=0] The index to search from.
+     * @param {Array|Object|string} collection 要检索的集合
+     * @param {*} value 要检索的值
+     * @param {number} [fromIndex=0] 要检索的 index 位置
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.reduce`.
-     * @returns {boolean} Returns `true` if `value` is found, else `false`.
+     * @returns {boolean} 如果找到 value 返回 ture， 否则返回 false。
+     * 
      * @example
      *
      * _.includes([1, 2, 3], 1);
@@ -7536,19 +7520,17 @@
     }
 
     /**
-     * Invokes the method at `path` of each element in `collection`, returning
-     * an array of the results of each invoked method. Any additional arguments
-     * are provided to each invoked method. If `methodName` is a function it's
-     * invoked for, and `this` bound to, each element in `collection`.
+     * 调用 `path` 的方法处理集合中的每一个元素，返回处理的数组。
+     * 如何附加的参数会传入到调用方法中。如果方法名是个函数，集合中的每个元素都会被调用到。
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Array|Function|string} path The path of the method to invoke or
-     *  the function invoked per iteration.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Array|Function|string} path 要调用的方法名 或者
+     *  这个函数会处理每一个元素
      * @param {...*} [args] The arguments to invoke each method with.
-     * @returns {Array} Returns the array of results.
+     * @returns {Array} 返回数组结果
      * @example
      *
      * _.invokeMap([[5, 1, 7], [3, 2, 1]], 'sort');
@@ -7571,17 +7553,15 @@
     });
 
     /**
-     * Creates an object composed of keys generated from the results of running
-     * each element of `collection` through `iteratee`. The corresponding value
-     * of each key is the last element responsible for generating the key. The
-     * iteratee is invoked with one argument: (value).
+     * 创建一个对象组成。key 是经 `iteratee` 处理的结果，value 是产生key的元素。
+     * iteratee 会传入1个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
-     * @returns {Object} Returns the composed aggregate object.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
+     * @returns {Object} 返回一个组成汇总的对象
      * @example
      *
      * var keyData = [
@@ -7602,25 +7582,24 @@
     });
 
     /**
-     * Creates an array of values by running each element in `collection` through
-     * `iteratee`. The iteratee is invoked with three arguments:
-     * (value, index|key, collection).
+     * 创建一个经过 `iteratee` 处理的集合中每一个元素的结果数组。
+     * iteratee 会传入3个参数：(value, index|key, collection)。
      *
-     * Many lodash methods are guarded to work as iteratees for methods like
-     * `_.every`, `_.filter`, `_.map`, `_.mapValues`, `_.reject`, and `_.some`.
+     * 有许多 lodash 的方法以 iteratees 的身份守护其工作，例如：
+     * `_.every`, `_.filter`, `_.map`, `_.mapValues`, `_.reject`, 以及 `_.some`
      *
-     * The guarded methods are:
+     * 被守护的有:
      * `ary`, `curry`, `curryRight`, `drop`, `dropRight`, `every`, `fill`,
      * `invert`, `parseInt`, `random`, `range`, `rangeRight`, `slice`, `some`,
      * `sortBy`, `take`, `takeRight`, `template`, `trim`, `trimEnd`, `trimStart`,
-     * and `words`
+     * 以及 `words`
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] The function invoked per iteration.
-     * @returns {Array} Returns the new mapped array.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
+     * @returns {Array} 返回映射后的新数组
      * @example
      *
      * function square(n) {
@@ -7631,7 +7610,7 @@
      * // => [3, 6]
      *
      * _.map({ 'a': 1, 'b': 2 }, square);
-     * // => [3, 6] (iteration order is not guaranteed)
+     * // => [3, 6] (无法保证遍历的顺序)
      *
      * var users = [
      *   { 'user': 'barney' },
@@ -7648,19 +7627,18 @@
     }
 
     /**
-     * This method is like `_.sortBy` except that it allows specifying the sort
-     * orders of the iteratees to sort by. If `orders` is unspecified, all values
-     * are sorted in ascending order. Otherwise, specify an order of "desc" for
-     * descending or "asc" for ascending sort order of corresponding values.
+     * 这个方法类似 `_.sortBy`，除了它允许以 iteratees 来指定排序规则。
+     * 如果没指定 `orders`，所有值以升序排序。
+     * 其他情况，指定 "desc" 降序，指定 "asc" 升序其对应值。
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function[]|Object[]|string[]} [iteratees=[_.identity]] The iteratees to sort by.
-     * @param {string[]} [orders] The sort orders of `iteratees`.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function[]|Object[]|string[]} [iteratees=[_.identity]] 通过 iteratees 决定排序
+     * @param {string[]} [orders] 决定 iteratees 的排序方法
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.reduce`.
-     * @returns {Array} Returns the new sorted array.
+     * @returns {Array} 排序排序后的新数组
      * @example
      *
      * var resolve = _.partial(_.map, _, _.values);
@@ -7672,7 +7650,7 @@
      *   { 'user': 'barney', 'age': 36 }
      * ];
      *
-     * // sort by `user` in ascending order and by `age` in descending order
+     * // 以 `user` 升序排序 再 以 `age` 降序排序。
      * resolve( _.orderBy(users, ['user', 'age'], ['asc', 'desc']) );
      * // => [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 42]]
      */
@@ -7699,8 +7677,8 @@
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
      * @returns {Array} Returns the array of grouped elements.
      * @example
      *
@@ -7753,8 +7731,8 @@
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
      * @param {*} [accumulator] The initial value.
      * @returns {*} Returns the accumulated value.
      * @example
@@ -7768,7 +7746,7 @@
      *   (result[value] || (result[value] = [])).push(key);
      *   return result;
      * }, {});
-     * // => { '1': ['a', 'c'], '2': ['b'] } (iteration order is not guaranteed)
+     * // => { '1': ['a', 'c'], '2': ['b'] } (无法保证遍历的顺序)
      */
     function reduce (collection, iteratee, accumulator) {
       var func               = isArray(collection) ? arrayReduce : baseReduce,
@@ -7784,8 +7762,8 @@
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
      * @param {*} [accumulator] The initial value.
      * @returns {*} Returns the accumulated value.
      * @example
@@ -7811,8 +7789,8 @@
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
      * @returns {Array} Returns the new filtered array.
      * @example
      *
@@ -7955,8 +7933,8 @@
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
+     * @param {Array|Object} collection 需要遍历的集合
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
      * @returns {boolean} Returns `true` if any element passes the predicate check, else `false`.
      * @example
@@ -7998,7 +7976,7 @@
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to iterate over.
+     * @param {Array|Object} collection 需要遍历的集合
      * @param {...(Function|Function[]|Object|Object[]|string|string[])} [iteratees=[_.identity]]
      *  The iteratees to sort by, specified individually or in arrays.
      * @returns {Array} Returns the new sorted array.
@@ -10558,7 +10536,7 @@
      * @memberOf _
      * @category Object
      * @param {Object} object The object to search.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
      * @returns {string|undefined} Returns the key of the matched element, else `undefined`.
      * @example
      *
@@ -10569,7 +10547,7 @@
      * };
      *
      * _.findKey(users, function(o) { return o.age < 40; });
-     * // => 'barney' (iteration order is not guaranteed)
+     * // => 'barney' (无法保证遍历的顺序)
      *
      * // 使用了 `_.matches` 的回调结果
      * _.findKey(users, { 'age': 1, 'active': true });
@@ -10595,7 +10573,7 @@
      * @memberOf _
      * @category Object
      * @param {Object} object The object to search.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per iteration.
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
      * @returns {string|undefined} Returns the key of the matched element, else `undefined`.
      * @example
      *
@@ -10634,7 +10612,7 @@
      * @memberOf _
      * @category Object
      * @param {Object} object The object to iterate over.
-     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Object} Returns `object`.
      * @example
      *
@@ -10648,7 +10626,7 @@
      * _.forIn(new Foo, function(value, key) {
      *   console.log(key);
      * });
-     * // => logs 'a', 'b', then 'c' (iteration order is not guaranteed)
+     * // => logs 'a', 'b', then 'c' (无法保证遍历的顺序)
      */
     function forIn (object, iteratee) {
       return object == null ? object : baseFor(object, toFunction(iteratee), keysIn);
@@ -10662,7 +10640,7 @@
      * @memberOf _
      * @category Object
      * @param {Object} object The object to iterate over.
-     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Object} Returns `object`.
      * @example
      *
@@ -10692,7 +10670,7 @@
      * @memberOf _
      * @category Object
      * @param {Object} object The object to iterate over.
-     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Object} Returns `object`.
      * @example
      *
@@ -10706,7 +10684,7 @@
      * _.forOwn(new Foo, function(value, key) {
      *   console.log(key);
      * });
-     * // => logs 'a' then 'b' (iteration order is not guaranteed)
+     * // => logs 'a' then 'b' (无法保证遍历的顺序)
      */
     function forOwn (object, iteratee) {
       return object && baseForOwn(object, toFunction(iteratee));
@@ -10720,7 +10698,7 @@
      * @memberOf _
      * @category Object
      * @param {Object} object The object to iterate over.
-     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Object} Returns `object`.
      * @example
      *
@@ -10959,7 +10937,7 @@
      * Foo.prototype.c = 3;
      *
      * _.keys(new Foo);
-     * // => ['a', 'b'] (iteration order is not guaranteed)
+     * // => ['a', 'b'] (无法保证遍历的顺序)
      *
      * _.keys('hi');
      * // => ['0', '1']
@@ -11002,7 +10980,7 @@
      * Foo.prototype.c = 3;
      *
      * _.keysIn(new Foo);
-     * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
+     * // => ['a', 'b', 'c'] (无法保证遍历的顺序)
      */
     function keysIn (object) {
       var index       = -1,
@@ -11032,7 +11010,7 @@
      * @memberOf _
      * @category Object
      * @param {Object} object The object to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] The function invoked per iteration.
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Object} Returns the new mapped object.
      * @example
      *
@@ -11060,7 +11038,7 @@
      * @memberOf _
      * @category Object
      * @param {Object} object The object to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] The function invoked per iteration.
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Object} Returns the new mapped object.
      * @example
      *
@@ -11070,11 +11048,11 @@
      * };
      *
      * _.mapValues(users, function(o) { return o.age; });
-     * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+     * // => { 'fred': 40, 'pebbles': 1 } (无法保证遍历的顺序)
      *
      * // 使用了 `_.property` 的回调结果
      * _.mapValues(users, 'age');
-     * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+     * // => { 'fred': 40, 'pebbles': 1 } (无法保证遍历的顺序)
      */
     function mapValues (object, iteratee) {
       var result = {};
@@ -11364,7 +11342,7 @@
      * Foo.prototype.c = 3;
      *
      * _.toPairs(new Foo);
-     * // => [['a', 1], ['b', 2]] (iteration order is not guaranteed)
+     * // => [['a', 1], ['b', 2]] (无法保证遍历的顺序)
      */
     function toPairs (object) {
       return baseToPairs(object, keys(object));
@@ -11388,7 +11366,7 @@
      * Foo.prototype.c = 3;
      *
      * _.toPairsIn(new Foo);
-     * // => [['a', 1], ['b', 2], ['c', 1]] (iteration order is not guaranteed)
+     * // => [['a', 1], ['b', 2], ['c', 1]] (无法保证遍历的顺序)
      */
     function toPairsIn (object) {
       return baseToPairs(object, keysIn(object));
@@ -11406,7 +11384,7 @@
      * @memberOf _
      * @category Object
      * @param {Array|Object} object The object to iterate over.
-     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
      * @param {*} [accumulator] The custom accumulator value.
      * @returns {*} Returns the accumulated value.
      * @example
@@ -11492,7 +11470,7 @@
      * Foo.prototype.c = 3;
      *
      * _.values(new Foo);
-     * // => [1, 2] (iteration order is not guaranteed)
+     * // => [1, 2] (无法保证遍历的顺序)
      *
      * _.values('hi');
      * // => ['h', 'i']
@@ -11521,7 +11499,7 @@
      * Foo.prototype.c = 3;
      *
      * _.valuesIn(new Foo);
-     * // => [1, 2, 3] (iteration order is not guaranteed)
+     * // => [1, 2, 3] (无法保证遍历的顺序)
      */
     function valuesIn (object) {
       return object == null ? baseValues(object, keysIn(object)) : [];
@@ -13445,7 +13423,7 @@
      * @memberOf _
      * @category Utility
      * @param {number} n The number of times to invoke `iteratee`.
-     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Array} Returns the array of results.
      * @example
      *
@@ -13620,13 +13598,13 @@
     /**
      * This method is like `_.max` except that it accepts `iteratee` which is
      * invoked for each element in `array` to generate the criterion by which
-     * the value is ranked. The iteratee is invoked with one argument: (value).
+     * the value is ranked. The iteratee 会传入1个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Math
      * @param {Array} array The array to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {*} Returns the maximum value.
      * @example
      *
@@ -13691,13 +13669,13 @@
     /**
      * This method is like `_.min` except that it accepts `iteratee` which is
      * invoked for each element in `array` to generate the criterion by which
-     * the value is ranked. The iteratee is invoked with one argument: (value).
+     * the value is ranked. The iteratee 会传入1个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Math
      * @param {Array} array The array to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {*} Returns the minimum value.
      * @example
      *
@@ -13788,13 +13766,13 @@
     /**
      * This method is like `_.sum` except that it accepts `iteratee` which is
      * invoked for each element in `array` to generate the value to be summed.
-     * The iteratee is invoked with one argument: (value).
+     * The iteratee 会传入1个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Math
      * @param {Array} array The array to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {number} Returns the sum.
      * @example
      *

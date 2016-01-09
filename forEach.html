@@ -392,39 +392,36 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>forEach <span class="aliases">each</span> <a class="fa-link" href="./forEach" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7438" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.foreach" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>forEach <span class="aliases">each</span> <a class="fa-link" href="./forEach" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7426" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.foreach" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.forEach(collection, [iteratee&#x3D;_.identity])</div>
 
-<div data-render-html="/forEach"><p>Iterates over elements of <code>collection</code> invoking <code>iteratee</code> for each element.
-The iteratee is invoked with three arguments: (value, index|key, collection).
-Iteratee functions may exit iteration early by explicitly returning <code>false</code>.
+<div data-render-html="/forEach"><p>调用 <code>iteratee</code> 遍历集合中的元素，iteratee 会传入3个参数：(value, index|key, collection)。
+如果显式的返回 false ，<code>iteratee</code> 会提前退出。
 <br>
 <br>
-<strong>注意:</strong> As with other &quot;Collections&quot; methods, objects with a &quot;length&quot; property
-are iterated like arrays. To avoid this behavior use <code>_.forIn</code> or <code>_.forOwn</code>
-for object iteration.</p>
+<strong>注意:</strong> 与其他集合方法一样，对象的 <code>length</code> 属性也会被遍历，避免这种情况，可以用 <code>_.forIn</code> 或者 <code>_.forOwn</code> 代替。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>The collection to iterate over. </p>
+<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>需要遍历的集合 </p>
 </div></li>
-<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function invoked per iteration. </p>
+<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>这个函数会处理每一个元素 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Array|Object)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns <code>collection</code>.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回集合</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token function" >_</span><span class="token punctuation" >(</span><span class="token punctuation" >[</span><span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >]</span><span class="token punctuation" >)</span><span class="token punctuation" >.</span><span class="token function" >forEach</span><span class="token punctuation" >(</span><span class="token keyword" >function</span><span class="token punctuation" >(</span>value<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
   console<span class="token punctuation" >.</span><span class="token function" >log</span><span class="token punctuation" >(</span>value<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => logs `1` then `2`</span>
+<span class="token comment" spellcheck="true">// => 输出 `1` 和 `2`</span>
 
 _<span class="token punctuation" >.</span><span class="token function" >forEach</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span> <span class="token string" >'a'</span><span class="token punctuation" >:</span> <span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token string" >'b'</span><span class="token punctuation" >:</span> <span class="token number" >2</span> <span class="token punctuation" >}</span><span class="token punctuation" >,</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>value<span class="token punctuation" >,</span> key<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
   console<span class="token punctuation" >.</span><span class="token function" >log</span><span class="token punctuation" >(</span>key<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => logs 'a' then 'b' (iteration order is not guaranteed)</span>
+<span class="token comment" spellcheck="true">// => 输出 'a' 和 'b' (不保证遍历的顺序)</span>
 </code></pre>
 </div>
 <div id="disqus_thread" style="margin-top:50px;"></div>

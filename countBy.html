@@ -392,24 +392,21 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>countBy <a class="fa-link" href="./countBy" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7253" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.countby" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>countBy <a class="fa-link" href="./countBy" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7250" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.countby" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.countBy(collection, [iteratee&#x3D;_.identity])</div>
 
-<div data-render-html="/countBy"><p>Creates an object composed of keys generated from the results of running
-each element of <code>collection</code> through <code>iteratee</code>. The corresponding value
-of each key is the number of times the key was returned by <code>iteratee</code>.
-The iteratee is invoked with one argument: (value).</p>
+<div data-render-html="/countBy"><p>创建一个组成对象，key是经过 <code>iteratee</code> 处理的集合的结果，value 是处理结果的次数。 <code>iteratee</code> 会传入一个参数：(value)。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>The collection to iterate over. </p>
+<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>需要遍历的集合 </p>
 </div></li>
-<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>这个函数会调用每一个元素 </p>
+<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>这个函数会处理每一个元素 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Object)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the composed aggregate object.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回一个组成汇总的对象</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >countBy</span><span class="token punctuation" >(</span><span class="token punctuation" >[</span><span class="token number" >6.1</span><span class="token punctuation" >,</span> <span class="token number" >4.2</span><span class="token punctuation" >,</span> <span class="token number" >6.3</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> Math<span class="token punctuation" >.</span>floor<span class="token punctuation" >)</span><span class="token punctuation" >;</span>

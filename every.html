@@ -392,23 +392,21 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>every <a class="fa-link" href="./every" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7291" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.every" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>every <a class="fa-link" href="./every" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7287" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.every" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.every(collection, [predicate&#x3D;_.identity])</div>
 
-<div data-render-html="/every"><p>Checks if <code>predicate</code> returns truthy for <strong>all</strong> elements of <code>collection</code>.
-Iteration is stopped once <code>predicate</code> returns falsey. The predicate is
-invoked with three arguments: (value, index|key, collection).</p>
+<div data-render-html="/every"><p>通过 <code>predicate</code> 检查集合中的元素是否都返回 真值，只要 <code>predicate</code> 返回一次假值，遍历就停止，并返回 false。<br><code>predicate</code> 会传入3个参数：(value, index|key, collection)</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>The collection to iterate over. </p>
+<li><span class="param-name">collection</span> <span class="param-type">(Array|Object)</span> <div data-render-html="/#synthetic"><p>需要遍历的集合 </p>
 </div></li>
-<li><span class="param-name">[predicate&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>The function invoked per iteration. </p>
+<li><span class="param-name">[predicate&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>这个函数会处理每一个元素 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(boolean)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns <code>true</code> if all elements pass the predicate check, else <code>false</code>.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回 true，如果所有元素经 predicate 检查都为真值，否则返回 false。</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >every</span><span class="token punctuation" >(</span><span class="token punctuation" >[</span><span class="token keyword" >true</span><span class="token punctuation" >,</span> <span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token keyword" >null</span><span class="token punctuation" >,</span> <span class="token string" >'yes'</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> Boolean<span class="token punctuation" >)</span><span class="token punctuation" >;</span>

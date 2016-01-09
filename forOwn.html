@@ -392,7 +392,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>forOwn <a class="fa-link" href="./forOwn" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L10711" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.forown" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>forOwn <a class="fa-link" href="./forOwn" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L10689" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.forown" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.forOwn(object, [iteratee&#x3D;_.identity])</div>
 
 <div data-render-html="/forOwn"><p>Iterates over own enumerable properties of an object invoking <code>iteratee</code>
@@ -405,7 +405,7 @@ explicitly returning <code>false</code>.</p>
     <ol>
 <li><span class="param-name">object</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>The object to iterate over. </p>
 </div></li>
-<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function invoked per iteration. </p>
+<li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>这个函数会处理每一个元素 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Object)</span></h3>
@@ -422,7 +422,7 @@ Foo<span class="token punctuation" >.</span>prototype<span class="token punctuat
 _<span class="token punctuation" >.</span><span class="token function" >forOwn</span><span class="token punctuation" >(</span><span class="token keyword" >new</span> <span class="token class-name" >Foo</span><span class="token punctuation" >,</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>value<span class="token punctuation" >,</span> key<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
   console<span class="token punctuation" >.</span><span class="token function" >log</span><span class="token punctuation" >(</span>key<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => logs 'a' then 'b' (iteration order is not guaranteed)</span>
+<span class="token comment" spellcheck="true">// => logs 'a' then 'b' (无法保证遍历的顺序)</span>
 </code></pre>
 </div>
 <div id="disqus_thread" style="margin-top:50px;"></div>
