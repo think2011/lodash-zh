@@ -392,7 +392,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>_ <a class="fa-link" href="./_" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L1491" title="View in source." target="github">source</a> </h2>
+        <div data-render-page="entry"><h2>_ <a class="fa-link" href="./_" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L1489" title="View in source." target="github">source</a> </h2>
 <div class="signature">_(value)</div>
 
 <div data-render-html="/_"><p>创建一个经 <code>lodash</code> 包装后的对象会启用隐式链。返回的数组、集合、方法相互之间能够链式调用。
@@ -405,9 +405,7 @@ var _hmt = _hmt || [];
 链式方法是惰性计算的，直到隐式或者显式调用了 <code>_#value</code> 才会执行计算。
 <br>
 <br>
-Lazy evaluation allows several methods to support shortcut fusion. Shortcut
-fusion is an optimization to merge iteratee calls; this avoids the creation
-of intermediate arrays and can greatly reduce the number of iteratee executions.
+惰性计算接受几种支持 shortcut fusion 的方法，shortcut fusion 是一种通过合并链式 iteratee 调用从而大大降低迭代的次数以提高执行性能的方式。
 Sections of a chain sequence qualify for shortcut fusion if the section is
 applied to an array of at least two hundred elements and any iteratees
 accept only one argument. The heuristic for whether a section qualifies
@@ -421,17 +419,39 @@ for shortcut fusion is subject to change.
 <br>
 <br>
 支持 <code>Array</code> 的方法:<br>
-<code>concat</code>, <code>join</code>, <code>pop</code>, <code>push</code>, <code>shift</code>, <code>sort</code>, <code>splice</code>, and <code>unshift</code>
+<code>concat</code>, <code>join</code>, <code>pop</code>, <code>push</code>, <code>shift</code>, <code>sort</code>, <code>splice</code>, 以及 <code>unshift</code>
 <br>
 <br>
 支持 <code>String</code> 的方法:<br>
-<code>replace</code> and <code>split</code>
+<code>replace</code> 以及 <code>split</code>
 <br>
 <br>
 支持 shortcut fusion 的方法:<br>
 <code>at</code>, <code>compact</code>, <code>drop</code>, <code>dropRight</code>, <code>dropWhile</code>, <code>filter</code>, <code>find</code>,
 <code>findLast</code>, <code>head</code>, <code>initial</code>, <code>last</code>, <code>map</code>, <code>reject</code>, <code>reverse</code>, <code>slice</code>,
-<code>tail</code>, <code>take</code>, <code>takeRight</code>, <code>takeRightWhile</code>, <code>takeWhile</code>, and <code>toArray</code>
+<code>tail</code>, <code>take</code>, <code>takeRight</code>, <code>takeRightWhile</code>, <code>takeWhile</code>, 以及 <code>toArray</code>
+<br>
+<br>
+默认不支持 链式调用 的方法:<br>
+<code>add</code>, <code>attempt</code>, <code>camelCase</code>, <code>capitalize</code>, <code>ceil</code>, <code>clamp</code>, <code>clone</code>,
+<code>cloneDeep</code>, <code>cloneDeepWith</code>, <code>cloneWith</code>, <code>deburr</code>, <code>endsWith</code>, <code>eq</code>,
+<code>escape</code>, <code>escapeRegExp</code>, <code>every</code>, <code>find</code>, <code>findIndex</code>, <code>findKey</code>,
+<code>findLast</code>, <code>findLastIndex</code>, <code>findLastKey</code>, <code>floor</code>, <code>get</code>, <code>gt</code>, <code>gte</code>,
+<code>has</code>, <code>hasIn</code>, <code>head</code>, <code>identity</code>, <code>includes</code>, <code>indexOf</code>, <code>inRange</code>,
+<code>invoke</code>, <code>isArguments</code>, <code>isArray</code>, <code>isArrayLike</code>, <code>isArrayLikeObject</code>,
+<code>isBoolean</code>, <code>isDate</code>, <code>isElement</code>, <code>isEmpty</code>, <code>isEqual</code>, <code>isEqualWith</code>,
+<code>isError</code>, <code>isFinite</code>, <code>isFunction</code>, <code>isInteger</code>, <code>isLength</code>, <code>isMatch</code>,
+<code>isMatchWith</code>, <code>isNaN</code>, <code>isNative</code>, <code>isNil</code>, <code>isNull</code>, <code>isNumber</code>,
+<code>isObject</code>, <code>isObjectLike</code>, <code>isPlainObject</code>, <code>isRegExp</code>, <code>isSafeInteger</code>,
+<code>isString</code>, <code>isUndefined</code>, <code>isTypedArray</code>, <code>join</code>, <code>kebabCase</code>, <code>last</code>,
+<code>lastIndexOf</code>, <code>lowerCase</code>, <code>lowerFirst</code>, <code>lt</code>, <code>lte</code>, <code>max</code>, <code>maxBy</code>,
+<code>mean</code>, <code>min</code>, <code>minBy</code>, <code>noConflict</code>, <code>noop</code>, <code>now</code>, <code>pad</code>, <code>padEnd</code>,
+<code>padStart</code>, <code>parseInt</code>, <code>pop</code>, <code>random</code>, <code>reduce</code>, <code>reduceRight</code>, <code>repeat</code>,
+<code>result</code>, <code>round</code>, <code>runInContext</code>, <code>sample</code>, <code>shift</code>, <code>size</code>, <code>snakeCase</code>,
+<code>some</code>, <code>sortedIndex</code>, <code>sortedIndexBy</code>, <code>sortedLastIndex</code>, <code>sortedLastIndexBy</code>,
+<code>startCase</code>, <code>startsWith</code>, <code>subtract</code>, <code>sum</code>, sumBy<code>,</code>template<code>,</code>times<code>,</code>toLower<code>,</code>toInteger<code>,</code>toLength<code>,</code>toNumber<code>,</code>toSafeInteger<code>, toString</code>,
+<code>toUpper</code>, <code>trim</code>, <code>trimEnd</code>, <code>trimStart</code>, <code>truncate</code>, <code>unescape</code>, <code>uniqueId</code>,
+<code>upperCase</code>, <code>upperFirst</code>, <code>value</code>, 以及 <code>words</code>
 <br>
 <br>
 支持 链式调用 的方法:<br>
@@ -443,10 +463,7 @@ for shortcut fusion is subject to change.
 <code>dropWhile</code>, <code>fill</code>, <code>filter</code>, <code>flatten</code>, <code>flattenDeep</code>, <code>flip</code>, <code>flow</code>,
 <code>flowRight</code>, <code>forEach</code>, <code>forEachRight</code>, <code>forIn</code>, <code>forInRight</code>, <code>forOwn</code>,
 <code>forOwnRight</code>, <code>fromPairs</code>, <code>functions</code>, <code>functionsIn</code>, <code>groupBy</code>, <code>initial</code>,
-<code>intersection</code>, <code>intersectionBy</code>, <code>intersectionWith</code>, invert<code>,</code>invokeMap<code>,</code>iteratee<code>,</code>keyBy<code>,</code>keys<code>,</code>keysIn<code>,</code>map<code>,</code>mapKeys<code>,</code>mapValues<code>,</code>matches<code>,</code>matchesProperty<code>,</code>memoize<code>,</code>merge<code>,</code>mergeWith<code>,</code>method<code>,</code>methodOf<code>,</code>mixin<code>,</code>negate<code>,</code>nthArg<code>,</code>omit<code>,</code>omitBy<code>,</code>once<code>,</code>orderBy<code>,</code>over<code>,</code>overArgs<code>,</code>overEvery<code>,</code>overSome<code>,</code>partial<code>,</code>partialRight<code>,</code>partition<code>,</code>pick<code>,</code>pickBy<code>,</code>plant<code>,</code>property<code>,</code>propertyOf<code>,</code>pull<code>,</code>pullAll<code>,</code>pullAllBy<code>,</code>pullAt<code>,</code>push<code>,</code>range<code>,</code>rangeRight<code>,</code>rearg<code>,</code>reject<code>,</code>remove<code>,</code>rest<code>,</code>reverse<code>,</code>sampleSize<code>,</code>set<code>,</code>setWith<code>,</code>shuffle<code>,</code>slice<code>,</code>sort<code>,</code>sortBy<code>,</code>splice<code>,</code>spread<code>,</code>tail<code>,</code>take<code>,</code>takeRight<code>,</code>takeRightWhile<code>,</code>takeWhile<code>,</code>tap<code>,</code>throttle<code>,</code>thru<code>,</code>toArray<code>,</code>toPairs<code>,</code>toPairsIn<code>,</code>toPath<code>,</code>toPlainObject<code>,</code>transform<code>,</code>unary<code>,</code>union<code>,</code>unionBy<code>,</code>unionWith<code>,</code>uniq<code>,</code>uniqBy<code>,</code>uniqWith<code>,</code>unset<code>,</code>unshift<code>,</code>unzip<code>,</code>unzipWith<code>,</code>values<code>,</code>valuesIn<code>,</code>without<code>,</code>wrap<code>,</code>xor<code>,</code>xorBy<code>,</code>xorWith<code>,</code>zip<code>,</code>zipObject<code>, and</code>zipWith<code>&lt;br&gt;
-&lt;br&gt;
-默认不支持 链式调用 的方法:&lt;br&gt;</code>add<code>,</code>attempt<code>,</code>camelCase<code>,</code>capitalize<code>,</code>ceil<code>,</code>clamp<code>,</code>clone<code>,</code>cloneDeep<code>,</code>cloneDeepWith<code>,</code>cloneWith<code>,</code>deburr<code>,</code>endsWith<code>,</code>eq<code>,</code>escape<code>,</code>escapeRegExp<code>,</code>every<code>,</code>find<code>,</code>findIndex<code>,</code>findKey<code>,</code>findLast<code>,</code>findLastIndex<code>,</code>findLastKey<code>,</code>floor<code>,</code>get<code>,</code>gt<code>,</code>gte<code>,</code>has<code>,</code>hasIn<code>,</code>head<code>,</code>identity<code>,</code>includes<code>,</code>indexOf<code>,</code>inRange<code>,</code>invoke<code>,</code>isArguments<code>,</code>isArray<code>,</code>isArrayLike<code>,</code>isArrayLikeObject<code>,</code>isBoolean<code>,</code>isDate<code>,</code>isElement<code>,</code>isEmpty<code>,</code>isEqual<code>,</code>isEqualWith<code>,</code>isError<code>,</code>isFinite<code>,</code>isFunction<code>,</code>isInteger<code>,</code>isLength<code>,</code>isMatch<code>,</code>isMatchWith<code>,</code>isNaN<code>,</code>isNative<code>,</code>isNil<code>,</code>isNull<code>,</code>isNumber<code>,</code>isObject<code>,</code>isObjectLike<code>,</code>isPlainObject<code>,</code>isRegExp<code>,</code>isSafeInteger<code>,</code>isString<code>,</code>isUndefined<code>,</code>isTypedArray<code>,</code>join<code>,</code>kebabCase<code>,</code>last<code>,</code>lastIndexOf<code>,</code>lowerCase<code>,</code>lowerFirst<code>,</code>lt<code>,</code>lte<code>,</code>max<code>,</code>maxBy<code>,</code>mean<code>,</code>min<code>,</code>minBy<code>,</code>noConflict<code>,</code>noop<code>,</code>now<code>,</code>pad<code>,</code>padEnd<code>,</code>padStart<code>,</code>parseInt<code>,</code>pop<code>,</code>random<code>,</code>reduce<code>,</code>reduceRight<code>,</code>repeat<code>,</code>result<code>,</code>round<code>,</code>runInContext<code>,</code>sample<code>,</code>shift<code>,</code>size<code>,</code>snakeCase<code>,</code>some<code>,</code>sortedIndex<code>,</code>sortedIndexBy<code>,</code>sortedLastIndex<code>,</code>sortedLastIndexBy<code>,</code>startCase<code>,</code>startsWith<code>,</code>subtract<code>,</code>sum<code>, sumBy</code>, <code>template</code>, <code>times</code>,
-<code>toLower</code>, <code>toInteger</code>, <code>toLength</code>, <code>toNumber</code>, <code>toSafeInteger</code>, toString<code>,</code>toUpper<code>,</code>trim<code>,</code>trimEnd<code>,</code>trimStart<code>,</code>truncate<code>,</code>unescape<code>,</code>uniqueId<code>,</code>upperCase<code>,</code>upperFirst<code>,</code>value<code>, and</code>words`</p>
+<code>intersection</code>, <code>intersectionBy</code>, <code>intersectionWith</code>, invert<code>,</code>invokeMap<code>,</code>iteratee<code>,</code>keyBy<code>,</code>keys<code>,</code>keysIn<code>,</code>map<code>,</code>mapKeys<code>,</code>mapValues<code>,</code>matches<code>,</code>matchesProperty<code>,</code>memoize<code>,</code>merge<code>,</code>mergeWith<code>,</code>method<code>,</code>methodOf<code>,</code>mixin<code>,</code>negate<code>,</code>nthArg<code>,</code>omit<code>,</code>omitBy<code>,</code>once<code>,</code>orderBy<code>,</code>over<code>,</code>overArgs<code>,</code>overEvery<code>,</code>overSome<code>,</code>partial<code>,</code>partialRight<code>,</code>partition<code>,</code>pick<code>,</code>pickBy<code>,</code>plant<code>,</code>property<code>,</code>propertyOf<code>,</code>pull<code>,</code>pullAll<code>,</code>pullAllBy<code>,</code>pullAt<code>,</code>push<code>,</code>range<code>,</code>rangeRight<code>,</code>rearg<code>,</code>reject<code>,</code>remove<code>,</code>rest<code>,</code>reverse<code>,</code>sampleSize<code>,</code>set<code>,</code>setWith<code>,</code>shuffle<code>,</code>slice<code>,</code>sort<code>,</code>sortBy<code>,</code>splice<code>,</code>spread<code>,</code>tail<code>,</code>take<code>,</code>takeRight<code>,</code>takeRightWhile<code>,</code>takeWhile<code>,</code>tap<code>,</code>throttle<code>,</code>thru<code>,</code>toArray<code>,</code>toPairs<code>,</code>toPairsIn<code>,</code>toPath<code>,</code>toPlainObject<code>,</code>transform<code>,</code>unary<code>,</code>union<code>,</code>unionBy<code>,</code>unionWith<code>,</code>uniq<code>,</code>uniqBy<code>,</code>uniqWith<code>,</code>unset<code>,</code>unshift<code>,</code>unzip<code>,</code>unzipWith<code>,</code>values<code>,</code>valuesIn<code>,</code>without<code>,</code>wrap<code>,</code>xor<code>,</code>xorBy<code>,</code>xorWith<code>,</code>zip<code>,</code>zipObject`, 以及 zipWith</p>
 </div>
 
 <h3>参数</h3>

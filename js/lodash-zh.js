@@ -1393,9 +1393,7 @@
      *
      * 链式方法是惰性计算的，直到隐式或者显式调用了 `_#value` 才会执行计算。
      *
-     * Lazy evaluation allows several methods to support shortcut fusion. Shortcut
-     * fusion is an optimization to merge iteratee calls; this avoids the creation
-     * of intermediate arrays and can greatly reduce the number of iteratee executions.
+     * 惰性计算接受几种支持 shortcut fusion 的方法，shortcut fusion 是一种通过合并链式 iteratee 调用从而大大降低迭代的次数以提高执行性能的方式。
      * Sections of a chain sequence qualify for shortcut fusion if the section is
      * applied to an array of at least two hundred elements and any iteratees
      * accept only one argument. The heuristic for whether a section qualifies
@@ -1406,16 +1404,38 @@
      * 除了 lodash 的自身方法，包装后的对象还支持  `Array` 的 `String` 的方法。
      *
      * 支持 `Array` 的方法:
-     * `concat`, `join`, `pop`, `push`, `shift`, `sort`, `splice`, and `unshift`
+     * `concat`, `join`, `pop`, `push`, `shift`, `sort`, `splice`, 以及 `unshift`
      *
      * 支持 `String` 的方法:
-     * `replace` and `split`
+     * `replace` 以及 `split`
      *
      * 支持 shortcut fusion 的方法:
      * `at`, `compact`, `drop`, `dropRight`, `dropWhile`, `filter`, `find`,
      * `findLast`, `head`, `initial`, `last`, `map`, `reject`, `reverse`, `slice`,
-     * `tail`, `take`, `takeRight`, `takeRightWhile`, `takeWhile`, and `toArray`
+     * `tail`, `take`, `takeRight`, `takeRightWhile`, `takeWhile`, 以及 `toArray`
      *
+     * 默认不支持 链式调用 的方法:
+     * `add`, `attempt`, `camelCase`, `capitalize`, `ceil`, `clamp`, `clone`,
+     * `cloneDeep`, `cloneDeepWith`, `cloneWith`, `deburr`, `endsWith`, `eq`,
+     * `escape`, `escapeRegExp`, `every`, `find`, `findIndex`, `findKey`,
+     * `findLast`, `findLastIndex`, `findLastKey`, `floor`, `get`, `gt`, `gte`,
+     * `has`, `hasIn`, `head`, `identity`, `includes`, `indexOf`, `inRange`,
+     * `invoke`, `isArguments`, `isArray`, `isArrayLike`, `isArrayLikeObject`,
+     * `isBoolean`, `isDate`, `isElement`, `isEmpty`, `isEqual`, `isEqualWith`,
+     * `isError`, `isFinite`, `isFunction`, `isInteger`, `isLength`, `isMatch`,
+     * `isMatchWith`, `isNaN`, `isNative`, `isNil`, `isNull`, `isNumber`,
+     * `isObject`, `isObjectLike`, `isPlainObject`, `isRegExp`, `isSafeInteger`,
+     * `isString`, `isUndefined`, `isTypedArray`, `join`, `kebabCase`, `last`,
+     * `lastIndexOf`, `lowerCase`, `lowerFirst`, `lt`, `lte`, `max`, `maxBy`,
+     * `mean`, `min`, `minBy`, `noConflict`, `noop`, `now`, `pad`, `padEnd`,
+     * `padStart`, `parseInt`, `pop`, `random`, `reduce`, `reduceRight`, `repeat`,
+     * `result`, `round`, `runInContext`, `sample`, `shift`, `size`, `snakeCase`,
+     * `some`, `sortedIndex`, `sortedIndexBy`, `sortedLastIndex`, `sortedLastIndexBy`,
+     * `startCase`, `startsWith`, `subtract`, `sum`, sumBy`, `template`, `times`,
+     * `toLower`, `toInteger`, `toLength`, `toNumber`, `toSafeInteger`, toString`,
+     * `toUpper`, `trim`, `trimEnd`, `trimStart`, `truncate`, `unescape`, `uniqueId`,
+     * `upperCase`, `upperFirst`, `value`, 以及 `words`
+     * 
      * 支持 链式调用 的方法:
      * `after`, `ary`, `assign`, `assignIn`, `assignInWith`, `assignWith`,
      * `at`, `before`, `bind`, `bindAll`, `bindKey`, `chain`, `chunk`, `commit`,
@@ -1438,30 +1458,8 @@
      * `toArray`, `toPairs`, `toPairsIn`, `toPath`, `toPlainObject`, `transform`,
      * `unary`, `union`, `unionBy`, `unionWith`, `uniq`, `uniqBy`, `uniqWith`,
      * `unset`, `unshift`, `unzip`, `unzipWith`, `values`, `valuesIn`, `without`,
-     * `wrap`, `xor`, `xorBy`, `xorWith`, `zip`, `zipObject`, and `zipWith`
-     *
-     * 默认不支持 链式调用 的方法:
-     * `add`, `attempt`, `camelCase`, `capitalize`, `ceil`, `clamp`, `clone`,
-     * `cloneDeep`, `cloneDeepWith`, `cloneWith`, `deburr`, `endsWith`, `eq`,
-     * `escape`, `escapeRegExp`, `every`, `find`, `findIndex`, `findKey`,
-     * `findLast`, `findLastIndex`, `findLastKey`, `floor`, `get`, `gt`, `gte`,
-     * `has`, `hasIn`, `head`, `identity`, `includes`, `indexOf`, `inRange`,
-     * `invoke`, `isArguments`, `isArray`, `isArrayLike`, `isArrayLikeObject`,
-     * `isBoolean`, `isDate`, `isElement`, `isEmpty`, `isEqual`, `isEqualWith`,
-     * `isError`, `isFinite`, `isFunction`, `isInteger`, `isLength`, `isMatch`,
-     * `isMatchWith`, `isNaN`, `isNative`, `isNil`, `isNull`, `isNumber`,
-     * `isObject`, `isObjectLike`, `isPlainObject`, `isRegExp`, `isSafeInteger`,
-     * `isString`, `isUndefined`, `isTypedArray`, `join`, `kebabCase`, `last`,
-     * `lastIndexOf`, `lowerCase`, `lowerFirst`, `lt`, `lte`, `max`, `maxBy`,
-     * `mean`, `min`, `minBy`, `noConflict`, `noop`, `now`, `pad`, `padEnd`,
-     * `padStart`, `parseInt`, `pop`, `random`, `reduce`, `reduceRight`, `repeat`,
-     * `result`, `round`, `runInContext`, `sample`, `shift`, `size`, `snakeCase`,
-     * `some`, `sortedIndex`, `sortedIndexBy`, `sortedLastIndex`, `sortedLastIndexBy`,
-     * `startCase`, `startsWith`, `subtract`, `sum`, sumBy`, `template`, `times`,
-     * `toLower`, `toInteger`, `toLength`, `toNumber`, `toSafeInteger`, toString`,
-     * `toUpper`, `trim`, `trimEnd`, `trimStart`, `truncate`, `unescape`, `uniqueId`,
-     * `upperCase`, `upperFirst`, `value`, and `words`
-     *
+     * `wrap`, `xor`, `xorBy`, `xorWith`, `zip`, `zipObject`, 以及 zipWith　　　　　
+ 
      * @name _
      * @constructor
      * @category Chain
@@ -6884,14 +6882,13 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a `lodash` object that wraps `value` with explicit method chaining enabled.
-     * The result of such method chaining must be unwrapped with `_#value`.
+     * 创建一个经 `lodash` 包装的对象以启用显式链模式，要解除链必须使用 `_#value` 方法。
      *
      * @static
      * @memberOf _
      * @category Chain
-     * @param {*} value The value to wrap.
-     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @param {*} value 要包装的值
+     * @returns {Object} 返回 `lodash` 包装的实例
      * @example
      *
      * var users = [
@@ -6917,17 +6914,15 @@
     }
 
     /**
-     * This method invokes `interceptor` and returns `value`. The interceptor is
-     * invoked with one argument; (value). The purpose of this method is to "tap into"
-     * a method chain in order to perform operations on intermediate results within
-     * the chain.
+     * 这个方法调用一个 `interceptor` 并返回 `value`。`interceptor` 传入一个参数：(value)
+     * 目的是 `进入` 链的中间以便执行操作。
      *
      * @static
      * @memberOf _
      * @category Chain
-     * @param {*} value The value to provide to `interceptor`.
-     * @param {Function} interceptor The function to invoke.
-     * @returns {*} Returns `value`.
+     * @param {*} value 提供给 `interceptor` 的值
+     * @param {Function} interceptor 调用函数
+     * @returns {*} 返回 `value`
      * @example
      *
      * _([1, 2, 3])
@@ -6944,14 +6939,14 @@
     }
 
     /**
-     * This method is like `_.tap` except that it returns the result of `interceptor`.
+     * 这个方法类似 `_.tap`， 除了它返回 `interceptor` 的返回结果
      *
      * @static
      * @memberOf _
      * @category Chain
-     * @param {*} value The value to provide to `interceptor`.
-     * @param {Function} interceptor The function to invoke.
-     * @returns {*} Returns the result of `interceptor`.
+     * @param {*} value 提供给 `interceptor` 的值
+     * @param {Function} interceptor 调用函数
+     * @returns {*} 返回 `interceptor` 的返回结果
      * @example
      *
      * _('  abc  ')
@@ -6968,14 +6963,14 @@
     }
 
     /**
-     * This method is the wrapper version of `_.at`.
+     * 这个方法是 `_.at` 的包装版本
      *
      * @name at
      * @memberOf _
      * @category Chain
-     * @param {...(string|string[])} [paths] The property paths of elements to pick,
-     *  specified individually or in arrays.
-     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @param {...(string|string[])} [paths] 要选择元素的属性路径，
+     * 单独指定或者数组
+     * @returns {Object} 返回 `lodash` 的包装实例
      * @example
      *
      * var object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
@@ -7009,12 +7004,12 @@
     });
 
     /**
-     * Enables explicit method chaining on the wrapper object.
+     * 开启包装对象的显式链。
      *
      * @name chain
      * @memberOf _
      * @category Chain
-     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @returns {Object} 返回 `lodash` 的包装实例
      * @example
      *
      * var users = [
@@ -7022,11 +7017,11 @@
      *   { 'user': 'fred',   'age': 40 }
      * ];
      *
-     * // without explicit chaining
+     * // 不启用显式链
      * _(users).head();
      * // => { 'user': 'barney', 'age': 36 }
      *
-     * // with explicit chaining
+     * // 启用显式链
      * _(users)
      *   .chain()
      *   .head()
@@ -7039,12 +7034,12 @@
     }
 
     /**
-     * Executes the chained sequence and returns the wrapped result.
+     * 执行链式队列并返回结果
      *
      * @name commit
      * @memberOf _
      * @category Chain
-     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @returns {Object} 返回 `lodash` 的包装实例
      * @example
      *
      * var array = [1, 2];
@@ -7068,13 +7063,13 @@
     }
 
     /**
-     * This method is the wrapper version of `_.flatMap`.
+     * 这个方法是 `_.flatMap` 的包装版本。
      *
      * @static
      * @memberOf _
      * @category Chain
-     * @param {Function|Object|string} [iteratee=_.identity] The function invoked per iteration.
-     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @returns {Object} 返回 `lodash` 的包装实例
      * @example
      *
      * function duplicate(n) {
@@ -7089,13 +7084,13 @@
     }
 
     /**
-     * Gets the next value on a wrapped object following the
-     * [iterator protocol](https://mdn.io/iteration_protocols#iterator).
+     * 获得包装对象的下一个值，遵循 [iterator 协议](https://mdn.io/iteration_protocols#iterator)。
+     * 
      *
      * @name next
      * @memberOf _
      * @category Chain
-     * @returns {Object} Returns the next iterator value.
+     * @returns {Object} 返回下一个 iterator 值
      * @example
      *
      * var wrapped = _([1, 2]);
@@ -7120,12 +7115,12 @@
     }
 
     /**
-     * Enables the wrapper to be iterable.
+     * 启用包装对象为 iterable。
      *
      * @name Symbol.iterator
      * @memberOf _
      * @category Chain
-     * @returns {Object} Returns the wrapper object.
+     * @returns {Object} 返回包装对象
      * @example
      *
      * var wrapped = _([1, 2]);
@@ -7141,13 +7136,13 @@
     }
 
     /**
-     * Creates a clone of the chained sequence planting `value` as the wrapped value.
+     * 创建一个链式队列的拷贝，传入的值作为链式队列的值。
      *
      * @name plant
      * @memberOf _
      * @category Chain
-     * @param {*} value The value to plant.
-     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @param {*} value 替换原值的值
+     * @returns {Object} 返回 `lodash` 的包装实例
      * @example
      *
      * function square(n) {
@@ -7191,7 +7186,7 @@
      * @name reverse
      * @memberOf _
      * @category Chain
-     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @returns {Object} 返回 `lodash` 的包装实例
      * @example
      *
      * var array = [1, 2, 3];
@@ -7217,13 +7212,13 @@
     }
 
     /**
-     * Executes the chained sequence to extract the unwrapped value.
+     * 执行链式队列并提取解链后的值
      *
      * @name value
      * @memberOf _
      * @alias run, toJSON, valueOf
      * @category Chain
-     * @returns {*} Returns the resolved unwrapped value.
+     * @returns {*} 返回解链后的值
      * @example
      *
      * _([1, 2, 3]).value();
