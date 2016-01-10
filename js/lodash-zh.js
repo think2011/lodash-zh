@@ -8301,52 +8301,47 @@
     }
 
     /**
-     * Creates a debounced function that delays invoking `func` until after `wait`
-     * milliseconds have elapsed since the last time the debounced function was
-     * invoked. The debounced function comes with a `cancel` method to cancel
-     * delayed `func` invocations and a `flush` method to immediately invoke them.
-     * Provide an options object to indicate whether `func` should be invoked on
-     * the leading and/or trailing edge of the `wait` timeout. The `func` is invoked
-     * with the last arguments provided to the debounced function. Subsequent calls
-     * to the debounced function return the result of the last `func` invocation.
+     * 创建一个防抖动函数。
+     * 该函数会在 `wait` 毫秒后调用 `func` 方法。
+     * 该函数提供一个 `cancel` 方法取消延迟的函数调用以及 `flush` 方法立即调用。
+     * 可以提供一个 `options ` 对象决定如何调用 `func` 方法，
+     * options.leading 与|或 options.trailing 决定延迟前后如何触发。
+     * `func` 会传入最后一次传入的参数给防抖动函数。
+     * 随后调用的防抖动函数返回是最后一次 `func` 调用的结果。
      *
-     * **注意:** If `leading` and `trailing` options are `true`, `func` is invoked
-     * on the trailing edge of the timeout only if the the debounced function is
-     * invoked more than once during the `wait` timeout.
+     * **注意:** 如果 `leading` 和 `trailing` 都设定为 true。
+     * 则 func 允许 trailing 方式调用的条件为: 在 wait 期间多次调用防抖方法。
      *
-     * See [David Corbacho's article](http://drupalmotion.com/article/debounce-and-throttle-visual-explanation)
-     * for details over the differences between `_.debounce` and `_.throttle`.
+     * 查看 [David Corbacho's article](http://drupalmotion.com/article/debounce-and-throttle-visual-explanation)
+     * 了解 `_.debounce` 与 `_.throttle` 的区别。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to debounce.
-     * @param {number} [wait=0] The number of milliseconds to delay.
-     * @param {Object} [options] The options object.
-     * @param {boolean} [options.leading=false] Specify invoking on the leading
-     *  edge of the timeout.
-     * @param {number} [options.maxWait] The maximum time `func` is allowed to be
-     *  delayed before it's invoked.
-     * @param {boolean} [options.trailing=true] Specify invoking on the trailing
-     *  edge of the timeout.
-     * @returns {Function} Returns the new debounced function.
+     * @param {Function} func 要防抖动的函数
+     * @param {number} [wait=0] 需要延迟的毫秒数
+     * @param {Object} [options] 选项对象
+     * @param {boolean} [options.leading=false] 指定调用在延迟开始前
+     * @param {number} [options.maxWait] 设置 `func` 允许被延迟的最大值
+     * @param {boolean} [options.trailing=true] 指定调用在延迟结束后
+     * @returns {Function} 返回具有防抖动功能的函数
      * @example
      *
-     * // avoid costly calculations while the window size is in flux
+     * // 避免窗口在变动时出现昂贵的计算开销。
      * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
      *
-     * // invoke `sendMail` when clicked, debouncing subsequent calls
+     * // 当点击时 `sendMail` 随后就被调用。
      * jQuery(element).on('click', _.debounce(sendMail, 300, {
      *   'leading': true,
      *   'trailing': false
      * }));
      *
-     * // ensure `batchLog` is invoked once after 1 second of debounced calls
+     * // 确保 `batchLog` 调用1次之后，1秒内会被触发。
      * var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
      * var source = new EventSource('/stream');
      * jQuery(source).on('message', debounced);
      *
-     * // cancel a trailing debounced invocation
+     * // 取消一个 trailing 的防抖动调用
      * jQuery(window).on('popstate', debounced.cancel);
      */
     function debounce (func, wait, options) {

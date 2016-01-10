@@ -392,62 +392,60 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>debounce <a class="fa-link" href="./debounce" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8352" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.debounce" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>debounce <a class="fa-link" href="./debounce" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8347" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.debounce" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.debounce(func, [wait&#x3D;0], [options])</div>
 
-<div data-render-html="/debounce"><p>Creates a debounced function that delays invoking <code>func</code> until after <code>wait</code>
-milliseconds have elapsed since the last time the debounced function was
-invoked. The debounced function comes with a <code>cancel</code> method to cancel
-delayed <code>func</code> invocations and a <code>flush</code> method to immediately invoke them.
-Provide an options object to indicate whether <code>func</code> should be invoked on
-the leading and/or trailing edge of the <code>wait</code> timeout. The <code>func</code> is invoked
-with the last arguments provided to the debounced function. Subsequent calls
-to the debounced function return the result of the last <code>func</code> invocation.
+<div data-render-html="/debounce"><p>创建一个防抖动函数。
+该函数会在 <code>wait</code> 毫秒后调用 <code>func</code> 方法。
+该函数提供一个 <code>cancel</code> 方法取消延迟的函数调用以及 <code>flush</code> 方法立即调用。
+可以提供一个 <code>options</code> 对象决定如何调用 <code>func</code> 方法，
+options.leading 与|或 options.trailing 决定延迟前后如何触发。
+<code>func</code> 会传入最后一次传入的参数给防抖动函数。
+随后调用的防抖动函数返回是最后一次 <code>func</code> 调用的结果。
 <br>
 <br>
-<strong>注意:</strong> If <code>leading</code> and <code>trailing</code> options are <code>true</code>, <code>func</code> is invoked
-on the trailing edge of the timeout only if the the debounced function is
-invoked more than once during the <code>wait</code> timeout.
+<strong>注意:</strong> 如果 <code>leading</code> 和 <code>trailing</code> 都设定为 true。
+则 func 允许 trailing 方式调用的条件为: 在 wait 期间多次调用防抖方法。
 <br>
 <br>
-See <a href="http://drupalmotion.com/article/debounce-and-throttle-visual-explanation" target="_blank">David Corbacho&#39;s article</a>
-for details over the differences between <code>_.debounce</code> and <code>_.throttle</code>.</p>
+查看 <a href="http://drupalmotion.com/article/debounce-and-throttle-visual-explanation" target="_blank">David Corbacho&#39;s article</a>
+了解 <code>_.debounce</code> 与 <code>_.throttle</code> 的区别。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function to debounce. </p>
+<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>要防抖动的函数 </p>
 </div></li>
-<li><span class="param-name">[wait&#x3D;0]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>The number of milliseconds to delay. </p>
+<li><span class="param-name">[wait&#x3D;0]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>需要延迟的毫秒数 </p>
 </div></li>
-<li><span class="param-name">[options]</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>The options object. </p>
+<li><span class="param-name">[options]</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>选项对象 </p>
 </div></li>
-<li><span class="param-name">[options.leading&#x3D;false]</span> <span class="param-type">(boolean)</span> <div data-render-html="/#synthetic"><p>Specify invoking on the leading edge of the timeout. </p>
+<li><span class="param-name">[options.leading&#x3D;false]</span> <span class="param-type">(boolean)</span> <div data-render-html="/#synthetic"><p>指定调用在延迟开始前 </p>
 </div></li>
-<li><span class="param-name">[options.maxWait]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>The maximum time <code>func</code> is allowed to be delayed before it&#39;s invoked. </p>
+<li><span class="param-name">[options.maxWait]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>设置 <code>func</code> 允许被延迟的最大值 </p>
 </div></li>
-<li><span class="param-name">[options.trailing&#x3D;true]</span> <span class="param-type">(boolean)</span> <div data-render-html="/#synthetic"><p>Specify invoking on the trailing edge of the timeout. </p>
+<li><span class="param-name">[options.trailing&#x3D;true]</span> <span class="param-type">(boolean)</span> <div data-render-html="/#synthetic"><p>指定调用在延迟结束后 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Function)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new debounced function.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回具有防抖动功能的函数</p>
 </div></div>
 <h3>示例</h3>
-    <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token comment" spellcheck="true">// avoid costly calculations while the window size is in flux</span>
+    <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token comment" spellcheck="true">// 避免窗口在变动时出现昂贵的计算开销。</span>
 <span class="token function" >jQuery</span><span class="token punctuation" >(</span>window<span class="token punctuation" >)</span><span class="token punctuation" >.</span><span class="token function" >on</span><span class="token punctuation" >(</span><span class="token string" >'resize'</span><span class="token punctuation" >,</span> _<span class="token punctuation" >.</span><span class="token function" >debounce</span><span class="token punctuation" >(</span>calculateLayout<span class="token punctuation" >,</span> <span class="token number" >150</span><span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 
-<span class="token comment" spellcheck="true">// invoke `sendMail` when clicked, debouncing subsequent calls</span>
+<span class="token comment" spellcheck="true">// 当点击时 `sendMail` 随后就被调用。</span>
 <span class="token function" >jQuery</span><span class="token punctuation" >(</span>element<span class="token punctuation" >)</span><span class="token punctuation" >.</span><span class="token function" >on</span><span class="token punctuation" >(</span><span class="token string" >'click'</span><span class="token punctuation" >,</span> _<span class="token punctuation" >.</span><span class="token function" >debounce</span><span class="token punctuation" >(</span>sendMail<span class="token punctuation" >,</span> <span class="token number" >300</span><span class="token punctuation" >,</span> <span class="token punctuation" >{</span>
   <span class="token string" >'leading'</span><span class="token punctuation" >:</span> <span class="token keyword" >true</span><span class="token punctuation" >,</span>
   <span class="token string" >'trailing'</span><span class="token punctuation" >:</span> <span class="token keyword" >false</span>
 <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 
-<span class="token comment" spellcheck="true">// ensure `batchLog` is invoked once after 1 second of debounced calls</span>
+<span class="token comment" spellcheck="true">// 确保 `batchLog` 调用1次之后，1秒内会被触发。</span>
 <span class="token keyword" >var</span> debounced <span class="token operator" >=</span> _<span class="token punctuation" >.</span><span class="token function" >debounce</span><span class="token punctuation" >(</span>batchLog<span class="token punctuation" >,</span> <span class="token number" >250</span><span class="token punctuation" >,</span> <span class="token punctuation" >{</span> <span class="token string" >'maxWait'</span><span class="token punctuation" >:</span> <span class="token number" >1000</span> <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token keyword" >var</span> source <span class="token operator" >=</span> <span class="token keyword" >new</span> <span class="token class-name" >EventSource</span><span class="token punctuation" >(</span><span class="token string" >'/stream'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token function" >jQuery</span><span class="token punctuation" >(</span>source<span class="token punctuation" >)</span><span class="token punctuation" >.</span><span class="token function" >on</span><span class="token punctuation" >(</span><span class="token string" >'message'</span><span class="token punctuation" >,</span> debounced<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 
-<span class="token comment" spellcheck="true">// cancel a trailing debounced invocation</span>
+<span class="token comment" spellcheck="true">// 取消一个 trailing 的防抖动调用</span>
 <span class="token function" >jQuery</span><span class="token punctuation" >(</span>window<span class="token punctuation" >)</span><span class="token punctuation" >.</span><span class="token function" >on</span><span class="token punctuation" >(</span><span class="token string" >'popstate'</span><span class="token punctuation" >,</span> debounced<span class="token punctuation" >.</span>cancel<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 </code></pre>
 </div>
