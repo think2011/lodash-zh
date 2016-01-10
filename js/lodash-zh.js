@@ -7627,7 +7627,7 @@
     }
 
     /**
-     * 这个方法类似 `_.sortBy`，除了它允许以 iteratees 来指定排序规则。
+     * 这个方法类似 `_.sortBy`，除了它允许指定 iteratees 结果如何排序。
      * 如果没指定 `orders`，所有值以升序排序。
      * 其他情况，指定 "desc" 降序，指定 "asc" 升序其对应值。
      *
@@ -7669,17 +7669,16 @@
     }
 
     /**
-     * Creates an array of elements split into two groups, the first of which
-     * contains elements `predicate` returns truthy for, while the second of which
-     * contains elements `predicate` returns falsey for. The predicate is invoked
-     * with three arguments: (value, index|key, collection).
+     * 创建一个拆分为两部分的数组。
+     * 第一部分是 `predicate` 检查为真值的，第二部分是 `predicate` 检查为假值的。
+     * predicate 会传入3个参数：(value, index|key, collection)。
      *
      * @static
      * @memberOf _
      * @category Collection
      * @param {Array|Object} collection 需要遍历的集合
      * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
-     * @returns {Array} Returns the array of grouped elements.
+     * @returns {Array} 返回分组元素的数组
      * @example
      *
      * var resolve = function(result) {
@@ -7714,27 +7713,25 @@
     });
 
     /**
-     * Reduces `collection` to a value which is the accumulated result of running
-     * each element in `collection` through `iteratee`, where each successive
-     * invocation is supplied the return value of the previous. If `accumulator`
-     * is not provided the first element of `collection` is used as the initial
-     * value. The iteratee is invoked with four arguments:
-     * (accumulator, value, index|key, collection).
+     * 通过 `iteratee` 遍历集合中的每个元素。
+     * 每次返回的值会作为下一次 `iteratee` 使用。
+     * 如果没有提供 `accumulator`，则集合中的第一个元素作为 `accumulator`。
+     * iteratee 会传入4个参数：(accumulator, value, index|key, collection)。
      *
-     * Many lodash methods are guarded to work as iteratees for methods like
-     * `_.reduce`, `_.reduceRight`, and `_.transform`.
+     * 有许多 lodash 的方法以 iteratees 的身份守护其工作，例如：
+     * `_.reduce`, `_.reduceRight`, 以及 `_.transform`.
      *
-     * The guarded methods are:
+     * 被守护的有:
      * `assign`, `defaults`, `defaultsDeep`, `includes`, `merge`, `orderBy`,
-     * and `sortBy`
+     * 以及 `sortBy`
      *
      * @static
      * @memberOf _
      * @category Collection
      * @param {Array|Object} collection 需要遍历的集合
      * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
-     * @param {*} [accumulator] The initial value.
-     * @returns {*} Returns the accumulated value.
+     * @param {*} [accumulator] 初始化的值
+     * @returns {*} 返回累加后的值
      * @example
      *
      * _.reduce([1, 2], function(sum, n) {
@@ -7756,16 +7753,15 @@
     }
 
     /**
-     * This method is like `_.reduce` except that it iterates over elements of
-     * `collection` from right to left.
+     * 这个方法类似 `_.reduce` ，除了它是从右到左遍历的。
      *
      * @static
      * @memberOf _
      * @category Collection
      * @param {Array|Object} collection 需要遍历的集合
      * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
-     * @param {*} [accumulator] The initial value.
-     * @returns {*} Returns the accumulated value.
+     * @param {*} [accumulator] 初始化的值
+     * @returns {*} 返回累加后的值
      * @example
      *
      * var array = [[0, 1], [2, 3], [4, 5]];
@@ -7783,15 +7779,14 @@
     }
 
     /**
-     * The opposite of `_.filter`; this method returns the elements of `collection`
-     * that `predicate` does **not** return truthy for.
+     * 反向版 `_.filter`，这个方法返回 `predicate` 检查为非真值的元素。
      *
      * @static
      * @memberOf _
      * @category Collection
      * @param {Array|Object} collection 需要遍历的集合
      * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
-     * @returns {Array} Returns the new filtered array.
+     * @returns {Array} 返回过滤后的新数组
      * @example
      *
      * var resolve = _.partial(_.map, _, 'user');
@@ -7825,13 +7820,13 @@
     }
 
     /**
-     * Gets a random element from `collection`.
+     * 从集合中随机获得元素
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to sample.
-     * @returns {*} Returns the random element.
+     * @param {Array|Object} collection 要取样的集合
+     * @returns {*} 返回随机元素
      * @example
      *
      * _.sample([1, 2, 3, 4]);
@@ -7845,14 +7840,15 @@
     }
 
     /**
+     * 获得从集合中随机获得 `N` 个元素
      * Gets `n` random elements from `collection`.
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to sample.
-     * @param {number} [n=0] The number of elements to sample.
-     * @returns {Array} Returns the random elements.
+     * @param {Array|Object} collection 要取样的集合
+     * @param {number} [n=0] 要取得的元素个数
+     * @returns {Array} 返回随机元素
      * @example
      *
      * _.sampleSize([1, 2, 3, 4], 2);
@@ -7877,14 +7873,14 @@
     }
 
     /**
-     * Creates an array of shuffled values, using a version of the
-     * [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher-Yates_shuffle).
+     * 创建一个被打乱元素的集合。
+     * 使用了 [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher-Yates_shuffle) 版本。
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to shuffle.
-     * @returns {Array} Returns the new shuffled array.
+     * @param {Array|Object} collection 要打乱的集合
+     * @returns {Array} 返回一个被打乱元素的新集合
      * @example
      *
      * _.shuffle([1, 2, 3, 4]);
@@ -7895,14 +7891,13 @@
     }
 
     /**
-     * Gets the size of `collection` by returning its length for array-like
-     * values or the number of own enumerable properties for objects.
+     * 返回集合的长度或对象中可枚举属性的个数。
      *
      * @static
      * @memberOf _
      * @category Collection
-     * @param {Array|Object} collection The collection to inspect.
-     * @returns {number} Returns the collection size.
+     * @param {Array|Object} collection 待处理的集合
+     * @returns {number} 返回集合的大小
      * @example
      *
      * _.size([1, 2, 3]);
@@ -7926,9 +7921,8 @@
     }
 
     /**
-     * Checks if `predicate` returns truthy for **any** element of `collection`.
-     * Iteration is stopped once `predicate` returns truthy. The predicate is
-     * invoked with three arguments: (value, index|key, collection).
+     * 通过 predicate 检查集合中的元素是否存在任意真值的元素，只要 predicate 返回一次真值，遍历就停止，并返回 true。
+     * predicate 会传入3个参数：(value, index|key, collection)。
      *
      * @static
      * @memberOf _
@@ -7936,7 +7930,7 @@
      * @param {Array|Object} collection 需要遍历的集合
      * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {boolean} Returns `true` if any element passes the predicate check, else `false`.
+     * @returns {boolean} 返回 true，如果任意元素经 predicate 检查都为真值，否则返回 false。
      * @example
      *
      * _.some([null, 0, 'yes', false], Boolean);
@@ -7968,18 +7962,18 @@
     }
 
     /**
-     * Creates an array of elements, sorted in ascending order by the results of
-     * running each element in a collection through each iteratee. This method
-     * performs a stable sort, that is, it preserves the original sort order of
-     * equal elements. The iteratees are invoked with one argument: (value).
+     * 创建一个元素数组。
+     * 以 iteratee 处理的结果升序排序。
+     * 这个方法执行稳定排序，也就是说相同元素会保持原始排序。
+     * iteratees 会传入1个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Collection
      * @param {Array|Object} collection 需要遍历的集合
      * @param {...(Function|Function[]|Object|Object[]|string|string[])} [iteratees=[_.identity]]
-     *  The iteratees to sort by, specified individually or in arrays.
-     * @returns {Array} Returns the new sorted array.
+     *  这个函数决定排序
+     * @returns {Array} 返回排序后的数组
      * @example
      *
      * var resolve = _.partial(_.map, _, _.values);
@@ -8018,20 +8012,19 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Gets the timestamp of the number of milliseconds that have elapsed since
-     * the Unix epoch (1 January 1970 00:00:00 UTC).
+     * 获得 Unix 纪元(1970 1月1日 00:00:00 UTC) 直到现在的毫秒数。
      *
      * @static
      * @memberOf _
      * @type Function
      * @category Date
-     * @returns {number} Returns the timestamp.
+     * @returns {number} 返回时间戳
      * @example
      *
      * _.defer(function(stamp) {
      *   console.log(_.now() - stamp);
      * }, _.now());
-     * // => logs the number of milliseconds it took for the deferred function to be invoked
+     * // => 记录延迟函数调用的毫秒数
      */
     var now = Date.now;
 

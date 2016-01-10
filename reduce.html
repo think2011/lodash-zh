@@ -392,24 +392,22 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>reduce <a class="fa-link" href="./reduce" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7751" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.reduce" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>reduce <a class="fa-link" href="./reduce" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L7748" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.reduce" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.reduce(collection, [iteratee&#x3D;_.identity], [accumulator])</div>
 
-<div data-render-html="/reduce"><p>Reduces <code>collection</code> to a value which is the accumulated result of running
-each element in <code>collection</code> through <code>iteratee</code>, where each successive
-invocation is supplied the return value of the previous. If <code>accumulator</code>
-is not provided the first element of <code>collection</code> is used as the initial
-value. The iteratee is invoked with four arguments:<br>
-(accumulator, value, index|key, collection).
+<div data-render-html="/reduce"><p>通过 <code>iteratee</code> 遍历集合中的每个元素。
+每次返回的值会作为下一次 <code>iteratee</code> 使用。
+如果没有提供 <code>accumulator</code>，则集合中的第一个元素作为 <code>accumulator</code>。
+iteratee 会传入4个参数：(accumulator, value, index|key, collection)。
 <br>
 <br>
-Many lodash methods are guarded to work as iteratees for methods like
-<code>_.reduce</code>, <code>_.reduceRight</code>, and <code>_.transform</code>.
+有许多 lodash 的方法以 iteratees 的身份守护其工作，例如：
+<code>_.reduce</code>, <code>_.reduceRight</code>, 以及 <code>_.transform</code>.
 <br>
 <br>
-The guarded methods are:<br>
+被守护的有:<br>
 <code>assign</code>, <code>defaults</code>, <code>defaultsDeep</code>, <code>includes</code>, <code>merge</code>, <code>orderBy</code>,
-and <code>sortBy</code></p>
+以及 <code>sortBy</code></p>
 </div>
 
 <h3>参数</h3>
@@ -418,11 +416,11 @@ and <code>sortBy</code></p>
 </div></li>
 <li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>这个函数会处理每一个元素 </p>
 </div></li>
-<li><span class="param-name">[accumulator]</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>The initial value. </p>
+<li><span class="param-name">[accumulator]</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>初始化的值 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(*)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the accumulated value.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回累加后的值</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >reduce</span><span class="token punctuation" >(</span><span class="token punctuation" >[</span><span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>sum<span class="token punctuation" >,</span> n<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
