@@ -392,27 +392,27 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>before <a class="fa-link" href="./before" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8106" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.before" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>before <a class="fa-link" href="./before" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8105" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.before" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.before(n, func)</div>
 
-<div data-render-html="/before"><p>Creates a function that invokes <code>func</code>, with the <code>this</code> binding and arguments
-of the created function, while it&#39;s called less than <code>n</code> times. Subsequent
-calls to the created function return the result of the last <code>func</code> invocation.</p>
+<div data-render-html="/before"><p>创建一个调用 <code>func</code> 的函数。
+调用次数不超过 <code>N</code> 次。
+之后再调用这个函数，将返回最后一个调用的结果。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">n</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>The number of calls at which <code>func</code> is no longer invoked. </p>
+<li><span class="param-name">n</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>超过多少次不再调用 <code>func</code> </p>
 </div></li>
-<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function to restrict. </p>
+<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>指定的触发的函数 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Function)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new restricted function.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回限定的函数</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token function" >jQuery</span><span class="token punctuation" >(</span>element<span class="token punctuation" >)</span><span class="token punctuation" >.</span><span class="token function" >on</span><span class="token punctuation" >(</span><span class="token string" >'click'</span><span class="token punctuation" >,</span> _<span class="token punctuation" >.</span><span class="token function" >before</span><span class="token punctuation" >(</span><span class="token number" >5</span><span class="token punctuation" >,</span> addContactToList<span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => allows adding up to 4 contacts to the list</span>
+<span class="token comment" spellcheck="true">// => 最多允许添加4个联系人到列表里</span>
 </code></pre>
 </div>
 <div id="disqus_thread" style="margin-top:50px;"></div>
@@ -424,9 +424,14 @@ calls to the created function return the result of the last <code>func</code> in
 /*
 var disqus_config = function () {
 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = PAGE_IDENTIFIER; // Repla<p></p>ce PAGE_IDENTIFIER with your page's unique identifier variable
 };
 */
+
+var disqus_config = function () {
+this.page.identifier = 'before';
+};
+
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
 

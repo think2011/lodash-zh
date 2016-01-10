@@ -8031,15 +8031,15 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * The opposite of `_.before`; this method creates a function that invokes
-     * `func` once it's called `n` or more times.
+     * 反向版 `_.before`。
+     * 这个方法创建一个新函数，当调用 `N` 次或者多次之后将触发 `func` 方法。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {number} n The number of calls before `func` is invoked.
-     * @param {Function} func The function to restrict.
-     * @returns {Function} Returns the new restricted function.
+     * @param {number} n `func` 方法应该在调用多少次后才执行
+     * @param {Function} func 指定的触发方法
+     * @returns {Function} 返回限定的函数
      * @example
      *
      * var saves = ['profile', 'settings'];
@@ -8051,7 +8051,7 @@
      * _.forEach(saves, function(type) {
      *   asyncSave({ 'type': type, 'complete': done });
      * });
-     * // => logs 'done saving!' after the two async saves have completed
+     * // => 2次 `asyncSave`之后，输出 'done saving!'。
      */
     function after (n, func) {
       if (typeof func != 'function') {
@@ -8066,16 +8066,15 @@
     }
 
     /**
-     * Creates a function that accepts up to `n` arguments, ignoring any
-     * additional arguments.
+     * 创建一个最多接受 `N` 个参数，忽略多余参数的方法。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to cap arguments for.
-     * @param {number} [n=func.length] The arity cap.
+     * @param {Function} func 需要被限制参数个数的函数
+     * @param {number} [n=func.length] 限制的参数数量
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {Function} Returns the new function.
+     * @returns {Function} 返回新的函数
      * @example
      *
      * _.map(['6', '8', '10'], _.ary(parseInt, 1));
@@ -8088,20 +8087,20 @@
     }
 
     /**
-     * Creates a function that invokes `func`, with the `this` binding and arguments
-     * of the created function, while it's called less than `n` times. Subsequent
-     * calls to the created function return the result of the last `func` invocation.
-     *
+     * 创建一个调用 `func` 的函数。
+     * 调用次数不超过 `N` 次。
+     * 之后再调用这个函数，将返回最后一个调用的结果。
+     * 
      * @static
      * @memberOf _
      * @category Function
-     * @param {number} n The number of calls at which `func` is no longer invoked.
-     * @param {Function} func The function to restrict.
-     * @returns {Function} Returns the new restricted function.
+     * @param {number} n 超过多少次不再调用 `func`
+     * @param {Function} func 指定的触发的函数
+     * @returns {Function} 返回限定的函数
      * @example
      *
      * jQuery(element).on('click', _.before(5, addContactToList));
-     * // => allows adding up to 4 contacts to the list
+     * // => 最多允许添加4个联系人到列表里
      */
     function before (n, func) {
       var result;
@@ -8121,23 +8120,20 @@
     }
 
     /**
-     * Creates a function that invokes `func` with the `this` binding of `thisArg`
-     * and prepends any additional `_.bind` arguments to those provided to the
-     * bound function.
+     * 创建一个函数 `func`，这个函数的 `this` 会被绑定在 `thisArg`。
+     * 并且任何附加在 `_.bind` 的参数会被传入到这个绑定函数上。
      *
-     * The `_.bind.placeholder` value, which defaults to `_` in monolithic builds,
-     * may be used as a placeholder for partially applied arguments.
+     * 这个 `_.bind.placeholder` 的值，默认是以 `_` 作为附加部分参数的占位符。
      *
-     * **注意:** Unlike native `Function#bind` this method doesn't set the "length"
-     * property of bound functions.
+     * **注意:** 不同于原生的 Function#bind，这个方法不会设置绑定函数的 length 属性。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to bind.
-     * @param {*} thisArg The `this` binding of `func`.
-     * @param {...*} [partials] The arguments to be partially applied.
-     * @returns {Function} Returns the new bound function.
+     * @param {Function} func 要绑定的函数
+     * @param {*} thisArg 这个 `this` 会被绑定给 `func`。
+     * @param {...*} [partials] 附加的部分参数
+     * @returns {Function} 返回新的绑定函数
      * @example
      *
      * var greet = function(greeting, punctuation) {
@@ -8150,7 +8146,7 @@
      * bound('!');
      * // => 'hi fred!'
      *
-     * // using placeholders
+     * // 使用了占位符
      * var bound = _.bind(greet, object, _, '!');
      * bound('hi');
      * // => 'hi fred!'
@@ -8165,24 +8161,23 @@
     });
 
     /**
-     * Creates a function that invokes the method at `object[key]` and prepends
-     * any additional `_.bindKey` arguments to those provided to the bound function.
+     * 创建一个函数。
+     * 该方法绑定 `object[key]` 的方法。
+     * 任何附加在 `_.bindKey` 的参数会预设到该绑定函数上。
      *
-     * This method differs from `_.bind` by allowing bound functions to reference
-     * methods that may be redefined or don't yet exist.
-     * See [Peter Michaux's article](http://peter.michaux.ca/articles/lazy-function-definition-pattern)
-     * for more details.
+     * 这个方法与 `_.bind` 的不同之处在于允许重写绑定函数即使它还不存在。
+     * 浏览 [Peter Michaux's article](http://peter.michaux.ca/articles/lazy-function-definition-pattern)
+     * 了解更多详情。
      *
-     * The `_.bindKey.placeholder` value, which defaults to `_` in monolithic
-     * builds, may be used as a placeholder for partially applied arguments.
+     * 这个 `_.bindKey.placeholder` 的值，默认是以 `_` 作为附加部分参数的占位符。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Object} object The object to invoke the method on.
-     * @param {string} key The key of the method.
-     * @param {...*} [partials] The arguments to be partially applied.
-     * @returns {Function} Returns the new bound function.
+     * @param {Object} object 需要绑定函数的对象
+     * @param {string} key 需要绑定函数对象的键
+     * @param {...*} [partials] 附加的部分参数
+     * @returns {Function} 返回新的绑定函数
      * @example
      *
      * var object = {
@@ -8203,7 +8198,7 @@
      * bound('!');
      * // => 'hiya fred!'
      *
-     * // using placeholders
+     * // 使用了占位符
      * var bound = _.bindKey(object, 'greet', _, '!');
      * bound('hi');
      * // => 'hiya fred!'
@@ -8218,24 +8213,22 @@
     });
 
     /**
-     * Creates a function that accepts arguments of `func` and either invokes
-     * `func` returning its result, if at least `arity` number of arguments have
-     * been provided, or returns a function that accepts the remaining `func`
-     * arguments, and so on. The arity of `func` may be specified if `func.length`
-     * is not sufficient.
+     * 创建一个函数，该函数接收一个或多个 func 的参数。
+     * 当该函数被调用时,如果 func 所需要传递的所有参数都被提供，则直接返回 func 所执行的结果。
+     * 否则继续返回该函数并等待接收剩余的参数。
+     * 可以使用 func.length 强制需要累积的参数个数。
      *
-     * The `_.curry.placeholder` value, which defaults to `_` in monolithic builds,
-     * may be used as a placeholder for provided arguments.
+     * 这个 `_.curry.placeholder` 的值，默认是以 `_` 作为附加部分参数的占位符。
      *
-     * **注意:** This method doesn't set the "length" property of curried functions.
+     * **注意:** 这个方法不会设置 "length" 到 curried 函数上。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to curry.
-     * @param {number} [arity=func.length] The arity of `func`.
+     * @param {Function} func 需要 curry 的函数
+     * @param {number} [arity=func.length] 需要提供给 `func` 的参数数量
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {Function} Returns the new curried function.
+     * @returns {Function} 返回 curry 后的函数
      * @example
      *
      * var abc = function(a, b, c) {
@@ -8253,7 +8246,7 @@
      * curried(1, 2, 3);
      * // => [1, 2, 3]
      *
-     * // using placeholders
+     * // 使用了占位符
      * curried(1)(_, 3)(2);
      * // => [1, 2, 3]
      */
@@ -8265,21 +8258,20 @@
     }
 
     /**
-     * This method is like `_.curry` except that arguments are applied to `func`
-     * in the manner of `_.partialRight` instead of `_.partial`.
+     * 这个方法类似 `_.curry`。
+     * 除了它接受参数的方式用 `_.partialRight` 代替了 `_.partial`。
      *
-     * The `_.curryRight.placeholder` value, which defaults to `_` in monolithic
-     * builds, may be used as a placeholder for provided arguments.
+     * 这个 `_.curry.placeholder` 的值，默认是以 `_` 作为附加部分参数的占位符。
      *
-     * **注意:** This method doesn't set the "length" property of curried functions.
+     * **注意:** 这个方法不会设置 "length" 到 curried 函数上。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to curry.
-     * @param {number} [arity=func.length] The arity of `func`.
+     * @param {Function} func 需要 curry 的函数
+     * @param {number} [arity=func.length] 需要提供给 `func` 的参数数量
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {Function} Returns the new curried function.
+     * @returns {Function} 返回 curry 后的函数
      * @example
      *
      * var abc = function(a, b, c) {
@@ -8297,7 +8289,7 @@
      * curried(1, 2, 3);
      * // => [1, 2, 3]
      *
-     * // using placeholders
+     * // 使用了占位符
      * curried(3)(1, _)(2);
      * // => [1, 2, 3]
      */
@@ -8635,7 +8627,7 @@
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to restrict.
+     * @param {Function} func 指定的触发的函数
      * @returns {Function} Returns the new restricted function.
      * @example
      *
@@ -8721,7 +8713,7 @@
      * sayHelloTo('fred');
      * // => 'hello fred'
      *
-     * // using placeholders
+     * // 使用了占位符
      * var greetFred = _.partial(greet, _, 'fred');
      * greetFred('hi');
      * // => 'hi fred'
@@ -8757,7 +8749,7 @@
      * greetFred('hi');
      * // => 'hi fred'
      *
-     * // using placeholders
+     * // 使用了占位符
      * var sayHelloTo = _.partialRight(greet, 'hello', _);
      * sayHelloTo('fred');
      * // => 'hello fred'

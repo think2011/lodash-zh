@@ -392,7 +392,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>set <a class="fa-link" href="./set" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L11292" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.set" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>set <a class="fa-link" href="./set" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L11284" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.set" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.set(object, path, value)</div>
 
 <div data-render-html="/set"><p>Sets the value at <code>path</code> of <code>object</code>. If a portion of <code>path</code> doesn&#39;t exist
@@ -434,9 +434,14 @@ console<span class="token punctuation" >.</span><span class="token function" >lo
 /*
 var disqus_config = function () {
 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = PAGE_IDENTIFIER; // Repla<p></p>ce PAGE_IDENTIFIER with your page's unique identifier variable
 };
 */
+
+var disqus_config = function () {
+this.page.identifier = 'set';
+};
+
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
 

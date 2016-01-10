@@ -392,7 +392,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>attempt <a class="fa-link" href="./attempt" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L12729" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.attempt" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>attempt <a class="fa-link" href="./attempt" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L12721" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.attempt" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.attempt(func)</div>
 
 <div data-render-html="/attempt"><p>Attempts to invoke <code>func</code>, returning either the result or the caught error
@@ -427,9 +427,14 @@ object. Any additional arguments are provided to <code>func</code> when it&#39;s
 /*
 var disqus_config = function () {
 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = PAGE_IDENTIFIER; // Repla<p></p>ce PAGE_IDENTIFIER with your page's unique identifier variable
 };
 */
+
+var disqus_config = function () {
+this.page.identifier = 'attempt';
+};
+
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
 

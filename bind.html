@@ -392,33 +392,30 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>bind <a class="fa-link" href="./bind" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8158" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.bind" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>bind <a class="fa-link" href="./bind" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8154" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.bind" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.bind(func, thisArg, [partials])</div>
 
-<div data-render-html="/bind"><p>Creates a function that invokes <code>func</code> with the <code>this</code> binding of <code>thisArg</code>
-and prepends any additional <code>_.bind</code> arguments to those provided to the
-bound function.
+<div data-render-html="/bind"><p>创建一个函数 <code>func</code>，这个函数的 <code>this</code> 会被绑定在 <code>thisArg</code>。
+并且任何附加在 <code>_.bind</code> 的参数会被传入到这个绑定函数上。
 <br>
 <br>
-The <code>_.bind.placeholder</code> value, which defaults to <code>_</code> in monolithic builds,
-may be used as a placeholder for partially applied arguments.
+这个 <code>_.bind.placeholder</code> 的值，默认是以 <code>_</code> 作为附加部分参数的占位符。
 <br>
 <br>
-<strong>注意:</strong> Unlike native <code>Function#bind</code> this method doesn&#39;t set the &quot;length&quot;
-property of bound functions.</p>
+<strong>注意:</strong> 不同于原生的 Function#bind，这个方法不会设置绑定函数的 length 属性。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function to bind. </p>
+<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>要绑定的函数 </p>
 </div></li>
-<li><span class="param-name">thisArg</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>The <code>this</code> binding of <code>func</code>. </p>
+<li><span class="param-name">thisArg</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>这个 <code>this</code> 会被绑定给 <code>func</code>。 </p>
 </div></li>
-<li><span class="param-name">[partials]</span> <span class="param-type">(...*)</span> <div data-render-html="/#synthetic"><p>The arguments to be partially applied. </p>
+<li><span class="param-name">[partials]</span> <span class="param-type">(...*)</span> <div data-render-html="/#synthetic"><p>附加的部分参数 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Function)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new bound function.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回新的绑定函数</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> greet <span class="token operator" >=</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>greeting<span class="token punctuation" >,</span> punctuation<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
@@ -431,7 +428,7 @@ property of bound functions.</p>
 <span class="token function" >bound</span><span class="token punctuation" >(</span><span class="token string" >'!'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => 'hi fred!'</span>
 
-<span class="token comment" spellcheck="true">// using placeholders</span>
+<span class="token comment" spellcheck="true">// 使用了占位符</span>
 <span class="token keyword" >var</span> bound <span class="token operator" >=</span> _<span class="token punctuation" >.</span><span class="token function" >bind</span><span class="token punctuation" >(</span>greet<span class="token punctuation" >,</span> object<span class="token punctuation" >,</span> _<span class="token punctuation" >,</span> <span class="token string" >'!'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token function" >bound</span><span class="token punctuation" >(</span><span class="token string" >'hi'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => 'hi fred!'</span>
@@ -446,9 +443,14 @@ property of bound functions.</p>
 /*
 var disqus_config = function () {
 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = PAGE_IDENTIFIER; // Repla<p></p>ce PAGE_IDENTIFIER with your page's unique identifier variable
 };
 */
+
+var disqus_config = function () {
+this.page.identifier = 'bind';
+};
+
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
 

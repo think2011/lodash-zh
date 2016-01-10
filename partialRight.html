@@ -392,7 +392,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>partialRight <a class="fa-link" href="./partialRight" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8765" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.partialright" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>partialRight <a class="fa-link" href="./partialRight" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8757" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.partialright" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.partialRight(func, [partials])</div>
 
 <div data-render-html="/partialRight"><p>This method is like <code>_.partial</code> except that partially applied arguments
@@ -426,7 +426,7 @@ applied functions.</p>
 <span class="token function" >greetFred</span><span class="token punctuation" >(</span><span class="token string" >'hi'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => 'hi fred'</span>
 
-<span class="token comment" spellcheck="true">// using placeholders</span>
+<span class="token comment" spellcheck="true">// 使用了占位符</span>
 <span class="token keyword" >var</span> sayHelloTo <span class="token operator" >=</span> _<span class="token punctuation" >.</span><span class="token function" >partialRight</span><span class="token punctuation" >(</span>greet<span class="token punctuation" >,</span> <span class="token string" >'hello'</span><span class="token punctuation" >,</span> _<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token function" >sayHelloTo</span><span class="token punctuation" >(</span><span class="token string" >'fred'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => 'hello fred'</span>
@@ -441,9 +441,14 @@ applied functions.</p>
 /*
 var disqus_config = function () {
 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = PAGE_IDENTIFIER; // Repla<p></p>ce PAGE_IDENTIFIER with your page's unique identifier variable
 };
 */
+
+var disqus_config = function () {
+this.page.identifier = 'partialRight';
+};
+
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
 

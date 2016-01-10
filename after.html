@@ -395,19 +395,19 @@ var _hmt = _hmt || [];
         <div data-render-page="entry"><h2>after <a class="fa-link" href="./after" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8056" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.after" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.after(n, func)</div>
 
-<div data-render-html="/after"><p>The opposite of <code>_.before</code>; this method creates a function that invokes
-<code>func</code> once it&#39;s called <code>n</code> or more times.</p>
+<div data-render-html="/after"><p>反向版 <code>_.before</code>。
+这个方法创建一个新函数，当调用 <code>N</code> 次或者多次之后将触发 <code>func</code> 方法。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">n</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>The number of calls before <code>func</code> is invoked. </p>
+<li><span class="param-name">n</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p><code>func</code> 方法应该在调用多少次后才执行 </p>
 </div></li>
-<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function to restrict. </p>
+<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>指定的触发方法 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Function)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new restricted function.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回限定的函数</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> saves <span class="token operator" >=</span> <span class="token punctuation" >[</span><span class="token string" >'profile'</span><span class="token punctuation" >,</span> <span class="token string" >'settings'</span><span class="token punctuation" >]</span><span class="token punctuation" >;</span>
@@ -419,7 +419,7 @@ var _hmt = _hmt || [];
 _<span class="token punctuation" >.</span><span class="token function" >forEach</span><span class="token punctuation" >(</span>saves<span class="token punctuation" >,</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>type<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
   <span class="token function" >asyncSave</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span> <span class="token string" >'type'</span><span class="token punctuation" >:</span> type<span class="token punctuation" >,</span> <span class="token string" >'complete'</span><span class="token punctuation" >:</span> done <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => logs 'done saving!' after the two async saves have completed</span>
+<span class="token comment" spellcheck="true">// => 2次 `asyncSave`之后，输出 'done saving!'。</span>
 </code></pre>
 </div>
 <div id="disqus_thread" style="margin-top:50px;"></div>
@@ -431,9 +431,14 @@ _<span class="token punctuation" >.</span><span class="token function" >forEach<
 /*
 var disqus_config = function () {
 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = PAGE_IDENTIFIER; // Repla<p></p>ce PAGE_IDENTIFIER with your page's unique identifier variable
 };
 */
+
+var disqus_config = function () {
+this.page.identifier = 'after';
+};
+
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
 

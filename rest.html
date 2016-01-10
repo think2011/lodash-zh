@@ -392,7 +392,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>rest <a class="fa-link" href="./rest" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8818" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.rest" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>rest <a class="fa-link" href="./rest" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8810" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.rest" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.rest(func, [start&#x3D;func.length-1])</div>
 
 <div data-render-html="/rest"><p>Creates a function that invokes <code>func</code> with the <code>this</code> binding of the
@@ -431,9 +431,14 @@ created function and arguments from <code>start</code> and beyond provided as an
 /*
 var disqus_config = function () {
 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = PAGE_IDENTIFIER; // Repla<p></p>ce PAGE_IDENTIFIER with your page's unique identifier variable
 };
 */
+
+var disqus_config = function () {
+this.page.identifier = 'rest';
+};
+
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
 

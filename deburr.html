@@ -392,7 +392,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>deburr <a class="fa-link" href="./deburr" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L11718" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.deburr" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>deburr <a class="fa-link" href="./deburr" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L11710" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.deburr" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.deburr([string&#x3D;&#x27;&#x27;])</div>
 
 <div data-render-html="/deburr"><p>Deburrs <code>string</code> by converting <a href="https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block" target="_blank">latin-1 supplementary letters</a>#Character_table)
@@ -421,9 +421,14 @@ to basic latin letters and removing <a href="https://en.wikipedia.org/wiki/Combi
 /*
 var disqus_config = function () {
 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = PAGE_IDENTIFIER; // Repla<p></p>ce PAGE_IDENTIFIER with your page's unique identifier variable
 };
 */
+
+var disqus_config = function () {
+this.page.identifier = 'deburr';
+};
+
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
 
