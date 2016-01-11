@@ -392,31 +392,30 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>memoize <a class="fa-link" href="./memoize" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8569" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.memoize" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>memoize <a class="fa-link" href="./memoize" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8568" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.memoize" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.memoize(func, [resolver])</div>
 
-<div data-render-html="/memoize"><p>Creates a function that memoizes the result of <code>func</code>. If <code>resolver</code> is
-provided it determines the cache key for storing the result based on the
-arguments provided to the memoized function. By default, the first argument
-provided to the memoized function is used as the map cache key. The <code>func</code>
-is invoked with the <code>this</code> binding of the memoized function.
+<div data-render-html="/memoize"><p>创建一个会缓存 <code>func</code> 结果的函数。
+如果提供了 <code>resolver</code>，就用 <code>resolver</code> 的返回值作为 key 缓存函数的结果。
+默认情况下用第一个参数作为缓存的 key。
+<code>func</code> 在调用时 this 会绑定在缓存函数上。
 <br>
 <br>
-<strong>注意:</strong> The cache is exposed as the <code>cache</code> property on the memoized
-function. Its creation may be customized by replacing the <code>_.memoize.Cache</code>
-constructor with one whose instances implement the <a href="http://ecma-international.org/ecma-262/6.0/#sec-properties-of-the-map-prototype-object" target="_blank"><code>Map</code></a>
-method interface of <code>delete</code>, <code>get</code>, <code>has</code>, and <code>set</code>.</p>
+<strong>注意:</strong> 
+缓存会暴露在缓存函数的 <code>cache</code> 上。
+它是可以定制的，只要替换了 _.memoize.Cache 构造函数，或实现了 <a href="http://ecma-international.org/ecma-262/6.0/#sec-properties-of-the-map-prototype-object" target="_blank"><code>Map</code></a> 的
+<code>delete</code>， <code>get</code>， <code>has</code>， 以及 <code>set</code>方法。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function to have its output memoized. </p>
+<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>需要缓存化的函数 </p>
 </div></li>
-<li><span class="param-name">[resolver]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function to resolve the cache key. </p>
+<li><span class="param-name">[resolver]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>这个函数的返回值作为缓存的 key </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Function)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new memoizing function.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回缓存化后的函数</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> object <span class="token operator" >=</span> <span class="token punctuation" >{</span> <span class="token string" >'a'</span><span class="token punctuation" >:</span> <span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token string" >'b'</span><span class="token punctuation" >:</span> <span class="token number" >2</span> <span class="token punctuation" >}</span><span class="token punctuation" >;</span>
@@ -433,12 +432,12 @@ object<span class="token punctuation" >.</span>a <span class="token operator" >=
 <span class="token function" >values</span><span class="token punctuation" >(</span>object<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => [1, 2]</span>
 
-<span class="token comment" spellcheck="true">// modifying the result cache</span>
+<span class="token comment" spellcheck="true">// 修改结果缓存</span>
 values<span class="token punctuation" >.</span>cache<span class="token punctuation" >.</span><span class="token keyword" >set</span><span class="token punctuation" >(</span>object<span class="token punctuation" >,</span> <span class="token punctuation" >[</span><span class="token string" >'a'</span><span class="token punctuation" >,</span> <span class="token string" >'b'</span><span class="token punctuation" >]</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token function" >values</span><span class="token punctuation" >(</span>object<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => ['a', 'b']</span>
 
-<span class="token comment" spellcheck="true">// replacing `_.memoize.Cache`</span>
+<span class="token comment" spellcheck="true">// 替换 `_.memoize.Cache`</span>
 _<span class="token punctuation" >.</span>memoize<span class="token punctuation" >.</span>Cache <span class="token operator" >=</span> WeakMap<span class="token punctuation" >;</span>
 </code></pre>
 </div>

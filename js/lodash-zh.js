@@ -8461,56 +8461,56 @@
     }
 
     /**
-     * Defers invoking the `func` until the current call stack has cleared. Any
-     * additional arguments are provided to `func` when it's invoked.
+     * 延迟调用 `func` 直到当前堆栈清理完毕。
+     * 任何附加的参数会传入到 `func`。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to defer.
-     * @param {...*} [args] The arguments to invoke `func` with.
-     * @returns {number} Returns the timer id.
+     * @param {Function} func 要延迟的函数
+     * @param {...*} [args] 会在调用时传入到 `func` 的参数
+     * @returns {number} 返回计时器 id
      * @example
      *
      * _.defer(function(text) {
      *   console.log(text);
      * }, 'deferred');
-     * // logs 'deferred' after one or more milliseconds
+     * // 一毫秒或更久一些输出 'deferred'。
      */
     var defer = rest(function (func, args) {
       return baseDelay(func, 1, args);
     });
 
     /**
-     * Invokes `func` after `wait` milliseconds. Any additional arguments are
-     * provided to `func` when it's invoked.
+     * 延迟 `wait` 毫秒后调用 `func`。
+     * 任何附加的参数会传入到 `func`。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to delay.
-     * @param {number} wait The number of milliseconds to delay invocation.
-     * @param {...*} [args] The arguments to invoke `func` with.
-     * @returns {number} Returns the timer id.
+     * @param {Function} func 要延迟的函数
+     * @param {number} wait 要延迟的毫秒数
+     * @param {...*} [args] 会在调用时传入到 `func` 的参数
+     * @returns {number} 返回计时器 id
      * @example
      *
      * _.delay(function(text) {
      *   console.log(text);
      * }, 1000, 'later');
-     * // => logs 'later' after one second
+     * // => 一秒后输出 'later'。
      */
     var delay = rest(function (func, wait, args) {
       return baseDelay(func, toNumber(wait) || 0, args);
     });
 
     /**
-     * Creates a function that invokes `func` with arguments reversed.
+     * 创建一个翻转接收参数的 `func` 函数。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to flip arguments for.
-     * @returns {Function} Returns the new function.
+     * @param {Function} func 要翻转参数的函数
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var flipped = _.flip(function() {
@@ -8525,23 +8525,22 @@
     }
 
     /**
-     * Creates a function that memoizes the result of `func`. If `resolver` is
-     * provided it determines the cache key for storing the result based on the
-     * arguments provided to the memoized function. By default, the first argument
-     * provided to the memoized function is used as the map cache key. The `func`
-     * is invoked with the `this` binding of the memoized function.
+     * 创建一个会缓存 `func` 结果的函数。
+     * 如果提供了 `resolver`，就用 `resolver` 的返回值作为 key 缓存函数的结果。
+     * 默认情况下用第一个参数作为缓存的 key。
+     * `func` 在调用时 this 会绑定在缓存函数上。
      *
-     * **注意:** The cache is exposed as the `cache` property on the memoized
-     * function. Its creation may be customized by replacing the `_.memoize.Cache`
-     * constructor with one whose instances implement the [`Map`](http://ecma-international.org/ecma-262/6.0/#sec-properties-of-the-map-prototype-object)
-     * method interface of `delete`, `get`, `has`, and `set`.
+     * **注意:** 
+     * 缓存会暴露在缓存函数的 `cache` 上。
+     * 它是可以定制的，只要替换了 _.memoize.Cache 构造函数，或实现了 [`Map`](http://ecma-international.org/ecma-262/6.0/#sec-properties-of-the-map-prototype-object) 的
+     * `delete`， `get`， `has`， 以及 `set`方法。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to have its output memoized.
-     * @param {Function} [resolver] The function to resolve the cache key.
-     * @returns {Function} Returns the new memoizing function.
+     * @param {Function} func 需要缓存化的函数
+     * @param {Function} [resolver] 这个函数的返回值作为缓存的 key
+     * @returns {Function} 返回缓存化后的函数
      * @example
      *
      * var object = { 'a': 1, 'b': 2 };
@@ -8558,12 +8557,12 @@
      * values(object);
      * // => [1, 2]
      *
-     * // modifying the result cache
+     * // 修改结果缓存
      * values.cache.set(object, ['a', 'b']);
      * values(object);
      * // => ['a', 'b']
      *
-     * // replacing `_.memoize.Cache`
+     * // 替换 `_.memoize.Cache`
      * _.memoize.Cache = WeakMap;
      */
     function memoize (func, resolver) {
@@ -8587,15 +8586,14 @@
     }
 
     /**
-     * Creates a function that negates the result of the predicate `func`. The
-     * `func` predicate is invoked with the `this` binding and arguments of the
-     * created function.
+     * 创建一个对 `func` 结果 取反的函数。
+     * 用 predicate 对 `func` 检查的时候，`this` 绑定到创建的函数，并传入对应参数。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} predicate The predicate to negate.
-     * @returns {Function} Returns the new function.
+     * @param {Function} predicate 需要对结果取反的函数
+     * @returns {Function} 返回一个新函数
      * @example
      *
      * function isEven(n) {
@@ -8615,37 +8613,35 @@
     }
 
     /**
-     * Creates a function that is restricted to invoking `func` once. Repeat calls
-     * to the function return the value of the first invocation. The `func` is
-     * invoked with the `this` binding and arguments of the created function.
+     * 创建一个只能调用一次的函数。
+     * 重复调用返回第一次调用的结果。
+     * `func` 调用时，this 绑定到创建的函数，并传入对应参数。
      *
      * @static
      * @memberOf _
      * @category Function
      * @param {Function} func 指定的触发的函数
-     * @returns {Function} Returns the new restricted function.
+     * @returns {Function} 返回受限的函数
      * @example
      *
      * var initialize = _.once(createApplication);
      * initialize();
      * initialize();
-     * // `initialize` invokes `createApplication` once
+     * // `initialize` 只能调用 `createApplication` 一次。
      */
     function once (func) {
       return before(2, func);
     }
 
     /**
-     * Creates a function that invokes `func` with arguments transformed by
-     * corresponding `transforms`.
+     * 创建一个函数，调用时`func` 参数会先一对一的改变。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to wrap.
-     * @param {...(Function|Function[])} [transforms] The functions to transform
-     * arguments, specified individually or in arrays.
-     * @returns {Function} Returns the new function.
+     * @param {Function} func 要包裹的函数
+     * @param {...(Function|Function[])} [transforms] 这个函数会改变传参，单独指定或者指定在数组中
+     * @returns {Function} 返回新函数
      * @example
      *
      * function doubled(n) {
@@ -8682,22 +8678,21 @@
     });
 
     /**
-     * Creates a function that invokes `func` with `partial` arguments prepended
-     * to those provided to the new function. This method is like `_.bind` except
-     * it does **not** alter the `this` binding.
+     * 创建一个函数。
+     * 该函数调用 func，并传入预设的参数。
+     * 这个方法类似 `_.bind`，除了它不会绑定 `this`。
      *
-     * The `_.partial.placeholder` value, which defaults to `_` in monolithic
-     * builds, may be used as a placeholder for partially applied arguments.
+     * 
+     * 这个 _.partial.placeholder 的值，默认是以 _ 作为附加部分参数的占位符。
      *
-     * **注意:** This method doesn't set the "length" property of partially
-     * applied functions.
+     * **注意:** 这个方法不会设置 "length" 到函数上。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to partially apply arguments to.
-     * @param {...*} [partials] The arguments to be partially applied.
-     * @returns {Function} Returns the new partially applied function.
+     * @param {Function} func 需要预设的函数
+     * @param {...*} [partials] 预设的参数
+     * @returns {Function} 返回预设参数的函数
      * @example
      *
      * var greet = function(greeting, name) {
@@ -8719,21 +8714,19 @@
     });
 
     /**
-     * This method is like `_.partial` except that partially applied arguments
-     * are appended to those provided to the new function.
+     * 这个函数类似 `_.partial`，除了它是从右到左预设参数的。
      *
-     * The `_.partialRight.placeholder` value, which defaults to `_` in monolithic
-     * builds, may be used as a placeholder for partially applied arguments.
+     * 
+     * 这个 _.partialRight.placeholder 的值，默认是以 _ 作为附加部分参数的占位符。
      *
-     * **注意:** This method doesn't set the "length" property of partially
-     * applied functions.
+     * **注意:** 这个方法不会设置 "length" 到函数上。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to partially apply arguments to.
-     * @param {...*} [partials] The arguments to be partially applied.
-     * @returns {Function} Returns the new partially applied function.
+     * @param {Function} func 需要预设的函数
+     * @param {...*} [partials] 预设的参数
+     * @returns {Function} 返回预设参数的函数
      * @example
      *
      * var greet = function(greeting, name) {
@@ -8755,18 +8748,16 @@
     });
 
     /**
-     * Creates a function that invokes `func` with arguments arranged according
-     * to the specified indexes where the argument value at the first index is
-     * provided as the first argument, the argument value at the second index is
-     * provided as the second argument, and so on.
+     * 创建一个调用 `func` 的函数。
+     * 所传递的参数根据 indexes 调整到对应位置。
+     * 第一个 index 对应到第一个传参，第二个 index 对应到第二个传参，以此类推。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to rearrange arguments for.
-     * @param {...(number|number[])} indexes The arranged argument indexes,
-     *  specified individually or in arrays.
-     * @returns {Function} Returns the new function.
+     * @param {Function} func 待调用的函数
+     * @param {...(number|number[])} indexes 重新排列参数的位置，单独指定或者指定在数组中
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var rearged = _.rearg(function(a, b, c) {
@@ -8781,17 +8772,17 @@
     });
 
     /**
-     * Creates a function that invokes `func` with the `this` binding of the
-     * created function and arguments from `start` and beyond provided as an array.
-     *
-     * **注意:** This method is based on the [rest parameter](https://mdn.io/rest_parameters).
+     * 创建一个调用 `func` 的函数。
+     * `this` 绑定到这个函数 并且 从 `start` 之后的参数都作为数组传入。
+     * 
+     * **注意:** 这个方法基于[rest parameter](https://mdn.io/rest_parameters)
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to apply a rest parameter to.
-     * @param {number} [start=func.length-1] The start position of the rest parameter.
-     * @returns {Function} Returns the new function.
+     * @param {Function} func 要应用的函数
+     * @param {number} [start=func.length-1] 从第几个参数开始应用
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var say = _.rest(function(what, names) {
@@ -8835,16 +8826,16 @@
     }
 
     /**
-     * Creates a function that invokes `func` with the `this` binding of the created
-     * function and an array of arguments much like [`Function#apply`](https://es5.github.io/#x15.3.4.3).
+     * 创建一个调用 `func` 的函数。 `this` 绑定到这个函数上。
+     * 把参数作为数组传入，类似于 [`Function#apply`](https://es5.github.io/#x15.3.4.3)
      *
-     * **注意:** This method is based on the [spread operator](https://mdn.io/spread_operator).
+     * **注意:** 这个方法基于 [spread operator](https://mdn.io/spread_operator)
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to spread arguments over.
-     * @returns {Function} Returns the new function.
+     * @param {Function} func 要应用的函数
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var say = _.spread(function(who, what) {
@@ -8854,7 +8845,7 @@
      * say(['fred', 'hello']);
      * // => 'fred says hello'
      *
-     * // with a Promise
+     * // 使用在 Promise
      * var numbers = Promise.all([
      *   Promise.resolve(40),
      *   Promise.resolve(36)
@@ -8863,7 +8854,7 @@
      * numbers.then(_.spread(function(x, y) {
      *   return x + y;
      * }));
-     * // => a Promise of 76
+     * // => 返回 76
      */
     function spread (func) {
       if (typeof func != 'function') {
@@ -8875,43 +8866,34 @@
     }
 
     /**
-     * Creates a throttled function that only invokes `func` at most once per
-     * every `wait` milliseconds. The throttled function comes with a `cancel`
-     * method to cancel delayed `func` invocations and a `flush` method to
-     * immediately invoke them. Provide an options object to indicate whether
-     * `func` should be invoked on the leading and/or trailing edge of the `wait`
-     * timeout. The `func` is invoked with the last arguments provided to the
-     * throttled function. Subsequent calls to the throttled function return the
-     * result of the last `func` invocation.
+     * 创建一个节流函数，在 `wait` 秒内最多执行 `func` 一次的函数。
+     * 该函数提供一个 cancel 方法取消延迟的函数调用以及 flush 方法立即调用。
+     * 可以提供一个 options 对象决定如何调用 func 方法， options.leading 与|或 options.trailing 决定 `wait` 前后如何触发。 func 会传入最后一次传入的参数给这个函数。 随后调用的函数返回是最后一次 func 调用的结果。 
      *
-     * **注意:** If `leading` and `trailing` options are `true`, `func` is invoked
-     * on the trailing edge of the timeout only if the the throttled function is
-     * invoked more than once during the `wait` timeout.
+     * **注意:** 如果 leading 和 trailing 都设定为 true。 则 func 允许 trailing 方式调用的条件为: 在 wait 期间多次调用。 
      *
-     * See [David Corbacho's article](http://drupalmotion.com/article/debounce-and-throttle-visual-explanation)
-     * for details over the differences between `_.throttle` and `_.debounce`.
+     * 查看 [David Corbacho's article](http://drupalmotion.com/article/debounce-and-throttle-visual-explanation)
+     * 了解 `_.throttle` 与 `_.debounce` 的区别
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to throttle.
-     * @param {number} [wait=0] The number of milliseconds to throttle invocations to.
-     * @param {Object} [options] The options object.
-     * @param {boolean} [options.leading=true] Specify invoking on the leading
-     *  edge of the timeout.
-     * @param {boolean} [options.trailing=true] Specify invoking on the trailing
-     *  edge of the timeout.
-     * @returns {Function} Returns the new throttled function.
+     * @param {Function} func 要节流的函数
+     * @param {number} [wait=0] 需要节流的毫秒
+     * @param {Object} [options] 选项对象
+     * @param {boolean} [options.leading=true] 指定调用在节流开始前
+     * @param {boolean} [options.trailing=true] 指定调用在节流结束后
+     * @returns {Function} 返回节流的函数
      * @example
      *
-     * // avoid excessively updating the position while scrolling
+     * // 避免在滚动时过分的更新定位
      * jQuery(window).on('scroll', _.throttle(updatePosition, 100));
      *
-     * // invoke `renewToken` when the click event is fired, but not more than once every 5 minutes
+     * // 点击后就调用 `renewToken`，但5分钟内超过1次。
      * var throttled = _.throttle(renewToken, 300000, { 'trailing': false });
      * jQuery(element).on('click', throttled);
      *
-     * // cancel a trailing throttled invocation
+     * // 取消一个 trailing 的节流调用
      * jQuery(window).on('popstate', throttled.cancel);
      */
     function throttle (func, wait, options) {
@@ -8929,14 +8911,13 @@
     }
 
     /**
-     * Creates a function that accepts up to one argument, ignoring any
-     * additional arguments.
+     * 创建一个最多接受一个参数的函数，忽略多余的参数。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {Function} func The function to cap arguments for.
-     * @returns {Function} Returns the new function.
+     * @param {Function} func 要处理的函数
+     * @returns {Function} 返回新函数
      * @example
      *
      * _.map(['6', '8', '10'], _.unary(parseInt));
@@ -8947,17 +8928,16 @@
     }
 
     /**
-     * Creates a function that provides `value` to the wrapper function as its
-     * first argument. Any additional arguments provided to the function are
-     * appended to those provided to the wrapper function. The wrapper is invoked
-     * with the `this` binding of the created function.
+     * 创建一个函数。提供的 `value` 包装在 wrapper 函数的第一个参数里。
+     * 任何附加的参数都提供给 wrapper 函数。
+     * 被调用时 `this` 绑定在创建的函数上。
      *
      * @static
      * @memberOf _
      * @category Function
-     * @param {*} value The value to wrap.
-     * @param {Function} wrapper The wrapper function.
-     * @returns {Function} Returns the new function.
+     * @param {*} value 要包装的值
+     * @param {Function} wrapper 包装函数
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var p = _.wrap(_.escape, function(func, text) {
@@ -12913,7 +12893,7 @@
     }
 
     /**
-     * Creates a function that invokes `func` with the arguments of the created
+     * 创建一个调用 `func` 的函数。 with the arguments of the created
      * function. If `func` is a property name the created callback returns the
      * property value for a given element. If `func` is an object the created
      * callback returns `true` for elements that contain the equivalent object properties, otherwise it returns `false`.

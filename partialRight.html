@@ -392,30 +392,29 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>partialRight <a class="fa-link" href="./partialRight" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8752" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.partialright" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>partialRight <a class="fa-link" href="./partialRight" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8745" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.partialright" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.partialRight(func, [partials])</div>
 
-<div data-render-html="/partialRight"><p>This method is like <code>_.partial</code> except that partially applied arguments
-are appended to those provided to the new function.
+<div data-render-html="/partialRight"><p>这个函数类似 <code>_.partial</code>，除了它是从右到左预设参数的。
 <br>
 <br>
-The <code>_.partialRight.placeholder</code> value, which defaults to <code>_</code> in monolithic
-builds, may be used as a placeholder for partially applied arguments.
 <br>
 <br>
-<strong>注意:</strong> This method doesn&#39;t set the &quot;length&quot; property of partially
-applied functions.</p>
+这个 <em>.partialRight.placeholder 的值，默认是以 </em> 作为附加部分参数的占位符。
+<br>
+<br>
+<strong>注意:</strong> 这个方法不会设置 &quot;length&quot; 到函数上。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function to partially apply arguments to. </p>
+<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>需要预设的函数 </p>
 </div></li>
-<li><span class="param-name">[partials]</span> <span class="param-type">(...*)</span> <div data-render-html="/#synthetic"><p>The arguments to be partially applied. </p>
+<li><span class="param-name">[partials]</span> <span class="param-type">(...*)</span> <div data-render-html="/#synthetic"><p>预设的参数 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Function)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new partially applied function.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回预设参数的函数</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> greet <span class="token operator" >=</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>greeting<span class="token punctuation" >,</span> name<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>

@@ -395,27 +395,27 @@ var _hmt = _hmt || [];
         <div data-render-page="entry"><h2>delay <a class="fa-link" href="./delay" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8502" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.delay" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.delay(func, wait, [args])</div>
 
-<div data-render-html="/delay"><p>Invokes <code>func</code> after <code>wait</code> milliseconds. Any additional arguments are
-provided to <code>func</code> when it&#39;s invoked.</p>
+<div data-render-html="/delay"><p>延迟 <code>wait</code> 毫秒后调用 <code>func</code>。
+任何附加的参数会传入到 <code>func</code>。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function to delay. </p>
+<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>要延迟的函数 </p>
 </div></li>
-<li><span class="param-name">wait</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>The number of milliseconds to delay invocation. </p>
+<li><span class="param-name">wait</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>要延迟的毫秒数 </p>
 </div></li>
-<li><span class="param-name">[args]</span> <span class="param-type">(...*)</span> <div data-render-html="/#synthetic"><p>The arguments to invoke <code>func</code> with. </p>
+<li><span class="param-name">[args]</span> <span class="param-type">(...*)</span> <div data-render-html="/#synthetic"><p>会在调用时传入到 <code>func</code> 的参数 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(number)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the timer id.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回计时器 id</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >delay</span><span class="token punctuation" >(</span><span class="token keyword" >function</span><span class="token punctuation" >(</span>text<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
   console<span class="token punctuation" >.</span><span class="token function" >log</span><span class="token punctuation" >(</span>text<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token punctuation" >}</span><span class="token punctuation" >,</span> <span class="token number" >1000</span><span class="token punctuation" >,</span> <span class="token string" >'later'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => logs 'later' after one second</span>
+<span class="token comment" spellcheck="true">// => 一秒后输出 'later'。</span>
 </code></pre>
 </div>
 <div id="disqus_thread" style="margin-top:50px;"></div>

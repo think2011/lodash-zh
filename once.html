@@ -392,12 +392,12 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>once <a class="fa-link" href="./once" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8634" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.once" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>once <a class="fa-link" href="./once" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L8632" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.once" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.once(func)</div>
 
-<div data-render-html="/once"><p>Creates a function that is restricted to invoking <code>func</code> once. Repeat calls
-to the function return the value of the first invocation. The <code>func</code> is
-invoked with the <code>this</code> binding and arguments of the created function.</p>
+<div data-render-html="/once"><p>创建一个只能调用一次的函数。
+重复调用返回第一次调用的结果。
+<code>func</code> 调用时，this 绑定到创建的函数，并传入对应参数。</p>
 </div>
 
 <h3>参数</h3>
@@ -406,13 +406,13 @@ invoked with the <code>this</code> binding and arguments of the created function
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Function)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new restricted function.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回受限的函数</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> initialize <span class="token operator" >=</span> _<span class="token punctuation" >.</span><span class="token function" >once</span><span class="token punctuation" >(</span>createApplication<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token function" >initialize</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token function" >initialize</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// `initialize` invokes `createApplication` once</span>
+<span class="token comment" spellcheck="true">// `initialize` 只能调用 `createApplication` 一次。</span>
 </code></pre>
 </div>
 <div id="disqus_thread" style="margin-top:50px;"></div>
