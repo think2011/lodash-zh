@@ -392,24 +392,23 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>cloneWith <a class="fa-link" href="./cloneWith" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L9017" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.clonewith" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>cloneWith <a class="fa-link" href="./cloneWith" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L9016" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.clonewith" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.cloneWith(value, [customizer])</div>
 
-<div data-render-html="/cloneWith"><p>This method is like <code>_.clone</code> except that it accepts <code>customizer</code> which
-is invoked to produce the cloned value. If <code>customizer</code> returns <code>undefined</code>
-cloning is handled by the method instead. The <code>customizer</code> is invoked with
-up to five arguments; (value [, index|key, object, stack]).</p>
+<div data-render-html="/cloneWith"><p>这个方法类似 <code>_.clone</code>，除了它接受一个 <code>customizer</code> 定制返回的拷贝值。
+如果 <code>customizer</code> 返回 <code>undefined</code> 将会拷贝处理方法代替。
+<code>customizer</code> 会传入5个参数：(value [, index|key, object, stack])</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">value</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>The value to clone. </p>
+<li><span class="param-name">value</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>要拷贝的值 </p>
 </div></li>
-<li><span class="param-name">[customizer]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function to customize cloning. </p>
+<li><span class="param-name">[customizer]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>这个函数定制返回的拷贝值 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(*)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the cloned value.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回拷贝后的值</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >function</span> <span class="token function" >customizer</span><span class="token punctuation" >(</span>value<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>

@@ -470,7 +470,7 @@
    * @private
    * @param {Array} array The array to iterate over.
    * @param {Function} predicate 这个函数会处理每一个元素
-   * @returns {boolean} Returns `true` if all elements pass the predicate check, else `false`.
+   * @returns {boolean} Returns `true` if all elements pass the predicate check否则返回 `false`
    */
   function arrayEvery (array, predicate) {
     var index  = -1,
@@ -515,7 +515,7 @@
    * @private
    * @param {Array} array The array to search.
    * @param {*} target 要检索的值
-   * @returns {boolean} Returns `true` if `target` is found, else `false`.
+   * @returns {boolean} Returns `true` if `target` is found否则返回 `false`
    */
   function arrayIncludes (array, value) {
     return !!array.length && baseIndexOf(array, value, 0) > -1;
@@ -529,7 +529,7 @@
    * @param {Array} array The array to search.
    * @param {*} target 要检索的值
    * @param {Function} comparator 这个函数会处理每一个元素
-   * @returns {boolean} Returns `true` if `target` is found, else `false`.
+   * @returns {boolean} Returns `true` if `target` is found否则返回 `false`
    */
   function arrayIncludesWith (array, value, comparator) {
     var index  = -1,
@@ -635,7 +635,7 @@
    * @private
    * @param {Array} array The array to iterate over.
    * @param {Function} predicate 这个函数会处理每一个元素
-   * @returns {boolean} Returns `true` if any element passes the predicate check, else `false`.
+   * @returns {boolean} Returns `true` if any element passes the predicate check否则返回 `false`
    */
   function arraySome (array, predicate) {
     var index  = -1,
@@ -924,10 +924,10 @@
   }
 
   /**
-   * Checks if `value` is a global object.
+   * 检查 `value` 是否是 a global object.
    *
    * @private
-   * @param {*} value The value to check.
+   * @param {*} value 要检查的值
    * @returns {null|Object} Returns `value` if it's a global object, else `null`.
    */
   function checkGlobal (value) {
@@ -938,8 +938,8 @@
    * Compares values to sort them in ascending order.
    *
    * @private
-   * @param {*} value The value to compare.
-   * @param {*} other The other value to compare.
+   * @param {*} value 要比较的值
+   * @param {*} other 其他要比较的值
    * @returns {number} Returns the sort order indicator for `value`.
    */
   function compareAscending (value, other) {
@@ -1063,11 +1063,11 @@
   }
 
   /**
-   * Checks if `value` is a host object in IE < 9.
+   * 检查 `value` 是否是 a host object in IE < 9.
    *
    * @private
-   * @param {*} value The value to check.
-   * @returns {boolean} Returns `true` if `value` is a host object, else `false`.
+   * @param {*} value 要检查的值
+   * @returns {boolean} Returns `true` if `value` is a host object否则返回 `false`
    */
   function isHostObject (value) {
     // Many host objects are `Object` objects that can coerce to strings
@@ -1083,12 +1083,12 @@
   }
 
   /**
-   * Checks if `value` is a valid array-like index.
+   * 检查 `value` 是否是 a valid array-like index.
    *
    * @private
-   * @param {*} value The value to check.
+   * @param {*} value 要检查的值
    * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
-   * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+   * @returns {boolean} Returns `true` if `value` is a valid index否则返回 `false`
    */
   function isIndex (value, length) {
     value  = (typeof value == 'number' || reIsUint.test(value)) ? +value : -1;
@@ -1102,7 +1102,7 @@
    *
    * @private
    * @param {number} charCode The character code to inspect.
-   * @returns {boolean} Returns `true` if `charCode` is whitespace, else `false`.
+   * @returns {boolean} Returns `true` if `charCode` is whitespace否则返回 `false`
    */
   function isSpace (charCode) {
     return ((charCode <= 160 && (charCode >= 9 && charCode <= 13) || charCode == 32 || charCode == 160) || charCode == 5760 || charCode == 6158 ||
@@ -1714,7 +1714,7 @@
      * @private
      * @param {Object} hash The hash to modify.
      * @param {string} key The key of the value to remove.
-     * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+     * @returns {boolean} Returns `true` if the entry was removed否则返回 `false`
      */
     function hashDelete (hash, key) {
       return hashHas(hash, key) && delete hash[key];
@@ -1742,7 +1742,7 @@
      * @private
      * @param {Object} hash The hash to query.
      * @param {string} key The key of the entry to check.
-     * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+     * @returns {boolean} Returns `true` if an entry for `key` exists否则返回 `false`
      */
     function hashHas (hash, key) {
       return nativeCreate ? hash[key] !== undefined : hasOwnProperty.call(hash, key);
@@ -1797,7 +1797,7 @@
      * @name delete
      * @memberOf MapCache
      * @param {string} key The key of the value to remove.
-     * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+     * @returns {boolean} Returns `true` if the entry was removed否则返回 `false`
      */
     function mapDelete (key) {
       var data = this.__data__;
@@ -1831,7 +1831,7 @@
      * @name has
      * @memberOf MapCache
      * @param {string} key The key of the entry to check.
-     * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+     * @returns {boolean} Returns `true` if an entry for `key` exists否则返回 `false`
      */
     function mapHas (key) {
       var data = this.__data__;
@@ -1883,12 +1883,12 @@
     }
 
     /**
-     * Checks if `value` is in `cache`.
+     * 检查 `value` 是否是 in `cache`.
      *
      * @private
      * @param {Object} cache The set cache to search.
      * @param {*} value 要检索的值
-     * @returns {number} Returns `true` if `value` is found, else `false`.
+     * @returns {number} Returns `true` if `value` is found否则返回 `false`
      */
     function cacheHas (cache, value) {
       var map = cache.__data__;
@@ -1959,7 +1959,7 @@
      * @name delete
      * @memberOf Stack
      * @param {string} key The key of the value to remove.
-     * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+     * @returns {boolean} Returns `true` if the entry was removed否则返回 `false`
      */
     function stackDelete (key) {
       var data  = this.__data__,
@@ -1991,7 +1991,7 @@
      * @name has
      * @memberOf Stack
      * @param {string} key The key of the entry to check.
-     * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+     * @returns {boolean} Returns `true` if an entry for `key` exists否则返回 `false`
      */
     function stackHas (key) {
       var data  = this.__data__,
@@ -2037,7 +2037,7 @@
      * @private
      * @param {Array} array The array to query.
      * @param {string} key The key of the value to remove.
-     * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+     * @returns {boolean} Returns `true` if the entry was removed否则返回 `false`
      */
     function assocDelete (array, key) {
       var index = assocIndexOf(array, key);
@@ -2072,7 +2072,7 @@
      * @private
      * @param {Array} array The array to query.
      * @param {string} key The key of the entry to check.
-     * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+     * @returns {boolean} Returns `true` if an entry for `key` exists否则返回 `false`
      */
     function assocHas (array, key) {
       return assocIndexOf(array, key) > -1;
@@ -2618,7 +2618,7 @@
      * @private
      * @param {Object} object The object to query.
      * @param {Array|string} key The key to check.
-     * @returns {boolean} Returns `true` if `key` exists, else `false`.
+     * @returns {boolean} Returns `true` if `key` exists否则返回 `false`
      */
     function baseHas (object, key) {
       // Avoid a bug in IE 10-11 where objects with a [[Prototype]] of `null`,
@@ -2634,7 +2634,7 @@
      * @private
      * @param {Object} object The object to query.
      * @param {Array|string} key The key to check.
-     * @returns {boolean} Returns `true` if `key` exists, else `false`.
+     * @returns {boolean} Returns `true` if `key` exists否则返回 `false`
      */
     function baseHasIn (object, key) {
       return key in Object(object);
@@ -2720,15 +2720,15 @@
      * and tracks traversed objects.
      *
      * @private
-     * @param {*} value The value to compare.
-     * @param {*} other The other value to compare.
+     * @param {*} value 要比较的值
+     * @param {*} other 其他要比较的值
      * @param {Function} [customizer] The function to customize comparisons.
      * @param {boolean} [bitmask] The bitmask of comparison flags.
      *  The bitmask may be composed of the following flags:
      *     1 - Unordered comparison
      *     2 - Partial comparison
      * @param {Object} [stack] Tracks traversed `value` and `other` objects.
-     * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+     * @returns {boolean} Returns `true` if the values are equivalent否则返回 `false`
      */
     function baseIsEqual (value, other, customizer, bitmask, stack) {
       if (value === other) {
@@ -2752,7 +2752,7 @@
      * @param {Function} [customizer] The function to customize comparisons.
      * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual` for more details.
      * @param {Object} [stack] Tracks traversed `object` and `other` objects.
-     * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+     * @returns {boolean} Returns `true` if the objects are equivalent否则返回 `false`
      */
     function baseIsEqualDeep (object, other, equalFunc, customizer, bitmask, stack) {
       var objIsArr = isArray(object),
@@ -2818,7 +2818,7 @@
      * @param {Object} source The object of property values to match.
      * @param {Array} matchData The property names, values, and compare flags to match.
      * @param {Function} [customizer] The function to customize comparisons.
-     * @returns {boolean} Returns `true` if `object` is a match, else `false`.
+     * @returns {boolean} Returns `true` if `object` is a match否则返回 `false`
      */
     function baseIsMatch (object, source, matchData, customizer) {
       var index        = matchData.length,
@@ -3372,7 +3372,7 @@
      * @private
      * @param {Array|Object} collection 需要遍历的集合
      * @param {Function} predicate 这个函数会处理每一个元素
-     * @returns {boolean} Returns `true` if any element passes the predicate check, else `false`.
+     * @returns {boolean} Returns `true` if any element passes the predicate check否则返回 `false`
      */
     function baseSome (collection, predicate) {
       var result;
@@ -3582,7 +3582,7 @@
      * @private
      * @param {Object} object The object to modify.
      * @param {Array|string} path The path of the property to unset.
-     * @returns {boolean} Returns `true` if the property is deleted, else `false`.
+     * @returns {boolean} Returns `true` if the property is deleted否则返回 `false`
      */
     function baseUnset (object, path) {
       path    = isKey(path, object) ? [path + ''] : baseToPath(path);
@@ -4487,7 +4487,7 @@
      * @param {Function} [customizer] The function to customize comparisons.
      * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual` for more details.
      * @param {Object} [stack] Tracks traversed `array` and `other` objects.
-     * @returns {boolean} Returns `true` if the arrays are equivalent, else `false`.
+     * @returns {boolean} Returns `true` if the arrays are equivalent否则返回 `false`
      */
     function equalArrays (array, other, equalFunc, customizer, bitmask, stack) {
       var index       = -1,
@@ -4543,7 +4543,7 @@
      * @param {Function} equalFunc The function to determine equivalents of values.
      * @param {Function} [customizer] The function to customize comparisons.
      * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual` for more details.
-     * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+     * @returns {boolean} Returns `true` if the objects are equivalent否则返回 `false`
      */
     function equalByTag (object, other, tag, equalFunc, customizer, bitmask) {
       switch (tag) {
@@ -4600,7 +4600,7 @@
      * @param {Function} [customizer] The function to customize comparisons.
      * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual` for more details.
      * @param {Object} [stack] Tracks traversed `object` and `other` objects.
-     * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+     * @returns {boolean} Returns `true` if the objects are equivalent否则返回 `false`
      */
     function equalObjects (object, other, equalFunc, customizer, bitmask, stack) {
       var isPartial   = bitmask & PARTIAL_COMPARE_FLAG,
@@ -4830,7 +4830,7 @@
      * @param {Object} object The object to query.
      * @param {Array|string} path The path to check.
      * @param {Function} hasFunc The function to check properties.
-     * @returns {boolean} Returns `true` if `path` exists, else `false`.
+     * @returns {boolean} Returns `true` if `path` exists否则返回 `false`
      */
     function hasPath (object, path, hasFunc) {
       if (object == null) {
@@ -4953,7 +4953,7 @@
      * @param {*} value The potential iteratee value argument.
      * @param {*} index The potential iteratee index or key argument.
      * @param {*} object The potential iteratee object argument.
-     * @returns {boolean} Returns `true` if the arguments are from an iteratee call, else `false`.
+     * @returns {boolean} Returns `true` if the arguments are from an iteratee call否则返回 `false`
      */
     function isIterateeCall (value, index, object) {
       if (!isObject(object)) {
@@ -4969,12 +4969,12 @@
     }
 
     /**
-     * Checks if `value` is a property name and not a property path.
+     * 检查 `value` 是否是 a property name and not a property path.
      *
      * @private
-     * @param {*} value The value to check.
+     * @param {*} value 要检查的值
      * @param {Object} [object] The object to query keys on.
-     * @returns {boolean} Returns `true` if `value` is a property name, else `false`.
+     * @returns {boolean} Returns `true` if `value` is a property name否则返回 `false`
      */
     function isKey (value, object) {
       if (typeof value == 'number') {
@@ -4986,11 +4986,11 @@
     }
 
     /**
-     * Checks if `value` is suitable for use as unique object key.
+     * 检查 `value` 是否是 suitable for use as unique object key.
      *
      * @private
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} Returns `true` if `value` is suitable否则返回 `false`
      */
     function isKeyable (value) {
       var type = typeof value;
@@ -5003,7 +5003,7 @@
      *
      * @private
      * @param {Function} func The function to check.
-     * @returns {boolean} Returns `true` if `func` has a lazy counterpart, else `false`.
+     * @returns {boolean} Returns `true` if `func` has a lazy counterpart否则返回 `false`
      */
     function isLaziable (func) {
       var funcName = getFuncName(func),
@@ -5020,11 +5020,11 @@
     }
 
     /**
-     * Checks if `value` is likely a prototype object.
+     * 检查 `value` 是否是 likely a prototype object.
      *
      * @private
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} Returns `true` if `value` is a prototype否则返回 `false`
      */
     function isPrototype (value) {
       var Ctor  = value && value.constructor,
@@ -5034,12 +5034,12 @@
     }
 
     /**
-     * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
+     * 检查 `value` 是否是 suitable for strict equality comparisons, i.e. `===`.
      *
      * @private
-     * @param {*} value The value to check.
+     * @param {*} value 要检查的值
      * @returns {boolean} Returns `true` if `value` if suitable for strict
-     *  equality comparisons, else `false`.
+     *  equality comparisons否则返回 `false`
      */
     function isStrictComparable (value) {
       return value === value && !isObject(value);
@@ -8955,21 +8955,21 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a shallow clone of `value`.
+     * 创建一个 `value` 的浅拷贝。
      *
-     * **注意:** This method is loosely based on the
+     * **注意:** 这个方法参考自
      * [structured clone algorithm](https://mdn.io/Structured_clone_algorithm)
-     * and supports cloning arrays, array buffers, booleans, date objects, maps,
-     * numbers, `Object` objects, regexes, sets, strings, symbols, and typed
-     * arrays. The own enumerable properties of `arguments` objects are cloned
-     * as plain objects. An empty object is returned for uncloneable values such
-     * as error objects, functions, DOM nodes, and WeakMaps.
+     * 以及支持 arrays、array buffers、 booleans、 date objects、maps、
+     * numbers， `Object` objects, regexes, sets, strings, symbols, 以及 typed
+     * arrays。
+     * 参数对象的可枚举属性会拷贝为普通对象。
+     * 一些不可拷贝的对象，例如error objects、functions, DOM nodes, 以及 WeakMaps 会返回空对象。
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to clone.
-     * @returns {*} Returns the cloned value.
+     * @param {*} value 要拷贝的值
+     * @returns {*} 返回拷贝后的值
      * @example
      *
      * var users = [
@@ -8986,17 +8986,16 @@
     }
 
     /**
-     * This method is like `_.clone` except that it accepts `customizer` which
-     * is invoked to produce the cloned value. If `customizer` returns `undefined`
-     * cloning is handled by the method instead. The `customizer` is invoked with
-     * up to five arguments; (value [, index|key, object, stack]).
+     * 这个方法类似 `_.clone`，除了它接受一个 `customizer` 定制返回的拷贝值。
+     * 如果 `customizer` 返回 `undefined` 将会拷贝处理方法代替。
+     * `customizer` 会传入5个参数：(value [, index|key, object, stack])
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to clone.
-     * @param {Function} [customizer] The function to customize cloning.
-     * @returns {*} Returns the cloned value.
+     * @param {*} value 要拷贝的值
+     * @param {Function} [customizer] 这个函数定制返回的拷贝值
+     * @returns {*} 返回拷贝后的值
      * @example
      *
      * function customizer(value) {
@@ -9019,13 +9018,13 @@
     }
 
     /**
-     * This method is like `_.clone` except that it recursively clones `value`.
+     * 这个方法类似 `_.clone`，除了它会递归拷贝 `value`。
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to recursively clone.
-     * @returns {*} Returns the deep cloned value.
+     * @param {*} value 要深拷贝的值
+     * @returns {*} 返回拷贝后的值
      * @example
      *
      * var users = [
@@ -9042,14 +9041,14 @@
     }
 
     /**
-     * This method is like `_.cloneWith` except that it recursively clones `value`.
+     * 这个方法类似 `_.cloneWith`，除了它会递归拷贝 `value`。
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to recursively clone.
-     * @param {Function} [customizer] The function to customize cloning.
-     * @returns {*} Returns the deep cloned value.
+     * @param {*} value 要深拷贝的值
+     * @param {Function} [customizer] 这个函数定制返回的拷贝值
+     * @returns {*} 返回拷贝后的值
      * @example
      *
      * function customizer(value) {
@@ -9072,15 +9071,14 @@
     }
 
     /**
-     * Performs a [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
-     * comparison between two values to determine if they are equivalent.
+     * 执行 [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero) 比较两者的值确定它们是否相等。
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to compare.
-     * @param {*} other The other value to compare.
-     * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+     * @param {*} value 要比较的值
+     * @param {*} other 其他要比较的值
+     * @returns {boolean} 相等返回 `true`，否则返回 `false`
      * @example
      *
      * var object = { 'user': 'fred' };
@@ -9106,14 +9104,14 @@
     }
 
     /**
-     * Checks if `value` is greater than `other`.
+     * 检查 `value` 是否大于 `other`
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to compare.
-     * @param {*} other The other value to compare.
-     * @returns {boolean} Returns `true` if `value` is greater than `other`, else `false`.
+     * @param {*} value 要比较的值
+     * @param {*} other 其他要比较的值
+     * @returns {boolean} 如果 `value` 大于 `other`，返回 `true`，否则返回 `false`
      * @example
      *
      * _.gt(3, 1);
@@ -9130,14 +9128,14 @@
     }
 
     /**
-     * Checks if `value` is greater than or equal to `other`.
+     * 检查 `value` 是否大于等于 `other`
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to compare.
-     * @param {*} other The other value to compare.
-     * @returns {boolean} Returns `true` if `value` is greater than or equal to `other`, else `false`.
+     * @param {*} value 要比较的值
+     * @param {*} other 其他要比较的值
+     * @returns {boolean} 如果 `value` 大于等于 `other`，返回 `true`，否则返回 `false`
      * @example
      *
      * _.gte(3, 1);
@@ -9154,13 +9152,13 @@
     }
 
     /**
-     * Checks if `value` is likely an `arguments` object.
+     * 检查 `value` 是否是 类 `arguments` 对象。
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是正确的类型，返回 `true`，否则返回 `false`
      * @example
      *
      * _.isArguments(function() { return arguments; }());
@@ -9176,14 +9174,14 @@
     }
 
     /**
-     * Checks if `value` is classified as an `Array` object.
+     * 检查 `value` 是否是 `Array` 类对象。
      *
      * @static
      * @memberOf _
      * @type Function
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是正确的类型，返回 `true`，否则返回 `false`
      * @example
      *
      * _.isArray([1, 2, 3]);
@@ -9201,16 +9199,15 @@
     var isArray = Array.isArray;
 
     /**
-     * Checks if `value` is array-like. A value is considered array-like if it's
-     * not a function and has a `value.length` that's an integer greater than or
-     * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+     * 检查 `value` 是否是类数组。
+     * 如果是类数组的话，应该不是一个函数，而且 `value.length` 是个整数，大于等于 0，小于或等于 `Number.MAX_SAFE_INTEGER`
      *
      * @static
      * @memberOf _
      * @type Function
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是类数组，返回 `true`，否则返回 `false`
      * @example
      *
      * _.isArrayLike([1, 2, 3]);
@@ -9230,15 +9227,14 @@
     }
 
     /**
-     * This method is like `_.isArrayLike` except that it also checks if `value`
-     * is an object.
+     * 这个方法类似 `_.isArrayLike`，除了它还检查值是否是个对象。
      *
      * @static
      * @memberOf _
      * @type Function
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is an array-like object, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是类数组对象，返回 `true`，否则返回 `false`
      * @example
      *
      * _.isArrayLikeObject([1, 2, 3]);
@@ -9258,13 +9254,13 @@
     }
 
     /**
-     * Checks if `value` is classified as a boolean primitive or object.
+     * 检查 `value` 是否是原始 boolean 类型或者对象。 
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是正确的类型，返回 `true`，否则返回 `false`
      * @example
      *
      * _.isBoolean(false);
@@ -9279,13 +9275,13 @@
     }
 
     /**
-     * Checks if `value` is classified as a `Date` object.
+     * 检查 `value` 是否是 `Date` 类型
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是正确的类型，返回 `true`，否则返回 `false`
      * @example
      *
      * _.isDate(new Date);
@@ -9299,13 +9295,13 @@
     }
 
     /**
-     * Checks if `value` is likely a DOM element.
+     * 检查 `value` 是否是可能是 DOM 元素
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a DOM element, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是 DOM 元素返回 `true`，否则返回 `false`
      * @example
      *
      * _.isElement(document.body);
@@ -9319,15 +9315,14 @@
     }
 
     /**
-     * Checks if `value` is empty. A value is considered empty unless it's an
-     * `arguments` object, array, string, or jQuery-like collection with a length
-     * greater than `0` or an object with own enumerable properties.
+     * 检查 `value` 是否为空。
+     * 判断的依据是除非是有枚举属性的对象，length 大于 `0` 的 `arguments` object, array, string 或类jquery选择器。
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {Array|Object|string} value The value to inspect.
-     * @returns {boolean} Returns `true` if `value` is empty, else `false`.
+     * @param {Array|Object|string} value 要检查的值
+     * @returns {boolean} 如果为空返回 `true`，否则返回 `false`
      * @example
      *
      * _.isEmpty(null);
@@ -9352,21 +9347,19 @@
     }
 
     /**
-     * Performs a deep comparison between two values to determine if they are
-     * equivalent.
+     * 执行深比较来决定两者的值是否相等。
      *
-     * **注意:** This method supports comparing arrays, array buffers, booleans,
+     * **注意:** 这个方法支持比较 arrays, array buffers, booleans,
      * date objects, error objects, maps, numbers, `Object` objects, regexes,
-     * sets, strings, symbols, and typed arrays. `Object` objects are compared
-     * by their own, not inherited, enumerable properties. Functions and DOM
-     * nodes are **not** supported.
+     * sets, strings, symbols, 以及 typed arrays. `Object` 对象值比较自身的属性，不包括继承的和可枚举的属性。
+     * 不支持函数和DOM节点。
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to compare.
-     * @param {*} other The other value to compare.
-     * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+     * @param {*} value 要比较的值
+     * @param {*} other 其他要比较的值
+     * @returns {boolean} 如果相等返回 `true`，否则返回 `false`
      * @example
      *
      * var object = { 'user': 'fred' };
@@ -9383,18 +9376,17 @@
     }
 
     /**
-     * This method is like `_.isEqual` except that it accepts `customizer` which is
-     * invoked to compare values. If `customizer` returns `undefined` comparisons are
-     * handled by the method instead. The `customizer` is invoked with up to seven arguments:
-     * (objValue, othValue [, index|key, object, other, stack]).
+     * 这个方法类似 `_.isEqual`。
+     * 除了它接受一个 customizer 定制比较值。 如果 customizer 返回 undefined 将会比较处理方法代替。
+     * `customizer` 会传入7个参数：(objValue, othValue [, index|key, object, other, stack])
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to compare.
-     * @param {*} other The other value to compare.
-     * @param {Function} [customizer] The function to customize comparisons.
-     * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+     * @param {*} value 要比较的值
+     * @param {*} other 其他要比较的值
+     * @param {Function} [customizer] 这个函数定制比较值
+     * @returns {boolean} 如果相等返回 `true`，否则返回 `false`
      * @example
      *
      * function isGreeting(value) {
@@ -9420,14 +9412,14 @@
     }
 
     /**
-     * Checks if `value` is an `Error`, `EvalError`, `RangeError`, `ReferenceError`,
-     * `SyntaxError`, `TypeError`, or `URIError` object.
+     * 检查 `value` 是否是 `Error`, `EvalError`, `RangeError`, `ReferenceError`,
+     * `SyntaxError`, `TypeError`, 或 `URIError` object.
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is an error object, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是 error object 返回 `true`，否则返回 `false`
      * @example
      *
      * _.isError(new Error);
@@ -9442,15 +9434,15 @@
     }
 
     /**
-     * Checks if `value` is a finite primitive number.
+     * 检查 `value` 是否是原始 finite number。
      *
-     * **注意:** This method is based on [`Number.isFinite`](https://mdn.io/Number/isFinite).
+     * **注意:** 这个方法基于 [`Number.isFinite`](https://mdn.io/Number/isFinite).
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a finite number, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是 finite number 返回 `true`，否则返回 `false`
      * @example
      *
      * _.isFinite(3);
@@ -9470,13 +9462,13 @@
     }
 
     /**
-     * Checks if `value` is classified as a `Function` object.
+     * 检查 `value` 是否是 `Function` 对象。
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是正确的类型，返回 `true`，否则返回 `false`
      * @example
      *
      * _.isFunction(_);
@@ -9494,15 +9486,15 @@
     }
 
     /**
-     * Checks if `value` is an integer.
+     * 检查 `value` 是否是整数。
      *
-     * **注意:** This method is based on [`Number.isInteger`](https://mdn.io/Number/isInteger).
+     * **注意:** 这个方法基于 [`Number.isInteger`](https://mdn.io/Number/isInteger).
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is an integer, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是整数返回 `true`，否则返回 `false`
      * @example
      *
      * _.isInteger(3);
@@ -9522,15 +9514,15 @@
     }
 
     /**
-     * Checks if `value` is a valid array-like length.
+     * 检查 `value` 是否是有效长度
      *
-     * **注意:** This function is loosely based on [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
+     * **注意:** 这个方法参考自 [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是有效长度返回 `true`，否则返回 `false`
      * @example
      *
      * _.isLength(3);
@@ -9550,14 +9542,14 @@
     }
 
     /**
-     * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
-     * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+     * 检查 `value` 是否是 `Object` 的 [language type](https://es5.github.io/#x8)。
+     * (例如： arrays, functions, objects, regexes, `new Number(0)`, 以及 `new String('')`)
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是对象返回 `true`，否则返回 `false`
      * @example
      *
      * _.isObject({});
@@ -9580,14 +9572,14 @@
     }
 
     /**
-     * Checks if `value` is object-like. A value is object-like if it's not `null`
-     * and has a `typeof` result of "object".
+     * 检查 `value` 是否是 类对象。
+     * 类对象应该不是 `null` 以及 `typeof` 的结果是 "object"。
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是类对象返回 `true`，否则返回 `false`
      * @example
      *
      * _.isObjectLike({});
@@ -9607,17 +9599,16 @@
     }
 
     /**
-     * Performs a deep comparison between `object` and `source` to determine if
-     * `object` contains equivalent property values.
+     * 执行一个深比较来确定`object` 是否包含有 `source` 的属性值。
      *
-     * **注意:** This method supports comparing the same values as `_.isEqual`.
+     * **注意:** 这个方法支持比较相同的值和 `_.isEqual` 一样
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {Object} object The object to inspect.
-     * @param {Object} source The object of property values to match.
-     * @returns {boolean} Returns `true` if `object` is a match, else `false`.
+     * @param {Object} object 要检查的值
+     * @param {Object} source 匹配包含在 object 的对象
+     * @returns {boolean} 如果匹配返回 `true`，否则返回 `false`
      * @example
      *
      * var object = { 'user': 'fred', 'age': 40 };
@@ -9633,18 +9624,17 @@
     }
 
     /**
-     * This method is like `_.isMatch` except that it accepts `customizer` which
-     * is invoked to compare values. If `customizer` returns `undefined` comparisons
-     * are handled by the method instead. The `customizer` is invoked with three
-     * arguments: (objValue, srcValue, index|key, object, source).
+     * 这个方法类似 `_.isMatch`。
+     * 除了它接受一个 customizer 定制比较的值。 
+     * 如果 customizer 返回 undefined 将会比较处理方法代替。 customizer 会传入5个参数：(objValue, srcValue, index|key, object, source)
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {Object} object The object to inspect.
-     * @param {Object} source The object of property values to match.
-     * @param {Function} [customizer] The function to customize comparisons.
-     * @returns {boolean} Returns `true` if `object` is a match, else `false`.
+     * @param {Object} object 要检查的值
+     * @param {Object} source 匹配包含在 object 的对象
+     * @param {Function} [customizer] 这个函数定制比较值
+     * @returns {boolean} 如果匹配返回 `true`，否则返回 `false`
      * @example
      *
      * function isGreeting(value) {
@@ -9669,16 +9659,16 @@
     }
 
     /**
-     * Checks if `value` is `NaN`.
+     * 检查 `value` 是否是 `NaN`.
      *
-     * **注意:** This method is not the same as [`isNaN`](https://es5.github.io/#x15.1.2.4)
-     * which returns `true` for `undefined` and other non-numeric values.
+     * **注意:** 这个方法不同于 [`isNaN`](https://es5.github.io/#x15.1.2.4)
+     * 对 undefind 和 其他非数值返回 true.
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is `NaN`, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果符合 `NaN` 返回 `true`，否则返回 `false`
      * @example
      *
      * _.isNaN(NaN);
@@ -9700,13 +9690,13 @@
     }
 
     /**
-     * Checks if `value` is a native function.
+     * 检查 `value` 是否是原生函数
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a native function, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是原生函数返回 `true`，否则返回 `false`
      * @example
      *
      * _.isNative(Array.prototype.push);
@@ -9727,13 +9717,13 @@
     }
 
     /**
-     * Checks if `value` is `null`.
+     * 检查 `value` 是否是 `null`.
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is `null`, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是 `null` 返回 `true`，否则返回 `false`
      * @example
      *
      * _.isNull(null);
@@ -9747,13 +9737,13 @@
     }
 
     /**
-     * Checks if `value` is `null` or `undefined`.
+     * 检查 `value` 是否是 `null` 或者 `undefined`。
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is nullish, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是 `null` 或者 `undefined` 返回 `true`，否则返回 `false`
      * @example
      *
      * _.isNil(null);
@@ -9770,7 +9760,7 @@
     }
 
     /**
-     * Checks if `value` is classified as a `Number` primitive or object.
+     * 检查 `value` 是否是 as a `Number` primitive or object.
      *
      * **注意:** To exclude `Infinity`, `-Infinity`, and `NaN`, which are classified
      * as numbers, use the `_.isFinite` method.
@@ -9778,8 +9768,8 @@
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是正确的类型，返回 `true`，否则返回 `false`
      * @example
      *
      * _.isNumber(3);
@@ -9800,14 +9790,14 @@
     }
 
     /**
-     * Checks if `value` is a plain object, that is, an object created by the
+     * 检查 `value` 是否是 a plain object, that is, an object created by the
      * `Object` constructor or one with a `[[Prototype]]` of `null`.
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} Returns `true` if `value` is a plain object否则返回 `false`
      * @example
      *
      * function Foo() {
@@ -9843,13 +9833,13 @@
     }
 
     /**
-     * Checks if `value` is classified as a `RegExp` object.
+     * 检查 `value` 是否是 as a `RegExp` object.
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是正确的类型，返回 `true`，否则返回 `false`
      * @example
      *
      * _.isRegExp(/abc/);
@@ -9863,7 +9853,7 @@
     }
 
     /**
-     * Checks if `value` is a safe integer. An integer is safe if it's an IEEE-754
+     * 检查 `value` 是否是 a safe integer. An integer is safe if it's an IEEE-754
      * double precision number which isn't the result of a rounded unsafe integer.
      *
      * **注意:** This method is based on [`Number.isSafeInteger`](https://mdn.io/Number/isSafeInteger).
@@ -9871,8 +9861,8 @@
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is a safe integer, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} Returns `true` if `value` is a safe integer否则返回 `false`
      * @example
      *
      * _.isSafeInteger(3);
@@ -9892,13 +9882,13 @@
     }
 
     /**
-     * Checks if `value` is classified as a `String` primitive or object.
+     * 检查 `value` 是否是 as a `String` primitive or object.
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是正确的类型，返回 `true`，否则返回 `false`
      * @example
      *
      * _.isString('abc');
@@ -9913,13 +9903,13 @@
     }
 
     /**
-     * Checks if `value` is classified as a `Symbol` primitive or object.
+     * 检查 `value` 是否是 as a `Symbol` primitive or object.
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是正确的类型，返回 `true`，否则返回 `false`
      * @example
      *
      * _.isSymbol(Symbol.iterator);
@@ -9934,13 +9924,13 @@
     }
 
     /**
-     * Checks if `value` is classified as a typed array.
+     * 检查 `value` 是否是 as a typed array.
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} 如果是正确的类型，返回 `true`，否则返回 `false`
      * @example
      *
      * _.isTypedArray(new Uint8Array);
@@ -9954,13 +9944,13 @@
     }
 
     /**
-     * Checks if `value` is `undefined`.
+     * 检查 `value` 是否是 `undefined`.
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is `undefined`, else `false`.
+     * @param {*} value 要检查的值
+     * @returns {boolean} Returns `true` if `value` is `undefined`否则返回 `false`
      * @example
      *
      * _.isUndefined(void 0);
@@ -9974,14 +9964,14 @@
     }
 
     /**
-     * Checks if `value` is less than `other`.
+     * 检查 `value` 是否是 less than `other`.
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to compare.
-     * @param {*} other The other value to compare.
-     * @returns {boolean} Returns `true` if `value` is less than `other`, else `false`.
+     * @param {*} value 要比较的值
+     * @param {*} other 其他要比较的值
+     * @returns {boolean} Returns `true` if `value` is less than `other`否则返回 `false`
      * @example
      *
      * _.lt(1, 3);
@@ -9998,14 +9988,14 @@
     }
 
     /**
-     * Checks if `value` is less than or equal to `other`.
+     * 检查 `value` 是否是 less than or equal to `other`.
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to compare.
-     * @param {*} other The other value to compare.
-     * @returns {boolean} Returns `true` if `value` is less than or equal to `other`, else `false`.
+     * @param {*} value 要比较的值
+     * @param {*} other 其他要比较的值
+     * @returns {boolean} Returns `true` if `value` is less than or equal to `other`否则返回 `false`
      * @example
      *
      * _.lte(1, 3);
@@ -10765,7 +10755,7 @@
      * @category Object
      * @param {Object} object The object to query.
      * @param {Array|string} path The path to check.
-     * @returns {boolean} Returns `true` if `path` exists, else `false`.
+     * @returns {boolean} Returns `true` if `path` exists否则返回 `false`
      * @example
      *
      * var object = { 'a': { 'b': { 'c': 3 } } };
@@ -10795,7 +10785,7 @@
      * @category Object
      * @param {Object} object The object to query.
      * @param {Array|string} path The path to check.
-     * @returns {boolean} Returns `true` if `path` exists, else `false`.
+     * @returns {boolean} Returns `true` if `path` exists否则返回 `false`
      * @example
      *
      * var object = _.create({ 'a': _.create({ 'b': _.create({ 'c': 3 }) }) });
@@ -11390,7 +11380,7 @@
      * @category Object
      * @param {Object} object The object to modify.
      * @param {Array|string} path The path of the property to unset.
-     * @returns {boolean} Returns `true` if the property is deleted, else `false`.
+     * @returns {boolean} Returns `true` if the property is deleted否则返回 `false`
      * @example
      *
      * var object = { 'a': [{ 'b': { 'c': 7 } }] };
@@ -11519,7 +11509,7 @@
      * @param {number} number The number to check.
      * @param {number} [start=0] The start of the range.
      * @param {number} end The end of the range.
-     * @returns {boolean} Returns `true` if `number` is in the range, else `false`.
+     * @returns {boolean} Returns `true` if `number` is in the range否则返回 `false`
      * @example
      *
      * _.inRange(3, 2, 4);
@@ -11696,7 +11686,7 @@
      * @param {string} [string=''] The string to search.
      * @param {string} [target] The string to search for.
      * @param {number} [position=string.length] The position to search from.
-     * @returns {boolean} Returns `true` if `string` ends with `target`, else `false`.
+     * @returns {boolean} Returns `true` if `string` ends with `target`否则返回 `false`
      * @example
      *
      * _.endsWith('abc', 'c');
@@ -12130,7 +12120,7 @@
      * @param {string} [string=''] The string to search.
      * @param {string} [target] The string to search for.
      * @param {number} [position=0] The position to search from.
-     * @returns {boolean} Returns `true` if `string` starts with `target`, else `false`.
+     * @returns {boolean} Returns `true` if `string` starts with `target`否则返回 `false`
      * @example
      *
      * _.startsWith('abc', 'a');
@@ -12787,7 +12777,7 @@
     /**
      * Creates a function that invokes the predicate properties of `source` with
      * the corresponding property values of a given object, returning `true` if
-     * all predicates return truthy, else `false`.
+     * all predicates return truthy否则返回 `false`
      *
      * @static
      * @memberOf _
@@ -12935,7 +12925,7 @@
     /**
      * Creates a function that performs a deep partial comparison between a given
      * object and `source`, returning `true` if the given object has equivalent
-     * property values, else `false`.
+     * property values否则返回 `false`
      *
      * **注意:** This method supports comparing the same values as `_.isEqual`.
      *
@@ -12961,7 +12951,7 @@
     /**
      * Creates a function that performs a deep partial comparison between the
      * value at `path` of a given object to `srcValue`, returning `true` if the
-     * object value is equivalent, else `false`.
+     * object value is equivalent否则返回 `false`
      *
      * **注意:** This method supports comparing the same values as `_.isEqual`.
      *
