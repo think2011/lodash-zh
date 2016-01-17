@@ -9760,10 +9760,9 @@
     }
 
     /**
-     * 检查 `value` 是否是 as a `Number` primitive or object.
+     * 检查 `value` 是否是原始数值型 或者 对象。
      *
-     * **注意:** To exclude `Infinity`, `-Infinity`, and `NaN`, which are classified
-     * as numbers, use the `_.isFinite` method.
+     * **注意:** 要排除 `Infinity`, `-Infinity`, 以及 `NaN` 数值类型，用 `_.isFinite` 方法
      *
      * @static
      * @memberOf _
@@ -9790,14 +9789,14 @@
     }
 
     /**
-     * 检查 `value` 是否是 a plain object, that is, an object created by the
-     * `Object` constructor or one with a `[[Prototype]]` of `null`.
+     * 检查 `value` 是否是普通对象。
+     * 也就是说该对象由 `Object` 构造函数创建或者 `[[Prototype]]` 为空。
      *
      * @static
      * @memberOf _
      * @category Lang
      * @param {*} value 要检查的值
-     * @returns {boolean} Returns `true` if `value` is a plain object否则返回 `false`
+     * @returns {boolean} 如果是普通对象返回 `true`，否则返回 `false`
      * @example
      *
      * function Foo() {
@@ -9833,7 +9832,7 @@
     }
 
     /**
-     * 检查 `value` 是否是 as a `RegExp` object.
+     * 检查 `value` 是否是 `RegExp` 对象
      *
      * @static
      * @memberOf _
@@ -9853,16 +9852,16 @@
     }
 
     /**
-     * 检查 `value` 是否是 a safe integer. An integer is safe if it's an IEEE-754
-     * double precision number which isn't the result of a rounded unsafe integer.
-     *
-     * **注意:** This method is based on [`Number.isSafeInteger`](https://mdn.io/Number/isSafeInteger).
+     * 检查 `value` 是否是安全整数。
+     * 这个整数应该是符合 IEEE-754 标准的非双精度浮点数。
+     * 
+     * **注意:** 这个方法基于 [`Number.isSafeInteger`](https://mdn.io/Number/isSafeInteger).
      *
      * @static
      * @memberOf _
      * @category Lang
      * @param {*} value 要检查的值
-     * @returns {boolean} Returns `true` if `value` is a safe integer否则返回 `false`
+     * @returns {boolean} 如果是安全整数返回`true`，否则返回 `false`
      * @example
      *
      * _.isSafeInteger(3);
@@ -9882,7 +9881,7 @@
     }
 
     /**
-     * 检查 `value` 是否是 as a `String` primitive or object.
+     * 检查 `value` 是否是原始字符串或者对象。
      *
      * @static
      * @memberOf _
@@ -9903,7 +9902,7 @@
     }
 
     /**
-     * 检查 `value` 是否是 as a `Symbol` primitive or object.
+     * 检查 `value` 是否是原始 `Symbol` 或者对象。
      *
      * @static
      * @memberOf _
@@ -9924,7 +9923,7 @@
     }
 
     /**
-     * 检查 `value` 是否是 as a typed array.
+     * 检查 `value` 是否是TypedArray。
      *
      * @static
      * @memberOf _
@@ -9964,14 +9963,14 @@
     }
 
     /**
-     * 检查 `value` 是否是 less than `other`.
+     * 检查 `value` 是否是 小于 `other`。
      *
      * @static
      * @memberOf _
      * @category Lang
      * @param {*} value 要比较的值
      * @param {*} other 其他要比较的值
-     * @returns {boolean} Returns `true` if `value` is less than `other`否则返回 `false`
+     * @returns {boolean} 如果 `value` 小于 `other` 返回 `true`，否则返回 `false`
      * @example
      *
      * _.lt(1, 3);
@@ -9988,14 +9987,14 @@
     }
 
     /**
-     * 检查 `value` 是否是 less than or equal to `other`.
+     * 检查 `value` 是否是 小于等于 `other`.
      *
      * @static
      * @memberOf _
      * @category Lang
      * @param {*} value 要比较的值
      * @param {*} other 其他要比较的值
-     * @returns {boolean} Returns `true` if `value` is less than or equal to `other`否则返回 `false`
+     * @returns {boolean} 如果 `value` 小于等于 `other` 返回 `true`，否则返回 `false`
      * @example
      *
      * _.lte(1, 3);
@@ -10012,13 +10011,13 @@
     }
 
     /**
-     * Converts `value` to an array.
+     * 转换 `value` 为数组
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to convert.
-     * @returns {Array} Returns the converted array.
+     * @param {*} value 要转换的值
+     * @returns {Array} 然后转换后的数组
      * @example
      *
      * (function() {
@@ -10043,15 +10042,15 @@
     }
 
     /**
-     * Converts `value` to an integer.
+     * 转换 `value` 为整数
      *
-     * **注意:** This function is loosely based on [`ToInteger`](http://www.ecma-international.org/ecma-262/6.0/#sec-tointeger).
+     * **注意:** 这个函数参考 [`ToInteger`](http://www.ecma-international.org/ecma-262/6.0/#sec-tointeger).
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to convert.
-     * @returns {number} Returns the converted integer.
+     * @param {*} value 要转换的值
+     * @returns {number} 返回转换后的整数
      * @example
      *
      * _.toInteger(3);
@@ -10080,16 +10079,15 @@
     }
 
     /**
-     * Converts `value` to an integer suitable for use as the length of an
-     * array-like object.
+     * 转换 `value` 为用作类数组对象的长度整数。
      *
-     * **注意:** This method is based on [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
+     * **注意:** 这个方法基于 [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to convert.
-     * @return {number} Returns the converted integer.
+     * @param {*} value 要转换的值
+     * @returns {number} 返回转换后的整数
      * @example
      *
      * _.toLength(3);
@@ -10112,13 +10110,13 @@
     }
 
     /**
-     * Converts `value` to a number.
+     * 转换 `value` 为数值
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to process.
-     * @returns {number} Returns the number.
+     * @param {*} value 要处理的值
+     * @returns {number} 返回数值
      * @example
      *
      * _.toNumber(3);
@@ -10152,14 +10150,14 @@
     }
 
     /**
-     * Converts `value` to a plain object flattening inherited enumerable
-     * properties of `value` to own properties of the plain object.
+     * 转换 `value` 为普通对象。
+     * 包括继承的可枚举属性。
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to convert.
-     * @returns {Object} Returns the converted plain object.
+     * @param {*} value 要转换的值
+     * @returns {Object} 返回转换后的普通对象
      * @example
      *
      * function Foo() {
@@ -10179,14 +10177,14 @@
     }
 
     /**
-     * Converts `value` to a safe integer. A safe integer can be compared and
-     * represented correctly.
+     * 转换 `value` 为安全整数。
+     * 安全整数可以用于比较和准确的表示。
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to convert.
-     * @returns {number} Returns the converted integer.
+     * @param {*} value 要转换的值
+     * @returns {number} 返回转换后的整数
      * @example
      *
      * _.toSafeInteger(3);
@@ -10209,14 +10207,14 @@
     }
 
     /**
-     * Converts `value` to a string if it's not one. An empty string is returned
-     * for `null` and `undefined` values. The sign of `-0` is preserved.
+     * 如果 `value` 不是字符串，将其转换为字符串。
+     * `null` 和 `undefined` 将返回空字符串。
      *
      * @static
      * @memberOf _
      * @category Lang
-     * @param {*} value The value to process.
-     * @returns {string} Returns the string.
+     * @param {*} value 要转换的值
+     * @returns {string} 返回字符串
      * @example
      *
      * _.toString(null);
