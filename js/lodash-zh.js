@@ -1185,10 +1185,10 @@
   }
 
   /**
-   * Gets the number of symbols in `string`.
+   * 获得字符串的长度
    *
-   * @param {string} string The string to inspect.
-   * @returns {number} Returns the string size.
+   * @param {string} string 要处理的字符串
+   * @returns {number} 返回字符串长度
    */
   function stringSize (string) {
     if (!(string && reHasComplexSymbol.test(string))) {
@@ -1574,7 +1574,7 @@
       'imports': {
 
         /**
-         * A reference to the `lodash` function.
+         * `lodash` 函数的引用
          *
          * @memberOf _.templateSettings.imports
          * @type Function
@@ -2173,9 +2173,9 @@
      * or `customizer` functions.
      *
      * @private
-     * @param {Object} object The destination object.
+     * @param {Object} object 目标对象
      * @param {Object} source The source object.
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      */
     function baseAssign (object, source) {
       return object && copyObject(source, keys(source), object);
@@ -2525,7 +2525,7 @@
      * @param {Object} object The object to iterate over.
      * @param {Function} iteratee 这个函数会处理每一个元素
      * @param {Function} keysFunc The function to get the keys of `object`.
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      */
     var baseFor = createBaseFor();
 
@@ -2537,7 +2537,7 @@
      * @param {Object} object The object to iterate over.
      * @param {Function} iteratee 这个函数会处理每一个元素
      * @param {Function} keysFunc The function to get the keys of `object`.
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      */
     var baseForRight = createBaseFor(true);
 
@@ -2547,7 +2547,7 @@
      * @private
      * @param {Object} object The object to iterate over.
      * @param {Function} iteratee 这个函数会处理每一个元素
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      */
     function baseForIn (object, iteratee) {
       return object == null ? object : baseFor(object, iteratee, keysIn);
@@ -2559,7 +2559,7 @@
      * @private
      * @param {Object} object The object to iterate over.
      * @param {Function} iteratee 这个函数会处理每一个元素
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      */
     function baseForOwn (object, iteratee) {
       return object && baseFor(object, iteratee, keys);
@@ -2571,7 +2571,7 @@
      * @private
      * @param {Object} object The object to iterate over.
      * @param {Function} iteratee 这个函数会处理每一个元素
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      */
     function baseForOwnRight (object, iteratee) {
       return object && baseForRight(object, iteratee, keys);
@@ -2986,7 +2986,7 @@
      * The base implementation of `_.merge` without support for multiple sources.
      *
      * @private
-     * @param {Object} object The destination object.
+     * @param {Object} object 目标对象
      * @param {Object} source The source object.
      * @param {Function} [customizer] The function to customize merged values.
      * @param {Object} [stack] Tracks traversed source values and their merged counterparts.
@@ -3021,7 +3021,7 @@
      * references to be merged.
      *
      * @private
-     * @param {Object} object The destination object.
+     * @param {Object} object 目标对象
      * @param {Object} source The source object.
      * @param {string} key The key of the value to merge.
      * @param {Function} mergeFunc The function to merge values.
@@ -3294,7 +3294,7 @@
      * @param {Array|string} path The path of the property to set.
      * @param {*} value The value to set.
      * @param {Function} [customizer] The function to customize path creation.
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      */
     function baseSet (object, path, value, customizer) {
       path = isKey(path, object) ? [path + ''] : baseToPath(path);
@@ -3829,7 +3829,7 @@
      * @param {Object} source The object to copy properties from.
      * @param {Array} props The property names to copy.
      * @param {Object} [object={}] The object to copy properties to.
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      */
     function copyObject (source, props, object) {
       return copyObjectWith(source, props, object);
@@ -3844,7 +3844,7 @@
      * @param {Array} props The property names to copy.
      * @param {Object} [object={}] The object to copy properties to.
      * @param {Function} [customizer] The function to customize copied values.
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      */
     function copyObjectWith (source, props, object, customizer) {
       object || (object = {});
@@ -3867,7 +3867,7 @@
      * @private
      * @param {Object} source The object to copy symbols from.
      * @param {Object} [object={}] The object to copy symbols to.
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      */
     function copySymbols (source, object) {
       return copyObject(source, getSymbols(source), object);
@@ -10274,8 +10274,8 @@
     });
 
     /**
-     * 这个方法类似 `_.assign` except that it iterates over own and
-     * inherited source properties.
+     * 这个方法类似 `_.assign`。
+     * 除了它会遍历并继承来源对象的属性。
      *
      * **注意:** 这方法会改变源对象
      *
@@ -10283,9 +10283,9 @@
      * @memberOf _
      * @alias extend
      * @category Object
-     * @param {Object} object The destination object.
-     * @param {...Object} [sources] The source objects.
-     * @returns {Object} Returns `object`.
+     * @param {Object} object 目标对象
+     * @param {...Object} [sources] 来源对象
+     * @returns {Object} 返回对象
      * @example
      *
      * function Foo() {
@@ -10307,10 +10307,10 @@
     });
 
     /**
-     * 这个方法类似 `_.assignIn` except that it accepts `customizer` which
-     * is invoked to produce the assigned values. If `customizer` returns `undefined`
-     * assignment is handled by the method instead. The `customizer` is invoked
-     * with five arguments: (objValue, srcValue, key, object, source).
+     * 这个方法类似 `_.assignIn`。
+     * 除了它接受一个 customizer` 决定如何分配值。
+     * 如果 `customizer` 返回 `undefined` 将会分配处理方法代替。
+     * `customizer` 会传入5个参数：(objValue, srcValue, key, object, source)。
      *
      * **注意:** 这方法会改变源对象
      *
@@ -10318,10 +10318,10 @@
      * @memberOf _
      * @alias extendWith
      * @category Object
-     * @param {Object} object The destination object.
-     * @param {...Object} sources The source objects.
-     * @param {Function} [customizer] The function to customize assigned values.
-     * @returns {Object} Returns `object`.
+     * @param {Object} object 目标对象
+     * @param {...Object} sources 来源对象
+     * @param {Function} [customizer] 这个函数决定分配的值
+     * @returns {Object} 返回对象
      * @example
      *
      * function customizer(objValue, srcValue) {
@@ -10338,20 +10338,20 @@
     });
 
     /**
-     * 这个方法类似 `_.assign` except that it accepts `customizer` which
-     * is invoked to produce the assigned values. If `customizer` returns `undefined`
-     * assignment is handled by the method instead. The `customizer` is invoked
-     * with five arguments: (objValue, srcValue, key, object, source).
+     * 这个方法类似 `_.assign`。
+     * 除了它接受一个 customizer` 决定如何分配值。
+     * 如果 `customizer` 返回 `undefined` 将会分配处理方法代替。
+     * `customizer` 会传入5个参数：(objValue, srcValue, key, object, source)。
      *
      * **注意:** 这方法会改变源对象
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The destination object.
-     * @param {...Object} sources The source objects.
-     * @param {Function} [customizer] The function to customize assigned values.
-     * @returns {Object} Returns `object`.
+     * @param {Object} object 目标对象
+     * @param {...Object} sources 来源对象
+     * @param {Function} [customizer] 这个函数决定分配的值
+     * @returns {Object} 返回对象
      * @example
      *
      * function customizer(objValue, srcValue) {
@@ -10439,9 +10439,9 @@
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The destination object.
-     * @param {...Object} [sources] The source objects.
-     * @returns {Object} Returns `object`.
+     * @param {Object} object 目标对象
+     * @param {...Object} [sources] 来源对象
+     * @returns {Object} 返回对象
      * @example
      *
      * _.defaults({ 'user': 'barney' }, { 'age': 36 }, { 'user': 'fred' });
@@ -10461,9 +10461,9 @@
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The destination object.
-     * @param {...Object} [sources] The source objects.
-     * @returns {Object} Returns `object`.
+     * @param {Object} object 目标对象
+     * @param {...Object} [sources] 来源对象
+     * @returns {Object} 返回对象
      * @example
      *
      * _.defaultsDeep({ 'user': { 'name': 'barney' } }, { 'user': { 'name': 'fred', 'age': 36 } });
@@ -10560,7 +10560,7 @@
      * @category Object
      * @param {Object} object The object to iterate over.
      * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      * @example
      *
      * function Foo() {
@@ -10588,7 +10588,7 @@
      * @category Object
      * @param {Object} object The object to iterate over.
      * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      * @example
      *
      * function Foo() {
@@ -10618,7 +10618,7 @@
      * @category Object
      * @param {Object} object The object to iterate over.
      * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      * @example
      *
      * function Foo() {
@@ -10646,7 +10646,7 @@
      * @category Object
      * @param {Object} object The object to iterate over.
      * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      * @example
      *
      * function Foo() {
@@ -11024,9 +11024,9 @@
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The destination object.
-     * @param {...Object} [sources] The source objects.
-     * @returns {Object} Returns `object`.
+     * @param {Object} object 目标对象
+     * @param {...Object} [sources] 来源对象
+     * @returns {Object} 返回对象
      * @example
      *
      * var users = {
@@ -11054,10 +11054,10 @@
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The destination object.
-     * @param {...Object} sources The source objects.
+     * @param {Object} object 目标对象
+     * @param {...Object} sources 来源对象
      * @param {Function} customizer The function to customize assigned values.
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      * @example
      *
      * function customizer(objValue, srcValue) {
@@ -11230,7 +11230,7 @@
      * @param {Object} object The object to modify.
      * @param {Array|string} path The path of the property to set.
      * @param {*} value The value to set.
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      * @example
      *
      * var object = { 'a': [{ 'b': { 'c': 3 } }] };
@@ -11260,7 +11260,7 @@
      * @param {Array|string} path The path of the property to set.
      * @param {*} value The value to set.
      * @param {Function} [customizer] The function to customize assigned values.
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      * @example
      *
      * _.setWith({ '0': { 'length': 2 } }, '[0][1][2]', 3, Object);
@@ -11455,16 +11455,15 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Returns a number whose value is limited to the given range specified
-     * by `min` and `max`.
+     * 返回限制在 `min` 和 `max` 之间的值
      *
      * @static
      * @memberOf _
      * @category Number
-     * @param {number} number The number whose value is to be limited.
-     * @param {number} [min] The minimum possible value.
-     * @param {number} max The maximum possible value.
-     * @returns {number} A number in the range [min, max].
+     * @param {number} number 被限制的值
+     * @param {number} [min] 最小绝对值
+     * @param {number} max 最大绝对值
+     * @returns {number} [min, max] 中的一个
      * @example
      *
      * _.clamp(-10, -5, 5);
@@ -11495,18 +11494,17 @@
     }
 
     /**
-     * Checks if `n` is between `start` and up to but not including, `end`. If
-     * `end` is not specified it's set to `start` with `start` then set to `0`.
-     * If `start` is greater than `end` the params are swapped to support
-     * negative ranges.
+     * 检查 `n` 是否在 `start` 与 `end` 之间，但不包括 `end`。
+     * 如果 `end` 没有指定，那么 `start` 设置为0。
+     * 如果 `start` 大于 `end`，那么参数会交换以便支持负范围。
      *
      * @static
      * @memberOf _
      * @category Number
-     * @param {number} number The number to check.
-     * @param {number} [start=0] The start of the range.
-     * @param {number} end The end of the range.
-     * @returns {boolean} Returns `true` if `number` is in the range否则返回 `false`
+     * @param {number} number 要检查的值
+     * @param {number} [start=0] 开始范围
+     * @param {number} end 结束范围
+     * @returns {boolean} 如果值在范围内返回`true`，否则返回 `false`
      * @example
      *
      * _.inRange(3, 2, 4);
@@ -11543,34 +11541,32 @@
     }
 
     /**
-     * Produces a random number between `min` and `max` (inclusive). If only one
-     * argument is provided a number between `0` and the given number is returned.
-     * If `floating` is `true`, or either `min` or `max` are floats, a
-     * floating-point number is returned instead of an integer.
+     * 产生一个包括  `min` 与 `max` 之间的数。
+     * 如果只提供一个参数返回一个0到提供数之间的数。
+     * 如果 `floating` 设为 true，或者 `min` 或 `max` 是浮点数，结果返回浮点数。
      *
-     * **注意:** JavaScript follows the IEEE-754 standard for resolving
-     * floating-point values which can produce unexpected results.
+     * **注意:** JavaScript 遵循 IEEE-754 标准处理无法预料的浮点数结果。
      *
      * @static
      * @memberOf _
      * @category Number
-     * @param {number} [min=0] The minimum possible value.
-     * @param {number} [max=1] The maximum possible value.
-     * @param {boolean} [floating] Specify returning a floating-point number.
-     * @returns {number} Returns the random number.
+     * @param {number} [min=0] 最小值
+     * @param {number} [max=1] 最大值
+     * @param {boolean} [floating] 是否返回浮点数
+     * @returns {number} 返回随机数
      * @example
      *
      * _.random(0, 5);
-     * // => an integer between 0 and 5
+     * // =>  0 和 5 之间的数
      *
      * _.random(5);
-     * // => also an integer between 0 and 5
+     * // => 同样是 0 和 5 之间的数
      *
      * _.random(5, true);
-     * // => a floating-point number between 0 and 5
+     * // => 0 和 5 之间的浮点数
      *
      * _.random(1.2, 5.2);
-     * // => a floating-point number between 1.2 and 5.2
+     * // =>  1.2 和 5.2 之间的浮点数
      */
     function random (min, max, floating) {
       if (floating && typeof floating != 'boolean' && isIterateeCall(min, max, floating)) {
@@ -12700,7 +12696,7 @@
      * @param {Object} object The object to bind and assign the bound methods to.
      * @param {...(string|string[])} methodNames The object method names to bind,
      *  specified individually or in arrays.
-     * @returns {Object} Returns `object`.
+     * @returns {Object} 返回对象
      * @example
      *
      * var view = {
@@ -13040,12 +13036,12 @@
      * @static
      * @memberOf _
      * @category Utility
-     * @param {Function|Object} [object=lodash] The destination object.
+     * @param {Function|Object} [object=lodash] 目标对象
      * @param {Object} source The object of functions to add.
      * @param {Object} [options] The options object.
      * @param {boolean} [options.chain=true] Specify whether the functions added
      *  are chainable.
-     * @returns {Function|Object} Returns `object`.
+     * @returns {Function|Object} 返回对象
      * @example
      *
      * function vowels(string) {
@@ -13451,14 +13447,14 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Adds two numbers.
+     * 相加两个数
      *
      * @static
      * @memberOf _
      * @category Math
-     * @param {number} augend The first number in an addition.
-     * @param {number} addend The second number in an addition.
-     * @returns {number} Returns the total.
+     * @param {number} augend 相加的第一个数
+     * @param {number} addend 相加的第二个数
+     * @returns {number} 返回总和
      * @example
      *
      * _.add(6, 4);
@@ -13476,14 +13472,14 @@
     }
 
     /**
-     * Computes `number` rounded up to `precision`.
+     * 根据 `precision` 向上舍入 `number`。
      *
      * @static
      * @memberOf _
      * @category Math
-     * @param {number} number The number to round up.
-     * @param {number} [precision=0] The precision to round up to.
-     * @returns {number} Returns the rounded up number.
+     * @param {number} number 要向上舍入的值
+     * @param {number} [precision=0] 精度
+     * @returns {number}返回向上舍入的结果
      * @example
      *
      * _.ceil(4.006);
@@ -13498,14 +13494,14 @@
     var ceil = createRound('ceil');
 
     /**
-     * Computes `number` rounded down to `precision`.
+     * 根据 `precision` 向下保留 `number`。
      *
      * @static
      * @memberOf _
      * @category Math
-     * @param {number} number The number to round down.
-     * @param {number} [precision=0] The precision to round down to.
-     * @returns {number} Returns the rounded down number.
+     * @param {number} number 要向下保留的数
+     * @param {number} [precision=0] 精度
+     * @returns {number} 返回向下保留的结果
      * @example
      *
      * _.floor(4.006);
@@ -13520,14 +13516,14 @@
     var floor = createRound('floor');
 
     /**
-     * Computes the maximum value of `array`. If `array` is empty or falsey
-     * `undefined` is returned.
+     * 计算 `array` 中最大的值。
+     * 如果 `array` 是 空的或者假值将会返回 undefined。
      *
      * @static
      * @memberOf _
      * @category Math
-     * @param {Array} array The array to iterate over.
-     * @returns {*} Returns the maximum value.
+     * @param {Array} array 要计算的数组
+     * @returns {*} 返回最大的值
      * @example
      *
      * _.max([4, 2, 8, 6]);
@@ -13543,16 +13539,16 @@
     }
 
     /**
-     * 这个方法类似 `_.max` except that it accepts `iteratee` which is
-     * invoked for each element in `array` to generate the criterion by which
-     * the value is ranked. The iteratee 会传入1个参数：(value)。
+     * 这个方法类似 `_.max` 
+     * 除了它接受 `iteratee` 调用每一个元素，根据返回的 value 决定排序准则。 
+     * iteratee 会传入1个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Math
-     * @param {Array} array The array to iterate over.
+     * @param {Array} array 要遍历的数组
      * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
-     * @returns {*} Returns the maximum value.
+     * @returns {*} 返回最大值
      * @example
      *
      * var users = [
@@ -13574,13 +13570,13 @@
     }
 
     /**
-     * Computes the mean of the values in `array`.
+     * 计算 `array` 的平均值。
      *
      * @static
      * @memberOf _
      * @category Math
-     * @param {Array} array The array to iterate over.
-     * @returns {number} Returns the mean.
+     * @param {Array} array 要遍历的数组
+     * @returns {number} 返回平均值
      * @example
      *
      * _.mean([4, 2, 8, 6]);
@@ -13591,14 +13587,13 @@
     }
 
     /**
-     * Computes the minimum value of `array`. If `array` is empty or falsey
-     * `undefined` is returned.
+     * 计算 array 中最小的值。 如果 array 是 空的或者假值将会返回 undefined。
      *
      * @static
      * @memberOf _
      * @category Math
-     * @param {Array} array The array to iterate over.
-     * @returns {*} Returns the minimum value.
+     * @param {Array} array 要计算的数组
+     * @returns {*} 返回最小值
      * @example
      *
      * _.min([4, 2, 8, 6]);
@@ -13614,16 +13609,15 @@
     }
 
     /**
-     * 这个方法类似 `_.min` except that it accepts `iteratee` which is
-     * invoked for each element in `array` to generate the criterion by which
-     * the value is ranked. The iteratee 会传入1个参数：(value)。
+     * 这个方法类似 `_.min`。
+     * 除了它接受 iteratee 调用每一个元素，根据返回的 value 决定排序准则。 iteratee 会传入1个参数：(value)。
      *
      * @static
      * @memberOf _
      * @category Math
-     * @param {Array} array The array to iterate over.
+     * @param {Array} array 要遍历的数组
      * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
-     * @returns {*} Returns the minimum value.
+     * @returns {*} 返回最小值
      * @example
      *
      * var users = [
@@ -13645,14 +13639,14 @@
     }
 
     /**
-     * Computes `number` rounded to `precision`.
+     * 根据 precision 四舍五入 number。
      *
      * @static
      * @memberOf _
      * @category Math
-     * @param {number} number The number to round.
-     * @param {number} [precision=0] The precision to round to.
-     * @returns {number} Returns the rounded number.
+     * @param {number} number 要四舍五入的值
+     * @param {number} [precision=0] 精度
+     * @returns {number}返回四舍五入的结果
      * @example
      *
      * _.round(4.006);
@@ -13667,14 +13661,14 @@
     var round = createRound('round');
 
     /**
-     * Subtract two numbers.
+     * 两双相减
      *
      * @static
      * @memberOf _
      * @category Math
-     * @param {number} minuend The first number in a subtraction.
-     * @param {number} subtrahend The second number in a subtraction.
-     * @returns {number} Returns the difference.
+     * @param {number} minuend 相减的第一个数
+     * @param {number} subtrahend 相减的第二个数
+     * @returns {number}返回结果
      * @example
      *
      * _.subtract(6, 4);
@@ -13692,13 +13686,13 @@
     }
 
     /**
-     * Computes the sum of the values in `array`.
+     * 计算 `array` 中值的总和
      *
      * @static
      * @memberOf _
      * @category Math
-     * @param {Array} array The array to iterate over.
-     * @returns {number} Returns the sum.
+     * @param {Array} array 要遍历的数组
+     * @returns {number} 返回总和
      * @example
      *
      * _.sum([4, 2, 8, 6]);
@@ -13711,16 +13705,16 @@
     }
 
     /**
-     * 这个方法类似 `_.sum` except that it accepts `iteratee` which is
-     * invoked for each element in `array` to generate the value to be summed.
-     * The iteratee 会传入1个参数：(value)。
-     *
+     * 这个方法类似 `_.sum`。
+     * 除了它接受 iteratee 调用每一个元素，根据返回的 value 决定如何计算。 
+     * iteratee 会传入1个参数：(value)。
+     * 
      * @static
      * @memberOf _
      * @category Math
-     * @param {Array} array The array to iterate over.
+     * @param {Array} array 要遍历的数组
      * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
-     * @returns {number} Returns the sum.
+     * @returns {number} 返回总和
      * @example
      *
      * var objects = [{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }];

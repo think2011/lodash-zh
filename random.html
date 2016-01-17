@@ -392,43 +392,41 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>random <a class="fa-link" href="./random" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L11575" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.random" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>random <a class="fa-link" href="./random" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L11571" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.random" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.random([min&#x3D;0], [max&#x3D;1], [floating])</div>
 
-<div data-render-html="/random"><p>Produces a random number between <code>min</code> and <code>max</code> (inclusive). If only one
-argument is provided a number between <code>0</code> and the given number is returned.
-If <code>floating</code> is <code>true</code>, or either <code>min</code> or <code>max</code> are floats, a
-floating-point number is returned instead of an integer.
+<div data-render-html="/random"><p>产生一个包括  <code>min</code> 与 <code>max</code> 之间的数。
+如果只提供一个参数返回一个0到提供数之间的数。
+如果 <code>floating</code> 设为 true，或者 <code>min</code> 或 <code>max</code> 是浮点数，结果返回浮点数。
 <br>
 <br>
-<strong>注意:</strong> JavaScript follows the IEEE-754 standard for resolving
-floating-point values which can produce unexpected results.</p>
+<strong>注意:</strong> JavaScript 遵循 IEEE-754 标准处理无法预料的浮点数结果。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">[min&#x3D;0]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>The minimum possible value. </p>
+<li><span class="param-name">[min&#x3D;0]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>最小值 </p>
 </div></li>
-<li><span class="param-name">[max&#x3D;1]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>The maximum possible value. </p>
+<li><span class="param-name">[max&#x3D;1]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>最大值 </p>
 </div></li>
-<li><span class="param-name">[floating]</span> <span class="param-type">(boolean)</span> <div data-render-html="/#synthetic"><p>Specify returning a floating-point number. </p>
+<li><span class="param-name">[floating]</span> <span class="param-type">(boolean)</span> <div data-render-html="/#synthetic"><p>是否返回浮点数 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(number)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the random number.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回随机数</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >random</span><span class="token punctuation" >(</span><span class="token number" >0</span><span class="token punctuation" >,</span> <span class="token number" >5</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => an integer between 0 and 5</span>
+<span class="token comment" spellcheck="true">// =>  0 和 5 之间的数</span>
 
 _<span class="token punctuation" >.</span><span class="token function" >random</span><span class="token punctuation" >(</span><span class="token number" >5</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => also an integer between 0 and 5</span>
+<span class="token comment" spellcheck="true">// => 同样是 0 和 5 之间的数</span>
 
 _<span class="token punctuation" >.</span><span class="token function" >random</span><span class="token punctuation" >(</span><span class="token number" >5</span><span class="token punctuation" >,</span> <span class="token keyword" >true</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => a floating-point number between 0 and 5</span>
+<span class="token comment" spellcheck="true">// => 0 和 5 之间的浮点数</span>
 
 _<span class="token punctuation" >.</span><span class="token function" >random</span><span class="token punctuation" >(</span><span class="token number" >1.2</span><span class="token punctuation" >,</span> <span class="token number" >5.2</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => a floating-point number between 1.2 and 5.2</span>
+<span class="token comment" spellcheck="true">// =>  1.2 和 5.2 之间的浮点数</span>
 </code></pre>
 </div>
 <div id="disqus_thread" style="margin-top:50px;"></div>
