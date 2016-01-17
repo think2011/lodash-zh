@@ -5957,7 +5957,7 @@
 
     /**
      * 这个方法类似  `_.indexOf`，除了它是从右到左遍历元素的。
-     * This method is like `_.indexOf` except that it iterates over elements of
+     * 这个方法类似 `_.indexOf` except that it iterates over elements of
      * `array` from right to left.
      *
      * @static
@@ -10241,19 +10241,18 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Assigns own enumerable properties of source objects to the destination
-     * object. Source objects are applied from left to right. Subsequent sources
-     * overwrite property assignments of previous sources.
+     * 分配来源对象的可枚举属性到目标对象上。
+     * 来源对象的应用规则是从左到右，随后的下一个对象的属性会覆盖上一个对象的属性。
      *
-     * **注意:** This method mutates `object` and is loosely based on
+     * **注意:** 这方法会改变源对象，参考自
      * [`Object.assign`](https://mdn.io/Object/assign).
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The destination object.
-     * @param {...Object} [sources] The source objects.
-     * @returns {Object} Returns `object`.
+     * @param {Object} object 目标对象
+     * @param {...Object} [sources] 来源对象
+     * @returns {Object} 返回对象
      * @example
      *
      * function Foo() {
@@ -10275,10 +10274,10 @@
     });
 
     /**
-     * This method is like `_.assign` except that it iterates over own and
+     * 这个方法类似 `_.assign` except that it iterates over own and
      * inherited source properties.
      *
-     * **注意:** This method mutates `object`.
+     * **注意:** 这方法会改变源对象
      *
      * @static
      * @memberOf _
@@ -10308,12 +10307,12 @@
     });
 
     /**
-     * This method is like `_.assignIn` except that it accepts `customizer` which
+     * 这个方法类似 `_.assignIn` except that it accepts `customizer` which
      * is invoked to produce the assigned values. If `customizer` returns `undefined`
      * assignment is handled by the method instead. The `customizer` is invoked
      * with five arguments: (objValue, srcValue, key, object, source).
      *
-     * **注意:** This method mutates `object`.
+     * **注意:** 这方法会改变源对象
      *
      * @static
      * @memberOf _
@@ -10339,12 +10338,12 @@
     });
 
     /**
-     * This method is like `_.assign` except that it accepts `customizer` which
+     * 这个方法类似 `_.assign` except that it accepts `customizer` which
      * is invoked to produce the assigned values. If `customizer` returns `undefined`
      * assignment is handled by the method instead. The `customizer` is invoked
      * with five arguments: (objValue, srcValue, key, object, source).
      *
-     * **注意:** This method mutates `object`.
+     * **注意:** 这方法会改变源对象
      *
      * @static
      * @memberOf _
@@ -10435,7 +10434,7 @@
      * Source objects are applied from left to right. Once a property is set,
      * additional values of the same property are ignored.
      *
-     * **注意:** This method mutates `object`.
+     * **注意:** 这方法会改变源对象
      *
      * @static
      * @memberOf _
@@ -10454,10 +10453,10 @@
     });
 
     /**
-     * This method is like `_.defaults` except that it recursively assigns
+     * 这个方法类似 `_.defaults` except that it recursively assigns
      * default properties.
      *
-     * **注意:** This method mutates `object`.
+     * **注意:** 这方法会改变源对象
      *
      * @static
      * @memberOf _
@@ -10477,7 +10476,7 @@
     });
 
     /**
-     * This method is like `_.find` except that it returns the key of the first
+     * 这个方法类似 `_.find` except that it returns the key of the first
      * element `predicate` returns truthy for instead of the element itself.
      *
      * @static
@@ -10514,7 +10513,7 @@
     }
 
     /**
-     * This method is like `_.findKey` except that it iterates over elements of
+     * 这个方法类似 `_.findKey` except that it iterates over elements of
      * a collection in the opposite order.
      *
      * @static
@@ -10581,7 +10580,7 @@
     }
 
     /**
-     * This method is like `_.forIn` except that it iterates over properties of
+     * 这个方法类似 `_.forIn` except that it iterates over properties of
      * `object` in the opposite order.
      *
      * @static
@@ -10639,7 +10638,7 @@
     }
 
     /**
-     * This method is like `_.forOwn` except that it iterates over properties of
+     * 这个方法类似 `_.forOwn` except that it iterates over properties of
      * `object` in the opposite order.
      *
      * @static
@@ -11020,7 +11019,7 @@
      * are applied from left to right. Subsequent sources overwrite property
      * assignments of previous sources.
      *
-     * **注意:** This method mutates `object`.
+     * **注意:** 这方法会改变源对象
      *
      * @static
      * @memberOf _
@@ -11046,7 +11045,7 @@
     });
 
     /**
-     * This method is like `_.merge` except that it accepts `customizer` which
+     * 这个方法类似 `_.merge` except that it accepts `customizer` which
      * is invoked to produce the merged values of the destination and source
      * properties. If `customizer` returns `undefined` merging is handled by the
      * method instead. The `customizer` is invoked with seven arguments:
@@ -11178,7 +11177,7 @@
     }
 
     /**
-     * This method is like `_.get` except that if the resolved value is a function
+     * 这个方法类似 `_.get` except that if the resolved value is a function
      * it's invoked with the `this` binding of its parent object and its result
      * is returned.
      *
@@ -11249,7 +11248,7 @@
     }
 
     /**
-     * This method is like `_.set` except that it accepts `customizer` which is
+     * 这个方法类似 `_.set` except that it accepts `customizer` which is
      * invoked to produce the objects of `path`.  If `customizer` returns `undefined`
      * path creation is handled by the method instead. The `customizer` is invoked
      * with three arguments: (nsValue, key, nsObject).
@@ -12841,7 +12840,7 @@
     var flow = createFlow();
 
     /**
-     * This method is like `_.flow` except that it creates a function that
+     * 这个方法类似 `_.flow` except that it creates a function that
      * invokes the provided functions from right to left.
      *
      * @static
@@ -13323,7 +13322,7 @@
     }
 
     /**
-     * This method is like `_.range` except that it populates values in
+     * 这个方法类似 `_.range` except that it populates values in
      * descending order.
      *
      * @static
@@ -13544,7 +13543,7 @@
     }
 
     /**
-     * This method is like `_.max` except that it accepts `iteratee` which is
+     * 这个方法类似 `_.max` except that it accepts `iteratee` which is
      * invoked for each element in `array` to generate the criterion by which
      * the value is ranked. The iteratee 会传入1个参数：(value)。
      *
@@ -13615,7 +13614,7 @@
     }
 
     /**
-     * This method is like `_.min` except that it accepts `iteratee` which is
+     * 这个方法类似 `_.min` except that it accepts `iteratee` which is
      * invoked for each element in `array` to generate the criterion by which
      * the value is ranked. The iteratee 会传入1个参数：(value)。
      *
@@ -13712,7 +13711,7 @@
     }
 
     /**
-     * This method is like `_.sum` except that it accepts `iteratee` which is
+     * 这个方法类似 `_.sum` except that it accepts `iteratee` which is
      * invoked for each element in `array` to generate the value to be summed.
      * The iteratee 会传入1个参数：(value)。
      *
