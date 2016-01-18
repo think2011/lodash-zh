@@ -392,23 +392,23 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>invert <a class="fa-link" href="./invert" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L10829" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.invert" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>invert <a class="fa-link" href="./invert" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L10821" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.invert" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.invert(object, [multiVal])</div>
 
-<div data-render-html="/invert"><p>Creates an object composed of the inverted keys and values of <code>object</code>.
-If <code>object</code> contains duplicate values, subsequent values overwrite property
-assignments of previous values unless <code>multiVal</code> is <code>true</code>.</p>
+<div data-render-html="/invert"><p>创建一个键值倒置的对象。
+如果 <code>object</code> 有重复的值，后面的值会覆盖前面的值。
+如果 <code>multiVal</code> 为 true，重复的值则组成数组。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">object</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>The object to invert. </p>
+<li><span class="param-name">object</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>要倒置的对象 </p>
 </div></li>
-<li><span class="param-name">[multiVal]</span> <span class="param-type">(boolean)</span> <div data-render-html="/#synthetic"><p>Allow multiple values per key. </p>
+<li><span class="param-name">[multiVal]</span> <span class="param-type">(boolean)</span> <div data-render-html="/#synthetic"><p>每个 key 允许多个值 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Object)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new inverted object.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回新的倒置的对象</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> object <span class="token operator" >=</span> <span class="token punctuation" >{</span> <span class="token string" >'a'</span><span class="token punctuation" >:</span> <span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token string" >'b'</span><span class="token punctuation" >:</span> <span class="token number" >2</span><span class="token punctuation" >,</span> <span class="token string" >'c'</span><span class="token punctuation" >:</span> <span class="token number" >1</span> <span class="token punctuation" >}</span><span class="token punctuation" >;</span>
@@ -416,7 +416,7 @@ assignments of previous values unless <code>multiVal</code> is <code>true</code>
 _<span class="token punctuation" >.</span><span class="token function" >invert</span><span class="token punctuation" >(</span>object<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => { '1': 'c', '2': 'b' }</span>
 
-<span class="token comment" spellcheck="true">// with `multiVal`</span>
+<span class="token comment" spellcheck="true">// 使用 `multiVal`</span>
 _<span class="token punctuation" >.</span><span class="token function" >invert</span><span class="token punctuation" >(</span>object<span class="token punctuation" >,</span> <span class="token keyword" >true</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => { '1': ['a', 'c'], '2': ['b'] }</span>
 </code></pre>

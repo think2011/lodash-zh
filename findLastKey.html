@@ -392,22 +392,22 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>findLastKey <a class="fa-link" href="./findLastKey" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L10548" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.findlastkey" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>findLastKey <a class="fa-link" href="./findLastKey" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L10546" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.findlastkey" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.findLastKey(object, [predicate&#x3D;_.identity])</div>
 
-<div data-render-html="/findLastKey"><p>这个方法类似 <code>_.findKey</code> except that it iterates over elements of
-a collection in the opposite order.</p>
+<div data-render-html="/findLastKey"><p>这个方法类似 <code>_.findKey</code>。
+不过它是反方向开始遍历的。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">object</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>The object to search. </p>
+<li><span class="param-name">object</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>需要检索的对象 </p>
 </div></li>
 <li><span class="param-name">[predicate&#x3D;_.identity]</span> <span class="param-type">(Function|Object|string)</span> <div data-render-html="/#synthetic"><p>这个函数会处理每一个元素 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(string|undefined)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the key of the matched element, else <code>undefined</code>.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回匹配的 key，否则返回 <code>undefined</code>。</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> users <span class="token operator" >=</span> <span class="token punctuation" >{</span>
@@ -417,7 +417,7 @@ a collection in the opposite order.</p>
 <span class="token punctuation" >}</span><span class="token punctuation" >;</span>
 
 _<span class="token punctuation" >.</span><span class="token function" >findLastKey</span><span class="token punctuation" >(</span>users<span class="token punctuation" >,</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>o<span class="token punctuation" >)</span> <span class="token punctuation" >{</span> <span class="token keyword" >return</span> o<span class="token punctuation" >.</span>age <span class="token operator" >&lt;</span> <span class="token number" >40</span><span class="token punctuation" >;</span> <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => returns 'pebbles' assuming `_.findKey` returns 'barney'</span>
+<span class="token comment" spellcheck="true">// => 返回 'pebbles'， `_.findKey` 会返回 'barney'</span>
 
 <span class="token comment" spellcheck="true">// 使用了 `_.matches` 的回调结果</span>
 _<span class="token punctuation" >.</span><span class="token function" >findLastKey</span><span class="token punctuation" >(</span>users<span class="token punctuation" >,</span> <span class="token punctuation" >{</span> <span class="token string" >'age'</span><span class="token punctuation" >:</span> <span class="token number" >36</span><span class="token punctuation" >,</span> <span class="token string" >'active'</span><span class="token punctuation" >:</span> <span class="token keyword" >true</span> <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>

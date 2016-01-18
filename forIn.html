@@ -392,18 +392,17 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>forIn <a class="fa-link" href="./forIn" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L10578" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.forin" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>forIn <a class="fa-link" href="./forIn" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L10575" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.forin" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.forIn(object, [iteratee&#x3D;_.identity])</div>
 
-<div data-render-html="/forIn"><p>Iterates over own and inherited enumerable properties of an object invoking
-<code>iteratee</code> for each property. The iteratee is invoked with three arguments:<br>
-(value, key, object). Iteratee functions may exit iteration early by explicitly
-returning <code>false</code>.</p>
+<div data-render-html="/forIn"><p>使用 <code>iteratee</code> 遍历对象的自身和继承的可枚举属性。
+iteratee 会传入3个参数：(value, key, object)。
+如果返回 false，iteratee 会提前退出遍历。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">object</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>The object to iterate over. </p>
+<li><span class="param-name">object</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>要遍历的对象 </p>
 </div></li>
 <li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>这个函数会处理每一个元素 </p>
 </div></li>
@@ -422,7 +421,7 @@ Foo<span class="token punctuation" >.</span>prototype<span class="token punctuat
 _<span class="token punctuation" >.</span><span class="token function" >forIn</span><span class="token punctuation" >(</span><span class="token keyword" >new</span> <span class="token class-name" >Foo</span><span class="token punctuation" >,</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>value<span class="token punctuation" >,</span> key<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
   console<span class="token punctuation" >.</span><span class="token function" >log</span><span class="token punctuation" >(</span>key<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => logs 'a', 'b', then 'c' (无法保证遍历的顺序)</span>
+<span class="token comment" spellcheck="true">// => 输出 'a', 'b', 然后 'c' (无法保证遍历的顺序)</span>
 </code></pre>
 </div>
 <div id="disqus_thread" style="margin-top:50px;"></div>

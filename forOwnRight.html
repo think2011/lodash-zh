@@ -392,16 +392,15 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>forOwnRight <a class="fa-link" href="./forOwnRight" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L10664" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.forownright" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>forOwnRight <a class="fa-link" href="./forOwnRight" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L10658" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.forownright" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.forOwnRight(object, [iteratee&#x3D;_.identity])</div>
 
-<div data-render-html="/forOwnRight"><p>这个方法类似 <code>_.forOwn</code> except that it iterates over properties of
-<code>object</code> in the opposite order.</p>
+<div data-render-html="/forOwnRight"><p>这个方法类似 <code>_.forOwn</code>。 除了它是反方向开始遍历的。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">object</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>The object to iterate over. </p>
+<li><span class="param-name">object</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>要遍历的对象 </p>
 </div></li>
 <li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>这个函数会处理每一个元素 </p>
 </div></li>
@@ -420,7 +419,7 @@ Foo<span class="token punctuation" >.</span>prototype<span class="token punctuat
 _<span class="token punctuation" >.</span><span class="token function" >forOwnRight</span><span class="token punctuation" >(</span><span class="token keyword" >new</span> <span class="token class-name" >Foo</span><span class="token punctuation" >,</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>value<span class="token punctuation" >,</span> key<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
   console<span class="token punctuation" >.</span><span class="token function" >log</span><span class="token punctuation" >(</span>key<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => logs 'b' then 'a' assuming `_.forOwn` logs 'a' then 'b'</span>
+<span class="token comment" spellcheck="true">// => 输出 'b' 然后 'a'， `_.forOwn` 会输出 'a' 然后 'b'</span>
 </code></pre>
 </div>
 <div id="disqus_thread" style="margin-top:50px;"></div>

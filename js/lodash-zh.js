@@ -835,7 +835,7 @@
    * of key-value pairs for `object` corresponding to the property names of `props`.
    *
    * @private
-   * @param {Object} object The object to query.
+   * @param {Object} object 要检索的对象
    * @param {Array} props The property names to get values for.
    * @returns {Object} Returns the new array of key-value pairs.
    */
@@ -878,7 +878,7 @@
    * of `props`.
    *
    * @private
-   * @param {Object} object The object to query.
+   * @param {Object} object 要检索的对象
    * @param {Array} props The property names to get values for.
    * @returns {Object} Returns the array of property values.
    */
@@ -1000,10 +1000,10 @@
     // Fixes an `Array#sort` bug in the JS engine embedded in Adobe applications
     // that causes it, under certain circumstances, to provide the same value for
     // `object` and `other`. See https://github.com/jashkenas/underscore/pull/1247
-    // for more details.
+    // 了解详情
     //
     // This also ensures a stable sort in V8 and other engines.
-    // See https://code.google.com/p/v8/issues/detail?id=90 for more details.
+    // See https://code.google.com/p/v8/issues/detail?id=90 了解详情
     return object.index - other.index;
   }
 
@@ -2185,7 +2185,7 @@
      * The base implementation of `_.at` without support for individual paths.
      *
      * @private
-     * @param {Object} object The object to iterate over.
+     * @param {Object} object 要遍历的对象
      * @param {string[]} paths The property paths of elements to pick.
      * @returns {Array} Returns the new array of picked elements.
      */
@@ -2522,7 +2522,7 @@
      * returning `false`.
      *
      * @private
-     * @param {Object} object The object to iterate over.
+     * @param {Object} object 要遍历的对象
      * @param {Function} iteratee 这个函数会处理每一个元素
      * @param {Function} keysFunc The function to get the keys of `object`.
      * @returns {Object} 返回对象
@@ -2534,7 +2534,7 @@
      * in the opposite order.
      *
      * @private
-     * @param {Object} object The object to iterate over.
+     * @param {Object} object 要遍历的对象
      * @param {Function} iteratee 这个函数会处理每一个元素
      * @param {Function} keysFunc The function to get the keys of `object`.
      * @returns {Object} 返回对象
@@ -2545,7 +2545,7 @@
      * The base implementation of `_.forIn` without support for callback shorthands.
      *
      * @private
-     * @param {Object} object The object to iterate over.
+     * @param {Object} object 要遍历的对象
      * @param {Function} iteratee 这个函数会处理每一个元素
      * @returns {Object} 返回对象
      */
@@ -2557,7 +2557,7 @@
      * The base implementation of `_.forOwn` without support for callback shorthands.
      *
      * @private
-     * @param {Object} object The object to iterate over.
+     * @param {Object} object 要遍历的对象
      * @param {Function} iteratee 这个函数会处理每一个元素
      * @returns {Object} 返回对象
      */
@@ -2569,7 +2569,7 @@
      * The base implementation of `_.forOwnRight` without support for callback shorthands.
      *
      * @private
-     * @param {Object} object The object to iterate over.
+     * @param {Object} object 要遍历的对象
      * @param {Function} iteratee 这个函数会处理每一个元素
      * @returns {Object} 返回对象
      */
@@ -2582,7 +2582,7 @@
      * `object` function property names filtered from those provided.
      *
      * @private
-     * @param {Object} object The object to inspect.
+     * @param {Object} object 要检索的对象
      * @param {Array} props The property names to filter.
      * @returns {Array} Returns the new array of filtered property names.
      */
@@ -2596,7 +2596,7 @@
      * The base implementation of `_.get` without support for default values.
      *
      * @private
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @param {Array|string} path The path of the property to get.
      * @returns {*} Returns the resolved value.
      */
@@ -2616,7 +2616,7 @@
      * The base implementation of `_.has` without support for deep paths.
      *
      * @private
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @param {Array|string} key The key to check.
      * @returns {boolean} Returns `true` if `key` exists否则返回 `false`
      */
@@ -2632,7 +2632,7 @@
      * The base implementation of `_.hasIn` without support for deep paths.
      *
      * @private
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @param {Array|string} key The key to check.
      * @returns {boolean} Returns `true` if `key` exists否则返回 `false`
      */
@@ -2700,7 +2700,7 @@
      *
      *
      * @private
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @param {Array|string} path The path of the method to invoke.
      * @param {Array} args The arguments to invoke the method with.
      * @returns {*} Returns the result of the invoked method.
@@ -2750,7 +2750,7 @@
      * @param {Object} other The other object to compare.
      * @param {Function} equalFunc The function to determine equivalents of values.
      * @param {Function} [customizer] The function to customize comparisons.
-     * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual` for more details.
+     * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual` 了解详情
      * @param {Object} [stack] Tracks traversed `object` and `other` objects.
      * @returns {boolean} Returns `true` if the objects are equivalent否则返回 `false`
      */
@@ -2814,7 +2814,7 @@
      * The base implementation of `_.isMatch` without support for callback shorthands.
      *
      * @private
-     * @param {Object} object The object to inspect.
+     * @param {Object} object 要检索的对象
      * @param {Object} source The object of property values to match.
      * @param {Array} matchData The property names, values, and compare flags to match.
      * @param {Function} [customizer] The function to customize comparisons.
@@ -2889,7 +2889,7 @@
      *
      * @private
      * @type Function
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @returns {Array} Returns the array of property names.
      */
     function baseKeys (object) {
@@ -2901,7 +2901,7 @@
      * property of prototypes or treat sparse arrays as dense.
      *
      * @private
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @returns {Array} Returns the array of property names.
      */
     function baseKeysIn (object) {
@@ -3290,7 +3290,7 @@
      * The base implementation of `_.set`.
      *
      * @private
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @param {Array|string} path The path of the property to set.
      * @param {*} value The value to set.
      * @param {Function} [customizer] The function to customize path creation.
@@ -3992,7 +3992,7 @@
      *
      * @private
      * @param {Function} func The function to wrap.
-     * @param {number} bitmask The bitmask of wrapper flags. See `createWrapper` for more details.
+     * @param {number} bitmask The bitmask of wrapper flags. See `createWrapper` 了解详情
      * @param {*} [thisArg] The `this` binding of `func`.
      * @returns {Function} Returns the new wrapped function.
      */
@@ -4052,7 +4052,7 @@
       return function () {
         // Use a `switch` statement to work with class constructors.
         // See http://ecma-international.org/ecma-262/6.0/#sec-ecmascript-function-objects-call-thisargument-argumentslist
-        // for more details.
+        // 了解详情
         var args = arguments;
         switch (args.length) {
           case 0:
@@ -4076,7 +4076,7 @@
             result      = Ctor.apply(thisBinding, args);
 
         // Mimic the constructor's `return` behavior.
-        // See https://es5.github.io/#x13.2.2 for more details.
+        // See https://es5.github.io/#x13.2.2 了解详情
         return isObject(result) ? result : thisBinding;
       };
     }
@@ -4086,7 +4086,7 @@
      *
      * @private
      * @param {Function} func The function to wrap.
-     * @param {number} bitmask The bitmask of wrapper flags. See `createWrapper` for more details.
+     * @param {number} bitmask The bitmask of wrapper flags. See `createWrapper` 了解详情
      * @param {number} arity The arity of `func`.
      * @returns {Function} Returns the new wrapped function.
      */
@@ -4180,7 +4180,7 @@
      *
      * @private
      * @param {Function|string} func The function or method name to wrap.
-     * @param {number} bitmask The bitmask of wrapper flags. See `createWrapper` for more details.
+     * @param {number} bitmask The bitmask of wrapper flags. See `createWrapper` 了解详情
      * @param {*} [thisArg] The `this` binding of `func`.
      * @param {Array} [partials] The arguments to prepend to those provided to the new function.
      * @param {Array} [holders] The `partials` placeholder indexes.
@@ -4295,7 +4295,7 @@
      *
      * @private
      * @param {Function} func The function to wrap.
-     * @param {number} bitmask The bitmask of wrapper flags. See `createWrapper` for more details.
+     * @param {number} bitmask The bitmask of wrapper flags. See `createWrapper` 了解详情
      * @param {*} thisArg The `this` binding of `func`.
      * @param {Array} partials The arguments to prepend to those provided to the new function.
      * @returns {Function} Returns the new wrapped function.
@@ -4329,7 +4329,7 @@
      *
      * @private
      * @param {Function} func The function to wrap.
-     * @param {number} bitmask The bitmask of wrapper flags. See `createWrapper` for more details.
+     * @param {number} bitmask The bitmask of wrapper flags. See `createWrapper` 了解详情
      * @param {Function} wrapFunc The function to create the `func` wrapper.
      * @param {*} placeholder The placeholder to replace.
      * @param {*} [thisArg] The `this` binding of `func`.
@@ -4378,7 +4378,7 @@
         precision = toInteger(precision);
         if (precision) {
           // Shift with exponential notation to avoid floating-point issues.
-          // See [MDN](https://mdn.io/round#Examples) for more details.
+          // See [MDN](https://mdn.io/round#Examples) 了解详情
           var pair  = (toString(number) + 'e').split('e'),
               value = func(pair[0] + 'e' + (+pair[1] + precision));
 
@@ -4485,7 +4485,7 @@
      * @param {Array} other The other array to compare.
      * @param {Function} equalFunc The function to determine equivalents of values.
      * @param {Function} [customizer] The function to customize comparisons.
-     * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual` for more details.
+     * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual` 了解详情
      * @param {Object} [stack] Tracks traversed `array` and `other` objects.
      * @returns {boolean} Returns `true` if the arrays are equivalent否则返回 `false`
      */
@@ -4542,7 +4542,7 @@
      * @param {string} tag The `toStringTag` of the objects to compare.
      * @param {Function} equalFunc The function to determine equivalents of values.
      * @param {Function} [customizer] The function to customize comparisons.
-     * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual` for more details.
+     * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual` 了解详情
      * @returns {boolean} Returns `true` if the objects are equivalent否则返回 `false`
      */
     function equalByTag (object, other, tag, equalFunc, customizer, bitmask) {
@@ -4569,7 +4569,7 @@
         case regexpTag:
         case stringTag:
           // Coerce regexes to strings and treat strings primitives and string
-          // objects as equal. See https://es5.github.io/#x15.10.6.4 for more details.
+          // objects as equal. See https://es5.github.io/#x15.10.6.4 了解详情
           return object == (other + '');
 
         case mapTag:
@@ -4598,7 +4598,7 @@
      * @param {Object} other The other object to compare.
      * @param {Function} equalFunc The function to determine equivalents of values.
      * @param {Function} [customizer] The function to customize comparisons.
-     * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual` for more details.
+     * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual` 了解详情
      * @param {Object} [stack] Tracks traversed `object` and `other` objects.
      * @returns {boolean} Returns `true` if the objects are equivalent否则返回 `false`
      */
@@ -4711,7 +4711,7 @@
      * that affects Safari on at least iOS 8.1-8.3 ARM64.
      *
      * @private
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @returns {*} Returns the "length" value.
      */
     var getLength = baseProperty('length');
@@ -4720,7 +4720,7 @@
      * Gets the property names, values, and compare flags of `object`.
      *
      * @private
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @returns {Array} Returns the match data of `object`.
      */
     function getMatchData (object) {
@@ -4737,7 +4737,7 @@
      * Gets the native function at `key` of `object`.
      *
      * @private
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @param {string} key The key of the method to get.
      * @returns {*} Returns the function if it's native, else `undefined`.
      */
@@ -4750,7 +4750,7 @@
      * Creates an array of the own symbol properties of `object`.
      *
      * @private
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @returns {Array} Returns the array of symbols.
      */
     var getSymbols = getOwnPropertySymbols || function () {
@@ -4827,7 +4827,7 @@
      * Checks if `path` exists on `object`.
      *
      * @private
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @param {Array|string} path The path to check.
      * @param {Function} hasFunc The function to check properties.
      * @returns {boolean} Returns `true` if `path` exists否则返回 `false`
@@ -4936,7 +4936,7 @@
      * `arguments` objects, and strings, otherwise `null` is returned.
      *
      * @private
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @returns {Array|null} Returns index keys, else `null`.
      */
     function indexKeys (object) {
@@ -5139,7 +5139,7 @@
      * Gets the parent value at `path` of `object`.
      *
      * @private
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @param {Array} path The path to get the parent value of.
      * @returns {*} Returns the parent value.
      */
@@ -5175,7 +5175,7 @@
      * **注意:** If this function becomes hot, i.e. is invoked a lot in a short
      * period of time, it will trip its breaker and transition to an identity function
      * to avoid garbage collection pauses in V8. See [V8 issue 2070](https://code.google.com/p/v8/issues/detail?id=2070)
-     * for more details.
+     * 了解详情
      *
      * @private
      * @param {Function} func The function to associate metadata with.
@@ -9566,7 +9566,7 @@
      */
     function isObject (value) {
       // Avoid a V8 JIT bug in Chrome 19-20.
-      // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
+      // See https://code.google.com/p/v8/issues/detail?id=2291 了解详情
       var type = typeof value;
       return !!value && (type == 'object' || type == 'function');
     }
@@ -10368,15 +10368,14 @@
     });
 
     /**
-     * Creates an array of values corresponding to `paths` of `object`.
-     *
+     * 根据 `object` 的路径获取值为数组。
+     * 
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to iterate over.
-     * @param {...(string|string[])} [paths] The property paths of elements to pick,
-     *  specified individually or in arrays.
-     * @returns {Array} Returns the new array of picked elements.
+     * @param {Object} object 要遍历的对象
+     * @param {...(string|string[])} [paths] 要获取的对象的元素路径，单独指定或者指定在数组中
+     * @returns {Array} 返回选中值的数组
      * @example
      *
      * var object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
@@ -10392,15 +10391,15 @@
     });
 
     /**
-     * Creates an object that inherits from the `prototype` object. If a `properties`
-     * object is provided its own enumerable properties are assigned to the created object.
-     *
+     * 创建一个继承 `prototype` 的对象。
+     * 如果提供了 `properties`，它的可枚举属性会被分配到创建的对象上。
+     * 
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} prototype The object to inherit from.
-     * @param {Object} [properties] The properties to assign to the object.
-     * @returns {Object} Returns the new object.
+     * @param {Object} prototype 要继承的对象
+     * @param {Object} [properties] 待分配的属性
+     * @returns {Object} 返回新对象
      * @example
      *
      * function Shape() {
@@ -10429,10 +10428,9 @@
     }
 
     /**
-     * Assigns own and inherited enumerable properties of source objects to the
-     * destination object for all destination properties that resolve to `undefined`.
-     * Source objects are applied from left to right. Once a property is set,
-     * additional values of the same property are ignored.
+     * 分配来源对象的可枚举属性到目标对象所有解析为 `undefined` 的属性上。
+     * 来源对象从左到右应用。
+     * 一旦设置了相同属性的值，后续的将被忽略掉。
      *
      * **注意:** 这方法会改变源对象
      *
@@ -10453,8 +10451,7 @@
     });
 
     /**
-     * 这个方法类似 `_.defaults` except that it recursively assigns
-     * default properties.
+     * 这个方法类似 `_.defaults`，除了它会递归分配默认属性。
      *
      * **注意:** 这方法会改变源对象
      *
@@ -10476,15 +10473,16 @@
     });
 
     /**
-     * 这个方法类似 `_.find` except that it returns the key of the first
-     * element `predicate` returns truthy for instead of the element itself.
+     * 这个方法类似 `_.find`。
+     * 除了它返回最先被 `predicate` 判断为真值的元素 key，而不是元素本身。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to search.
+     * @param {Object} object 需要检索的对象
      * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
-     * @returns {string|undefined} Returns the key of the matched element, else `undefined`.
+     * @returns {string|undefined} 返回匹配的 key，否则返回 `undefined`。
+     * 
      * @example
      *
      * var users = {
@@ -10513,15 +10511,15 @@
     }
 
     /**
-     * 这个方法类似 `_.findKey` except that it iterates over elements of
-     * a collection in the opposite order.
+     * 这个方法类似 `_.findKey`。
+     * 不过它是反方向开始遍历的。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to search.
+     * @param {Object} object 需要检索的对象
      * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
-     * @returns {string|undefined} Returns the key of the matched element, else `undefined`.
+     * @returns {string|undefined} 返回匹配的 key，否则返回 `undefined`。
      * @example
      *
      * var users = {
@@ -10531,7 +10529,7 @@
      * };
      *
      * _.findLastKey(users, function(o) { return o.age < 40; });
-     * // => returns 'pebbles' assuming `_.findKey` returns 'barney'
+     * // => 返回 'pebbles'， `_.findKey` 会返回 'barney'
      *
      * // 使用了 `_.matches` 的回调结果
      * _.findLastKey(users, { 'age': 36, 'active': true });
@@ -10550,15 +10548,14 @@
     }
 
     /**
-     * Iterates over own and inherited enumerable properties of an object invoking
-     * `iteratee` for each property. The iteratee is invoked with three arguments:
-     * (value, key, object). Iteratee functions may exit iteration early by explicitly
-     * returning `false`.
+     * 使用 `iteratee` 遍历对象的自身和继承的可枚举属性。
+     * iteratee 会传入3个参数：(value, key, object)。
+     * 如果返回 false，iteratee 会提前退出遍历。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to iterate over.
+     * @param {Object} object 要遍历的对象
      * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Object} 返回对象
      * @example
@@ -10573,20 +10570,20 @@
      * _.forIn(new Foo, function(value, key) {
      *   console.log(key);
      * });
-     * // => logs 'a', 'b', then 'c' (无法保证遍历的顺序)
+     * // => 输出 'a', 'b', 然后 'c' (无法保证遍历的顺序)
      */
     function forIn (object, iteratee) {
       return object == null ? object : baseFor(object, toFunction(iteratee), keysIn);
     }
 
     /**
-     * 这个方法类似 `_.forIn` except that it iterates over properties of
-     * `object` in the opposite order.
+     * 这个方法类似 `_.forIn`。
+     * 除了它是反方向开始遍历的。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to iterate over.
+     * @param {Object} object 要遍历的对象
      * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Object} 返回对象
      * @example
@@ -10601,22 +10598,20 @@
      * _.forInRight(new Foo, function(value, key) {
      *   console.log(key);
      * });
-     * // => logs 'c', 'b', then 'a' assuming `_.forIn` logs 'a', 'b', then 'c'
+     * // => 输出 'c', 'b', 然后 'a'， `_.forIn` 会输出 'a', 'b', 然后 'c'
      */
     function forInRight (object, iteratee) {
       return object == null ? object : baseForRight(object, toFunction(iteratee), keysIn);
     }
 
     /**
-     * Iterates over own enumerable properties of an object invoking `iteratee`
-     * for each property. The iteratee is invoked with three arguments:
-     * (value, key, object). Iteratee functions may exit iteration early by
-     * explicitly returning `false`.
+     * 使用 `iteratee` 遍历自身的可枚举属性。
+     * iteratee 会传入3个参数：(value, key, object)。 如果返回 false，iteratee 会提前退出遍历。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to iterate over.
+     * @param {Object} object 要遍历的对象
      * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Object} 返回对象
      * @example
@@ -10631,20 +10626,19 @@
      * _.forOwn(new Foo, function(value, key) {
      *   console.log(key);
      * });
-     * // => logs 'a' then 'b' (无法保证遍历的顺序)
+     * // => 输出 'a' 然后 'b' (无法保证遍历的顺序)
      */
     function forOwn (object, iteratee) {
       return object && baseForOwn(object, toFunction(iteratee));
     }
 
     /**
-     * 这个方法类似 `_.forOwn` except that it iterates over properties of
-     * `object` in the opposite order.
+     * 这个方法类似 `_.forOwn`。 除了它是反方向开始遍历的。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to iterate over.
+     * @param {Object} object 要遍历的对象
      * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Object} 返回对象
      * @example
@@ -10659,21 +10653,20 @@
      * _.forOwnRight(new Foo, function(value, key) {
      *   console.log(key);
      * });
-     * // => logs 'b' then 'a' assuming `_.forOwn` logs 'a' then 'b'
+     * // => 输出 'b' 然后 'a'， `_.forOwn` 会输出 'a' 然后 'b'
      */
     function forOwnRight (object, iteratee) {
       return object && baseForOwnRight(object, toFunction(iteratee));
     }
 
     /**
-     * Creates an array of function property names from own enumerable properties
-     * of `object`.
+     * 返回一个 function 对象自身可枚举属性名的数组。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to inspect.
-     * @returns {Array} Returns the new array of property names.
+     * @param {Object} object 要检索的对象
+     * @returns {Array} 返回包含属性名的新数组
      * @example
      *
      * function Foo() {
@@ -10691,14 +10684,13 @@
     }
 
     /**
-     * Creates an array of function property names from own and inherited
-     * enumerable properties of `object`.
+     * 返回一个 function 对象自身和继承的可枚举属性名的数组。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to inspect.
-     * @returns {Array} Returns the new array of property names.
+     * @param {Object} object 要检索的对象
+     * @returns {Array} 返回包含属性名的新数组
      * @example
      *
      * function Foo() {
@@ -10716,16 +10708,16 @@
     }
 
     /**
-     * Gets the value at `path` of `object`. If the resolved value is
-     * `undefined` the `defaultValue` is used in its place.
+     * 根据对象路径获取值。
+     * 如果解析 value 是 `undefined` 会以 `defaultValue` 取代。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to query.
-     * @param {Array|string} path The path of the property to get.
-     * @param {*} [defaultValue] The value returned if the resolved value is `undefined`.
-     * @returns {*} Returns the resolved value.
+     * @param {Object} object 要检索的对象
+     * @param {Array|string} path 要获取的对象路径
+     * @param {*} [defaultValue] 如果解析值是 `undefined`，这值会被返回
+     * @returns {*} 返回解析的值
      * @example
      *
      * var object = { 'a': [{ 'b': { 'c': 3 } }] };
@@ -10745,14 +10737,14 @@
     }
 
     /**
-     * Checks if `path` is a direct property of `object`.
+     * 检查 `path` 是否是对象的直接属性。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to query.
-     * @param {Array|string} path The path to check.
-     * @returns {boolean} Returns `true` if `path` exists否则返回 `false`
+     * @param {Object} object 要检索的对象
+     * @param {Array|string} path 要检查的路径
+     * @returns {boolean} 如果存在返回 true，否则返回 `false`
      * @example
      *
      * var object = { 'a': { 'b': { 'c': 3 } } };
@@ -10775,14 +10767,14 @@
     }
 
     /**
-     * Checks if `path` is a direct or inherited property of `object`.
+     * 检查 `path` 是否是对象的直接 或者 继承属性。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to query.
-     * @param {Array|string} path The path to check.
-     * @returns {boolean} Returns `true` if `path` exists否则返回 `false`
+     * @param {Object} object 要检索的对象
+     * @param {Array|string} path 要检查的路径
+     * @returns {boolean} 如果存在返回 true，否则返回 `false`
      * @example
      *
      * var object = _.create({ 'a': _.create({ 'b': _.create({ 'c': 3 }) }) });
@@ -10804,17 +10796,17 @@
     }
 
     /**
-     * Creates an object composed of the inverted keys and values of `object`.
-     * If `object` contains duplicate values, subsequent values overwrite property
-     * assignments of previous values unless `multiVal` is `true`.
+     * 创建一个键值倒置的对象。
+     * 如果 `object` 有重复的值，后面的值会覆盖前面的值。
+     * 如果 `multiVal` 为 true，重复的值则组成数组。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to invert.
-     * @param {boolean} [multiVal] Allow multiple values per key.
+     * @param {Object} object 要倒置的对象
+     * @param {boolean} [multiVal] 每个 key 允许多个值
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {Object} Returns the new inverted object.
+     * @returns {Object} 返回新的倒置的对象
      * @example
      *
      * var object = { 'a': 1, 'b': 2, 'c': 1 };
@@ -10822,7 +10814,7 @@
      * _.invert(object);
      * // => { '1': 'c', '2': 'b' }
      *
-     * // with `multiVal`
+     * // 使用 `multiVal`
      * _.invert(object, true);
      * // => { '1': ['a', 'c'], '2': ['b'] }
      */
@@ -10844,15 +10836,15 @@
     }
 
     /**
-     * Invokes the method at `path` of `object`.
+     * 调用对象路径的方法
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to query.
-     * @param {Array|string} path The path of the method to invoke.
-     * @param {...*} [args] The arguments to invoke the method with.
-     * @returns {*} Returns the result of the invoked method.
+     * @param {Object} object 要检索的对象
+     * @param {Array|string} path 要调用方法的路径
+     * @param {...*} [args] 调用方法的参数
+     * @returns {*} 返回调用方法的结果
      * @example
      *
      * var object = { 'a': [{ 'b': { 'c': [1, 2, 3, 4] } }] };
@@ -10863,17 +10855,17 @@
     var invoke = rest(baseInvoke);
 
     /**
-     * Creates an array of the own enumerable property names of `object`.
+     * 创建 `object` 自身可枚举属性名为一个数组。
      *
-     * **注意:** Non-object values are coerced to objects. See the
+     * **注意:** 非对象的值会被强制转换为对象，查看
      * [ES spec](http://ecma-international.org/ecma-262/6.0/#sec-object.keys)
-     * for more details.
+     * 了解详情
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to query.
-     * @returns {Array} Returns the array of property names.
+     * @param {Object} object 要检索的对象
+     * @returns {Array} 返回包含属性名的数组
      * @example
      *
      * function Foo() {
@@ -10908,15 +10900,15 @@
     }
 
     /**
-     * Creates an array of the own and inherited enumerable property names of `object`.
-     *
-     * **注意:** Non-object values are coerced to objects.
+     * 创建 `object` 自身 或 继承的可枚举属性名为一个数组。
+     * 
+     * **注意:** 非对象的值会被强制转换为对象
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to query.
-     * @returns {Array} Returns the array of property names.
+     * @param {Object} object 要检索的对象
+     * @returns {Array} 返回包含属性名的数组
      * @example
      *
      * function Foo() {
@@ -10949,16 +10941,15 @@
     }
 
     /**
-     * The opposite of `_.mapValues`; this method creates an object with the
-     * same values as `object` and keys generated by running each own enumerable
-     * property of `object` through `iteratee`.
+     * 反向版 `_.mapValues`。
+     * 这个方法创建一个对象，对象的值与源对象相同，但 key 是通过 `iteratee` 产生的。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to iterate over.
+     * @param {Object} object 要遍历的对象
      * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
-     * @returns {Object} Returns the new mapped object.
+     * @returns {Object} 返回映射后的新对象
      * @example
      *
      * _.mapKeys({ 'a': 1, 'b': 2 }, function(value, key) {
@@ -10977,16 +10968,15 @@
     }
 
     /**
-     * Creates an object with the same keys as `object` and values generated by
-     * running each own enumerable property of `object` through `iteratee`. The
-     * iteratee function is invoked with three arguments: (value, key, object).
+     * 创建一个对象，对象的key相同，值是通过 `iteratee` 产生的。
+     * iteratee 会传入3个参数： (value, key, object)
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to iterate over.
+     * @param {Object} object 要遍历的对象
      * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
-     * @returns {Object} Returns the new mapped object.
+     * @returns {Object} 返回映射后的对象
      * @example
      *
      * var users = {
@@ -11184,7 +11174,7 @@
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @param {Array|string} path The path of the property to resolve.
      * @param {*} [defaultValue] The value returned if the resolved value is `undefined`.
      * @returns {*} Returns the resolved value.
@@ -11277,7 +11267,7 @@
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @returns {Array} Returns the new array of key-value pairs.
      * @example
      *
@@ -11301,7 +11291,7 @@
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @returns {Array} Returns the new array of key-value pairs.
      * @example
      *
@@ -11330,7 +11320,7 @@
      * @static
      * @memberOf _
      * @category Object
-     * @param {Array|Object} object The object to iterate over.
+     * @param {Array|Object} object 要遍历的对象
      * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
      * @param {*} [accumulator] The custom accumulator value.
      * @returns {*} Returns the accumulated value.
@@ -11405,7 +11395,7 @@
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @returns {Array} Returns the array of property values.
      * @example
      *
@@ -11434,7 +11424,7 @@
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @returns {Array} Returns the array of property values.
      * @example
      *
@@ -11715,13 +11705,13 @@
      * ">" and "/" don't need escaping in HTML and have no special meaning
      * unless they're part of a tag or unquoted attribute value.
      * See [Mathias Bynens's article](https://mathiasbynens.be/notes/ambiguous-ampersands)
-     * (under "semi-related fun fact") for more details.
+     * (under "semi-related fun fact") 了解详情
      *
      * Backticks are escaped because in IE < 9, they can break out of
      * attribute values or HTML comments. See [#59](https://html5sec.org/#59),
      * [#102](https://html5sec.org/#102), [#108](https://html5sec.org/#108), and
      * [#133](https://html5sec.org/#133) of the [HTML5 Security Cheatsheet](https://html5sec.org/)
-     * for more details.
+     * 了解详情
      *
      * When working with HTML you should always [quote attribute values](http://wonko.com/post/html-escaping)
      * to reduce XSS vectors.
@@ -11962,7 +11952,7 @@
      */
     function parseInt (string, radix, guard) {
       // Chrome fails to trim leading <BOM> whitespace characters.
-      // See https://code.google.com/p/v8/issues/detail?id=3109 for more details.
+      // See https://code.google.com/p/v8/issues/detail?id=3109 了解详情
       if (guard || radix == null) {
         radix = 0;
       } else if (radix) {
@@ -12001,7 +11991,7 @@
         return result;
       }
       // Leverage the exponentiation by squaring algorithm for a faster repeat.
-      // See https://en.wikipedia.org/wiki/Exponentiation_by_squaring for more details.
+      // See https://en.wikipedia.org/wiki/Exponentiation_by_squaring 了解详情
       do {
         if (n % 2) {
           result += string;
@@ -13005,7 +12995,7 @@
      * @static
      * @memberOf _
      * @category Utility
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @param {...*} [args] The arguments to invoke the method with.
      * @returns {Function} Returns the new function.
      * @example
@@ -13251,7 +13241,7 @@
      * @static
      * @memberOf _
      * @category Utility
-     * @param {Object} object The object to query.
+     * @param {Object} object 要检索的对象
      * @returns {Function} Returns the new function.
      * @example
      *
@@ -14294,7 +14284,7 @@
 
   // Expose lodash on the free variable `window` or `self` when available. This
   // prevents errors in cases where lodash is loaded by a script tag in the presence
-  // of an AMD loader. See http://requirejs.org/docs/errors.html#mismatch for more details.
+  // of an AMD loader. See http://requirejs.org/docs/errors.html#mismatch 了解详情
   (freeWindow || freeSelf || {})._ = _;
 
   // Some AMD build optimizers like r.js check for condition patterns like the following:
