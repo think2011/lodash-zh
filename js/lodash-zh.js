@@ -1523,9 +1523,8 @@
     }
 
     /**
-     * By default, the template delimiters used by lodash are like those in
-     * embedded Ruby (ERB). Change the following template settings to use
-     * alternative delimiters.
+     * 默认情况下，这些都是用于处理lodash的模板，类似 Ruby 的嵌入式 (ERB)。
+     * 可以改变接下来的设置用新的方式代替。
      *
      * @static
      * @memberOf _
@@ -1534,7 +1533,7 @@
     lodash.templateSettings = {
 
       /**
-       * Used to detect `data` property values to be HTML-escaped.
+       * 用于检测要进行HTML转义 `data` 的属性值。
        *
        * @memberOf _.templateSettings
        * @type RegExp
@@ -1542,7 +1541,7 @@
       'escape': reEscape,
 
       /**
-       * Used to detect code to be evaluated.
+       * 用于检测表达式代码
        *
        * @memberOf _.templateSettings
        * @type RegExp
@@ -1550,7 +1549,7 @@
       'evaluate': reEvaluate,
 
       /**
-       * Used to detect `data` property values to inject.
+       * 用于检测要插入的 `data` 的属性值。
        *
        * @memberOf _.templateSettings
        * @type RegExp
@@ -1558,7 +1557,7 @@
       'interpolate': reInterpolate,
 
       /**
-       * Used to reference the data object in the template text.
+       * 用于引用模板文本中的 `data` 对象
        *
        * @memberOf _.templateSettings
        * @type string
@@ -1566,7 +1565,7 @@
       'variable': '',
 
       /**
-       * Used to import variables into the compiled template.
+       * 用于导入变量到编译模板
        *
        * @memberOf _.templateSettings
        * @type Object
