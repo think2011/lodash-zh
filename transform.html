@@ -392,15 +392,14 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>transform <a class="fa-link" href="./transform" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L11340" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.transform" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>transform <a class="fa-link" href="./transform" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L11330" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.transform" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.transform(object, [iteratee&#x3D;_.identity], [accumulator])</div>
 
-<div data-render-html="/transform"><p>An alternative to <code>_.reduce</code>; this method transforms <code>object</code> to a new
-<code>accumulator</code> object which is the result of running each of its own enumerable
-properties through <code>iteratee</code>, with each invocation potentially mutating
-the <code>accumulator</code> object. The iteratee is invoked with four arguments:<br>
-(accumulator, value, key, object). Iteratee functions may exit iteration
-early by explicitly returning <code>false</code>.</p>
+<div data-render-html="/transform"><p><code>_.reduce</code> 的代替方法。
+这个方法会改变对象为一个新的 <code>accumulator</code> 对象，来自每一次经 <code>iteratee</code> 处理自身可枚举对象的结果。
+每次调用可能会改变 <code>accumulator</code> 对象。
+iteratee 会传入4个对象：(accumulator, value, key, object)。
+如果返回 <code>false</code>，iteratee 会提前退出。</p>
 </div>
 
 <h3>参数</h3>
@@ -409,11 +408,11 @@ early by explicitly returning <code>false</code>.</p>
 </div></li>
 <li><span class="param-name">[iteratee&#x3D;_.identity]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>这个函数会处理每一个元素 </p>
 </div></li>
-<li><span class="param-name">[accumulator]</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>The custom accumulator value. </p>
+<li><span class="param-name">[accumulator]</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>定制叠加的值 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(*)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the accumulated value.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回叠加后的值</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >transform</span><span class="token punctuation" >(</span><span class="token punctuation" >[</span><span class="token number" >2</span><span class="token punctuation" >,</span> <span class="token number" >3</span><span class="token punctuation" >,</span> <span class="token number" >4</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>result<span class="token punctuation" >,</span> n<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>

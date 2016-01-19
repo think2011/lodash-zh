@@ -392,24 +392,24 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>setWith <a class="fa-link" href="./setWith" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L11259" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.setwith" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>setWith <a class="fa-link" href="./setWith" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L11250" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.setwith" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.setWith(object, path, value, [customizer])</div>
 
-<div data-render-html="/setWith"><p>这个方法类似 <code>_.set</code> except that it accepts <code>customizer</code> which is
-invoked to produce the objects of <code>path</code>.  If <code>customizer</code> returns <code>undefined</code>
-path creation is handled by the method instead. The <code>customizer</code> is invoked
-with three arguments: (nsValue, key, nsObject).</p>
+<div data-render-html="/setWith"><p>这个方法类似 <code>_.set</code>。
+除了它接受一个 <code>customizer</code> 决定如何设置对象路径的值。
+如果 <code>customizer</code> 返回 <code>undefined</code> 将会有它的处理方法代替。
+<code>customizer</code> 会传入3个参数：(nsValue, key, nsObject)</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">object</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>The object to modify. </p>
+<li><span class="param-name">object</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>要修改的对象 </p>
 </div></li>
-<li><span class="param-name">path</span> <span class="param-type">(Array|string)</span> <div data-render-html="/#synthetic"><p>The path of the property to set. </p>
+<li><span class="param-name">path</span> <span class="param-type">(Array|string)</span> <div data-render-html="/#synthetic"><p>要设置的对象路径 </p>
 </div></li>
-<li><span class="param-name">value</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>The value to set. </p>
+<li><span class="param-name">value</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>要设置的值 </p>
 </div></li>
-<li><span class="param-name">[customizer]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function to customize assigned values. </p>
+<li><span class="param-name">[customizer]</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>这个函数决定如何分配值 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Object)</span></h3>

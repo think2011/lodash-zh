@@ -1753,8 +1753,8 @@
      *
      * @private
      * @param {Object} hash The hash to modify.
-     * @param {string} key The key of the value to set.
-     * @param {*} value The value to set.
+     * @param {string} key The key of 要设置的值
+     * @param {*} value 要设置的值
      */
     function hashSet (hash, key, value) {
       hash[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
@@ -1847,8 +1847,8 @@
      * @private
      * @name set
      * @memberOf MapCache
-     * @param {string} key The key of the value to set.
-     * @param {*} value The value to set.
+     * @param {string} key The key of 要设置的值
+     * @param {*} value 要设置的值
      * @returns {Object} Returns the map cache object.
      */
     function mapSet (key, value) {
@@ -2006,8 +2006,8 @@
      * @private
      * @name set
      * @memberOf Stack
-     * @param {string} key The key of the value to set.
-     * @param {*} value The value to set.
+     * @param {string} key The key of 要设置的值
+     * @param {*} value 要设置的值
      * @returns {Object} Returns the stack cache object.
      */
     function stackSet (key, value) {
@@ -2102,8 +2102,8 @@
      *
      * @private
      * @param {Array} array The array to modify.
-     * @param {string} key The key of the value to set.
-     * @param {*} value The value to set.
+     * @param {string} key The key of 要设置的值
+     * @param {*} value 要设置的值
      */
     function assocSet (array, key, value) {
       var index = assocIndexOf(array, key);
@@ -2138,7 +2138,7 @@
      * This function is like `assignValue` except that it doesn't assign `undefined` values.
      *
      * @private
-     * @param {Object} object The object to modify.
+     * @param {Object} object 要修改的对象
      * @param {string} key The key of the property to assign.
      * @param {*} value The value to assign.
      */
@@ -2155,7 +2155,7 @@
      * for equality comparisons.
      *
      * @private
-     * @param {Object} object The object to modify.
+     * @param {Object} object 要修改的对象
      * @param {string} key The key of the property to assign.
      * @param {*} value The value to assign.
      */
@@ -2174,7 +2174,7 @@
      *
      * @private
      * @param {Object} object 目标对象
-     * @param {Object} source The source object.
+     * @param {Object} source 来源对象
      * @returns {Object} 返回对象
      */
     function baseAssign (object, source) {
@@ -2299,7 +2299,7 @@
      *
      * @private
      * @param {Object} prototype The object to inherit from.
-     * @returns {Object} Returns the new object.
+     * @returns {Object} 返回新对象
      */
     var baseCreate = (function () {
       function object () {
@@ -2987,7 +2987,7 @@
      *
      * @private
      * @param {Object} object 目标对象
-     * @param {Object} source The source object.
+     * @param {Object} source 来源对象
      * @param {Function} [customizer] The function to customize merged values.
      * @param {Object} [stack] Tracks traversed source values and their merged counterparts.
      */
@@ -3022,7 +3022,7 @@
      *
      * @private
      * @param {Object} object 目标对象
-     * @param {Object} source The source object.
+     * @param {Object} source 来源对象
      * @param {string} key The key of the value to merge.
      * @param {Function} mergeFunc The function to merge values.
      * @param {Function} [customizer] The function to customize assigned values.
@@ -3099,9 +3099,9 @@
      * property names.
      *
      * @private
-     * @param {Object} object The source object.
+     * @param {Object} object 来源对象
      * @param {string[]} props The property names to pick.
-     * @returns {Object} Returns the new object.
+     * @returns {Object} 返回新对象
      */
     function basePick (object, props) {
       object = Object(object);
@@ -3117,9 +3117,9 @@
      * The base implementation of  `_.pickBy` without support for callback shorthands.
      *
      * @private
-     * @param {Object} object The source object.
+     * @param {Object} object 来源对象
      * @param {Function} predicate The function invoked per property.
-     * @returns {Object} Returns the new object.
+     * @returns {Object} 返回新对象
      */
     function basePickBy (object, predicate) {
       var result = {};
@@ -3291,8 +3291,8 @@
      *
      * @private
      * @param {Object} object 要检索的对象
-     * @param {Array|string} path The path of the property to set.
-     * @param {*} value The value to set.
+     * @param {Array|string} path 要设置的对象路径
+     * @param {*} value 要设置的值
      * @param {Function} [customizer] The function to customize path creation.
      * @returns {Object} 返回对象
      */
@@ -3580,7 +3580,7 @@
      * The base implementation of `_.unset`.
      *
      * @private
-     * @param {Object} object The object to modify.
+     * @param {Object} object 要修改的对象
      * @param {Array|string} path The path of the property to unset.
      * @returns {boolean} Returns `true` if the property is deleted否则返回 `false`
      */
@@ -10309,7 +10309,7 @@
     /**
      * 这个方法类似 `_.assignIn`。
      * 除了它接受一个 customizer` 决定如何分配值。
-     * 如果 `customizer` 返回 `undefined` 将会分配处理方法代替。
+     * 如果 `customizer` 返回 `undefined` 将会由分配处理方法代替。
      * `customizer` 会传入5个参数：(objValue, srcValue, key, object, source)。
      *
      * **注意:** 这方法会改变源对象
@@ -10340,7 +10340,7 @@
     /**
      * 这个方法类似 `_.assign`。
      * 除了它接受一个 customizer` 决定如何分配值。
-     * 如果 `customizer` 返回 `undefined` 将会分配处理方法代替。
+     * 如果 `customizer` 返回 `undefined` 将会由分配处理方法代替。
      * `customizer` 会传入5个参数：(objValue, srcValue, key, object, source)。
      *
      * **注意:** 这方法会改变源对象
@@ -11002,12 +11002,10 @@
     }
 
     /**
-     * Recursively merges own and inherited enumerable properties of source
-     * objects into the destination object, skipping source properties that resolve
-     * to `undefined`. Array and plain object properties are merged recursively.
-     * Other objects and value types are overridden by assignment. Source objects
-     * are applied from left to right. Subsequent sources overwrite property
-     * assignments of previous sources.
+     * 递归合并来源对象的自身和继承的可枚举属性到目标对象。
+     * 跳过来源对象解析为 `undefined` 的属性。
+     * 数组和普通对象会递归合并，其他对象和值会被直接分配。
+     * 来源对象从左到右分配，后续的来源对象属性会覆盖之前分配的属性。
      *
      * **注意:** 这方法会改变源对象
      *
@@ -11035,18 +11033,16 @@
     });
 
     /**
-     * 这个方法类似 `_.merge` except that it accepts `customizer` which
-     * is invoked to produce the merged values of the destination and source
-     * properties. If `customizer` returns `undefined` merging is handled by the
-     * method instead. The `customizer` is invoked with seven arguments:
-     * (objValue, srcValue, key, object, source, stack).
+     * 这个方法类似 `_.merge`。
+     * 除了它接受一个 `customizer` 决定如何合并。
+     * 如果 `customizer` 返回 `undefined` 将会由合并处理方法代替。
      *
      * @static
      * @memberOf _
      * @category Object
      * @param {Object} object 目标对象
      * @param {...Object} sources 来源对象
-     * @param {Function} customizer The function to customize assigned values.
+     * @param {Function} customizer 这个方法决定如何合并
      * @returns {Object} 返回对象
      * @example
      *
@@ -11074,16 +11070,15 @@
     });
 
     /**
-     * The opposite of `_.pick`; this method creates an object composed of the
-     * own and inherited enumerable properties of `object` that are not omitted.
+     * 反向版 `_.pick`。
+     * 这个方法返回忽略属性之外的自身和继承的可枚举属性。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The source object.
-     * @param {...(string|string[])} [props] The property names to omit, specified
-     *  individually or in arrays..
-     * @returns {Object} Returns the new object.
+     * @param {Object} object 来源对象
+     * @param {...(string|string[])} [props] 要被忽略的属性，单独指定或指定在数组中
+     * @returns {Object} 返回新对象
      * @example
      *
      * var object = { 'user': 'fred', 'age': 40 };
@@ -11100,16 +11095,15 @@
     });
 
     /**
-     * The opposite of `_.pickBy`; this method creates an object composed of the
-     * own and inherited enumerable properties of `object` that `predicate`
-     * doesn't return truthy for.
+     * 反向版 `_.pickBy`。
+     * 这个方法返回经 `predicate` 判断不是真值的属性的自身和继承的可枚举属性。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The source object.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per property.
-     * @returns {Object} Returns the new object.
+     * @param {Object} object 来源对象
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会调用每一个属性
+     * @returns {Object} 返回新对象
      * @example
      *
      * var object = { 'user': 'fred', 'age': 40 };
@@ -11125,15 +11119,14 @@
     }
 
     /**
-     * Creates an object composed of the picked `object` properties.
+     * 创建一个从 `object` 中选中的属性的对象。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The source object.
-     * @param {...(string|string[])} [props] The property names to pick, specified
-     *  individually or in arrays.
-     * @returns {Object} Returns the new object.
+     * @param {Object} object 来源对象
+     * @param {...(string|string[])} [props] 要选中的属性名，单独指定或指定在数组中
+     * @returns {Object} 返回新对象
      * @example
      *
      * var object = { 'user': 'fred', 'age': 40 };
@@ -11146,15 +11139,15 @@
     });
 
     /**
-     * Creates an object composed of the `object` properties `predicate` returns
-     * truthy for. The predicate is invoked with one argument: (value).
+     * 创建一个从 `object` 中经 `predicate` 判断为真值的属性为对象。
+     * predicate 会传入1个参数：(value)
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The source object.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked per property.
-     * @returns {Object} Returns the new object.
+     * @param {Object} object 来源对象
+     * @param {Function|Object|string} [predicate=_.identity] 这个函数会调用每一个属性
+     * @returns {Object} 返回新对象
      * @example
      *
      * var object = { 'user': 'fred', 'age': 40 };
@@ -11167,17 +11160,16 @@
     }
 
     /**
-     * 这个方法类似 `_.get` except that if the resolved value is a function
-     * it's invoked with the `this` binding of its parent object and its result
-     * is returned.
+     * 这个方法类似 `_.get`。
+     * 除了如果解析到的值是一个函数的话，就绑定 `this` 到这个函数并返回执行后的结果。 
      *
      * @static
      * @memberOf _
      * @category Object
      * @param {Object} object 要检索的对象
-     * @param {Array|string} path The path of the property to resolve.
-     * @param {*} [defaultValue] The value returned if the resolved value is `undefined`.
-     * @returns {*} Returns the resolved value.
+     * @param {Array|string} path 要解析的属性路径
+     * @param {*} [defaultValue] 如果值是 `undefined`，返回这个值
+     * @returns {*} 返回解析后的值
      * @example
      *
      * var object = { 'a': [{ 'b': { 'c1': 3, 'c2': _.constant(4) } }] };
@@ -11209,17 +11201,16 @@
     }
 
     /**
-     * Sets the value at `path` of `object`. If a portion of `path` doesn't exist
-     * it's created. Arrays are created for missing index properties while objects
-     * are created for all other missing properties. Use `_.setWith` to customize
-     * `path` creation.
+     * 设置值到对象对应的属性路径上，如果没有则创建这部分路径。
+     * 缺少的索引属性会创建为数组，而缺少的属性会创建为对象。
+     * 使用 `_.setWith` 定制创建。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to modify.
-     * @param {Array|string} path The path of the property to set.
-     * @param {*} value The value to set.
+     * @param {Object} object 要修改的对象
+     * @param {Array|string} path 要设置的对象路径
+     * @param {*} value 要设置的值
      * @returns {Object} 返回对象
      * @example
      *
@@ -11238,18 +11229,18 @@
     }
 
     /**
-     * 这个方法类似 `_.set` except that it accepts `customizer` which is
-     * invoked to produce the objects of `path`.  If `customizer` returns `undefined`
-     * path creation is handled by the method instead. The `customizer` is invoked
-     * with three arguments: (nsValue, key, nsObject).
+     * 这个方法类似 `_.set`。
+     * 除了它接受一个 `customizer` 决定如何设置对象路径的值。
+     * 如果 `customizer` 返回 `undefined` 将会有它的处理方法代替。
+     * `customizer` 会传入3个参数：(nsValue, key, nsObject)
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to modify.
-     * @param {Array|string} path The path of the property to set.
-     * @param {*} value The value to set.
-     * @param {Function} [customizer] The function to customize assigned values.
+     * @param {Object} object 要修改的对象
+     * @param {Array|string} path 要设置的对象路径
+     * @param {*} value 要设置的值
+     * @param {Function} [customizer] 这个函数决定如何分配值
      * @returns {Object} 返回对象
      * @example
      *
@@ -11262,13 +11253,13 @@
     }
 
     /**
-     * Creates an array of own enumerable key-value pairs for `object`.
+     * 创建一个对象自身可枚举属性的键值对数组。
      *
      * @static
      * @memberOf _
      * @category Object
      * @param {Object} object 要检索的对象
-     * @returns {Array} Returns the new array of key-value pairs.
+     * @returns {Array} 返回键值对的数组
      * @example
      *
      * function Foo() {
@@ -11286,13 +11277,13 @@
     }
 
     /**
-     * Creates an array of own and inherited enumerable key-value pairs for `object`.
-     *
+     * 创建一个对象自身和继承的可枚举属性的键值对数组。
+     * 
      * @static
      * @memberOf _
      * @category Object
      * @param {Object} object 要检索的对象
-     * @returns {Array} Returns the new array of key-value pairs.
+     * @returns {Array} 返回键值对的数组
      * @example
      *
      * function Foo() {
@@ -11310,20 +11301,19 @@
     }
 
     /**
-     * An alternative to `_.reduce`; this method transforms `object` to a new
-     * `accumulator` object which is the result of running each of its own enumerable
-     * properties through `iteratee`, with each invocation potentially mutating
-     * the `accumulator` object. The iteratee is invoked with four arguments:
-     * (accumulator, value, key, object). Iteratee functions may exit iteration
-     * early by explicitly returning `false`.
+     * `_.reduce` 的代替方法。
+     * 这个方法会改变对象为一个新的 `accumulator` 对象，来自每一次经 `iteratee` 处理自身可枚举对象的结果。
+     * 每次调用可能会改变 `accumulator` 对象。
+     * iteratee 会传入4个对象：(accumulator, value, key, object)。
+     * 如果返回 `false`，iteratee 会提前退出。
      *
      * @static
      * @memberOf _
      * @category Object
      * @param {Array|Object} object 要遍历的对象
      * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
-     * @param {*} [accumulator] The custom accumulator value.
-     * @returns {*} Returns the accumulated value.
+     * @param {*} [accumulator] 定制叠加的值
+     * @returns {*} 返回叠加后的值
      * @example
      *
      * _.transform([2, 3, 4], function(result, n) {
@@ -11360,14 +11350,14 @@
     }
 
     /**
-     * Removes the property at `path` of `object`.
+     * 移除对象路径的属性。
      *
      * @static
      * @memberOf _
      * @category Object
-     * @param {Object} object The object to modify.
-     * @param {Array|string} path The path of the property to unset.
-     * @returns {boolean} Returns `true` if the property is deleted否则返回 `false`
+     * @param {Object} object 要修改的对象
+     * @param {Array|string} path 要移除的对象路径
+     * @returns {boolean} 移除成功返回 `true`，否则返回 `false`
      * @example
      *
      * var object = { 'a': [{ 'b': { 'c': 7 } }] };
@@ -11388,15 +11378,15 @@
     }
 
     /**
-     * Creates an array of the own enumerable property values of `object`.
+     * 创建 `object` 自身可枚举属性的值为数组
      *
-     * **注意:** Non-object values are coerced to objects.
+     * **注意:** 非对象的值会强制转换为对象
      *
      * @static
      * @memberOf _
      * @category Object
      * @param {Object} object 要检索的对象
-     * @returns {Array} Returns the array of property values.
+     * @returns {Array} 返回对象属性的值的数组
      * @example
      *
      * function Foo() {
@@ -11417,9 +11407,9 @@
     }
 
     /**
-     * Creates an array of the own and inherited enumerable property values of `object`.
-     *
-     * **注意:** Non-object values are coerced to objects.
+     * 创建 `object` 自身和继承的可枚举属性的值为数组
+     * 
+     * **注意:** 非对象的值会强制转换为对象
      *
      * @static
      * @memberOf _
