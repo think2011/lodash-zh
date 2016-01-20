@@ -392,42 +392,38 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>escape <a class="fa-link" href="./escape" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L11718" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.escape" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>escape <a class="fa-link" href="./escape" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L11712" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.escape" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.escape([string&#x3D;&#x27;&#x27;])</div>
 
-<div data-render-html="/escape"><p>Converts the characters &quot;&amp;&quot;, &quot;&lt;&quot;, &quot;&gt;&quot;, &#39;&quot;&#39;, &quot;&#39;&quot;, and &quot;`&quot; in <code>string</code> to
-their corresponding HTML entities.
+<div data-render-html="/escape"><p>转义字符 &quot;&amp;&quot;, &quot;&lt;&quot;, &quot;&gt;&quot;, &#39;&quot;&#39;, &quot;&#39;&quot;, 以及 &quot;`&quot; 为HTML实体字符。
 <br>
 <br>
-<strong>注意:</strong> No other characters are escaped. To escape additional
-characters use a third-party library like <a href="https://mths.be/he" target="_blank"><em>he</em></a>.
+<strong>注意:</strong> 不会转义其他字符，如果需要，可以使用第三方库，例如 <a href="https://mths.be/he" target="_blank"><em>he</em></a>。
 <br>
 <br>
-Though the &quot;&gt;&quot; character is escaped for symmetry, characters like
-&quot;&gt;&quot; and &quot;/&quot; don&#39;t need escaping in HTML and have no special meaning
-unless they&#39;re part of a tag or unquoted attribute value.
-See <a href="https://mathiasbynens.be/notes/ambiguous-ampersands" target="_blank">Mathias Bynens&#39;s article</a>
+虽然 &quot;&gt;&quot; 是对称转义的，像是 &quot;&gt;&quot; 和 &quot;/&quot; 没有特殊的意义，所以不需要在 HTML 中转义。
+除非它们是标签的一部分，或者是不带引号的属性值。
+查看 <a href="https://mathiasbynens.be/notes/ambiguous-ampersands" target="_blank">Mathias Bynens 的文章</a>
 (under &quot;semi-related fun fact&quot;) 了解详情
 <br>
 <br>
-Backticks are escaped because in IE &lt; 9, they can break out of
-attribute values or HTML comments. See <a href="https://html5sec.org/#59" target="_blank">#59</a>,
-<a href="https://html5sec.org/#102" target="_blank">#102</a>, <a href="https://html5sec.org/#108" target="_blank">#108</a>, and
-<a href="https://html5sec.org/#133" target="_blank">#133</a> of the <a href="https://html5sec.org/" target="_blank">HTML5 Security Cheatsheet</a>
-了解详情
+在 IE &lt; 9 中转义引号，因为会中断属性值或 HTML 注释，查看
+<a href="https://html5sec.org/" target="_blank">HTML5 安全列表</a> 的 <a href="https://html5sec.org/#59" target="_blank">#59</a>,
+<a href="https://html5sec.org/#102" target="_blank">#102</a>, <a href="https://html5sec.org/#108" target="_blank">#108</a>, 以及
+<a href="https://html5sec.org/#133" target="_blank">#133</a> 了解详情
 <br>
 <br>
-When working with HTML you should always <a href="http://wonko.com/post/html-escaping" target="_blank">quote attribute values</a>
-to reduce XSS vectors.</p>
+当解析为 HTML 时应该总是 <a href="http://wonko.com/post/html-escaping" target="_blank">引用属性值</a>
+以减少 XSS 的可能性。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">[string&#x3D;&#x27;&#x27;]</span> <span class="param-type">(string)</span> <div data-render-html="/#synthetic"><p>The string to escape. </p>
+<li><span class="param-name">[string&#x3D;&#x27;&#x27;]</span> <span class="param-type">(string)</span> <div data-render-html="/#synthetic"><p>要转义的字符串 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(string)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the escaped string.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回转义后的字符串</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >escape</span><span class="token punctuation" >(</span><span class="token string" >'fred, barney, &amp; pebbles'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>

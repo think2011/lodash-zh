@@ -1205,7 +1205,7 @@
    * Converts `string` to an array.
    *
    * @private
-   * @param {string} string The string to convert.
+   * @param {string} string 要转换的字符串
    * @returns {Array} Returns the converted array.
    */
   function stringToArray (string) {
@@ -4267,8 +4267,8 @@
      *
      * @private
      * @param {string} string The string to create padding for.
-     * @param {number} [length=0] The padding length.
-     * @param {string} [chars=' '] The string used as padding.
+     * @param {number} [length=0] 填充的长度
+     * @param {string} [chars=' '] 填充字符
      * @returns {string} Returns the padding for `string`.
      */
     function createPadding (string, length, chars) {
@@ -5205,7 +5205,7 @@
      * Converts `string` to a property path array.
      *
      * @private
-     * @param {string} string The string to convert.
+     * @param {string} string 要转换的字符串
      * @returns {Array} Returns the property path array.
      */
     function stringToPath (string) {
@@ -11589,13 +11589,13 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Converts `string` to [camel case](https://en.wikipedia.org/wiki/CamelCase).
+     * 转换字符串为 [驼峰写法](https://en.wikipedia.org/wiki/CamelCase)
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to convert.
-     * @returns {string} Returns the camel cased string.
+     * @param {string} [string=''] 要转换的字符串
+     * @returns {string} 返回驼峰写法的字符串
      * @example
      *
      * _.camelCase('Foo Bar');
@@ -11613,14 +11613,13 @@
     });
 
     /**
-     * Converts the first character of `string` to upper case and the remaining
-     * to lower case.
+     * 转换字符串首字母为大写，剩下为小写。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to capitalize.
-     * @returns {string} Returns the capitalized string.
+     * @param {string} [string=''] 要大写开头的字符串
+     * @returns {string} 返回大写开头的字符串
      * @example
      *
      * _.capitalize('FRED');
@@ -11631,14 +11630,13 @@
     }
 
     /**
-     * Deburrs `string` by converting [latin-1 supplementary letters](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)#Character_table)
-     * to basic latin letters and removing [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks).
+     * 转换 [latin-1 supplementary letters](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)#Character_table) 为基本拉丁字母，并删除[变音符](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks)。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to deburr.
-     * @returns {string} Returns the deburred string.
+     * @param {string} [string=''] 要处理的字符串
+     * @returns {string} 返回处理后的字符串
      * @example
      *
      * _.deburr('déjà vu');
@@ -11650,15 +11648,15 @@
     }
 
     /**
-     * Checks if `string` ends with the given target string.
+     * 检查给定的字符是否是字符串的结尾
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to search.
-     * @param {string} [target] The string to search for.
-     * @param {number} [position=string.length] The position to search from.
-     * @returns {boolean} Returns `true` if `string` ends with `target`否则返回 `false`
+     * @param {string} [string=''] 要检索的字符串
+     * @param {string} [target] 要检索字符
+     * @param {number} [position=string.length] 检索的位置
+     * @returns {boolean} 如果是结尾返回 `true`，否则返回 `false`
      * @example
      *
      * _.endsWith('abc', 'c');
@@ -11684,32 +11682,28 @@
     }
 
     /**
-     * Converts the characters "&", "<", ">", '"', "'", and "\`" in `string` to
-     * their corresponding HTML entities.
+     * 转义字符 "&", "<", ">", '"', "'", 以及 "\`" 为HTML实体字符。
      *
-     * **注意:** No other characters are escaped. To escape additional
-     * characters use a third-party library like [_he_](https://mths.be/he).
+     * **注意:** 不会转义其他字符，如果需要，可以使用第三方库，例如 [_he_](https://mths.be/he)。
      *
-     * Though the ">" character is escaped for symmetry, characters like
-     * ">" and "/" don't need escaping in HTML and have no special meaning
-     * unless they're part of a tag or unquoted attribute value.
-     * See [Mathias Bynens's article](https://mathiasbynens.be/notes/ambiguous-ampersands)
+     * 虽然 ">" 是对称转义的，像是 ">" 和 "/" 没有特殊的意义，所以不需要在 HTML 中转义。
+     * 除非它们是标签的一部分，或者是不带引号的属性值。
+     * 查看 [Mathias Bynens 的文章](https://mathiasbynens.be/notes/ambiguous-ampersands)
      * (under "semi-related fun fact") 了解详情
      *
-     * Backticks are escaped because in IE < 9, they can break out of
-     * attribute values or HTML comments. See [#59](https://html5sec.org/#59),
-     * [#102](https://html5sec.org/#102), [#108](https://html5sec.org/#108), and
-     * [#133](https://html5sec.org/#133) of the [HTML5 Security Cheatsheet](https://html5sec.org/)
-     * 了解详情
+     * 在 IE < 9 中转义引号，因为会中断属性值或 HTML 注释，查看
+     * [HTML5 安全列表](https://html5sec.org/) 的 [#59](https://html5sec.org/#59),
+     * [#102](https://html5sec.org/#102), [#108](https://html5sec.org/#108), 以及
+     * [#133](https://html5sec.org/#133) 了解详情
      *
-     * When working with HTML you should always [quote attribute values](http://wonko.com/post/html-escaping)
-     * to reduce XSS vectors.
+     * 当解析为 HTML 时应该总是 [引用属性值](http://wonko.com/post/html-escaping)
+     * 以减少 XSS 的可能性。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to escape.
-     * @returns {string} Returns the escaped string.
+     * @param {string} [string=''] 要转义的字符串
+     * @returns {string} 返回转义后的字符串
      * @example
      *
      * _.escape('fred, barney, & pebbles');
@@ -11723,14 +11717,14 @@
     }
 
     /**
-     * Escapes the `RegExp` special characters "^", "$", "\", ".", "*", "+",
-     * "?", "(", ")", "[", "]", "{", "}", and "|" in `string`.
+     * 转义`RegExp` 中特殊的字符 "^", "$", "\", ".", "*", "+",
+     * "?", "(", ")", "[", "]", "{", "}", 以及 "|"。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to escape.
-     * @returns {string} Returns the escaped string.
+     * @param {string} [string=''] 要转义的字符串
+     * @returns {string} 返回转义后的字符串
      * @example
      *
      * _.escapeRegExp('[lodash](https://lodash.com/)');
@@ -11744,13 +11738,13 @@
     }
 
     /**
-     * Converts `string` to [kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
+     * 转换字符串为 [kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles)。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to convert.
-     * @returns {string} Returns the kebab cased string.
+     * @param {string} [string=''] 要转换的字符串
+     * @returns {string} 返回转换后的字符串
      * @example
      *
      * _.kebabCase('Foo Bar');
@@ -11767,13 +11761,13 @@
     });
 
     /**
-     * Converts `string`, as space separated words, to lower case.
+     * 以空格分开单词并转换为小写。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to convert.
-     * @returns {string} Returns the lower cased string.
+     * @param {string} [string=''] 要转换的字符串
+     * @returns {string} 返回小写的字符串
      * @example
      *
      * _.lowerCase('--Foo-Bar');
@@ -11790,13 +11784,13 @@
     });
 
     /**
-     * Converts the first character of `string` to lower case.
+     * 转换首字母为小写。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to convert.
-     * @returns {string} Returns the converted string.
+     * @param {string} [string=''] 要转换的字符串
+     * @returns {string} 返回转换后的字符串
      * @example
      *
      * _.lowerFirst('Fred');
@@ -11808,13 +11802,13 @@
     var lowerFirst = createCaseFirst('toLowerCase');
 
     /**
-     * Converts the first character of `string` to upper case.
+     * 转换首字母为大写。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to convert.
-     * @returns {string} Returns the converted string.
+     * @param {string} [string=''] 要转换的字符串
+     * @returns {string} 返回转换后的字符串
      * @example
      *
      * _.upperFirst('fred');
@@ -11826,16 +11820,16 @@
     var upperFirst = createCaseFirst('toUpperCase');
 
     /**
-     * Pads `string` on the left and right sides if it's shorter than `length`.
-     * Padding characters are truncated if they can't be evenly divided by `length`.
+     * 如果字符串长度小于 `length` 则从左到右填充字符。
+     * 如果没法平均分配，则截断超出的长度。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to pad.
-     * @param {number} [length=0] The padding length.
-     * @param {string} [chars=' '] The string used as padding.
-     * @returns {string} Returns the padded string.
+     * @param {string} [string=''] 要填充的字符串
+     * @param {number} [length=0] 填充的长度
+     * @param {string} [chars=' '] 填充字符
+     * @returns {string} 返回填充后的字符串
      * @example
      *
      * _.pad('abc', 8);
@@ -11863,16 +11857,15 @@
     }
 
     /**
-     * Pads `string` on the right side if it's shorter than `length`. Padding
-     * characters are truncated if they exceed `length`.
+     * 如果字符串长度小于 length 则在右侧填充字符。 如果超出长度则截断超出的部分。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to pad.
-     * @param {number} [length=0] The padding length.
-     * @param {string} [chars=' '] The string used as padding.
-     * @returns {string} Returns the padded string.
+     * @param {string} [string=''] 要填充的字符串
+     * @param {number} [length=0] 填充的长度
+     * @param {string} [chars=' '] 填充字符
+     * @returns {string} Returns 返回填充后的字符串
      * @example
      *
      * _.padEnd('abc', 6);
@@ -11890,16 +11883,15 @@
     }
 
     /**
-     * Pads `string` on the left side if it's shorter than `length`. Padding
-     * characters are truncated if they exceed `length`.
+     * 如果字符串长度小于 length 则在左侧填充字符。 如果超出长度则截断超出的部分。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to pad.
-     * @param {number} [length=0] The padding length.
-     * @param {string} [chars=' '] The string used as padding.
-     * @returns {string} Returns the padded string.
+     * @param {string} [string=''] 要填充的字符串
+     * @param {number} [length=0] 填充的长度
+     * @param {string} [chars=' '] 填充字符
+     * @returns {string} Returns 返回填充后的字符串
      * @example
      *
      * _.padStart('abc', 6);
@@ -11927,7 +11919,7 @@
      * @static
      * @memberOf _
      * @category String
-     * @param {string} string The string to convert.
+     * @param {string} string 要转换的字符串
      * @param {number} [radix] The radix to interpret `value` by.
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
      * @returns {number} Returns the converted integer.
@@ -12022,7 +12014,7 @@
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to convert.
+     * @param {string} [string=''] 要转换的字符串
      * @returns {string} Returns the snake cased string.
      * @example
      *
@@ -12066,7 +12058,7 @@
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to convert.
+     * @param {string} [string=''] 要转换的字符串
      * @returns {string} Returns the start cased string.
      * @example
      *
@@ -12089,9 +12081,9 @@
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to search.
+     * @param {string} [string=''] 要检索的字符串
      * @param {string} [target] The string to search for.
-     * @param {number} [position=0] The position to search from.
+     * @param {number} [position=0] 检索的位置
      * @returns {boolean} Returns `true` if `string` starts with `target`否则返回 `false`
      * @example
      *
@@ -12318,7 +12310,7 @@
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to convert.
+     * @param {string} [string=''] 要转换的字符串
      * @returns {string} Returns the lower cased string.
      * @example
      *
@@ -12341,7 +12333,7 @@
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to convert.
+     * @param {string} [string=''] 要转换的字符串
      * @returns {string} Returns the upper cased string.
      * @example
      *
@@ -12588,7 +12580,7 @@
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to convert.
+     * @param {string} [string=''] 要转换的字符串
      * @returns {string} Returns the upper cased string.
      * @example
      *
@@ -14048,7 +14040,7 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * The semantic version number.
+     * 语义化版本号
      *
      * @static
      * @memberOf _
