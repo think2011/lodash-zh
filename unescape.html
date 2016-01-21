@@ -337,9 +337,9 @@ var _hmt = _hmt || [];
 <li><a href="./padStart" title="_.padStart([string=&#39;&#39;], [length=0], [chars=&#39; &#39;])">padStart</a></li>
 <li><a href="./parseInt" title="_.parseInt(string, [radix])">parseInt</a></li>
 <li><a href="./repeat" title="_.repeat([string=&#39;&#39;], [n=0])">repeat</a></li>
-<li><a href="./replace" title="_.replace([string=&#39;&#39;], pattern, replacement)">replace</a></li>
+<li><a href="./replace" title="_.replace([string=&#39;&#39;], pattern, 要替换的内容)">replace</a></li>
 <li><a href="./snakeCase" title="_.snakeCase([string=&#39;&#39;])">snakeCase</a></li>
-<li><a href="./split" title="_.split([string=&#39;&#39;], separator, [limit])">split</a></li>
+<li><a href="./split" title="_.split([string=&#39;&#39;], [separator], [limit])">split</a></li>
 <li><a href="./startCase" title="_.startCase([string=&#39;&#39;])">startCase</a></li>
 <li><a href="./startsWith" title="_.startsWith([string=&#39;&#39;], [target], [position=0])">startsWith</a></li>
 <li><a href="./template" title="_.template([string=&#39;&#39;], [options])">template</a></li>
@@ -392,25 +392,24 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>unescape <a class="fa-link" href="./unescape" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L12570" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.unescape" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>unescape <a class="fa-link" href="./unescape" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L12567" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.unescape" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.unescape([string&#x3D;&#x27;&#x27;])</div>
 
-<div data-render-html="/unescape"><p>The inverse of <code>_.escape</code>; this method converts the HTML entities
-<code>&amp;amp;</code>, <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;quot;</code>, <code>&amp;#39;</code>, and <code>&amp;#96;</code> in <code>string</code> to their
-corresponding characters.
+<div data-render-html="/unescape"><p>反向版 <code>_.escape</code>。
+这个方法转换 HTML 实体 
+<code>&amp;amp;</code>, <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;quot;</code>, <code>&amp;#39;</code>, 以及 <code>&amp;#96;</code> 为对应的字符。
 <br>
 <br>
-<strong>注意:</strong> No other HTML entities are unescaped. To unescape additional HTML
-entities use a third-party library like <a href="https://mths.be/he" target="_blank"><em>he</em></a>.</p>
+<strong>注意:</strong> 不会转换其他的 HTML 实体，需要转换可以使用类似 <a href="https://mths.be/he" target="_blank"><em>he</em></a> 的第三方库。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">[string&#x3D;&#x27;&#x27;]</span> <span class="param-type">(string)</span> <div data-render-html="/#synthetic"><p>The string to unescape. </p>
+<li><span class="param-name">[string&#x3D;&#x27;&#x27;]</span> <span class="param-type">(string)</span> <div data-render-html="/#synthetic"><p>要转换的字符串 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(string)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the unescaped string.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回转换后的字符串</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >unescape</span><span class="token punctuation" >(</span><span class="token string" >'fred, barney, &amp;amp; pebbles'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>

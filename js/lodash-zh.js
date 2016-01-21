@@ -590,7 +590,7 @@
    * @param {Array} array The array to iterate over.
    * @param {Function} iteratee 这个函数会处理每一个元素
    * @param {*} [accumulator] The initial value.
-   * @param {boolean} [initFromArray] Specify using the first element of `array` as the initial value.
+   * @param {boolean} [initFromArray] Specify 使用 first element of `array` as the initial value.
    * @returns {*} Returns the accumulated value.
    */
   function arrayReduce (array, iteratee, accumulator, initFromArray) {
@@ -614,7 +614,7 @@
    * @param {Array} array The array to iterate over.
    * @param {Function} iteratee 这个函数会处理每一个元素
    * @param {*} [accumulator] The initial value.
-   * @param {boolean} [initFromArray] Specify using the last element of `array` as the initial value.
+   * @param {boolean} [initFromArray] Specify 使用 last element of `array` as the initial value.
    * @returns {*} Returns the accumulated value.
    */
   function arrayReduceRight (array, iteratee, accumulator, initFromArray) {
@@ -749,14 +749,14 @@
 
   /**
    * The base implementation of `_.reduce` and `_.reduceRight`, without support
-   * for callback shorthands, which iterates over `collection` using the provided
+   * for callback shorthands, which iterates over `collection` 使用 provided
    * `eachFunc`.
    *
    * @private
    * @param {Array|Object} collection 需要遍历的集合
    * @param {Function} iteratee 这个函数会处理每一个元素
    * @param {*} accumulator The initial value.
-   * @param {boolean} initFromCollection Specify using the first or last element of `collection` as the initial value.
+   * @param {boolean} initFromCollection Specify 使用 first or last element of `collection` as the initial value.
    * @param {Function} eachFunc The function to iterate over `collection`.
    * @returns {*} Returns the accumulated value.
    */
@@ -850,8 +850,8 @@
    * characters.
    *
    * @private
-   * @param {string} string The string to trim.
-   * @returns {string} Returns the trimmed string.
+   * @param {string} string 要处理的字符串
+   * @returns {string} 返回处理后的字符串
    */
   function baseTrim (string) {
     return string
@@ -1259,7 +1259,7 @@
   /*--------------------------------------------------------------------------*/
 
   /**
-   * Create a new pristine `lodash` function using the `context` object.
+   * Create a new pristine `lodash` function 使用 `context` object.
    *
    * @static
    * @memberOf _
@@ -11909,20 +11909,19 @@
     }
 
     /**
-     * Converts `string` to an integer of the specified radix. If `radix` is
-     * `undefined` or `0`, a `radix` of `10` is used unless `value` is a hexadecimal,
-     * in which case a `radix` of `16` is used.
+     * 以指定的基数转换字符串为整数。
+     * 如果基数是 `undefined` 或者 0，则基数默认是10，如果字符串是16进制，则基数为16。
      *
-     * **注意:** This method aligns with the [ES5 implementation](https://es5.github.io/#E)
-     * of `parseInt`.
+     * **注意:** 这个方法与 [ES5 implementation](https://es5.github.io/#E)
+     * 的 `parseInt` 一致
      *
      * @static
      * @memberOf _
      * @category String
      * @param {string} string 要转换的字符串
-     * @param {number} [radix] The radix to interpret `value` by.
+     * @param {number} [radix] 基数
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {number} Returns the converted integer.
+     * @returns {number} 返回转换后的整数
      * @example
      *
      * _.parseInt('08');
@@ -11944,14 +11943,14 @@
     }
 
     /**
-     * Repeats the given string `n` times.
+     * 重复 N 次字符串
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to repeat.
-     * @param {number} [n=0] The number of times to repeat the string.
-     * @returns {string} Returns the repeated string.
+     * @param {string} [string=''] 要重复的字符串
+     * @param {number} [n=0] 重复的次数
+     * @returns {string} 返回重复的字符串
      * @example
      *
      * _.repeat('*', 3);
@@ -11985,17 +11984,17 @@
     }
 
     /**
-     * Replaces matches for `pattern` in `string` with `replacement`.
+     * 替换字符串中匹配的内容为给定的内容
      *
-     * **注意:** This method is based on [`String#replace`](https://mdn.io/String/replace).
+     * **注意:** 这个方法基于 [`String#replace`](https://mdn.io/String/replace)
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to modify.
-     * @param {RegExp|string} pattern The pattern to replace.
-     * @param {Function|string} replacement The match replacement.
-     * @returns {string} Returns the modified string.
+     * @param {string} [string=''] 待替换的字符串
+     * @param {RegExp|string} pattern 要匹配的内容
+     * @param {Function|string} 要替换的内容
+     * @returns {string} 返回替换完成的字符串
      * @example
      *
      * _.replace('Hi Fred', 'Fred', 'Barney');
@@ -12009,13 +12008,13 @@
     }
 
     /**
-     * Converts `string` to [snake case](https://en.wikipedia.org/wiki/Snake_case).
+     * 转换字符串为 [snake case](https://en.wikipedia.org/wiki/Snake_case)
      *
      * @static
      * @memberOf _
      * @category String
      * @param {string} [string=''] 要转换的字符串
-     * @returns {string} Returns the snake cased string.
+     * @returns {string} 返回转换后的字符串
      * @example
      *
      * _.snakeCase('Foo Bar');
@@ -12032,17 +12031,17 @@
     });
 
     /**
-     * Splits `string` by `separator`.
+     * 以 `separator` 拆分字符串
      *
-     * **注意:** This method is based on [`String#split`](https://mdn.io/String/split).
+     * **注意:** 这个方法基于 [`String#split`](https://mdn.io/String/split)
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to split.
-     * @param {RegExp|string} separator The separator pattern to split by.
-     * @param {number} [limit] The length to truncate results to.
-     * @returns {Array} Returns the new array of string segments.
+     * @param {string} [string=''] 要拆分的字符串
+     * @param {RegExp|string} [separator] 拆分的分隔符
+     * @param {number} [limit] 限制的数量
+     * @returns {Array} 返回拆分部分的字符串的数组
      * @example
      *
      * _.split('a-b-c', '-', 2);
@@ -12053,13 +12052,13 @@
     }
 
     /**
-     * Converts `string` to [start case](https://en.wikipedia.org/wiki/Letter_case#Stylistic_or_specialised_usage).
+     * 转换字符串为 [start case](https://en.wikipedia.org/wiki/Letter_case#Stylistic_or_specialised_usage)
      *
      * @static
      * @memberOf _
      * @category String
      * @param {string} [string=''] 要转换的字符串
-     * @returns {string} Returns the start cased string.
+     * @returns {string} 返回转换后的字符串
      * @example
      *
      * _.startCase('--foo-bar');
@@ -12076,15 +12075,15 @@
     });
 
     /**
-     * Checks if `string` starts with the given target string.
+     * 检查字符串是否以 `target` 开头。
      *
      * @static
      * @memberOf _
      * @category String
      * @param {string} [string=''] 要检索的字符串
-     * @param {string} [target] The string to search for.
+     * @param {string} [target] 要检查的字符串
      * @param {number} [position=0] 检索的位置
-     * @returns {boolean} Returns `true` if `string` starts with `target`否则返回 `false`
+     * @returns {boolean} 如果符合条件返回`true`，否则返回 `false`
      * @example
      *
      * _.startsWith('abc', 'a');
@@ -12103,85 +12102,85 @@
     }
 
     /**
-     * Creates a compiled template function that can interpolate data properties
-     * in "interpolate" delimiters, HTML-escape interpolated data properties in
-     * "escape" delimiters, and execute JavaScript in "evaluate" delimiters. Data
-     * properties may be accessed as free variables in the template. If a setting
-     * object is provided it takes precedence over `_.templateSettings` values.
+     * 创建一个预编译模板方法，可以插入数据到模板中 "interpolate" 分隔符相应的位置。
+     * HTML会在 "escape" 分隔符中转换为相应实体。
+     * 在 "evaluate" 分隔符中允许执行JavaScript代码。
+     * 在模板中可以自由访问变量。
+     * 如果设置了选项对象，则会优先覆盖 `_.templateSettings` 的值。
      *
-     * **注意:** In the development build `_.template` utilizes
+     * **注意:** 在开发过程中可以使用
      * [sourceURLs](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl)
-     * for easier debugging.
+     * 便于调试。
      *
-     * For more information on precompiling templates see
-     * [lodash's custom builds documentation](https://lodash.com/custom-builds).
+     * 了解更多预编译模板的信息查看
+     * [lodash的自定义构建文档](https://lodash.com/custom-builds)
      *
-     * For more information on Chrome extension sandboxes see
-     * [Chrome's extensions documentation](https://developer.chrome.com/extensions/sandboxingEval).
+     * 了解更多 Chrome 沙箱扩展的信息查看
+     * [Chrome的扩展文档](https://developer.chrome.com/extensions/sandboxingEval)
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The template string.
-     * @param {Object} [options] The options object.
-     * @param {RegExp} [options.escape] The HTML "escape" delimiter.
-     * @param {RegExp} [options.evaluate] The "evaluate" delimiter.
-     * @param {Object} [options.imports] An object to import into the template as free variables.
-     * @param {RegExp} [options.interpolate] The "interpolate" delimiter.
-     * @param {string} [options.sourceURL] The sourceURL of the template's compiled source.
-     * @param {string} [options.variable] The data object variable name.
+     * @param {string} [string=''] 模板字符串
+     * @param {Object} [options] 选项对象
+     * @param {RegExp} [options.escape]  "escape" 分隔符
+     * @param {RegExp} [options.evaluate] "evaluate" 分隔符
+     * @param {Object} [options.imports] 导入对象到模板中作为自由变量
+     * @param {RegExp} [options.interpolate] "interpolate" 分隔符
+     * @param {string} [options.sourceURL] 模板编译的来源URL
+     * @param {string} [options.variable] 数据对象的变量名
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {Function} Returns the compiled template function.
+     * @returns {Function} 返回编译模板函数
      * @example
      *
-     * // using the "interpolate" delimiter to create a compiled template
+     * // 使用 "interpolate" 分隔符创建编译模板
      * var compiled = _.template('hello <%= user %>!');
      * compiled({ 'user': 'fred' });
      * // => 'hello fred!'
      *
-     * // using the HTML "escape" delimiter to escape data property values
+     * // 使用 HTML "escape" 转义数据的值
      * var compiled = _.template('<b><%- value %></b>');
      * compiled({ 'value': '<script>' });
      * // => '<b>&lt;script&gt;</b>'
      *
-     * // using the "evaluate" delimiter to execute JavaScript and generate HTML
+     * // 使用 "evaluate" 分隔符执行 JavaScript 和 生成HTML代码
      * var compiled = _.template('<% _.forEach(users, function(user) { %><li><%- user %></li><% }); %>');
      * compiled({ 'users': ['fred', 'barney'] });
      * // => '<li>fred</li><li>barney</li>'
      *
-     * // using the internal `print` function in "evaluate" delimiters
+     * // 在 "evaluate" 分隔符中使用内部的 `print` 函数
      * var compiled = _.template('<% print("hello " + user); %>!');
      * compiled({ 'user': 'barney' });
      * // => 'hello barney!'
      *
-     * // using the ES delimiter as an alternative to the default "interpolate" delimiter
+     * // 使用 ES 分隔符代替默认的 "interpolate" 分隔符
      * var compiled = _.template('hello ${ user }!');
      * compiled({ 'user': 'pebbles' });
      * // => 'hello pebbles!'
      *
-     * // using custom template delimiters
+     * // 使用自定义的模板分隔符
      * _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
      * var compiled = _.template('hello {{ user }}!');
      * compiled({ 'user': 'mustache' });
      * // => 'hello mustache!'
      *
-     * // using backslashes to treat delimiters as plain text
+     * // 使用反斜杠符号作为纯文本处理
      * var compiled = _.template('<%= "\\<%- value %\\>" %>');
      * compiled({ 'value': 'ignored' });
      * // => '<%- value %>'
      *
-     * // using the `imports` option to import `jQuery` as `jq`
+     * // 使用 `imports` 选项导入 `jq` 作为 `jQuery` 的别名
      * var text = '<% jq.each(users, function(user) { %><li><%- user %></li><% }); %>';
      * var compiled = _.template(text, { 'imports': { 'jq': jQuery } });
      * compiled({ 'users': ['fred', 'barney'] });
      * // => '<li>fred</li><li>barney</li>'
      *
-     * // using the `sourceURL` option to specify a custom sourceURL for the template
+     * // 使用 `sourceURL` 选项指定模板的来源URL
      * var compiled = _.template('hello <%= user %>!', { 'sourceURL': '/basic/greeting.jst' });
      * compiled(data);
-     * // => find the source of "greeting.jst" under the Sources tab or Resources panel of the web inspector
+     * // => 在开发工具的 Sources 选项卡 或 Resources 面板中找到 "greeting.jst"
      *
-     * // using the `variable` option to ensure a with-statement isn't used in the compiled template
+     * // 使用 `variable` 选项确保在编译模板中不声明变量
      * var compiled = _.template('hi <%= data.user %>!', { 'variable': 'data' });
      * compiled.source;
      * // => function(data) {
@@ -12190,8 +12189,8 @@
      * //   return __p;
      * // }
      *
-     * // using the `source` property to inline compiled templates for meaningful
-     * // line numbers in error messages and a stack trace
+     * // 使用 `source` 特性内联编译模板
+     * // 便以查看行号、错误信息、堆栈
      * fs.writeFileSync(path.join(cwd, 'jst.js'), '\
      *   var JST = {\
      *     "main": ' + _.template(mainText).source + '\
@@ -12305,13 +12304,13 @@
     }
 
     /**
-     * Converts `string`, as a whole, to lower case.
+     * 转换整体的字符串为小写
      *
      * @static
      * @memberOf _
      * @category String
      * @param {string} [string=''] 要转换的字符串
-     * @returns {string} Returns the lower cased string.
+     * @returns {string} 返回小写的字符串
      * @example
      *
      * _.toLower('--Foo-Bar');
@@ -12328,13 +12327,13 @@
     }
 
     /**
-     * Converts `string`, as a whole, to upper case.
+     * 转换整体的字符串为大写
      *
      * @static
      * @memberOf _
      * @category String
      * @param {string} [string=''] 要转换的字符串
-     * @returns {string} Returns the upper cased string.
+     * @returns {string} 返回大写的字符串
      * @example
      *
      * _.toUpper('--foo-bar');
@@ -12351,15 +12350,15 @@
     }
 
     /**
-     * Removes leading and trailing whitespace or specified characters from `string`.
+     * 从字符串中移除前面和后面的空白 或 指定的字符。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to trim.
-     * @param {string} [chars=whitespace] The characters to trim.
+     * @param {string} [string=''] 要处理的字符串
+     * @param {string} [chars=whitespace] 要处理的字符
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {string} Returns the trimmed string.
+     * @returns {string} 返回处理后的字符串
      * @example
      *
      * _.trim('  abc  ');
@@ -12390,15 +12389,15 @@
     }
 
     /**
-     * Removes trailing whitespace or specified characters from `string`.
+     * 移除字符串后面的空白 或 指定的字符。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to trim.
-     * @param {string} [chars=whitespace] The characters to trim.
+     * @param {string} [string=''] 要处理的字符串
+     * @param {string} [chars=whitespace] 要处理的字符
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {string} Returns the trimmed string.
+     * @returns {string} 返回处理后的字符串
      * @example
      *
      * _.trimEnd('  abc  ');
@@ -12424,15 +12423,15 @@
     }
 
     /**
-     * Removes leading whitespace or specified characters from `string`.
+     * 移除字符串中前面的空白 或 指定的字符。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to trim.
-     * @param {string} [chars=whitespace] The characters to trim.
+     * @param {string} [string=''] 要处理的字符串
+     * @param {string} [chars=whitespace] 要处理的字符
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {string} Returns the trimmed string.
+     * @returns {string} 返回处理后的字符串
      * @example
      *
      * _.trimStart('  abc  ');
@@ -12458,19 +12457,18 @@
     }
 
     /**
-     * Truncates `string` if it's longer than the given maximum string length.
-     * The last characters of the truncated string are replaced with the omission
-     * string which defaults to "...".
+     * 截断字符串，如果字符串超出了限定的最大值。
+     * 被截断的字符串后面会以 `omission` 代替，`omission` 默认是 "..."。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to truncate.
-     * @param {Object} [options] The options object.
-     * @param {number} [options.length=30] The maximum string length.
-     * @param {string} [options.omission='...'] The string to indicate text is omitted.
-     * @param {RegExp|string} [options.separator] The separator pattern to truncate to.
-     * @returns {string} Returns the truncated string.
+     * @param {string} [string=''] 要截断的字符串
+     * @param {Object} [options] 选项对象
+     * @param {number} [options.length=30] 允许的最大长度
+     * @param {string} [options.omission='...'] 超出后的代替字符
+     * @param {RegExp|string} [options.separator] 截断点
+     * @returns {string} 返回截断后的字符串
      * @example
      *
      * _.truncate('hi-diddly-ho there, neighborino');
@@ -12550,18 +12548,17 @@
     }
 
     /**
-     * The inverse of `_.escape`; this method converts the HTML entities
-     * `&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#39;`, and `&#96;` in `string` to their
-     * corresponding characters.
+     * 反向版 `_.escape`。
+     * 这个方法转换 HTML 实体 
+     * `&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#39;`, 以及 `&#96;` 为对应的字符。
      *
-     * **注意:** No other HTML entities are unescaped. To unescape additional HTML
-     * entities use a third-party library like [_he_](https://mths.be/he).
+     * **注意:** 不会转换其他的 HTML 实体，需要转换可以使用类似 [_he_](https://mths.be/he) 的第三方库。
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to unescape.
-     * @returns {string} Returns the unescaped string.
+     * @param {string} [string=''] 要转换的字符串
+     * @returns {string} 返回转换后的字符串
      * @example
      *
      * _.unescape('fred, barney, &amp; pebbles');
@@ -12575,13 +12572,13 @@
     }
 
     /**
-     * Converts `string`, as space separated words, to upper case.
+     * 转换字符串为空格分割的大写单词
      *
      * @static
      * @memberOf _
      * @category String
      * @param {string} [string=''] 要转换的字符串
-     * @returns {string} Returns the upper cased string.
+     * @returns {string} 返回大写单词
      * @example
      *
      * _.upperCase('--foo-bar');
@@ -12598,15 +12595,15 @@
     });
 
     /**
-     * Splits `string` into an array of its words.
+     * 拆分字符串中的词为数组
      *
      * @static
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The string to inspect.
-     * @param {RegExp|string} [pattern] The pattern to match words.
+     * @param {string} [string=''] 要处理的字符串
+     * @param {RegExp|string} [pattern] 匹配模式
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.map`.
-     * @returns {Array} Returns the words of `string`.
+     * @returns {Array} 然后拆分后的数组
      * @example
      *
      * _.words('fred, barney, & pebbles');

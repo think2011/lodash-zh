@@ -337,9 +337,9 @@ var _hmt = _hmt || [];
 <li><a href="./padStart" title="_.padStart([string=&#39;&#39;], [length=0], [chars=&#39; &#39;])">padStart</a></li>
 <li><a href="./parseInt" title="_.parseInt(string, [radix])">parseInt</a></li>
 <li><a href="./repeat" title="_.repeat([string=&#39;&#39;], [n=0])">repeat</a></li>
-<li><a href="./replace" title="_.replace([string=&#39;&#39;], pattern, replacement)">replace</a></li>
+<li><a href="./replace" title="_.replace([string=&#39;&#39;], pattern, 要替换的内容)">replace</a></li>
 <li><a href="./snakeCase" title="_.snakeCase([string=&#39;&#39;])">snakeCase</a></li>
-<li><a href="./split" title="_.split([string=&#39;&#39;], separator, [limit])" class = "open">split</a></li>
+<li><a href="./split" title="_.split([string=&#39;&#39;], [separator], [limit])" class = "open">split</a></li>
 <li><a href="./startCase" title="_.startCase([string=&#39;&#39;])">startCase</a></li>
 <li><a href="./startsWith" title="_.startsWith([string=&#39;&#39;], [target], [position=0])">startsWith</a></li>
 <li><a href="./template" title="_.template([string=&#39;&#39;], [options])">template</a></li>
@@ -392,26 +392,26 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>split <a class="fa-link" href="./split" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L12051" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.split" title="See the npm package." target="npm">npm</a></h2>
-<div class="signature">_.split([string&#x3D;&#x27;&#x27;], separator, [limit])</div>
+        <div data-render-page="entry"><h2>split <a class="fa-link" href="./split" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L12050" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.split" title="See the npm package." target="npm">npm</a></h2>
+<div class="signature">_.split([string&#x3D;&#x27;&#x27;], [separator], [limit])</div>
 
-<div data-render-html="/split"><p>Splits <code>string</code> by <code>separator</code>.
+<div data-render-html="/split"><p>以 <code>separator</code> 拆分字符串
 <br>
 <br>
-<strong>注意:</strong> This method is based on <a href="https://mdn.io/String/split" target="_blank"><code>String#split</code></a>.</p>
+<strong>注意:</strong> 这个方法基于 <a href="https://mdn.io/String/split" target="_blank"><code>String#split</code></a></p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">[string&#x3D;&#x27;&#x27;]</span> <span class="param-type">(string)</span> <div data-render-html="/#synthetic"><p>The string to split. </p>
+<li><span class="param-name">[string&#x3D;&#x27;&#x27;]</span> <span class="param-type">(string)</span> <div data-render-html="/#synthetic"><p>要拆分的字符串 </p>
 </div></li>
-<li><span class="param-name">separator</span> <span class="param-type">(RegExp|string)</span> <div data-render-html="/#synthetic"><p>The separator pattern to split by. </p>
+<li><span class="param-name">[separator]</span> <span class="param-type">(RegExp|string)</span> <div data-render-html="/#synthetic"><p>拆分的分隔符 </p>
 </div></li>
-<li><span class="param-name">[limit]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>The length to truncate results to. </p>
+<li><span class="param-name">[limit]</span> <span class="param-type">(number)</span> <div data-render-html="/#synthetic"><p>限制的数量 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Array)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new array of string segments.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回拆分部分的字符串的数组</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >split</span><span class="token punctuation" >(</span><span class="token string" >'a-b-c'</span><span class="token punctuation" >,</span> <span class="token string" >'-'</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
