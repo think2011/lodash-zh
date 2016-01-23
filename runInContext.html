@@ -37,7 +37,7 @@ var _hmt = _hmt || [];
 <div data-render-layout="main-layout"><nav id="nav" onclick=""><span class="fa fa-2x"></span>
 
     <header>
-        <a href="./" title="lodash"><img src="./images/logo.png" alt="lodash">v4.0.0-pre</a>
+        <a href="./" title="lodash"><img src="./images/logo.png" alt="lodash">v4.0.0正式版</a>
     </header>
 
     <div id="search">
@@ -392,19 +392,19 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>runInContext <a class="fa-link" href="./runInContext" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L1296" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.runincontext" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>runInContext <a class="fa-link" href="./runInContext" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0正式版/lodash.src.js#L1296" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.runincontext" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.runInContext([context&#x3D;root])</div>
 
-<div data-render-html="/runInContext"><p>Create a new pristine <code>lodash</code> function 使用 <code>context</code> object.</p>
+<div data-render-html="/runInContext"><p>创建一个给定上下文对象的原始的 <code>lodash</code> 函数。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">[context&#x3D;root]</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>The context object. </p>
+<li><span class="param-name">[context&#x3D;root]</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>上下文对象 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Function)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns a new <code>lodash</code> function.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回新的 <code>lodash</code> 对象</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js">_<span class="token punctuation" >.</span><span class="token function" >mixin</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span> <span class="token string" >'foo'</span><span class="token punctuation" >:</span> _<span class="token punctuation" >.</span><span class="token function" >constant</span><span class="token punctuation" >(</span><span class="token string" >'foo'</span><span class="token punctuation" >)</span> <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
@@ -422,14 +422,14 @@ lodash<span class="token punctuation" >.</span><span class="token function" >isF
 lodash<span class="token punctuation" >.</span><span class="token function" >isFunction</span><span class="token punctuation" >(</span>lodash<span class="token punctuation" >.</span>bar<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => true</span>
 
-<span class="token comment" spellcheck="true">// using `context` to mock `Date#getTime` use in `_.now`</span>
+<span class="token comment" spellcheck="true">// 使用 `context` 模拟 `Date#getTime` 调用 `_.now`</span>
 <span class="token keyword" >var</span> mock <span class="token operator" >=</span> _<span class="token punctuation" >.</span><span class="token function" >runInContext</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span>
   <span class="token string" >'Date'</span><span class="token punctuation" >:</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
     <span class="token keyword" >return</span> <span class="token punctuation" >{</span> <span class="token string" >'getTime'</span><span class="token punctuation" >:</span> getTimeMock <span class="token punctuation" >}</span><span class="token punctuation" >;</span>
   <span class="token punctuation" >}</span>
 <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 
-<span class="token comment" spellcheck="true">// or creating a suped-up `defer` in Node.js</span>
+<span class="token comment" spellcheck="true">// 或者在 Node.js 中创建一个更高级的 `defer`</span>
 <span class="token keyword" >var</span> defer <span class="token operator" >=</span> _<span class="token punctuation" >.</span><span class="token function" >runInContext</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span> <span class="token string" >'setTimeout'</span><span class="token punctuation" >:</span> setImmediate <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >.</span>defer<span class="token punctuation" >;</span>
 </code></pre>
 </div>

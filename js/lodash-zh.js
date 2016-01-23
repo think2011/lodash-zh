@@ -1259,13 +1259,13 @@
   /*--------------------------------------------------------------------------*/
 
   /**
-   * Create a new pristine `lodash` function 使用 `context` object.
+   * 创建一个给定上下文对象的原始的 `lodash` 函数。
    *
    * @static
    * @memberOf _
    * @category Utility
-   * @param {Object} [context=root] The context object.
-   * @returns {Function} Returns a new `lodash` function.
+   * @param {Object} [context=root] 上下文对象
+   * @returns {Function} 返回新的 `lodash` 对象
    * @example
    *
    * _.mixin({ 'foo': _.constant('foo') });
@@ -1283,14 +1283,14 @@
    * lodash.isFunction(lodash.bar);
    * // => true
    *
-   * // using `context` to mock `Date#getTime` use in `_.now`
+   * // 使用 `context` 模拟 `Date#getTime` 调用 `_.now`
    * var mock = _.runInContext({
    *   'Date': function() {
    *     return { 'getTime': getTimeMock };
    *   }
    * });
    *
-   * // or creating a suped-up `defer` in Node.js
+   * // 或者在 Node.js 中创建一个更高级的 `defer`
    * var defer = _.runInContext({ 'setTimeout': setImmediate }).defer;
    */
   function runInContext (context) {
