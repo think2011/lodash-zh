@@ -864,7 +864,7 @@
    *
    * @private
    * @param {Function} func The function to cap arguments for.
-   * @returns {Function} Returns the new function.
+   * @returns {Function} 返回新的函数
    */
   function baseUnary (func) {
     return function (value) {
@@ -2268,7 +2268,7 @@
      *
      * @private
      * @param {Object} source The object of property predicates to conform to.
-     * @returns {Function} Returns the new function.
+     * @returns {Function} 返回新的函数
      */
     function baseConforms (source) {
       var props = keys(source),
@@ -2943,7 +2943,7 @@
      *
      * @private
      * @param {Object} source The object of property values to match.
-     * @returns {Function} Returns the new function.
+     * @returns {Function} 返回新的函数
      */
     function baseMatches (source) {
       var matchData = getMatchData(source);
@@ -2970,7 +2970,7 @@
      * @private
      * @param {string} path The path of the property to get.
      * @param {*} srcValue The value to match.
-     * @returns {Function} Returns the new function.
+     * @returns {Function} 返回新的函数
      */
     function baseMatchesProperty (path, srcValue) {
       return function (object) {
@@ -3135,7 +3135,7 @@
      *
      * @private
      * @param {string} key The key of the property to get.
-     * @returns {Function} Returns the new function.
+     * @returns {Function} 返回新的函数
      */
     function baseProperty (key) {
       return function (object) {
@@ -3148,7 +3148,7 @@
      *
      * @private
      * @param {Array|string} path The path of the property to get.
-     * @returns {Function} Returns the new function.
+     * @returns {Function} 返回新的函数
      */
     function basePropertyDeep (path) {
       return function (object) {
@@ -4012,7 +4012,7 @@
      *
      * @private
      * @param {string} methodName The name of the `String` case method to use.
-     * @returns {Function} Returns the new function.
+     * @returns {Function} 返回新的函数
      */
     function createCaseFirst (methodName) {
       return function (string) {
@@ -8121,7 +8121,6 @@
     /**
      * 创建一个函数 `func`，这个函数的 `this` 会被绑定在 `thisArg`。
      * 并且任何附加在 `_.bind` 的参数会被传入到这个绑定函数上。
-     *
      * 这个 `_.bind.placeholder` 的值，默认是以 `_` 作为附加部分参数的占位符。
      *
      * **注意:** 不同于原生的 Function#bind，这个方法不会设置绑定函数的 length 属性。
@@ -8680,9 +8679,7 @@
      * 创建一个函数。
      * 该函数调用 func，并传入预设的参数。
      * 这个方法类似 `_.bind`，除了它不会绑定 `this`。
-     *
-     * 
-     * 这个 _.partial.placeholder 的值，默认是以 _ 作为附加部分参数的占位符。
+     * 这个 `_.partial.placeholder` 的值，默认是以 `_` 作为附加部分参数的占位符。
      *
      * **注意:** 这个方法不会设置 "length" 到函数上。
      *
@@ -8714,8 +8711,6 @@
 
     /**
      * 这个函数类似 `_.partial`，除了它是从右到左预设参数的。
-     *
-     * 
      * 这个 _.partialRight.placeholder 的值，默认是以 _ 作为附加部分参数的占位符。
      *
      * **注意:** 这个方法不会设置 "length" 到函数上。
@@ -12625,17 +12620,17 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Attempts to invoke `func`, returning either the result or the caught error
-     * object. Any additional arguments are provided to `func` when it's invoked.
+     * 尝试调用函数，返回结果 或者 错误对象。
+     * 任何附加的参数都会在调用时传给函数。
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {Function} func The function to attempt.
-     * @returns {*} Returns the `func` result or error object.
+     * @param {Function} func 要调用的函数
+     * @returns {*} 返回函数结果或者错误对象
      * @example
      *
-     * // avoid throwing errors for invalid selectors
+     * // 避免因为错误的选择器而抛出
      * var elements = _.attempt(function(selector) {
      *   return document.querySelectorAll(selector);
      * }, '>_>');
@@ -12653,17 +12648,16 @@
     });
 
     /**
-     * Binds methods of an object to the object itself, overwriting the existing
-     * method.
+     * 绑定对象的方法到对象本身，覆盖已存在的方法。
      *
-     * **注意:** This method doesn't set the "length" property of bound functions.
+     * **注意:** 这个方法不会设置 "length" 属性到约束的函数。
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {Object} object The object to bind and assign the bound methods to.
-     * @param {...(string|string[])} methodNames The object method names to bind,
-     *  specified individually or in arrays.
+     * @param {Object} object 要绑定的对象
+     * @param {...(string|string[])} methodNames 要绑定的方法名
+     *  单独指定或指定在数组中。
      * @returns {Object} 返回对象
      * @example
      *
@@ -12686,16 +12680,14 @@
     });
 
     /**
-     * Creates a function that iterates over `pairs` invoking the corresponding
-     * function of the first predicate to return truthy. The predicate-function
-     * pairs are invoked with the `this` binding and arguments of the created
-     * function.
+     * 创建一个函数。
+     * 这个函数会遍历 `pairs`，并执行最先返回真值对应的函数，并绑定 `this` 及传入创建函数的参数。
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {Array} pairs The predicate-function pairs.
-     * @returns {Function} Returns the new function.
+     * @param {Array} pairs 判断函数对
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var func = _.cond([
@@ -12705,13 +12697,13 @@
      * ])
      *
      * func({ 'a': 1, 'b': 2 });
-     * // => 'matches A'
+     * // => 输出：'matches A'
      *
      * func({ 'a': 0, 'b': 1 });
-     * // => 'matches B'
+     * // => 输出：'matches B'
      *
      * func({ 'a': '1', 'b': '2' });
-     * // => 'no match'
+     * // => 输出：'no match'
      */
     function cond (pairs) {
       var length     = pairs ? pairs.length : 0,
@@ -12736,15 +12728,15 @@
     }
 
     /**
-     * Creates a function that invokes the predicate properties of `source` with
-     * the corresponding property values of a given object, returning `true` if
-     * all predicates return truthy否则返回 `false`
+     * 创建一个函数。
+     * 这个函数会调用 `source` 的属性名对应的 `predicate` 与传入对象相对应属性名的值进行 `predicate` 处理。
+     * 如果都符合返回 `true`，否则返回 `false`
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {Object} source The object of property predicates to conform to.
-     * @returns {Function} Returns the new function.
+     * @param {Object} source 包含 predicates 属性值的对象
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var users = [
@@ -12760,13 +12752,13 @@
     }
 
     /**
-     * Creates a function that returns `value`.
+     * 创建一个返回 `value` 的函数
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {*} value The value to return from the new function.
-     * @returns {Function} Returns the new function.
+     * @param {*} value 要返回的值
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var object = { 'user': 'fred' };
@@ -12782,15 +12774,15 @@
     }
 
     /**
-     * Creates a function that returns the result of invoking the provided
-     * functions with the `this` binding of the created function, where each
-     * successive invocation is supplied the return value of the previous.
+     * 创建一个函数。
+     * 返回的结果是调用提供函数的结果，`this` 会绑定到创建函数。
+     * 每一个连续调用，传入的参数都是前一个函数返回的结果。
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {...(Function|Function[])} [funcs] Functions to invoke.
-     * @returns {Function} Returns the new function.
+     * @param {...(Function|Function[])} [funcs] 要调用的函数
+     * @returns {Function} 返回新的函数
      * @example
      *
      * function square(n) {
@@ -12804,14 +12796,13 @@
     var flow = createFlow();
 
     /**
-     * 这个方法类似 `_.flow` except that it creates a function that
-     * invokes the provided functions from right to left.
+     * 这个方法类似 `_.flow`，除了它调用函数的顺序是从右往左的。
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {...(Function|Function[])} [funcs] Functions to invoke.
-     * @returns {Function} Returns the new function.
+     * @param {...(Function|Function[])} [funcs] 要调用的函数
+     * @returns {Function} 返回新的函数
      * @example
      *
      * function square(n) {
@@ -12825,13 +12816,13 @@
     var flowRight = createFlow(true);
 
     /**
-     * This method returns the first argument provided to it.
+     * 这个方法返回首个提供的参数
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {*} value Any value.
-     * @returns {*} Returns `value`.
+     * @param {*} value 任何值
+     * @returns {*} 返回 value
      * @example
      *
      * var object = { 'user': 'fred' };
@@ -12844,16 +12835,16 @@
     }
 
     /**
-     * 创建一个调用 `func` 的函数。 with the arguments of the created
-     * function. If `func` is a property name the created callback returns the
-     * property value for a given element. If `func` is an object the created
-     * callback returns `true` for elements that contain the equivalent object properties, otherwise it returns `false`.
-     *
+     * 创建一个调用 `func` 的函数。
+     * 如果 `func` 是一个属性名，传入包含这个属性名的对象，回调返回对应属性名的值。
+     * 如果 `func` 是一个对象，传入的元素有相同的对象属性，回调返回 `true`。
+     * 其他情况返回 `false`。
+     * 
      * @static
      * @memberOf _
      * @category Utility
-     * @param {*} [func=_.identity] The value to convert to a callback.
-     * @returns {Function} Returns the callback.
+     * @param {*} [func=_.identity] 转换成 callback 的值
+     * @returns {Function} 返回 callback.
      * @example
      *
      * var users = [
@@ -12861,7 +12852,7 @@
      *   { 'user': 'fred',   'age': 40 }
      * ];
      *
-     * // wrap to create custom callback shorthands
+     * // 使用 wrap 创建一个自定义回调速写
      * _.iteratee = _.wrap(_.iteratee, function(callback, func, thisArg) {
      *   var match = /^(.+?)__([gl]t)(.+)$/.exec(func);
      *   if (!match) {
@@ -12884,17 +12875,17 @@
     }
 
     /**
-     * Creates a function that performs a deep partial comparison between a given
-     * object and `source`, returning `true` if the given object has equivalent
-     * property values否则返回 `false`
      *
-     * **注意:** This method supports comparing the same values as `_.isEqual`.
+     * 创建一个深比较的方法来比较给定的对象和 `source` 对象。
+     * 如果给定的对象拥有相同的属性值返回 `true`，否则返回 `false`
+     *
+     * **注意:** 这个方法支持以 `_.isEqual` 的方式比较相同的值。
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {Object} source The object of property values to match.
-     * @returns {Function} Returns the new function.
+     * @param {Object} source 要匹配的源对象
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var users = [
@@ -12910,18 +12901,17 @@
     }
 
     /**
-     * Creates a function that performs a deep partial comparison between the
-     * value at `path` of a given object to `srcValue`, returning `true` if the
-     * object value is equivalent否则返回 `false`
+     * 创建一个深比较的方法来比较给定对象的 `path` 的值是否是 `srcValue`。
+     * 如果是返回 `true`，否则返回 `false`
      *
-     * **注意:** This method supports comparing the same values as `_.isEqual`.
+     * **注意:** 这个方法支持以 `_.isEqual` 的方式比较相同的值。
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {Array|string} path The path of the property to get.
-     * @param {*} srcValue The value to match.
-     * @returns {Function} Returns the new function.
+     * @param {Array|string} path 给定对象的属性路径名
+     * @param {*} srcValue 要匹配的值
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var users = [
@@ -12937,15 +12927,15 @@
     }
 
     /**
-     * Creates a function that invokes the method at `path` of a given object.
-     * Any additional arguments are provided to the invoked method.
+     * 创建一个调用给定对象 `path` 上的函数。
+     * 任何附加的参数都会传入这个调用函数中。
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {Array|string} path The path of the method to invoke.
-     * @param {...*} [args] The arguments to invoke the method with.
-     * @returns {Function} Returns the new function.
+     * @param {Array|string} path 调用函数所在对象的路径
+     * @param {...*} [args] 传递给调用函数的参数
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var objects = [
@@ -12966,16 +12956,16 @@
     });
 
     /**
-     * The opposite of `_.method`; this method creates a function that invokes
-     * the method at a given path of `object`. Any additional arguments are
-     * provided to the invoked method.
+     * 反向版 `_.method`。
+     * 这个创建一个函数调用给定 `object` 的 `path` 上的方法，
+     * 任何附加的参数都会传入这个调用函数中。
      *
      * @static
      * @memberOf _
      * @category Utility
      * @param {Object} object 要检索的对象
-     * @param {...*} [args] The arguments to invoke the method with.
-     * @returns {Function} Returns the new function.
+     * @param {...*} [args] 传递给调用函数的参数
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var array = _.times(3, _.constant),
@@ -12994,21 +12984,18 @@
     });
 
     /**
-     * Adds all own enumerable function properties of a source object to the
-     * destination object. If `object` is a function then methods are added to
-     * its prototype as well.
+     * 添加来源对象自身的所有可枚举函数属性到目标对象。
+     * 如果 `object` 是个函数，那么函数方法将被添加到原型链上。
      *
-     * **注意:** Use `_.runInContext` to create a pristine `lodash` function to
-     * avoid conflicts caused by modifying the original.
+     * **注意:** 使用 `_.runInContext` 来创建原始的 `lodash` 函数来避免修改造成的冲突。
      *
      * @static
      * @memberOf _
      * @category Utility
      * @param {Function|Object} [object=lodash] 目标对象
-     * @param {Object} source The object of functions to add.
-     * @param {Object} [options] The options object.
-     * @param {boolean} [options.chain=true] Specify whether the functions added
-     *  are chainable.
+     * @param {Object} source 来源对象
+     * @param {Object} [options]  选项对象
+     * @param {boolean} [options.chain=true] 是否开启链式操作
      * @returns {Function|Object} 返回对象
      * @example
      *
@@ -13065,13 +13052,12 @@
     }
 
     /**
-     * Reverts the `_` variable to its previous value and returns a reference to
-     * the `lodash` function.
+     * 释放 `_` 为原来的值，并返回一个 `lodash` 的引用
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @returns {Function} Returns the `lodash` function.
+     * @returns {Function} 返回 `lodash` 函数
      * @example
      *
      * var lodash = _.noConflict();
@@ -13082,8 +13068,7 @@
     }
 
     /**
-     * A no-operation function that returns `undefined` regardless of the
-     * arguments it receives.
+     * 无论传递什么参数，都返回 `undefined`。
      *
      * @static
      * @memberOf _
@@ -13100,13 +13085,13 @@
     }
 
     /**
-     * Creates a function that returns its nth argument.
+     * 创建一个返回第 N 个参数的函数。
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {number} [n=0] The index of the argument to return.
-     * @returns {Function} Returns the new function.
+     * @param {number} [n=0] 要返回参数的索引
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var func = _.nthArg(1);
@@ -13122,14 +13107,13 @@
     }
 
     /**
-     * Creates a function that invokes `iteratees` with the arguments provided
-     * to the created function and returns their results.
+     * 创建一个传入提供的参数的函数并调用 `iteratees` 返回结果的函数。 
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {...(Function|Function[])} iteratees The iteratees to invoke.
-     * @returns {Function} Returns the new function.
+     * @param {...(Function|Function[])} iteratees 要调用的 iteratees
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var func = _.over(Math.max, Math.min);
@@ -13140,14 +13124,13 @@
     var over = createOver(arrayMap);
 
     /**
-     * Creates a function that checks if **all** of the `predicates` return
-     * truthy when invoked with the arguments provided to the created function.
+     * 创建一个传入提供的参数的函数并调用 `iteratees` 判断是否 全部 都为真值的函数。 
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {...(Function|Function[])} predicates The predicates to check.
-     * @returns {Function} Returns the new function.
+     * @param {...(Function|Function[])} predicates 要调用的 predicates
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var func = _.overEvery(Boolean, isFinite);
@@ -13164,14 +13147,13 @@
     var overEvery = createOver(arrayEvery);
 
     /**
-     * Creates a function that checks if **any** of the `predicates` return
-     * truthy when invoked with the arguments provided to the created function.
+     * 创建一个传入提供的参数的函数并调用 `iteratees` 判断是否 存在 有真值的函数。 
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {...(Function|Function[])} predicates The predicates to check.
-     * @returns {Function} Returns the new function.
+     * @param {...(Function|Function[])} predicates 要调用的 predicates
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var func = _.overSome(Boolean, isFinite);
@@ -13188,13 +13170,13 @@
     var overSome = createOver(arraySome);
 
     /**
-     * Creates a function that returns the value at `path` of a given object.
+     * 创建一个返回给定对象的 `path` 的值的函数。
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {Array|string} path The path of the property to get.
-     * @returns {Function} Returns the new function.
+     * @param {Array|string} path 要得到值的属性路径
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var objects = [
@@ -13213,14 +13195,14 @@
     }
 
     /**
-     * The opposite of `_.property`; this method creates a function that returns
-     * the value at a given path of `object`.
-     *
+     * 反向版  `_.property`。
+     * 这个方法创建的函数返回给定 path 在对象上的值。
+     * 
      * @static
      * @memberOf _
      * @category Utility
      * @param {Object} object 要检索的对象
-     * @returns {Function} Returns the new function.
+     * @returns {Function} 返回新的函数
      * @example
      *
      * var array = [0, 1, 2],
@@ -13239,22 +13221,20 @@
     }
 
     /**
-     * Creates an array of numbers (positive and/or negative) progressing from
-     * `start` up to, but not including, `end`. A step of `-1` is used if a negative
-     * `start` is specified without an `end` or `step`. If `end` is not specified
-     * it's set to `start` with `start` then set to `0`.  If `end` is less than
-     * `start` a zero-length range is created unless a negative `step` is specified.
+     * 创建一个包含从 `start` 到 `end`，但不包含 `end` 本身范围数字的数组。
+     * 如果 `start` 是负数，而 `end` 或 `step` 没有指定，那么 `step` 从 `-1` 为开始。
+     * 如果 `end` 没有指定，`start` 设置为 `0`。
+     * 如果 `end` 小于 `start`，会创建一个空数组，除非指定了 `step`。
      *
-     * **注意:** JavaScript follows the IEEE-754 standard for resolving
-     * floating-point values which can produce unexpected results.
+     * **注意:** JavaScript 遵循 IEEE-754 标准处理无法预料的浮点数结果。 
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {number} [start=0] The start of the range.
-     * @param {number} end The end of the range.
-     * @param {number} [step=1] The value to increment or decrement by.
-     * @returns {Array} Returns the new array of numbers.
+     * @param {number} [start=0] 开始的范围
+     * @param {number} end 结束的范围
+     * @param {number} [step=1] 范围的增量 或者 减量
+     * @returns {Array} 返回范围内数字组成的新数组
      * @example
      *
      * _.range(4);
@@ -13286,16 +13266,16 @@
     }
 
     /**
-     * 这个方法类似 `_.range` except that it populates values in
-     * descending order.
+     * 这个方法类似 `_.range`，
+     * 除了它是降序生成值的。
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {number} [start=0] The start of the range.
-     * @param {number} end The end of the range.
-     * @param {number} [step=1] The value to increment or decrement by.
-     * @returns {Array} Returns the new array of numbers.
+     * @param {number} [start=0] 开始的范围
+     * @param {number} end 结束的范围
+     * @param {number} [step=1] 范围的增量 或者 减量
+     * @returns {Array} 返回范围内数字组成的新数组
      * @example
      *
      * _.rangeRight(4);
@@ -13327,15 +13307,15 @@
     }
 
     /**
-     * Invokes the iteratee function `n` times, returning an array of the results
-     * of each invocation. The iteratee is invoked with one argument; (index).
+     * 调用 iteratee N 次，每次调用返回的结果存入到数组中。
+     * iteratee 会传入1个参数：(index)。
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {number} n The number of times to invoke `iteratee`.
+     * @param {number} n 要调用  `iteratee` 的次数
      * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
-     * @returns {Array} Returns the array of results.
+     * @returns {Array} 返回调用结果的数组
      * @example
      *
      * _.times(3, String);
@@ -13363,13 +13343,13 @@
     }
 
     /**
-     * Converts `value` to a property path array.
+     * 创建 `value` 为属性路径的数组
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {*} value The value to convert.
-     * @returns {Array} Returns the new property path array.
+     * @param {*} value 要转换的值
+     * @returns {Array} 返回包含属性路径的数组
      * @example
      *
      * _.toPath('a.b.c');
@@ -13392,13 +13372,14 @@
     }
 
     /**
-     * Generates a unique ID. If `prefix` is provided the ID is appended to it.
+     * 创建唯一ID。
+     * 如果提供了 `prefix`，会被添加到ID前缀上。
      *
      * @static
      * @memberOf _
      * @category Utility
-     * @param {string} [prefix] The value to prefix the ID with.
-     * @returns {string} Returns the unique ID.
+     * @param {string} [prefix] 要添加到ID前缀的值
+     * @returns {string} 返回唯一ID
      * @example
      *
      * _.uniqueId('contact_');

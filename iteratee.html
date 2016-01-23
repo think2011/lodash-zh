@@ -392,22 +392,22 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>iteratee <a class="fa-link" href="./iteratee" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L12880" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.iteratee" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>iteratee <a class="fa-link" href="./iteratee" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L12871" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.iteratee" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.iteratee([func&#x3D;_.identity])</div>
 
-<div data-render-html="/iteratee"><p>创建一个调用 <code>func</code> 的函数。 with the arguments of the created
-function. If <code>func</code> is a property name the created callback returns the
-property value for a given element. If <code>func</code> is an object the created
-callback returns <code>true</code> for elements that contain the equivalent object properties, otherwise it returns <code>false</code>.</p>
+<div data-render-html="/iteratee"><p>创建一个调用 <code>func</code> 的函数。
+如果 <code>func</code> 是一个属性名，传入包含这个属性名的对象，回调返回对应属性名的值。
+如果 <code>func</code> 是一个对象，传入的元素有相同的对象属性，回调返回 <code>true</code>。
+其他情况返回 <code>false</code>。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">[func&#x3D;_.identity]</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>The value to convert to a callback. </p>
+<li><span class="param-name">[func&#x3D;_.identity]</span> <span class="param-type">(*)</span> <div data-render-html="/#synthetic"><p>转换成 callback 的值 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Function)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the callback.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回 callback.</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> users <span class="token operator" >=</span> <span class="token punctuation" >[</span>
@@ -415,7 +415,7 @@ callback returns <code>true</code> for elements that contain the equivalent obje
   <span class="token punctuation" >{</span> <span class="token string" >'user'</span><span class="token punctuation" >:</span> <span class="token string" >'fred'</span><span class="token punctuation" >,</span>   <span class="token string" >'age'</span><span class="token punctuation" >:</span> <span class="token number" >40</span> <span class="token punctuation" >}</span>
 <span class="token punctuation" >]</span><span class="token punctuation" >;</span>
 
-<span class="token comment" spellcheck="true">// wrap to create custom callback shorthands</span>
+<span class="token comment" spellcheck="true">// 使用 wrap 创建一个自定义回调速写</span>
 _<span class="token punctuation" >.</span>iteratee <span class="token operator" >=</span> _<span class="token punctuation" >.</span><span class="token function" >wrap</span><span class="token punctuation" >(</span>_<span class="token punctuation" >.</span>iteratee<span class="token punctuation" >,</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>callback<span class="token punctuation" >,</span> func<span class="token punctuation" >,</span> thisArg<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
   <span class="token keyword" >var</span> match <span class="token operator" >=</span> <span class="token regex" >/^(.+?)__([gl]t)(.+)$/</span><span class="token punctuation" >.</span><span class="token function" >exec</span><span class="token punctuation" >(</span>func<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
   <span class="token keyword" >if</span> <span class="token punctuation" >(</span><span class="token operator" >!</span>match<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>

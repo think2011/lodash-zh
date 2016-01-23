@@ -392,23 +392,23 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>attempt <a class="fa-link" href="./attempt" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L12647" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.attempt" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>attempt <a class="fa-link" href="./attempt" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L12642" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.attempt" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.attempt(func)</div>
 
-<div data-render-html="/attempt"><p>Attempts to invoke <code>func</code>, returning either the result or the caught error
-object. Any additional arguments are provided to <code>func</code> when it&#39;s invoked.</p>
+<div data-render-html="/attempt"><p>尝试调用函数，返回结果 或者 错误对象。
+任何附加的参数都会在调用时传给函数。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>The function to attempt. </p>
+<li><span class="param-name">func</span> <span class="param-type">(Function)</span> <div data-render-html="/#synthetic"><p>要调用的函数 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(*)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the <code>func</code> result or error object.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回函数结果或者错误对象</p>
 </div></div>
 <h3>示例</h3>
-    <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token comment" spellcheck="true">// avoid throwing errors for invalid selectors</span>
+    <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token comment" spellcheck="true">// 避免因为错误的选择器而抛出</span>
 <span class="token keyword" >var</span> elements <span class="token operator" >=</span> _<span class="token punctuation" >.</span><span class="token function" >attempt</span><span class="token punctuation" >(</span><span class="token keyword" >function</span><span class="token punctuation" >(</span>selector<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
   <span class="token keyword" >return</span> document<span class="token punctuation" >.</span><span class="token function" >querySelectorAll</span><span class="token punctuation" >(</span>selector<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token punctuation" >}</span><span class="token punctuation" >,</span> <span class="token string" >'>_>'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>

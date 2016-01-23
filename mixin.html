@@ -392,27 +392,25 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>mixin <a class="fa-link" href="./mixin" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L13032" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.mixin" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>mixin <a class="fa-link" href="./mixin" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L13019" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.mixin" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.mixin([object&#x3D;lodash], source, [options])</div>
 
-<div data-render-html="/mixin"><p>Adds all own enumerable function properties of a source object to the
-destination object. If <code>object</code> is a function then methods are added to
-its prototype as well.
+<div data-render-html="/mixin"><p>添加来源对象自身的所有可枚举函数属性到目标对象。
+如果 <code>object</code> 是个函数，那么函数方法将被添加到原型链上。
 <br>
 <br>
-<strong>注意:</strong> Use <code>_.runInContext</code> to create a pristine <code>lodash</code> function to
-avoid conflicts caused by modifying the original.</p>
+<strong>注意:</strong> 使用 <code>_.runInContext</code> 来创建原始的 <code>lodash</code> 函数来避免修改造成的冲突。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
 <li><span class="param-name">[object&#x3D;lodash]</span> <span class="param-type">(Function|Object)</span> <div data-render-html="/#synthetic"><p>目标对象 </p>
 </div></li>
-<li><span class="param-name">source</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>The object of functions to add. </p>
+<li><span class="param-name">source</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>来源对象 </p>
 </div></li>
-<li><span class="param-name">[options]</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>The options object. </p>
+<li><span class="param-name">[options]</span> <span class="param-type">(Object)</span> <div data-render-html="/#synthetic"><p>选项对象 </p>
 </div></li>
-<li><span class="param-name">[options.chain&#x3D;true]</span> <span class="param-type">(boolean)</span> <div data-render-html="/#synthetic"><p>Specify whether the functions added are chainable. </p>
+<li><span class="param-name">[options.chain&#x3D;true]</span> <span class="param-type">(boolean)</span> <div data-render-html="/#synthetic"><p>是否开启链式操作 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Function|Object)</span></h3>

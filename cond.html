@@ -392,22 +392,20 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>cond <a class="fa-link" href="./cond" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L12716" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.cond" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>cond <a class="fa-link" href="./cond" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0-pre/lodash.src.js#L12708" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.cond" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.cond(pairs)</div>
 
-<div data-render-html="/cond"><p>Creates a function that iterates over <code>pairs</code> invoking the corresponding
-function of the first predicate to return truthy. The predicate-function
-pairs are invoked with the <code>this</code> binding and arguments of the created
-function.</p>
+<div data-render-html="/cond"><p>创建一个函数。
+这个函数会遍历 <code>pairs</code>，并执行最先返回真值对应的函数，并绑定 <code>this</code> 及传入创建函数的参数。</p>
 </div>
 
 <h3>参数</h3>
     <ol>
-<li><span class="param-name">pairs</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>The predicate-function pairs. </p>
+<li><span class="param-name">pairs</span> <span class="param-type">(Array)</span> <div data-render-html="/#synthetic"><p>判断函数对 </p>
 </div></li>
     </ol>
 <h3>返回值 <span class="return-type">(Function)</span></h3>
-    <div class="returns"> <div data-render-html="/#synthetic"><p> Returns the new function.</p>
+    <div class="returns"> <div data-render-html="/#synthetic"><p> 返回新的函数</p>
 </div></div>
 <h3>示例</h3>
     <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> func <span class="token operator" >=</span> _<span class="token punctuation" >.</span><span class="token function" >cond</span><span class="token punctuation" >(</span><span class="token punctuation" >[</span>
@@ -417,13 +415,13 @@ function.</p>
 <span class="token punctuation" >]</span><span class="token punctuation" >)</span>
 
 <span class="token function" >func</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span> <span class="token string" >'a'</span><span class="token punctuation" >:</span> <span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token string" >'b'</span><span class="token punctuation" >:</span> <span class="token number" >2</span> <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => 'matches A'</span>
+<span class="token comment" spellcheck="true">// => 输出：'matches A'</span>
 
 <span class="token function" >func</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span> <span class="token string" >'a'</span><span class="token punctuation" >:</span> <span class="token number" >0</span><span class="token punctuation" >,</span> <span class="token string" >'b'</span><span class="token punctuation" >:</span> <span class="token number" >1</span> <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => 'matches B'</span>
+<span class="token comment" spellcheck="true">// => 输出：'matches B'</span>
 
 <span class="token function" >func</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span> <span class="token string" >'a'</span><span class="token punctuation" >:</span> <span class="token string" >'1'</span><span class="token punctuation" >,</span> <span class="token string" >'b'</span><span class="token punctuation" >:</span> <span class="token string" >'2'</span> <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => 'no match'</span>
+<span class="token comment" spellcheck="true">// => 输出：'no match'</span>
 </code></pre>
 </div>
 <div id="disqus_thread" style="margin-top:50px;"></div>
