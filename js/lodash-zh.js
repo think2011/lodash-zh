@@ -1348,10 +1348,8 @@
      *
      * 惰性计算接受几种支持 shortcut fusion 的方法，
      * shortcut fusion 是一种通过合并链式 iteratee 调用从而大大降低迭代的次数以提高执行性能的方式。
-     * Sections of a chain sequence qualify for shortcut fusion if the section is
-     * applied to an array of at least two hundred elements and any iteratees
-     * accept only one argument. The heuristic for whether a section qualifies
-     * for shortcut fusion is subject to change.
+     * 部分链有资格 shortcut fusion，如果它至少有超过二百个元素的数组和任何只接受一个参数的 iteratees。
+     * 触发的方式是任何一个 shortcut fusion 有了变化。
      *
      * 链式方法支持定制版本，只要 `_#value` 包含或者间接包含在版本中。
      *
