@@ -119,7 +119,8 @@ var _hmt = _hmt || [];
 <li><a href="./xorWith" title="_.xorWith([arrays], [comparator])">xorWith</a></li>
 <li><a href="./zip" title="_.zip([arrays])">zip</a></li>
 <li><a href="./zipObject" title="_.zipObject([props=[]], [values=[]])">zipObject</a></li>
-<li><a href="./zipWith" title="_.zipWith([arrays], [iteratee=_.identity])">zipWith</a></li>
+<li><a href="./zipObjectDeep" title="_.zipObjectDeep([props=[]], [values=[]])">zipObjectDeep</a></li>
+<li><a href="./zipWith" title="_.zipWith([arrays])">zipWith</a></li>
 </ul></li>
 <li id="page-tree-chain" class="folder"><span class="folderPage">Chain</span>
 <ul>
@@ -259,7 +260,6 @@ var _hmt = _hmt || [];
 </ul></li>
 <li id="page-tree-methods" class="folder"><span class="folderPage">Methods</span>
 <ul>
-<li><a href="./stringSize" title="stringSize(string)">stringSize</a></li>
 <li><a href="./templateSettings-imports-_" title="_.templateSettings.imports._">templateSettings.imports._</a></li>
 </ul></li>
 <li id="page-tree-number" class="folder"><span class="folderPage">Number</span>
@@ -354,6 +354,10 @@ var _hmt = _hmt || [];
 <li><a href="./upperFirst" title="_.upperFirst([string=&#39;&#39;])">upperFirst</a></li>
 <li><a href="./words" title="_.words([string=&#39;&#39;], [pattern])">words</a></li>
 </ul></li>
+<li id="page-tree-util" class="folder"><span class="folderPage">Util</span>
+<ul>
+<li><a href="./runInContext" title="_.runInContext([context=root])">runInContext</a></li>
+</ul></li>
 <li id="page-tree-utility" class="folder"><span class="folderPage">Utility</span>
 <ul>
 <li><a href="./attempt" title="_.attempt(func)">attempt</a></li>
@@ -380,7 +384,6 @@ var _hmt = _hmt || [];
 <li><a href="./propertyOf" title="_.propertyOf(object)">propertyOf</a></li>
 <li><a href="./range" title="_.range([start=0], end, [step=1])">range</a></li>
 <li><a href="./rangeRight" title="_.rangeRight([start=0], end, [step=1])">rangeRight</a></li>
-<li><a href="./runInContext" title="_.runInContext([context=root])">runInContext</a></li>
 <li><a href="./times" title="_.times(n, [iteratee=_.identity])">times</a></li>
 <li><a href="./toPath" title="_.toPath(value)">toPath</a></li>
 <li><a href="./uniqueId" title="_.uniqueId([prefix])">uniqueId</a></li>
@@ -392,7 +395,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>memoize <a class="fa-link" href="./memoize" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0正式版/lodash.src.js#L8566" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.memoize" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>memoize <a class="fa-link" href="./memoize" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0正式版/lodash.src.js#L8607" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.memoize" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.memoize(func, [resolver])</div>
 
 <div data-render-html="/memoize"><p>创建一个会缓存 <code>func</code> 结果的函数。
@@ -401,7 +404,7 @@ var _hmt = _hmt || [];
 <code>func</code> 在调用时 this 会绑定在缓存函数上。
 <br>
 <br>
-<strong>注意:</strong> 
+<strong>注意:</strong>
 缓存会暴露在缓存函数的 <code>cache</code> 上。
 它是可以定制的，只要替换了 _.memoize.Cache 构造函数，或实现了 <a href="http://ecma-international.org/ecma-262/6.0/#sec-properties-of-the-map-prototype-object" target="_blank"><code>Map</code></a> 的
 <code>delete</code>， <code>get</code>， <code>has</code>， 以及 <code>set</code>方法。</p>

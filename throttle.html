@@ -119,7 +119,8 @@ var _hmt = _hmt || [];
 <li><a href="./xorWith" title="_.xorWith([arrays], [comparator])">xorWith</a></li>
 <li><a href="./zip" title="_.zip([arrays])">zip</a></li>
 <li><a href="./zipObject" title="_.zipObject([props=[]], [values=[]])">zipObject</a></li>
-<li><a href="./zipWith" title="_.zipWith([arrays], [iteratee=_.identity])">zipWith</a></li>
+<li><a href="./zipObjectDeep" title="_.zipObjectDeep([props=[]], [values=[]])">zipObjectDeep</a></li>
+<li><a href="./zipWith" title="_.zipWith([arrays])">zipWith</a></li>
 </ul></li>
 <li id="page-tree-chain" class="folder"><span class="folderPage">Chain</span>
 <ul>
@@ -259,7 +260,6 @@ var _hmt = _hmt || [];
 </ul></li>
 <li id="page-tree-methods" class="folder"><span class="folderPage">Methods</span>
 <ul>
-<li><a href="./stringSize" title="stringSize(string)">stringSize</a></li>
 <li><a href="./templateSettings-imports-_" title="_.templateSettings.imports._">templateSettings.imports._</a></li>
 </ul></li>
 <li id="page-tree-number" class="folder"><span class="folderPage">Number</span>
@@ -354,6 +354,10 @@ var _hmt = _hmt || [];
 <li><a href="./upperFirst" title="_.upperFirst([string=&#39;&#39;])">upperFirst</a></li>
 <li><a href="./words" title="_.words([string=&#39;&#39;], [pattern])">words</a></li>
 </ul></li>
+<li id="page-tree-util" class="folder"><span class="folderPage">Util</span>
+<ul>
+<li><a href="./runInContext" title="_.runInContext([context=root])">runInContext</a></li>
+</ul></li>
 <li id="page-tree-utility" class="folder"><span class="folderPage">Utility</span>
 <ul>
 <li><a href="./attempt" title="_.attempt(func)">attempt</a></li>
@@ -380,7 +384,6 @@ var _hmt = _hmt || [];
 <li><a href="./propertyOf" title="_.propertyOf(object)">propertyOf</a></li>
 <li><a href="./range" title="_.range([start=0], end, [step=1])">range</a></li>
 <li><a href="./rangeRight" title="_.rangeRight([start=0], end, [step=1])">rangeRight</a></li>
-<li><a href="./runInContext" title="_.runInContext([context=root])">runInContext</a></li>
 <li><a href="./times" title="_.times(n, [iteratee=_.identity])">times</a></li>
 <li><a href="./toPath" title="_.toPath(value)">toPath</a></li>
 <li><a href="./uniqueId" title="_.uniqueId([prefix])">uniqueId</a></li>
@@ -392,15 +395,15 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>throttle <a class="fa-link" href="./throttle" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0正式版/lodash.src.js#L8893" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.throttle" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>throttle <a class="fa-link" href="./throttle" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0正式版/lodash.src.js#L8934" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.throttle" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.throttle(func, [wait&#x3D;0], [options])</div>
 
 <div data-render-html="/throttle"><p>创建一个节流函数，在 <code>wait</code> 秒内最多执行 <code>func</code> 一次的函数。
 该函数提供一个 cancel 方法取消延迟的函数调用以及 flush 方法立即调用。
-可以提供一个 options 对象决定如何调用 func 方法， options.leading 与|或 options.trailing 决定 <code>wait</code> 前后如何触发。 func 会传入最后一次传入的参数给这个函数。 随后调用的函数返回是最后一次 func 调用的结果。 
+可以提供一个 options 对象决定如何调用 func 方法， options.leading 与|或 options.trailing 决定 <code>wait</code> 前后如何触发。 func 会传入最后一次传入的参数给这个函数。 随后调用的函数返回是最后一次 func 调用的结果。
 <br>
 <br>
-<strong>注意:</strong> 如果 leading 和 trailing 都设定为 true。 则 func 允许 trailing 方式调用的条件为: 在 wait 期间多次调用。 
+<strong>注意:</strong> 如果 leading 和 trailing 都设定为 true。 则 func 允许 trailing 方式调用的条件为: 在 wait 期间多次调用。
 <br>
 <br>
 查看 <a href="http://drupalmotion.com/article/debounce-and-throttle-visual-explanation" target="_blank">David Corbacho&#39;s article</a>

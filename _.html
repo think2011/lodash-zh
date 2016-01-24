@@ -119,7 +119,8 @@ var _hmt = _hmt || [];
 <li><a href="./xorWith" title="_.xorWith([arrays], [comparator])">xorWith</a></li>
 <li><a href="./zip" title="_.zip([arrays])">zip</a></li>
 <li><a href="./zipObject" title="_.zipObject([props=[]], [values=[]])">zipObject</a></li>
-<li><a href="./zipWith" title="_.zipWith([arrays], [iteratee=_.identity])">zipWith</a></li>
+<li><a href="./zipObjectDeep" title="_.zipObjectDeep([props=[]], [values=[]])">zipObjectDeep</a></li>
+<li><a href="./zipWith" title="_.zipWith([arrays])">zipWith</a></li>
 </ul></li>
 <li id="page-tree-chain" class="folder"><span class="folderPage">Chain</span>
 <ul>
@@ -259,7 +260,6 @@ var _hmt = _hmt || [];
 </ul></li>
 <li id="page-tree-methods" class="folder"><span class="folderPage">Methods</span>
 <ul>
-<li><a href="./stringSize" title="stringSize(string)">stringSize</a></li>
 <li><a href="./templateSettings-imports-_" title="_.templateSettings.imports._">templateSettings.imports._</a></li>
 </ul></li>
 <li id="page-tree-number" class="folder"><span class="folderPage">Number</span>
@@ -354,6 +354,10 @@ var _hmt = _hmt || [];
 <li><a href="./upperFirst" title="_.upperFirst([string=&#39;&#39;])">upperFirst</a></li>
 <li><a href="./words" title="_.words([string=&#39;&#39;], [pattern])">words</a></li>
 </ul></li>
+<li id="page-tree-util" class="folder"><span class="folderPage">Util</span>
+<ul>
+<li><a href="./runInContext" title="_.runInContext([context=root])">runInContext</a></li>
+</ul></li>
 <li id="page-tree-utility" class="folder"><span class="folderPage">Utility</span>
 <ul>
 <li><a href="./attempt" title="_.attempt(func)">attempt</a></li>
@@ -380,7 +384,6 @@ var _hmt = _hmt || [];
 <li><a href="./propertyOf" title="_.propertyOf(object)">propertyOf</a></li>
 <li><a href="./range" title="_.range([start=0], end, [step=1])">range</a></li>
 <li><a href="./rangeRight" title="_.rangeRight([start=0], end, [step=1])">rangeRight</a></li>
-<li><a href="./runInContext" title="_.runInContext([context=root])">runInContext</a></li>
 <li><a href="./times" title="_.times(n, [iteratee=_.identity])">times</a></li>
 <li><a href="./toPath" title="_.toPath(value)">toPath</a></li>
 <li><a href="./uniqueId" title="_.uniqueId([prefix])">uniqueId</a></li>
@@ -392,7 +395,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>_ <a class="fa-link" href="./_" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0正式版/lodash.src.js#L1489" title="View in source." target="github">source</a> </h2>
+        <div data-render-page="entry"><h2>_ <a class="fa-link" href="./_" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0正式版/lodash.src.js#L1441" title="View in source." target="github">source</a> </h2>
 <div class="signature">_(value)</div>
 
 <div data-render-html="/_"><p>创建一个经 <code>lodash</code> 包装后的对象会启用隐式链。返回的数组、集合、方法相互之间能够链式调用。
@@ -461,9 +464,21 @@ for shortcut fusion is subject to change.
 <code>debounce</code>, <code>defaults</code>, <code>defaultsDeep</code>, <code>defer</code>, <code>delay</code>, <code>difference</code>,
 <code>differenceBy</code>, <code>differenceWith</code>,  <code>drop</code>, <code>dropRight</code>, <code>dropRightWhile</code>,
 <code>dropWhile</code>, <code>fill</code>, <code>filter</code>, <code>flatten</code>, <code>flattenDeep</code>, <code>flip</code>, <code>flow</code>,
-<code>flowRight</code>, <code>forEach</code>, <code>forEachRight</code>, <code>forIn</code>, <code>forInRight</code>, <code>forOwn</code>,
-<code>forOwnRight</code>, <code>fromPairs</code>, <code>functions</code>, <code>functionsIn</code>, <code>groupBy</code>, <code>initial</code>,
-<code>intersection</code>, <code>intersectionBy</code>, <code>intersectionWith</code>, invert<code>,</code>invokeMap<code>,</code>iteratee<code>,</code>keyBy<code>,</code>keys<code>,</code>keysIn<code>,</code>map<code>,</code>mapKeys<code>,</code>mapValues<code>,</code>matches<code>,</code>matchesProperty<code>,</code>memoize<code>,</code>merge<code>,</code>mergeWith<code>,</code>method<code>,</code>methodOf<code>,</code>mixin<code>,</code>negate<code>,</code>nthArg<code>,</code>omit<code>,</code>omitBy<code>,</code>once<code>,</code>orderBy<code>,</code>over<code>,</code>overArgs<code>,</code>overEvery<code>,</code>overSome<code>,</code>partial<code>,</code>partialRight<code>,</code>partition<code>,</code>pick<code>,</code>pickBy<code>,</code>plant<code>,</code>property<code>,</code>propertyOf<code>,</code>pull<code>,</code>pullAll<code>,</code>pullAllBy<code>,</code>pullAt<code>,</code>push<code>,</code>range<code>,</code>rangeRight<code>,</code>rearg<code>,</code>reject<code>,</code>remove<code>,</code>rest<code>,</code>reverse<code>,</code>sampleSize<code>,</code>set<code>,</code>setWith<code>,</code>shuffle<code>,</code>slice<code>,</code>sort<code>,</code>sortBy<code>,</code>splice<code>,</code>spread<code>,</code>tail<code>,</code>take<code>,</code>takeRight<code>,</code>takeRightWhile<code>,</code>takeWhile<code>,</code>tap<code>,</code>throttle<code>,</code>thru<code>,</code>toArray<code>,</code>toPairs<code>,</code>toPairsIn<code>,</code>toPath<code>,</code>toPlainObject<code>,</code>transform<code>,</code>unary<code>,</code>union<code>,</code>unionBy<code>,</code>unionWith<code>,</code>uniq<code>,</code>uniqBy<code>,</code>uniqWith<code>,</code>unset<code>,</code>unshift<code>,</code>unzip<code>,</code>unzipWith<code>,</code>values<code>,</code>valuesIn<code>,</code>without<code>,</code>wrap<code>,</code>xor<code>,</code>xorBy<code>,</code>xorWith<code>,</code>zip<code>,</code>zipObject`, 以及 zipWith</p>
+<code>flowRight</code>, <code>fromPairs</code>, <code>functions</code>, <code>functionsIn</code>, <code>groupBy</code>, <code>initial</code>,
+<code>intersection</code>, <code>intersectionBy</code>, <code>intersectionWith</code>, <code>invert</code>, <code>invokeMap</code>,
+<code>iteratee</code>, <code>keyBy</code>, <code>keys</code>, <code>keysIn</code>, <code>map</code>, <code>mapKeys</code>, <code>mapValues</code>,
+<code>matches</code>, <code>matchesProperty</code>, <code>memoize</code>, <code>merge</code>, <code>mergeWith</code>, <code>method</code>,
+<code>methodOf</code>, <code>mixin</code>, <code>negate</code>, <code>nthArg</code>, <code>omit</code>, <code>omitBy</code>, <code>once</code>, <code>orderBy</code>,
+<code>over</code>, <code>overArgs</code>, <code>overEvery</code>, <code>overSome</code>, <code>partial</code>, <code>partialRight</code>,
+<code>partition</code>, <code>pick</code>, <code>pickBy</code>, <code>plant</code>, <code>property</code>, <code>propertyOf</code>, <code>pull</code>,
+<code>pullAll</code>, <code>pullAllBy</code>, <code>pullAt</code>, <code>push</code>, <code>range</code>, <code>rangeRight</code>, <code>rearg</code>,
+<code>reject</code>, <code>remove</code>, <code>rest</code>, <code>reverse</code>, <code>sampleSize</code>, <code>set</code>, <code>setWith</code>,
+<code>shuffle</code>, <code>slice</code>, <code>sort</code>, <code>sortBy</code>, <code>splice</code>, <code>spread</code>, <code>tail</code>, <code>take</code>,
+<code>takeRight</code>, <code>takeRightWhile</code>, <code>takeWhile</code>, <code>tap</code>, <code>throttle</code>, <code>thru</code>,
+<code>toArray</code>, <code>toPairs</code>, <code>toPairsIn</code>, <code>toPath</code>, <code>toPlainObject</code>, <code>transform</code>,
+<code>unary</code>, <code>union</code>, <code>unionBy</code>, <code>unionWith</code>, <code>uniq</code>, <code>uniqBy</code>, <code>uniqWith</code>,
+<code>unset</code>, <code>unshift</code>, <code>unzip</code>, <code>unzipWith</code>, <code>values</code>, <code>valuesIn</code>, <code>without</code>,
+<code>wrap</code>, <code>xor</code>, <code>xorBy</code>, <code>xorWith</code>, <code>zip</code>, <code>zipObject</code>, 以及 zipWith</p>
 </div>
 
 <h3>参数</h3>

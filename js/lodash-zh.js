@@ -1,6 +1,7 @@
 /**
  * @license
- * lodash 4.0.0-pre <https://lodash.com/>
+ * lodash 4.0.0 (Custom Build) <https://lodash.com/>
+ * Build: `lodash -d -o ./lodash.js`
  * Copyright 2012-2016 The Dojo Foundation <http://dojofoundation.org/>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright 2009-2016 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -11,7 +12,7 @@
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.0.0-pre';
+  var VERSION = '4.0.0';
 
   /** Used to compose bitmasks for wrapper metadata. */
   var BIND_FLAG          = 1,
@@ -118,6 +119,11 @@
   var reRegExpChar    = /[\\^$.*+?()[\]{}|]/g,
       reHasRegExpChar = RegExp(reRegExpChar.source);
 
+  /** Used to match leading and trailing whitespace. */
+  var reTrim      = /^\s+|\s+$/g,
+      reTrimStart = /^\s+/,
+      reTrimEnd   = /\s+$/;
+
   /** Used to match backslashes in property paths. */
   var reEscapeChar = /\\(\\)?/g;
 
@@ -155,27 +161,29 @@
   var reUnescapedString = /['\n\r\u2028\u2029\\]/g;
 
   /** Used to compose unicode character classes. */
-  var rsAstralRange  = '\\ud800-\\udfff',
-      rsComboRange   = '\\u0300-\\u036f\\ufe20-\\ufe23',
-      rsDingbatRange = '\\u2700-\\u27bf',
-      rsLowerRange   = 'a-z\\xdf-\\xf6\\xf8-\\xff',
-      rsMathOpRange  = '\\xac\\xb1\\xd7\\xf7',
-      rsNonCharRange = '\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf',
-      rsQuoteRange   = '\\u2018\\u2019\\u201c\\u201d',
-      rsSpaceRange   = ' \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000',
-      rsUpperRange   = 'A-Z\\xc0-\\xd6\\xd8-\\xde',
-      rsVarRange     = '\\ufe0e\\ufe0f',
-      rsBreakRange   = rsMathOpRange + rsNonCharRange + rsQuoteRange + rsSpaceRange;
+  var rsAstralRange       = '\\ud800-\\udfff',
+      rsComboMarksRange   = '\\u0300-\\u036f\\ufe20-\\ufe23',
+      rsComboSymbolsRange = '\\u20d0-\\u20f0',
+      rsDingbatRange      = '\\u2700-\\u27bf',
+      rsLowerRange        = 'a-z\\xdf-\\xf6\\xf8-\\xff',
+      rsMathOpRange       = '\\xac\\xb1\\xd7\\xf7',
+      rsNonCharRange      = '\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf',
+      rsQuoteRange        = '\\u2018\\u2019\\u201c\\u201d',
+      rsSpaceRange        = ' \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000',
+      rsUpperRange        = 'A-Z\\xc0-\\xd6\\xd8-\\xde',
+      rsVarRange          = '\\ufe0e\\ufe0f',
+      rsBreakRange        = rsMathOpRange + rsNonCharRange + rsQuoteRange + rsSpaceRange;
 
   /** Used to compose unicode capture groups. */
   var rsAstral    = '[' + rsAstralRange + ']',
       rsBreak     = '[' + rsBreakRange + ']',
-      rsCombo     = '[' + rsComboRange + ']',
+      rsCombo     = '[' + rsComboMarksRange + rsComboSymbolsRange + ']',
       rsDigits    = '\\d+',
       rsDingbat   = '[' + rsDingbatRange + ']',
       rsLower     = '[' + rsLowerRange + ']',
       rsMisc      = '[^' + rsAstralRange + rsBreakRange + rsDigits + rsDingbatRange + rsLowerRange + rsUpperRange + ']',
-      rsModifier  = '(?:\\ud83c[\\udffb-\\udfff])',
+      rsFitz      = '\\ud83c[\\udffb-\\udfff]',
+      rsModifier  = '(?:' + rsCombo + '|' + rsFitz + ')',
       rsNonAstral = '[^' + rsAstralRange + ']',
       rsRegional  = '(?:\\ud83c[\\udde6-\\uddff]){2}',
       rsSurrPair  = '[\\ud800-\\udbff][\\udc00-\\udfff]',
@@ -192,14 +200,17 @@
       rsEmoji     = '(?:' + [rsDingbat, rsRegional, rsSurrPair].join('|') + ')' + rsSeq,
       rsSymbol    = '(?:' + [rsNonAstral + rsCombo + '?', rsCombo, rsRegional, rsSurrPair, rsAstral].join('|') + ')';
 
-  /** Used to match [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks). */
+  /**
+   * Used to match [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks) and
+   * [combining diacritical marks for symbols](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks_for_Symbols).
+   */
   var reComboMark = RegExp(rsCombo, 'g');
 
   /** Used to match [string symbols](https://mathiasbynens.be/notes/javascript-unicode). */
-  var reComplexSymbol = RegExp(rsSymbol + rsSeq, 'g');
+  var reComplexSymbol = RegExp(rsFitz + '(?=' + rsFitz + ')|' + rsSymbol + rsSeq, 'g');
 
   /** Used to detect strings with [zero-width joiners or code points from the astral planes](http://eev.ee/blog/2015/09/12/dark-corners-of-unicode/). */
-  var reHasComplexSymbol = RegExp('[' + rsZWJ + rsAstralRange + rsComboRange + rsVarRange + ']');
+  var reHasComplexSymbol = RegExp('[' + rsZWJ + rsAstralRange + rsComboMarksRange + rsComboSymbolsRange + rsVarRange + ']');
 
   /** Used to match non-compound words composed of alphanumeric characters. */
   var reBasicWord = /[a-zA-Z0-9]+/g;
@@ -209,7 +220,8 @@
     rsUpper + '?' + rsLower + '+(?=' + [rsBreak, rsUpper, '$'].join('|') + ')',
     rsUpperMisc + '+(?=' + [rsBreak, rsUpper + rsLowerMisc, '$'].join('|') + ')',
     rsUpper + '?' + rsLowerMisc + '+',
-    rsDigits + '(?:' + rsLowerMisc + '+)?',
+    rsUpper + '+',
+    rsDigits,
     rsEmoji
   ].join('|'), 'g');
 
@@ -222,7 +234,7 @@
     'Int8Array', 'Int16Array', 'Int32Array', 'Map', 'Math', 'Object',
     'Reflect', 'RegExp', 'Set', 'String', 'Symbol', 'TypeError', 'Uint8Array',
     'Uint8ClampedArray', 'Uint16Array', 'Uint32Array', 'WeakMap', '_',
-    'clearTimeout', 'isFinite', 'parseFloat', 'parseInt', 'setTimeout'
+    'clearTimeout', 'isFinite', 'parseInt', 'setTimeout'
   ];
 
   /** Used to make template sourceURLs easier to identify. */
@@ -315,6 +327,10 @@
     '\u2028': 'u2028',
     '\u2029': 'u2029'
   };
+
+  /** Built-in method references without a dependency on `root`. */
+  var freeParseFloat = parseFloat,
+      freeParseInt   = parseInt;
 
   /** Detect free variable `exports`. */
   var freeExports = (objectTypes[typeof exports] && exports && !exports.nodeType) ? exports : null;
@@ -424,11 +440,11 @@
 
   /**
    * A specialized version of `_.forEach` for arrays without support for
-   * callback shorthands.
+   * iteratee shorthands.
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} iteratee 这个函数会处理每一个元素
+   * @param {Function} iteratee The function invoked per iteration.
    * @returns {Array} Returns `array`.
    */
   function arrayEach (array, iteratee) {
@@ -445,11 +461,11 @@
 
   /**
    * A specialized version of `_.forEachRight` for arrays without support for
-   * callback shorthands.
+   * iteratee shorthands.
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} iteratee 这个函数会处理每一个元素
+   * @param {Function} iteratee The function invoked per iteration.
    * @returns {Array} Returns `array`.
    */
   function arrayEachRight (array, iteratee) {
@@ -465,12 +481,12 @@
 
   /**
    * A specialized version of `_.every` for arrays without support for
-   * callback shorthands.
+   * iteratee shorthands.
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} predicate 这个函数会处理每一个元素
-   * @returns {boolean} Returns `true` if all elements pass the predicate check否则返回 `false`
+   * @param {Function} predicate The function invoked per iteration.
+   * @returns {boolean} Returns `true` if all elements pass the predicate check, else `false`.
    */
   function arrayEvery (array, predicate) {
     var index  = -1,
@@ -486,11 +502,11 @@
 
   /**
    * A specialized version of `_.filter` for arrays without support for
-   * callback shorthands.
+   * iteratee shorthands.
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} predicate 这个函数会处理每一个元素
+   * @param {Function} predicate The function invoked per iteration.
    * @returns {Array} Returns the new filtered array.
    */
   function arrayFilter (array, predicate) {
@@ -514,8 +530,8 @@
    *
    * @private
    * @param {Array} array The array to search.
-   * @param {*} target 要检索的值
-   * @returns {boolean} Returns `true` if `target` is found否则返回 `false`
+   * @param {*} target The value to search for.
+   * @returns {boolean} Returns `true` if `target` is found, else `false`.
    */
   function arrayIncludes (array, value) {
     return !!array.length && baseIndexOf(array, value, 0) > -1;
@@ -527,9 +543,9 @@
    *
    * @private
    * @param {Array} array The array to search.
-   * @param {*} target 要检索的值
-   * @param {Function} comparator 这个函数会处理每一个元素
-   * @returns {boolean} Returns `true` if `target` is found否则返回 `false`
+   * @param {*} target The value to search for.
+   * @param {Function} comparator The comparator invoked per element.
+   * @returns {boolean} Returns `true` if `target` is found, else `false`.
    */
   function arrayIncludesWith (array, value, comparator) {
     var index  = -1,
@@ -544,12 +560,12 @@
   }
 
   /**
-   * A specialized version of `_.map` for arrays without support for callback
+   * A specialized version of `_.map` for arrays without support for iteratee
    * shorthands.
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} iteratee 这个函数会处理每一个元素
+   * @param {Function} iteratee The function invoked per iteration.
    * @returns {Array} Returns the new mapped array.
    */
   function arrayMap (array, iteratee) {
@@ -584,20 +600,20 @@
 
   /**
    * A specialized version of `_.reduce` for arrays without support for
-   * callback shorthands.
+   * iteratee shorthands.
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} iteratee 这个函数会处理每一个元素
+   * @param {Function} iteratee The function invoked per iteration.
    * @param {*} [accumulator] The initial value.
-   * @param {boolean} [initFromArray] Specify 使用 first element of `array` as the initial value.
+   * @param {boolean} [initAccum] Specify using the first element of `array` as the initial value.
    * @returns {*} Returns the accumulated value.
    */
-  function arrayReduce (array, iteratee, accumulator, initFromArray) {
+  function arrayReduce (array, iteratee, accumulator, initAccum) {
     var index  = -1,
         length = array.length;
 
-    if (initFromArray && length) {
+    if (initAccum && length) {
       accumulator = array[++index];
     }
     while (++index < length) {
@@ -608,18 +624,18 @@
 
   /**
    * A specialized version of `_.reduceRight` for arrays without support for
-   * callback shorthands.
+   * iteratee shorthands.
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} iteratee 这个函数会处理每一个元素
+   * @param {Function} iteratee The function invoked per iteration.
    * @param {*} [accumulator] The initial value.
-   * @param {boolean} [initFromArray] Specify 使用 last element of `array` as the initial value.
+   * @param {boolean} [initAccum] Specify using the last element of `array` as the initial value.
    * @returns {*} Returns the accumulated value.
    */
-  function arrayReduceRight (array, iteratee, accumulator, initFromArray) {
+  function arrayReduceRight (array, iteratee, accumulator, initAccum) {
     var length = array.length;
-    if (initFromArray && length) {
+    if (initAccum && length) {
       accumulator = array[--length];
     }
     while (length--) {
@@ -629,13 +645,13 @@
   }
 
   /**
-   * A specialized version of `_.some` for arrays without support for callback
+   * A specialized version of `_.some` for arrays without support for iteratee
    * shorthands.
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} predicate 这个函数会处理每一个元素
-   * @returns {boolean} Returns `true` if any element passes the predicate check否则返回 `false`
+   * @param {Function} predicate The function invoked per iteration.
+   * @returns {boolean} Returns `true` if any element passes the predicate check, else `false`.
    */
   function arraySome (array, predicate) {
     var index  = -1,
@@ -680,12 +696,12 @@
 
   /**
    * The base implementation of methods like `_.find` and `_.findKey`, without
-   * support for callback shorthands, which iterates over `collection` using
-   * the provided `eachFunc`.
+   * support for iteratee shorthands, which iterates over `collection` using
+   * `eachFunc`.
    *
    * @private
-   * @param {Array|Object} collection 要检索的集合
-   * @param {Function} predicate 这个函数会处理每一个元素
+   * @param {Array|Object} collection The collection to search.
+   * @param {Function} predicate The function invoked per iteration.
    * @param {Function} eachFunc The function to iterate over `collection`.
    * @param {boolean} [retKey] Specify returning the key of the found element instead of the element itself.
    * @returns {*} Returns the found element or its key, else `undefined`.
@@ -703,11 +719,11 @@
 
   /**
    * The base implementation of `_.findIndex` and `_.findLastIndex` without
-   * support for callback shorthands.
+   * support for iteratee shorthands.
    *
    * @private
    * @param {Array} array The array to search.
-   * @param {Function} predicate 这个函数会处理每一个元素
+   * @param {Function} predicate The function invoked per iteration.
    * @param {boolean} [fromRight] Specify iterating from right to left.
    * @returns {number} Returns the index of the matched value, else `-1`.
    */
@@ -728,7 +744,7 @@
    *
    * @private
    * @param {Array} array The array to search.
-   * @param {*} value 要检索的值
+   * @param {*} value The value to search for.
    * @param {number} fromIndex The index to search from.
    * @returns {number} Returns the index of the matched value, else `-1`.
    */
@@ -749,21 +765,20 @@
 
   /**
    * The base implementation of `_.reduce` and `_.reduceRight`, without support
-   * for callback shorthands, which iterates over `collection` 使用 provided
-   * `eachFunc`.
+   * for iteratee shorthands, which iterates over `collection` using `eachFunc`.
    *
    * @private
-   * @param {Array|Object} collection 需要遍历的集合
-   * @param {Function} iteratee 这个函数会处理每一个元素
+   * @param {Array|Object} collection The collection to iterate over.
+   * @param {Function} iteratee The function invoked per iteration.
    * @param {*} accumulator The initial value.
-   * @param {boolean} initFromCollection Specify 使用 first or last element of `collection` as the initial value.
+   * @param {boolean} initAccum Specify using the first or last element of `collection` as the initial value.
    * @param {Function} eachFunc The function to iterate over `collection`.
    * @returns {*} Returns the accumulated value.
    */
-  function baseReduce (collection, iteratee, accumulator, initFromCollection, eachFunc) {
+  function baseReduce (collection, iteratee, accumulator, initAccum, eachFunc) {
     eachFunc(collection, function (value, index, collection) {
-      accumulator = initFromCollection
-        ? (initFromCollection = false, value)
+      accumulator = initAccum
+        ? (initAccum = false, value)
         : iteratee(accumulator, value, index, collection);
     });
     return accumulator;
@@ -790,11 +805,11 @@
   }
 
   /**
-   * The base implementation of `_.sum` without support for callback shorthands.
+   * The base implementation of `_.sum` without support for iteratee shorthands.
    *
    * @private
    * @param {Array} array The array to iterate over.
-   * @param {Function} iteratee 这个函数会处理每一个元素
+   * @param {Function} iteratee The function invoked per iteration.
    * @returns {number} Returns the sum.
    */
   function baseSum (array, iteratee) {
@@ -812,12 +827,12 @@
   }
 
   /**
-   * The base implementation of `_.times` without support for callback shorthands
+   * The base implementation of `_.times` without support for iteratee shorthands
    * or max array length checks.
    *
    * @private
    * @param {number} n The number of times to invoke `iteratee`.
-   * @param {Function} iteratee 这个函数会处理每一个元素
+   * @param {Function} iteratee The function invoked per iteration.
    * @returns {Array} Returns the array of results.
    */
   function baseTimes (n, iteratee) {
@@ -835,7 +850,7 @@
    * of key-value pairs for `object` corresponding to the property names of `props`.
    *
    * @private
-   * @param {Object} object 要检索的对象
+   * @param {Object} object The object to query.
    * @param {Array} props The property names to get values for.
    * @returns {Object} Returns the new array of key-value pairs.
    */
@@ -846,25 +861,11 @@
   }
 
   /**
-   * The base implementation of `_.trim` without support trimming non-whitespace
-   * characters.
-   *
-   * @private
-   * @param {string} string 要处理的字符串
-   * @returns {string} 返回处理后的字符串
-   */
-  function baseTrim (string) {
-    return string
-      ? string.slice(trimmedStartIndex(string), trimmedEndIndex(string) + 1)
-      : string;
-  }
-
-  /**
    * The base implementation of `_.unary` without support for storing wrapper metadata.
    *
    * @private
    * @param {Function} func The function to cap arguments for.
-   * @returns {Function} 返回新的函数
+   * @returns {Function} Returns the new function.
    */
   function baseUnary (func) {
     return function (value) {
@@ -878,7 +879,7 @@
    * of `props`.
    *
    * @private
-   * @param {Object} object 要检索的对象
+   * @param {Object} object The object to query.
    * @param {Array} props The property names to get values for.
    * @returns {Object} Returns the array of property values.
    */
@@ -924,10 +925,10 @@
   }
 
   /**
-   * 检查 `value` 是否是 a global object.
+   * Checks if `value` is a global object.
    *
    * @private
-   * @param {*} value 要检查的值
+   * @param {*} value The value to check.
    * @returns {null|Object} Returns `value` if it's a global object, else `null`.
    */
   function checkGlobal (value) {
@@ -938,8 +939,8 @@
    * Compares values to sort them in ascending order.
    *
    * @private
-   * @param {*} value 要比较的值
-   * @param {*} other 其他要比较的值
+   * @param {*} value The value to compare.
+   * @param {*} other The other value to compare.
    * @returns {number} Returns the sort order indicator for `value`.
    */
   function compareAscending (value, other) {
@@ -1000,10 +1001,10 @@
     // Fixes an `Array#sort` bug in the JS engine embedded in Adobe applications
     // that causes it, under certain circumstances, to provide the same value for
     // `object` and `other`. See https://github.com/jashkenas/underscore/pull/1247
-    // 了解详情
+    // for more details.
     //
     // This also ensures a stable sort in V8 and other engines.
-    // See https://code.google.com/p/v8/issues/detail?id=90 了解详情
+    // See https://code.google.com/p/v8/issues/detail?id=90 for more details.
     return object.index - other.index;
   }
 
@@ -1063,11 +1064,11 @@
   }
 
   /**
-   * 检查 `value` 是否是 a host object in IE < 9.
+   * Checks if `value` is a host object in IE < 9.
    *
    * @private
-   * @param {*} value 要检查的值
-   * @returns {boolean} Returns `true` if `value` is a host object否则返回 `false`
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is a host object, else `false`.
    */
   function isHostObject (value) {
     // Many host objects are `Object` objects that can coerce to strings
@@ -1083,30 +1084,17 @@
   }
 
   /**
-   * 检查 `value` 是否是 a valid array-like index.
+   * Checks if `value` is a valid array-like index.
    *
    * @private
-   * @param {*} value 要检查的值
+   * @param {*} value The value to check.
    * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
-   * @returns {boolean} Returns `true` if `value` is a valid index否则返回 `false`
+   * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
    */
   function isIndex (value, length) {
     value  = (typeof value == 'number' || reIsUint.test(value)) ? +value : -1;
     length = length == null ? MAX_SAFE_INTEGER : length;
     return value > -1 && value % 1 == 0 && value < length;
-  }
-
-  /**
-   * Used by `trimmedStartIndex` and `trimmedEndIndex` to determine if a
-   * character code is whitespace.
-   *
-   * @private
-   * @param {number} charCode The character code to inspect.
-   * @returns {boolean} Returns `true` if `charCode` is whitespace否则返回 `false`
-   */
-  function isSpace (charCode) {
-    return ((charCode <= 160 && (charCode >= 9 && charCode <= 13) || charCode == 32 || charCode == 160) || charCode == 5760 || charCode == 6158 ||
-    (charCode >= 8192 && (charCode <= 8202 || charCode == 8232 || charCode == 8233 || charCode == 8239 || charCode == 8287 || charCode == 12288 || charCode == 65279)));
   }
 
   /**
@@ -1185,10 +1173,11 @@
   }
 
   /**
-   * 获得字符串的长度
+   * Gets the number of symbols in `string`.
    *
-   * @param {string} string 要处理的字符串
-   * @returns {number} 返回字符串长度
+   * @private
+   * @param {string} string The string to inspect.
+   * @returns {number} Returns the string size.
    */
   function stringSize (string) {
     if (!(string && reHasComplexSymbol.test(string))) {
@@ -1205,44 +1194,11 @@
    * Converts `string` to an array.
    *
    * @private
-   * @param {string} string 要转换的字符串
+   * @param {string} string The string to convert.
    * @returns {Array} Returns the converted array.
    */
   function stringToArray (string) {
     return string.match(reComplexSymbol);
-  }
-
-  /**
-   * Used by `_.trim` and `_.trimStart` to get the index of the first non-whitespace
-   * character of `string`.
-   *
-   * @private
-   * @param {string} string The string to inspect.
-   * @returns {number} Returns the index of the first non-whitespace character.
-   */
-  function trimmedStartIndex (string) {
-    var index  = -1,
-        length = string.length;
-
-    while (++index < length && isSpace(string.charCodeAt(index))) {
-    }
-    return index;
-  }
-
-  /**
-   * Used by `_.trim` and `_.trimEnd` to get the index of the last non-whitespace
-   * character of `string`.
-   *
-   * @private
-   * @param {string} string The string to inspect.
-   * @returns {number} Returns the index of the last non-whitespace character.
-   */
-  function trimmedEndIndex (string) {
-    var index = string.length;
-
-    while (index-- && isSpace(string.charCodeAt(index))) {
-    }
-    return index;
   }
 
   /**
@@ -1263,7 +1219,7 @@
    *
    * @static
    * @memberOf _
-   * @category Utility
+   * @category Util
    * @param {Object} [context=root] 上下文对象
    * @returns {Function} 返回新的 `lodash` 对象
    * @example
@@ -1305,8 +1261,7 @@
 
     /** Used for built-in method references. */
     var arrayProto  = context.Array.prototype,
-        objectProto = context.Object.prototype,
-        stringProto = context.String.prototype;
+        objectProto = context.Object.prototype;
 
     /** Used to resolve the decompiled source of functions. */
     var funcToString = context.Function.prototype.toString;
@@ -1344,8 +1299,6 @@
         getPrototypeOf        = Object.getPrototypeOf,
         getOwnPropertySymbols = Object.getOwnPropertySymbols,
         iteratorSymbol        = typeof (iteratorSymbol = Symbol && Symbol.iterator) == 'symbol' ? iteratorSymbol : undefined,
-        parseFloat            = context.parseFloat,
-        pow                   = Math.pow,
         propertyIsEnumerable  = objectProto.propertyIsEnumerable,
         setTimeout            = context.setTimeout,
         splice                = arrayProto.splice;
@@ -1435,7 +1388,7 @@
      * `toLower`, `toInteger`, `toLength`, `toNumber`, `toSafeInteger`, toString`,
      * `toUpper`, `trim`, `trimEnd`, `trimStart`, `truncate`, `unescape`, `uniqueId`,
      * `upperCase`, `upperFirst`, `value`, 以及 `words`
-     * 
+     *
      * 支持 链式调用 的方法:
      * `after`, `ary`, `assign`, `assignIn`, `assignInWith`, `assignWith`,
      * `at`, `before`, `bind`, `bindAll`, `bindKey`, `chain`, `chunk`, `commit`,
@@ -1443,9 +1396,8 @@
      * `debounce`, `defaults`, `defaultsDeep`, `defer`, `delay`, `difference`,
      * `differenceBy`, `differenceWith`,  `drop`, `dropRight`, `dropRightWhile`,
      * `dropWhile`, `fill`, `filter`, `flatten`, `flattenDeep`, `flip`, `flow`,
-     * `flowRight`, `forEach`, `forEachRight`, `forIn`, `forInRight`, `forOwn`,
-     * `forOwnRight`, `fromPairs`, `functions`, `functionsIn`, `groupBy`, `initial`,
-     * `intersection`, `intersectionBy`, `intersectionWith`, invert`, `invokeMap`,
+     * `flowRight`, `fromPairs`, `functions`, `functionsIn`, `groupBy`, `initial`,
+     * `intersection`, `intersectionBy`, `intersectionWith`, `invert`, `invokeMap`,
      * `iteratee`, `keyBy`, `keys`, `keysIn`, `map`, `mapKeys`, `mapValues`,
      * `matches`, `matchesProperty`, `memoize`, `merge`, `mergeWith`, `method`,
      * `methodOf`, `mixin`, `negate`, `nthArg`, `omit`, `omitBy`, `once`, `orderBy`,
@@ -1459,7 +1411,7 @@
      * `unary`, `union`, `unionBy`, `unionWith`, `uniq`, `uniqBy`, `uniqWith`,
      * `unset`, `unshift`, `unzip`, `unzipWith`, `values`, `valuesIn`, `without`,
      * `wrap`, `xor`, `xorBy`, `xorWith`, `zip`, `zipObject`, 以及 zipWith　　　　　
- 
+
      * @name _
      * @constructor
      * @category Chain
@@ -2201,6 +2153,27 @@
     }
 
     /**
+     * The base implementation of `_.clamp` which doesn't coerce arguments to numbers.
+     *
+     * @private
+     * @param {number} number The number to clamp.
+     * @param {number} [lower] The lower bound.
+     * @param {number} upper The upper bound.
+     * @returns {number} Returns the clamped number.
+     */
+    function baseClamp (number, lower, upper) {
+      if (number === number) {
+        if (upper !== undefined) {
+          number = number <= upper ? number : upper;
+        }
+        if (lower !== undefined) {
+          number = number >= lower ? number : lower;
+        }
+      }
+      return number;
+    }
+
+    /**
      * The base implementation of `_.clone` and `_.cloneDeep` which tracks
      * traversed objects.
      *
@@ -2271,7 +2244,7 @@
      * @returns {Function} 返回新的函数
      */
     function baseConforms (source) {
-      var props = keys(source),
+      var props  = keys(source),
           length = props.length;
 
       return function (object) {
@@ -2482,7 +2455,7 @@
      * @param {Object} [stack] Tracks traversed arrays.
      * @returns {Array} Returns the new flattened array.
      */
-    function baseFlatten (array, isDeep, isStrict, result, stack) {
+    function baseFlatten (array, isDeep, isStrict, result) {
       result || (result = []);
 
       var index  = -1,
@@ -2493,18 +2466,9 @@
         if (isArrayLikeObject(value) &&
           (isStrict || isArray(value) || isArguments(value))) {
           if (isDeep) {
-            stack || (stack = new Stack);
-            if (stack.get(array)) {
-              return result;
-            }
-            stack.set(array, true);
-
             // Recursively flatten arrays (susceptible to call stack limits).
-            baseFlatten(value, isDeep, isStrict, result, stack);
-
-            stack['delete'](array);
-          }
-          else {
+            baseFlatten(value, isDeep, isStrict, result);
+          } else {
             arrayPush(result, value);
           }
         } else if (!isStrict) {
@@ -2794,19 +2758,8 @@
       if (!isSameTag) {
         return false;
       }
-      // Assume cyclic values are equal.
-      // For more information on detecting circular references see https://es5.github.io/#JO.
       stack || (stack = new Stack);
-      var stacked = stack.get(object);
-      if (stacked) {
-        return stacked == other;
-      }
-      stack.set(object, other);
-
-      var result = (objIsArr ? equalArrays : equalObjects)(object, other, equalFunc, customizer, bitmask, stack);
-
-      stack['delete'](object);
-      return result;
+      return (objIsArr ? equalArrays : equalObjects)(object, other, equalFunc, customizer, bitmask, stack);
     }
 
     /**
@@ -2990,7 +2943,7 @@
      * @param {Function} [customizer] The function to customize merged values.
      * @param {Object} [stack] Tracks traversed source values and their merged counterparts.
      */
-    function baseMerge (object, source, customizer, stack) {
+    function baseMerge (object, source, srcIndex, customizer, stack) {
       if (object === source) {
         return;
       }
@@ -3002,7 +2955,7 @@
         }
         if (isObject(srcValue)) {
           stack || (stack = new Stack);
-          baseMergeDeep(object, source, key, baseMerge, customizer, stack);
+          baseMergeDeep(object, source, key, srcIndex, baseMerge, customizer, stack);
         }
         else {
           var newValue = customizer ? customizer(object[key], srcValue, (key + ''), object, source, stack) : undefined;
@@ -3027,7 +2980,7 @@
      * @param {Function} [customizer] The function to customize assigned values.
      * @param {Object} [stack] Tracks traversed source values and their merged counterparts.
      */
-    function baseMergeDeep (object, source, key, mergeFunc, customizer, stack) {
+    function baseMergeDeep (object, source, key, srcIndex, mergeFunc, customizer, stack) {
       var objValue = object[key],
           srcValue = source[key],
           stacked  = stack.get(srcValue) || stack.get(objValue);
@@ -3042,17 +2995,29 @@
       if (isCommon) {
         newValue = srcValue;
         if (isArray(srcValue) || isTypedArray(srcValue)) {
-          newValue = isArray(objValue)
-            ? objValue
-            : ((isArrayLikeObject(objValue)) ? copyArray(objValue) : baseClone(srcValue));
+          if (isArray(objValue)) {
+            newValue = srcIndex ? copyArray(objValue) : objValue;
+          }
+          else if (isArrayLikeObject(objValue)) {
+            newValue = copyArray(objValue);
+          }
+          else {
+            newValue = baseClone(srcValue);
+          }
         }
         else if (isPlainObject(srcValue) || isArguments(srcValue)) {
-          newValue = isArguments(objValue)
-            ? toPlainObject(objValue)
-            : (isObject(objValue) ? objValue : baseClone(srcValue));
+          if (isArguments(objValue)) {
+            newValue = toPlainObject(objValue);
+          }
+          else if (!isObject(objValue) || (srcIndex && isFunction(objValue))) {
+            newValue = baseClone(srcValue);
+          }
+          else {
+            newValue = srcIndex ? baseClone(objValue) : objValue;
+          }
         }
         else {
-          isCommon = isFunction(srcValue);
+          isCommon = false;
         }
       }
       stack.set(srcValue, newValue);
@@ -3123,7 +3088,7 @@
     function basePickBy (object, predicate) {
       var result = {};
       baseForIn(object, function (value, key) {
-        if (predicate(value)) {
+        if (predicate(value, key)) {
           result[key] = value;
         }
       });
@@ -3248,8 +3213,8 @@
      * @param {number} max The maximum possible value.
      * @returns {number} Returns the random number.
      */
-    function baseRandom (min, max) {
-      return min + nativeFloor(nativeRandom() * (max - min + 1));
+    function baseRandom (lower, upper) {
+      return lower + nativeFloor(nativeRandom() * (upper - lower + 1));
     }
 
     /**
@@ -3263,17 +3228,6 @@
      * @returns {Array} Returns the new array of numbers.
      */
     function baseRange (start, end, step, fromRight) {
-      start = toNumber(start);
-      start = start === start ? start : 0;
-
-      if (end === undefined) {
-        end   = start;
-        start = 0;
-      } else {
-        end = toNumber(end) || 0;
-      }
-      step = step === undefined ? (start < end ? 1 : -1) : (toNumber(step) || 0);
-
       var index  = -1,
           length = nativeMax(nativeCeil((end - start) / (step || 1)), 0),
           result = Array(length);
@@ -3347,11 +3301,10 @@
       var index  = -1,
           length = array.length;
 
-      start = start == null ? 0 : toInteger(start);
       if (start < 0) {
         start = -start > length ? 0 : (length + start);
       }
-      end = (end === undefined || end > length) ? length : toInteger(end);
+      end = end > length ? length : end;
       if (end < 0) {
         end += length;
       }
@@ -3660,6 +3613,27 @@
     }
 
     /**
+     * This base implementation of `_.zipObject` which assigns values using `assignFunc`.
+     *
+     * @private
+     * @param {Array} props The property names.
+     * @param {Array} values The property values.
+     * @param {Function} assignFunc The function to assign values.
+     * @returns {Object} Returns the new object.
+     */
+    function baseZipObject (props, values, assignFunc) {
+      var index      = -1,
+          length     = props.length,
+          valsLength = values.length,
+          result     = {};
+
+      while (++index < length) {
+        assignFunc(result, props[index], index < valsLength ? values[index] : undefined);
+      }
+      return result;
+    }
+
+    /**
      * Creates a clone of `buffer`.
      *
      * @private
@@ -3722,7 +3696,7 @@
      * @returns {Object} Returns the cloned symbol object.
      */
     function cloneSymbol (symbol) {
-      return Object(symbolValueOf.call(symbol));
+      return Symbol ? Object(symbolValueOf.call(symbol)) : {};
     }
 
     /**
@@ -3912,7 +3886,7 @@
     function createAssigner (assigner) {
       return rest(function (object, sources) {
         var index      = -1,
-            length     = object == null ? 0 : sources.length,
+            length     = sources.length,
             customizer = length > 1 ? sources[length - 1] : undefined,
             guard      = length > 2 ? sources[2] : undefined;
 
@@ -3925,7 +3899,7 @@
         while (++index < length) {
           var source = sources[index];
           if (source) {
-            assigner(object, source, customizer);
+            assigner(object, source, index, customizer);
           }
         }
         return object;
@@ -4324,6 +4298,32 @@
     }
 
     /**
+     * Creates a `_.range` or `_.rangeRight` function.
+     *
+     * @private
+     * @param {boolean} [fromRight] Specify iterating from right to left.
+     * @returns {Function} Returns the new range function.
+     */
+    function createRange (fromRight) {
+      return function (start, end, step) {
+        if (step && typeof step != 'number' && isIterateeCall(start, end, step)) {
+          end = step = undefined;
+        }
+        // Ensure the sign of `-0` is preserved.
+        start = toNumber(start);
+        start = start === start ? start : 0;
+        if (end === undefined) {
+          end   = start;
+          start = 0;
+        } else {
+          end = toNumber(end) || 0;
+        }
+        step = step === undefined ? (start < end ? 1 : -1) : (toNumber(step) || 0);
+        return baseRange(start, end, step, fromRight);
+      };
+    }
+
+    /**
      * Creates a function that wraps `func` to continue currying.
      *
      * @private
@@ -4377,7 +4377,7 @@
         precision = toInteger(precision);
         if (precision) {
           // Shift with exponential notation to avoid floating-point issues.
-          // See [MDN](https://mdn.io/round#Examples) 了解详情
+          // See [MDN](https://mdn.io/round#Examples) for more details.
           var pair  = (toString(number) + 'e').split('e'),
               value = func(pair[0] + 'e' + (+pair[1] + precision));
 
@@ -4498,34 +4498,46 @@
       if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
         return false;
       }
+      // Assume cyclic values are equal.
+      var stacked = stack.get(array);
+      if (stacked) {
+        return stacked == other;
+      }
+      var result = true;
+      stack.set(array, other);
+
       // Ignore non-index properties.
       while (++index < arrLength) {
         var arrValue = array[index],
             othValue = other[index];
 
         if (customizer) {
-          var result = isPartial
+          var compared = isPartial
             ? customizer(othValue, arrValue, index, other, array, stack)
             : customizer(arrValue, othValue, index, array, other, stack);
         }
-        if (result !== undefined) {
-          if (result) {
+        if (compared !== undefined) {
+          if (compared) {
             continue;
           }
-          return false;
+          result = false;
+          break;
         }
         // Recursively compare arrays (susceptible to call stack limits).
         if (isUnordered) {
           if (!arraySome(other, function (othValue) {
               return arrValue === othValue || equalFunc(arrValue, othValue, customizer, bitmask, stack);
             })) {
-            return false;
+            result = false;
+            break;
           }
         } else if (!(arrValue === othValue || equalFunc(arrValue, othValue, customizer, bitmask, stack))) {
-          return false;
+          result = false;
+          break;
         }
       }
-      return true;
+      stack['delete'](array);
+      return result;
     }
 
     /**
@@ -4568,7 +4580,7 @@
         case regexpTag:
         case stringTag:
           // Coerce regexes to strings and treat strings primitives and string
-          // objects as equal. See https://es5.github.io/#x15.10.6.4 了解详情
+          // objects as equal. See https://es5.github.io/#x15.10.6.4 for more details.
           return object == (other + '');
 
         case mapTag:
@@ -4583,7 +4595,7 @@
             equalFunc(convert(object), convert(other), customizer, bitmask | UNORDERED_COMPARE_FLAG);
 
         case symbolTag:
-          return symbolValueOf.call(object) == symbolValueOf.call(other);
+          return !!Symbol && (symbolValueOf.call(object) == symbolValueOf.call(other));
       }
       return false;
     }
@@ -4602,12 +4614,11 @@
      * @returns {boolean} Returns `true` if the objects are equivalent否则返回 `false`
      */
     function equalObjects (object, other, equalFunc, customizer, bitmask, stack) {
-      var isPartial   = bitmask & PARTIAL_COMPARE_FLAG,
-          isUnordered = bitmask & UNORDERED_COMPARE_FLAG,
-          objProps    = keys(object),
-          objLength   = objProps.length,
-          othProps    = keys(other),
-          othLength   = othProps.length;
+      var isPartial = bitmask & PARTIAL_COMPARE_FLAG,
+          objProps  = keys(object),
+          objLength = objProps.length,
+          othProps  = keys(other),
+          othLength = othProps.length;
 
       if (objLength != othLength && !isPartial) {
         return false;
@@ -4615,10 +4626,18 @@
       var index = objLength;
       while (index--) {
         var key = objProps[index];
-        if (!(isPartial ? key in other : baseHas(other, key)) || !(isUnordered || key == othProps[index])) {
+        if (!(isPartial ? key in other : baseHas(other, key))) {
           return false;
         }
       }
+      // Assume cyclic values are equal.
+      var stacked = stack.get(object);
+      if (stacked) {
+        return stacked == other;
+      }
+      var result = true;
+      stack.set(object, other);
+
       var skipCtor = isPartial;
       while (++index < objLength) {
         key          = objProps[index];
@@ -4626,20 +4645,21 @@
             othValue = other[key];
 
         if (customizer) {
-          var result = isPartial
+          var compared = isPartial
             ? customizer(othValue, objValue, key, other, object, stack)
             : customizer(objValue, othValue, key, object, other, stack);
         }
         // Recursively compare objects (susceptible to call stack limits).
-        if (!(result === undefined
+        if (!(compared === undefined
               ? (objValue === othValue || equalFunc(objValue, othValue, customizer, bitmask, stack))
-              : result
+              : compared
           )) {
-          return false;
+          result = false;
+          break;
         }
         skipCtor || (skipCtor = key == 'constructor');
       }
-      if (!skipCtor) {
+      if (result && !skipCtor) {
         var objCtor = object.constructor,
             othCtor = other.constructor;
 
@@ -4647,10 +4667,11 @@
         if (objCtor != othCtor &&
           ('constructor' in object && 'constructor' in other) && !(typeof objCtor == 'function' && objCtor instanceof objCtor &&
           typeof othCtor == 'function' && othCtor instanceof othCtor)) {
-          return false;
+          result = false;
         }
       }
-      return true;
+      stack['delete'](object);
+      return result;
     }
 
     /**
@@ -4674,7 +4695,7 @@
     function getFuncName (func) {
       var result = (func.name + ''),
           array  = realNames[result],
-          length = array ? array.length : 0;
+          length = hasOwnProperty.call(realNames, result) ? array.length : 0;
 
       while (length--) {
         var data      = array[length],
@@ -5129,9 +5150,9 @@
     function mergeDefaults (objValue, srcValue, key, object, source, stack) {
       if (isObject(objValue) && isObject(srcValue)) {
         stack.set(srcValue, objValue);
-        baseMerge(objValue, srcValue, mergeDefaults, stack);
+        baseMerge(objValue, srcValue, undefined, mergeDefaults, stack);
       }
-      return objValue === undefined ? baseClone(srcValue) : objValue;
+      return objValue;
     }
 
     /**
@@ -5329,7 +5350,7 @@
      * @memberOf _
      * @category Array
      * @param {Array} array 需要被连接的数组
-     * @param {...*} [values] 需要被连接的值的队列 
+     * @param {...*} [values] 需要被连接的值的队列
      * @returns {Array} 返回连接后的新数组
      * @example
      *
@@ -5343,8 +5364,11 @@
      * // => [1]
      */
     var concat = rest(function (array, values) {
+      if (!isArray(array)) {
+        array = array == null ? [] : [Object(array)];
+      }
       values = baseFlatten(values);
-      return arrayConcat(isArray(array) ? array : [Object(array)], values);
+      return arrayConcat(array, values);
     });
 
     /**
@@ -5448,11 +5472,12 @@
      * // => [1, 2, 3]
      */
     function drop (array, n, guard) {
-      if (!(array && array.length)) {
+      var length = array ? array.length : 0;
+      if (!length) {
         return [];
       }
-      n = (guard || n === undefined) ? 1 : n;
-      return baseSlice(array, n < 0 ? 0 : n);
+      n = (guard || n === undefined) ? 1 : toInteger(n);
+      return baseSlice(array, n < 0 ? 0 : n, length);
     }
 
     /**
@@ -5610,7 +5635,7 @@
 
     /**
      * 这个方法类似 `_.find`。除了它返回最先通过 `predicate` 判断为真值的元素的 index ，而不是元素本身。
-     * 
+     *
      * @static
      * @memberOf _
      * @category Array
@@ -5761,8 +5786,8 @@
           result = {};
 
       while (++index < length) {
-        var pair = pairs[index];
-        baseSet(result, pair[0], pair[1]);
+        var pair        = pairs[index];
+        result[pair[0]] = pair[1];
       }
       return result;
     }
@@ -5965,9 +5990,9 @@
      * @param {Array} array 需要检索的数组
      * @param {*} value 要检索的值
      * @param {number} [fromIndex=array.length-1] 检索 index 的起点
-     * 
+     *
      * @returns {number} 返回匹配元素的 index，否则返回 -1
-     * 
+     *
      * @example
      *
      * _.lastIndexOf([1, 2, 1, 2], 2);
@@ -6080,7 +6105,7 @@
      * @category Array
      * @param {Array} array 需要调整的数组
      * @param {...(number|number[])} [indexes] indexes 可以是特殊的数组队列，或者个别的单个或多个参数
-     * 
+     *
      * @returns {Array} 返回被移除的元素数组
      * @example
      *
@@ -6170,7 +6195,7 @@
 
     /**
      * 创建一个裁剪后的数组，从 start 到 end 的位置，但不包括 end 本身的位置。
-     * 
+     *
      * **注意:** 这个方法用于代替 [`Array#slice`](https://mdn.io/Array/slice)
      * 来确保数组正确返回
      *
@@ -6203,7 +6228,7 @@
      * @param {Array} array 需要检索的已排序数组
      * @param {*} value 要评估位置的值
      * @returns {number} 返回 value 应该在数组中插入的 index。
-     * 
+     *
      * @example
      *
      * _.sortedIndex([30, 50], 40);
@@ -6576,7 +6601,7 @@
 
     /**
      * 这个方法类似 `_.union`，
-* 除了它接受一个 comparator 调用每一个数组元素的值。 comparator 会传入2个参数：(arrVal, othVal)。
+     * 除了它接受一个 comparator 调用每一个数组元素的值。 comparator 会传入2个参数：(arrVal, othVal)。
      *
      * @static
      * @memberOf _
@@ -6841,33 +6866,49 @@
      * @returns {Object} 返回一个新的对象
      * @example
      *
-     * _.zipObject(['fred', 'barney'], [30, 40]);
-     * // => { 'fred': 30, 'barney': 40 }
+     * _.zipObject(['a', 'b'], [1, 2]);
+     * // => { 'a': 1, 'b': 2 }
      */
     function zipObject (props, values) {
-      var index      = -1,
-          length     = props ? props.length : 0,
-          valsLength = values ? values.length : 0,
-          result     = {};
-
-      while (++index < length) {
-        baseSet(result, props[index], index < valsLength ? values[index] : undefined);
-      }
-      return result;
+      return baseZipObject(props || [], values || [], assignValue);
     }
 
     /**
-     * 这个方法类似 `_.zip`，除了它接受一个 iteratee 决定如何重组值。iteratee 会传入4个参数：(accumulator, value, index, group)。每组的第一个元素作为初始化的值
+     *
+     * 这个方法类似 `_.zipObject`，除了支持属性路径。
+     * This method is like `_.zipObject` except that it supports property paths.
+     *
+     * @static
+     * @memberOf _
+     * @category Array
+     * @param {Array} [props=[]] 属性名
+     * @param {Array} [values=[]] 属性值
+     * @returns {Object} 返回新的对象
+     * @example
+     *
+     * _.zipObjectDeep(['a.b[0].c', 'a.b[1].d'], [1, 2]);
+     * // => { 'a': { 'b': [{ 'c': 1 }, { 'd': 2 }] } }
+     */
+    function zipObjectDeep (props, values) {
+      return baseZipObject(props || [], values || [], baseSet);
+    }
+
+    /**
+     * 这个方法类似 _.zip，
+     * 除了它接受一个 iteratee 决定如何重组值。
+     * iteratee 会调用每一组元素。
      *
      * @static
      * @memberOf _
      * @category Array
      * @param {...Array} [arrays] 要处理的数组队列
-     * @param {Function} [iteratee=_.identity] 这个函数决定如何重组值
+     * @param {Function} [iteratee=_.identity]这个函数决定如何重组值
      * @returns {Array} 返回一个打包后的数组
      * @example
      *
-     * _.zipWith([1, 2], [10, 20], [100, 200], _.add);
+     * _.zipWith([1, 2], [10, 20], [100, 200], function(a, b, c) {
+     *   return a + b + c;
+     * });
      * // => [111, 222]
      */
     var zipWith = rest(function (arrays) {
@@ -7084,7 +7125,7 @@
 
     /**
      * 获得包装对象的下一个值，遵循 [iterator 协议](https://mdn.io/iteration_protocols#iterator)。
-     * 
+     *
      *
      * @name next
      * @memberOf _
@@ -7251,7 +7292,7 @@
     });
 
     /**
-     * 通过 `predicate` 检查集合中的元素是否都返回 真值，只要 `predicate` 返回一次假值，遍历就停止，并返回 false。  
+     * 通过 `predicate` 检查集合中的元素是否都返回 真值，只要 `predicate` 返回一次假值，遍历就停止，并返回 false。
      * `predicate` 会传入3个参数：(value, index|key, collection)
      *
      * @static
@@ -7490,7 +7531,7 @@
      * @param {number} [fromIndex=0] 要检索的 index 位置
      * @param- {Object} [guard] Enables use as an iteratee for functions like `_.reduce`.
      * @returns {boolean} 如果找到 value 返回 ture， 否则返回 false。
-     * 
+     *
      * @example
      *
      * _.includes([1, 2, 3], 1);
@@ -7745,10 +7786,10 @@
      * // => { '1': ['a', 'c'], '2': ['b'] } (无法保证遍历的顺序)
      */
     function reduce (collection, iteratee, accumulator) {
-      var func               = isArray(collection) ? arrayReduce : baseReduce,
-          initFromCollection = arguments.length < 3;
+      var func      = isArray(collection) ? arrayReduce : baseReduce,
+          initAccum = arguments.length < 3;
 
-      return func(collection, getIteratee(iteratee, 4), accumulator, initFromCollection, baseEach);
+      return func(collection, getIteratee(iteratee, 4), accumulator, initAccum, baseEach);
     }
 
     /**
@@ -7788,27 +7829,25 @@
      * @returns {Array} 返回过滤后的新数组
      * @example
      *
-     * var resolve = _.partial(_.map, _, 'user');
-     *
      * var users = [
      *   { 'user': 'barney', 'age': 36, 'active': false },
      *   { 'user': 'fred',   'age': 40, 'active': true }
      * ];
      *
-     * resolve( _.reject(users, function(o) { return !o.active; }) );
-     * // => ['fred']
+     * _.reject(users, function(o) { return !o.active; });
+     * // => objects for ['fred']
      *
-     * // 使用了 `_.matches` 的回调结果
-     * resolve( _.reject(users, { 'age': 40, 'active': true }) );
-     * // => ['barney']
+     * // 使用了 `_.matches` iteratee 的结果
+     * _.reject(users, { 'age': 40, 'active': true });
+     * // => objects for ['barney']
      *
-     * // 使用了 `_.matchesProperty` 的回调结果
-     * resolve( _.reject(users, ['active', false]) );
-     * // => ['fred']
+     * // 使用了 `_.matchesProperty` iteratee 的结果
+     * _.reject(users, ['active', false]);
+     * // => objects for ['fred']
      *
-     * // 使用了 `_.property` 的回调结果
-     * resolve( _.reject(users, 'active') );
-     * // => ['barney']
+     * // 使用了 `_.property` iteratee 的结果
+     * _.reject(users, 'active');
+     * // => objects for ['barney']
      */
     function reject (collection, predicate) {
       var func  = isArray(collection) ? arrayFilter : baseFilter;
@@ -7850,8 +7889,11 @@
      * @returns {Array} 返回随机元素
      * @example
      *
-     * _.sampleSize([1, 2, 3, 4], 2);
+     * _.sampleSize([1, 2, 3], 2);
      * // => [3, 1]
+     *
+     * _.sampleSize([1, 2, 3], 4);
+     * // => [2, 3, 1]
      */
     function sampleSize (collection, n) {
       var index     = -1,
@@ -7859,7 +7901,7 @@
           length    = result.length,
           lastIndex = length - 1;
 
-      n = clamp(toInteger(n), 0, length);
+      n = baseClamp(toInteger(n), 0, length);
       while (++index < n) {
         var rand  = baseRandom(index, lastIndex),
             value = result[rand];
@@ -7975,8 +8017,6 @@
      * @returns {Array} 返回排序后的数组
      * @example
      *
-     * var resolve = _.partial(_.map, _, _.values);
-     *
      * var users = [
      *   { 'user': 'fred',   'age': 48 },
      *   { 'user': 'barney', 'age': 36 },
@@ -7984,16 +8024,17 @@
      *   { 'user': 'barney', 'age': 34 }
      * ];
      *
-     * resolve( _.sortBy(users, function(o) { return o.user; }) );
-     * // => // => [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 42]]
      *
-     * resolve( _.sortBy(users, ['user', 'age']) );
-     * // => [['barney', 34], ['barney', 36], ['fred', 42], ['fred', 48]]
+     * _.sortBy(users, function(o) { return o.user; });
+     * // => 排序结果 [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 42]]
      *
-     * resolve( _.sortBy(users, 'user', function(o) {
+     * _.sortBy(users, ['user', 'age']);
+     * // => 排序结果 [['barney', 34], ['barney', 36], ['fred', 42], ['fred', 48]]
+     *
+     * _.sortBy(users, 'user', function(o) {
      *   return Math.floor(o.age / 10);
-     * }) );
-     * // => [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 42]]
+     * });
+     * // => 排序结果 [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 42]]
      */
     var sortBy = rest(function (collection, iteratees) {
       if (collection == null) {
@@ -8089,7 +8130,7 @@
      * 创建一个调用 `func` 的函数。
      * 调用次数不超过 `N` 次。
      * 之后再调用这个函数，将返回最后一个调用的结果。
-     * 
+     *
      * @static
      * @memberOf _
      * @category Function
@@ -8528,7 +8569,7 @@
      * 默认情况下用第一个参数作为缓存的 key。
      * `func` 在调用时 this 会绑定在缓存函数上。
      *
-     * **注意:** 
+     * **注意:**
      * 缓存会暴露在缓存函数的 `cache` 上。
      * 它是可以定制的，只要替换了 _.memoize.Cache 构造函数，或实现了 [`Map`](http://ecma-international.org/ecma-262/6.0/#sec-properties-of-the-map-prototype-object) 的
      * `delete`， `get`， `has`， 以及 `set`方法。
@@ -8768,7 +8809,7 @@
     /**
      * 创建一个调用 `func` 的函数。
      * `this` 绑定到这个函数 并且 从 `start` 之后的参数都作为数组传入。
-     * 
+     *
      * **注意:** 这个方法基于[rest parameter](https://mdn.io/rest_parameters)
      *
      * @static
@@ -8862,9 +8903,9 @@
     /**
      * 创建一个节流函数，在 `wait` 秒内最多执行 `func` 一次的函数。
      * 该函数提供一个 cancel 方法取消延迟的函数调用以及 flush 方法立即调用。
-     * 可以提供一个 options 对象决定如何调用 func 方法， options.leading 与|或 options.trailing 决定 `wait` 前后如何触发。 func 会传入最后一次传入的参数给这个函数。 随后调用的函数返回是最后一次 func 调用的结果。 
+     * 可以提供一个 options 对象决定如何调用 func 方法， options.leading 与|或 options.trailing 决定 `wait` 前后如何触发。 func 会传入最后一次传入的参数给这个函数。 随后调用的函数返回是最后一次 func 调用的结果。
      *
-     * **注意:** 如果 leading 和 trailing 都设定为 true。 则 func 允许 trailing 方式调用的条件为: 在 wait 期间多次调用。 
+     * **注意:** 如果 leading 和 trailing 都设定为 true。 则 func 允许 trailing 方式调用的条件为: 在 wait 期间多次调用。
      *
      * 查看 [David Corbacho's article](http://drupalmotion.com/article/debounce-and-throttle-visual-explanation)
      * 了解 `_.throttle` 与 `_.debounce` 的区别
@@ -8966,13 +9007,10 @@
      * @returns {*} 返回拷贝后的值
      * @example
      *
-     * var users = [
-     *   { 'user': 'barney' },
-     *   { 'user': 'fred' }
-     * ];
+     * var objects = [{ 'a': 1 }, { 'b': 2 }];
      *
-     * var shallow = _.clone(users);
-     * console.log(shallow[0] === users[0]);
+     * var shallow = _.clone(objects);
+     * console.log(shallow[0] === objects[0]);
      * // => true
      */
     function clone (value) {
@@ -8998,12 +9036,12 @@
      *   }
      * }
      *
-     * var el = _.clone(document.body, customizer);
+     * var el = _.cloneWith(document.body, customizer);
      *
      * console.log(el === document.body);
      * // => false
      * console.log(el.nodeName);
-     * // => BODY
+     * // => 'BODY'
      * console.log(el.childNodes.length);
      * // => 0
      */
@@ -9021,13 +9059,10 @@
      * @returns {*} 返回拷贝后的值
      * @example
      *
-     * var users = [
-     *   { 'user': 'barney' },
-     *   { 'user': 'fred' }
-     * ];
+     * var objects = [{ 'a': 1 }, { 'b': 2 }];
      *
-     * var deep = _.cloneDeep(users);
-     * console.log(deep[0] === users[0]);
+     * var deep = _.cloneDeep(objects);
+     * console.log(deep[0] === objects[0]);
      * // => false
      */
     function cloneDeep (value) {
@@ -9248,7 +9283,7 @@
     }
 
     /**
-     * 检查 `value` 是否是原始 boolean 类型或者对象。 
+     * 检查 `value` 是否是原始 boolean 类型或者对象。
      *
      * @static
      * @memberOf _
@@ -9619,7 +9654,7 @@
 
     /**
      * 这个方法类似 `_.isMatch`。
-     * 除了它接受一个 customizer 定制比较的值。 
+     * 除了它接受一个 customizer 定制比较的值。
      * 如果 customizer 返回 undefined 将会比较处理方法代替。 customizer 会传入5个参数：(objValue, srcValue, index|key, object, source)
      *
      * @static
@@ -9848,7 +9883,7 @@
     /**
      * 检查 `value` 是否是安全整数。
      * 这个整数应该是符合 IEEE-754 标准的非双精度浮点数。
-     * 
+     *
      * **注意:** 这个方法基于 [`Number.isSafeInteger`](https://mdn.io/Number/isSafeInteger).
      *
      * @static
@@ -10014,10 +10049,17 @@
      * @returns {Array} 然后转换后的数组
      * @example
      *
-     * (function() {
-     *   return _.toArray(arguments).slice(1);
-     * }(1, 2, 3));
-     * // => [2, 3]
+     * _.toArray({ 'a': 1, 'b': 2 });
+     * // => [1, 2]
+     *
+     * _.toArray('abc');
+     * // => ['a', 'b', 'c']
+     *
+     * _.toArray(1);
+     * // => []
+     *
+     * _.toArray(null);
+     * // => []
      */
     function toArray (value) {
       if (!value) {
@@ -10097,10 +10139,7 @@
      * // => 3
      */
     function toLength (value) {
-      if (!value) {
-        return 0;
-      }
-      return clamp(toInteger(value), 0, MAX_ARRAY_LENGTH);
+      return value ? baseClamp(toInteger(value), 0, MAX_ARRAY_LENGTH) : 0;
     }
 
     /**
@@ -10126,20 +10165,17 @@
      * // => 3
      */
     function toNumber (value) {
-      if (!value) {
-        return value === 0 ? value : +value;
-      }
       if (isObject(value)) {
         var other = isFunction(value.valueOf) ? value.valueOf() : value;
         value     = isObject(other) ? (other + '') : other;
       }
-      if (typeof value == 'number' || !isString(value)) {
-        return +value;
+      if (typeof value != 'string') {
+        return value === 0 ? value : +value;
       }
-      value        = baseTrim(value);
+      value        = value.replace(reTrim, '');
       var isBinary = reIsBinary.test(value);
       return (isBinary || reIsOctal.test(value))
-        ? nativeParseInt(value.slice(2), isBinary ? 2 : 8)
+        ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
         : (reIsBadHex.test(value) ? NAN : +value);
     }
 
@@ -10194,10 +10230,7 @@
      * // => 3
      */
     function toSafeInteger (value) {
-      if (!value) {
-        return value === 0 ? value : 0;
-      }
-      return clamp(toInteger(value), -MAX_SAFE_INTEGER, MAX_SAFE_INTEGER);
+      return baseClamp(toInteger(value), -MAX_SAFE_INTEGER, MAX_SAFE_INTEGER);
     }
 
     /**
@@ -10228,7 +10261,10 @@
       if (value == null) {
         return '';
       }
-      var result = isSymbol(value) ? symbolToString.call(value) : (value + '');
+      if (isSymbol(value)) {
+        return Symbol ? symbolToString.call(value) : '';
+      }
+      var result = (value + '');
       return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
     }
 
@@ -10327,7 +10363,7 @@
      * defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 });
      * // => { 'a': 1, 'b': 2 }
      */
-    var assignInWith = createAssigner(function (object, source, customizer) {
+    var assignInWith = createAssigner(function (object, source, srcIndex, customizer) {
       copyObjectWith(source, keysIn(source), object, customizer);
     });
 
@@ -10357,13 +10393,13 @@
      * defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 });
      * // => { 'a': 1, 'b': 2 }
      */
-    var assignWith = createAssigner(function (object, source, customizer) {
+    var assignWith = createAssigner(function (object, source, srcIndex, customizer) {
       copyObjectWith(source, keys(source), object, customizer);
     });
 
     /**
      * 根据 `object` 的路径获取值为数组。
-     * 
+     *
      * @static
      * @memberOf _
      * @category Object
@@ -10387,7 +10423,7 @@
     /**
      * 创建一个继承 `prototype` 的对象。
      * 如果提供了 `properties`，它的可枚举属性会被分配到创建的对象上。
-     * 
+     *
      * @static
      * @memberOf _
      * @category Object
@@ -10476,7 +10512,7 @@
      * @param {Object} object 需要检索的对象
      * @param {Function|Object|string} [predicate=_.identity] 这个函数会处理每一个元素
      * @returns {string|undefined} 返回匹配的 key，否则返回 `undefined`。
-     * 
+     *
      * @example
      *
      * var users = {
@@ -10807,24 +10843,10 @@
      *
      * _.invert(object);
      * // => { '1': 'c', '2': 'b' }
-     *
-     * // 使用 `multiVal`
-     * _.invert(object, true);
-     * // => { '1': ['a', 'c'], '2': ['b'] }
      */
-    function invert (object, multiVal, guard) {
+    function invert (object) {
       return arrayReduce(keys(object), function (result, key) {
-        var value = object[key];
-        if (multiVal && !guard) {
-          if (hasOwnProperty.call(result, value)) {
-            result[value].push(key);
-          } else {
-            result[value] = [key];
-          }
-        }
-        else {
-          result[value] = key;
-        }
+        result[object[key]] = key;
         return result;
       }, {});
     }
@@ -10895,7 +10917,7 @@
 
     /**
      * 创建 `object` 自身 或 继承的可枚举属性名为一个数组。
-     * 
+     *
      * **注意:** 非对象的值会被强制转换为对象
      *
      * @static
@@ -11022,8 +11044,8 @@
      * _.merge(users, ages);
      * // => { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user': 'fred', 'age': 40 }] }
      */
-    var merge = createAssigner(function (object, source) {
-      baseMerge(object, source);
+    var merge = createAssigner(function (object, source, srcIndex) {
+      baseMerge(object, source, srcIndex);
     });
 
     /**
@@ -11059,8 +11081,8 @@
      * _.mergeWith(object, other, customizer);
      * // => { 'fruits': ['apple', 'banana'], 'vegetables': ['beet', 'carrot'] }
      */
-    var mergeWith = createAssigner(function (object, source, customizer) {
-      baseMerge(object, source, customizer);
+    var mergeWith = createAssigner(function (object, source, srcIndex, customizer) {
+      baseMerge(object, source, srcIndex, customizer);
     });
 
     /**
@@ -11075,10 +11097,10 @@
      * @returns {Object} 返回新对象
      * @example
      *
-     * var object = { 'user': 'fred', 'age': 40 };
+     * var object = { 'a': 1, 'b': '2', 'c': 3 };
      *
-     * _.omit(object, 'user');
-     * // => { 'age': 40 }
+     * _.omit(object, ['a', 'c']);
+     * // => { 'b': '2' }
      */
     var omit = rest(function (object, props) {
       if (object == null) {
@@ -11100,15 +11122,15 @@
      * @returns {Object} 返回新对象
      * @example
      *
-     * var object = { 'user': 'fred', 'age': 40 };
+     * var object = { 'a': 1, 'b': '2', 'c': 3 };
      *
      * _.omitBy(object, _.isNumber);
-     * // => { 'user': 'fred' }
+     * // => { 'b': '2' }
      */
     function omitBy (object, predicate) {
-      predicate = getIteratee(predicate);
-      return basePickBy(object, function (value) {
-        return !predicate(value);
+      predicate = getIteratee(predicate, 2);
+      return basePickBy(object, function (value, key) {
+        return !predicate(value, key);
       });
     }
 
@@ -11123,10 +11145,10 @@
      * @returns {Object} 返回新对象
      * @example
      *
-     * var object = { 'user': 'fred', 'age': 40 };
+     * var object = { 'a': 1, 'b': '2', 'c': 3 };
      *
-     * _.pick(object, 'user');
-     * // => { 'user': 'fred' }
+     * _.pick(object, ['a', 'c']);
+     * // => { 'a': 1, 'c': 3 }
      */
     var pick = rest(function (object, props) {
       return object == null ? {} : basePick(object, baseFlatten(props));
@@ -11144,18 +11166,18 @@
      * @returns {Object} 返回新对象
      * @example
      *
-     * var object = { 'user': 'fred', 'age': 40 };
+     * var object = { 'a': 1, 'b': '2', 'c': 3 };
      *
      * _.pickBy(object, _.isNumber);
-     * // => { 'age': 40 }
+     * // => { 'a': 1, 'c': 3 }
      */
     function pickBy (object, predicate) {
-      return object == null ? {} : basePickBy(object, getIteratee(predicate));
+      return object == null ? {} : basePickBy(object, getIteratee(predicate, 2));
     }
 
     /**
      * 这个方法类似 `_.get`。
-     * 除了如果解析到的值是一个函数的话，就绑定 `this` 到这个函数并返回执行后的结果。 
+     * 除了如果解析到的值是一个函数的话，就绑定 `this` 到这个函数并返回执行后的结果。
      *
      * @static
      * @memberOf _
@@ -11272,7 +11294,7 @@
 
     /**
      * 创建一个对象自身和继承的可枚举属性的键值对数组。
-     * 
+     *
      * @static
      * @memberOf _
      * @category Object
@@ -11402,7 +11424,7 @@
 
     /**
      * 创建 `object` 自身和继承的可枚举属性的值为数组
-     * 
+     *
      * **注意:** 非对象的值会强制转换为对象
      *
      * @static
@@ -11446,25 +11468,20 @@
      * _.clamp(10, -5, 5);
      * // => 5
      */
-    function clamp (number, min, max) {
-      number = toNumber(number);
-      if (number === number) {
-        if (max === undefined) {
-          max = min;
-          min = undefined;
-        }
-        if (max !== undefined) {
-          max    = toNumber(max);
-          max    = max === max ? max : 0;
-          number = number <= max ? number : max;
-        }
-        if (min !== undefined) {
-          min    = toNumber(min);
-          min    = min === min ? min : 0;
-          number = number >= min ? number : min;
-        }
+    function clamp (number, lower, upper) {
+      if (upper === undefined) {
+        upper = lower;
+        lower = undefined;
       }
-      return number;
+      if (upper !== undefined) {
+        upper = toNumber(upper);
+        upper = upper === upper ? upper : 0;
+      }
+      if (lower !== undefined) {
+        lower = toNumber(lower);
+        lower = lower === lower ? lower : 0;
+      }
+      return baseClamp(toNumber(number), lower, upper);
     }
 
     /**
@@ -11511,7 +11528,7 @@
         end = toNumber(end) || 0;
       }
       number = toNumber(number);
-      return number >= nativeMin(start, end) && number < nativeMax(start, end);
+      return baseInRange(number, start, end);
     }
 
     /**
@@ -11542,43 +11559,43 @@
      * _.random(1.2, 5.2);
      * // =>  1.2 和 5.2 之间的浮点数
      */
-    function random (min, max, floating) {
-      if (floating && typeof floating != 'boolean' && isIterateeCall(min, max, floating)) {
-        max = floating = undefined;
+    function random (lower, upper, floating) {
+      if (floating && typeof floating != 'boolean' && isIterateeCall(lower, upper, floating)) {
+        upper = floating = undefined;
       }
       if (floating === undefined) {
-        if (typeof max == 'boolean') {
-          floating = max;
-          max      = undefined;
+        if (typeof upper == 'boolean') {
+          floating = upper;
+          upper    = undefined;
         }
-        else if (typeof min == 'boolean') {
-          floating = min;
-          min      = undefined;
+        else if (typeof lower == 'boolean') {
+          floating = lower;
+          lower    = undefined;
         }
       }
-      if (min === undefined && max === undefined) {
-        min = 0;
-        max = 1;
+      if (lower === undefined && upper === undefined) {
+        lower = 0;
+        upper = 1;
       }
       else {
-        min = toNumber(min) || 0;
-        if (max === undefined) {
-          max = min;
-          min = 0;
+        lower = toNumber(lower) || 0;
+        if (upper === undefined) {
+          upper = lower;
+          lower = 0;
         } else {
-          max = toNumber(max) || 0;
+          upper = toNumber(upper) || 0;
         }
       }
-      if (min > max) {
-        var temp = min;
-        min      = max;
-        max      = temp;
+      if (lower > upper) {
+        var temp = lower;
+        lower    = upper;
+        upper    = temp;
       }
-      if (floating || min % 1 || max % 1) {
+      if (floating || lower % 1 || upper % 1) {
         var rand = nativeRandom();
-        return nativeMin(min + (rand * (max - min + parseFloat('1e-' + ((rand + '').length - 1)))), max);
+        return nativeMin(lower + (rand * (upper - lower + freeParseFloat('1e-' + ((rand + '').length - 1)))), upper);
       }
-      return baseRandom(min, max);
+      return baseRandom(lower, upper);
     }
 
     /*------------------------------------------------------------------------*/
@@ -11670,7 +11687,7 @@
       var length = string.length;
       position   = position === undefined
         ? length
-        : clamp(toInteger(position), 0, length);
+        : baseClamp(toInteger(position), 0, length);
 
       position -= target.length;
       return position >= 0 && string.indexOf(target, position) == position;
@@ -11927,13 +11944,13 @@
      */
     function parseInt (string, radix, guard) {
       // Chrome fails to trim leading <BOM> whitespace characters.
-      // See https://code.google.com/p/v8/issues/detail?id=3109 了解详情
+      // See https://code.google.com/p/v8/issues/detail?id=3109 for more details.
       if (guard || radix == null) {
         radix = 0;
       } else if (radix) {
         radix = +radix;
       }
-      string = baseTrim(toString(string));
+      string = toString(string).replace(reTrim, '');
       return nativeParseInt(string, radix || (reHasHexPrefix.test(string) ? 16 : 10));
     }
 
@@ -12192,7 +12209,7 @@
      *   };\
      * ');
      */
-    function template(string, options, guard) {
+    function template (string, options, guard) {
       // Based on John Resig's `tmpl` implementation (http://ejohn.org/blog/javascript-micro-templating/)
       // and Laura Doktorova's doT.js (https://github.com/olado/doT).
       var settings = lodash.templateSettings;
@@ -12371,7 +12388,7 @@
         return string;
       }
       if (guard || chars === undefined) {
-        return baseTrim(string);
+        return string.replace(reTrim, '');
       }
       chars = (chars + '');
       if (!chars) {
@@ -12544,7 +12561,7 @@
 
     /**
      * 反向版 `_.escape`。
-     * 这个方法转换 HTML 实体 
+     * 这个方法转换 HTML 实体
      * `&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#39;`, 以及 `&#96;` 为对应的字符。
      *
      * **注意:** 不会转换其他的 HTML 实体，需要转换可以使用类似 [_he_](https://mths.be/he) 的第三方库。
@@ -12839,7 +12856,7 @@
      * 如果 `func` 是一个属性名，传入包含这个属性名的对象，回调返回对应属性名的值。
      * 如果 `func` 是一个对象，传入的元素有相同的对象属性，回调返回 `true`。
      * 其他情况返回 `false`。
-     * 
+     *
      * @static
      * @memberOf _
      * @category Utility
@@ -13107,7 +13124,7 @@
     }
 
     /**
-     * 创建一个传入提供的参数的函数并调用 `iteratees` 返回结果的函数。 
+     * 创建一个传入提供的参数的函数并调用 `iteratees` 返回结果的函数。
      *
      * @static
      * @memberOf _
@@ -13124,7 +13141,7 @@
     var over = createOver(arrayMap);
 
     /**
-     * 创建一个传入提供的参数的函数并调用 `iteratees` 判断是否 全部 都为真值的函数。 
+     * 创建一个传入提供的参数的函数并调用 `iteratees` 判断是否 全部 都为真值的函数。
      *
      * @static
      * @memberOf _
@@ -13147,7 +13164,7 @@
     var overEvery = createOver(arrayEvery);
 
     /**
-     * 创建一个传入提供的参数的函数并调用 `iteratees` 判断是否 存在 有真值的函数。 
+     * 创建一个传入提供的参数的函数并调用 `iteratees` 判断是否 存在 有真值的函数。
      *
      * @static
      * @memberOf _
@@ -13197,7 +13214,7 @@
     /**
      * 反向版  `_.property`。
      * 这个方法创建的函数返回给定 path 在对象上的值。
-     * 
+     *
      * @static
      * @memberOf _
      * @category Utility
@@ -13226,7 +13243,7 @@
      * 如果 `end` 没有指定，`start` 设置为 `0`。
      * 如果 `end` 小于 `start`，会创建一个空数组，除非指定了 `step`。
      *
-     * **注意:** JavaScript 遵循 IEEE-754 标准处理无法预料的浮点数结果。 
+     * **注意:** JavaScript 遵循 IEEE-754 标准处理无法预料的浮点数结果。
      *
      * @static
      * @memberOf _
@@ -13258,12 +13275,7 @@
      * _.range(0);
      * // => []
      */
-    function range (start, end, step) {
-      if (step && typeof step != 'number' && isIterateeCall(start, end, step)) {
-        end = step = undefined;
-      }
-      return baseRange(start, end, step);
-    }
+    var range = createRange();
 
     /**
      * 这个方法类似 `_.range`，
@@ -13299,12 +13311,7 @@
      * _.rangeRight(0);
      * // => []
      */
-    function rangeRight (start, end, step) {
-      if (step && typeof step != 'number' && isIterateeCall(start, end, step)) {
-        end = step = undefined;
-      }
-      return baseRange(start, end, step, true);
-    }
+    var rangeRight = createRange(true);
 
     /**
      * 调用 iteratee N 次，每次调用返回的结果存入到数组中。
@@ -13488,8 +13495,8 @@
     }
 
     /**
-     * 这个方法类似 `_.max` 
-     * 除了它接受 `iteratee` 调用每一个元素，根据返回的 value 决定排序准则。 
+     * 这个方法类似 `_.max`
+     * 除了它接受 `iteratee` 调用每一个元素，根据返回的 value 决定排序准则。
      * iteratee 会传入1个参数：(value)。
      *
      * @static
@@ -13500,17 +13507,14 @@
      * @returns {*} 返回最大值
      * @example
      *
-     * var users = [
-     *   { 'user': 'barney', 'age': 36 },
-     *   { 'user': 'fred',   'age': 40 }
-     * ];
+     * var objects = [{ 'n': 1 }, { 'n': 2 }];
      *
-     * _.maxBy(users, function(o) { return o.age; });
-     * // => { 'user': 'fred', 'age': 40 }
+     * _.maxBy(objects, function(o) { return o.n; });
+     * // => { 'n': 2 }
      *
-     * // 使用了 `_.property` 的回调结果
-     * _.maxBy(users, 'age');
-     * // => { 'user': 'fred', 'age': 40 }
+     * // 使用了 `_.property` iteratee 的回调结果
+     * _.maxBy(objects, 'n');
+     * // => { 'n': 2 }
      */
     function maxBy (array, iteratee) {
       return (array && array.length)
@@ -13569,17 +13573,14 @@
      * @returns {*} 返回最小值
      * @example
      *
-     * var users = [
-     *   { 'user': 'barney', 'age': 36 },
-     *   { 'user': 'fred',   'age': 40 }
-     * ];
+     * var objects = [{ 'n': 1 }, { 'n': 2 }];
      *
-     * _.minBy(users, function(o) { return o.age; });
-     * // => { 'user': 'barney', 'age': 36 }
+     * _.minBy(objects, function(o) { return o.n; });
+     * // => { 'n': 1 }
      *
-     * // 使用了 `_.property` 的回调结果
-     * _.minBy(users, 'age');
-     * // => { 'user': 'barney', 'age': 36 }
+     * // 使用了 `_.property` iteratee 的回调结果
+     * _.minBy(objects, 'n');
+     * // => { 'n': 1 }
      */
     function minBy (array, iteratee) {
       return (array && array.length)
@@ -13655,9 +13656,9 @@
 
     /**
      * 这个方法类似 `_.sum`。
-     * 除了它接受 iteratee 调用每一个元素，根据返回的 value 决定如何计算。 
+     * 除了它接受 iteratee 调用每一个元素，根据返回的 value 决定如何计算。
      * iteratee 会传入1个参数：(value)。
-     * 
+     *
      * @static
      * @memberOf _
      * @category Math
@@ -13855,11 +13856,10 @@
     lodash.xorWith          = xorWith;
     lodash.zip              = zip;
     lodash.zipObject        = zipObject;
+    lodash.zipObjectDeep    = zipObjectDeep;
     lodash.zipWith          = zipWith;
 
     // Add aliases.
-    lodash.each       = forEach;
-    lodash.eachRight  = forEachRight;
     lodash.extend     = assignIn;
     lodash.extendWith = assignInWith;
 
@@ -14003,7 +14003,9 @@
     lodash.upperFirst        = upperFirst;
 
     // Add aliases.
-    lodash.first = head;
+    lodash.each      = forEach;
+    lodash.eachRight = forEachRight;
+    lodash.first     = head;
 
     mixin(lodash, (function () {
       var source = {};
@@ -14228,7 +14230,7 @@
     lodash.prototype.next    = wrapperNext;
     lodash.prototype.plant   = wrapperPlant;
     lodash.prototype.reverse = wrapperReverse;
-    lodash.prototype.run     = lodash.prototype.toJSON = lodash.prototype.valueOf = lodash.prototype.value = wrapperValue;
+    lodash.prototype.toJSON  = lodash.prototype.valueOf = lodash.prototype.value = wrapperValue;
 
     if (iteratorSymbol) {
       lodash.prototype[iteratorSymbol] = wrapperToIterator;
@@ -14243,7 +14245,7 @@
 
   // Expose lodash on the free variable `window` or `self` when available. This
   // prevents errors in cases where lodash is loaded by a script tag in the presence
-  // of an AMD loader. See http://requirejs.org/docs/errors.html#mismatch 了解详情
+  // of an AMD loader. See http://requirejs.org/docs/errors.html#mismatch for more details.
   (freeWindow || freeSelf || {})._ = _;
 
   // Some AMD build optimizers like r.js check for condition patterns like the following:

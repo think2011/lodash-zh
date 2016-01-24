@@ -64,6 +64,7 @@
 <url><loc>http://lodash.think2011.net/xorWith</loc></url>
 <url><loc>http://lodash.think2011.net/zip</loc></url>
 <url><loc>http://lodash.think2011.net/zipObject</loc></url>
+<url><loc>http://lodash.think2011.net/zipObjectDeep</loc></url>
 <url><loc>http://lodash.think2011.net/zipWith</loc></url>
 <url><loc>http://lodash.think2011.net/_</loc></url>
 <url><loc>http://lodash.think2011.net/chain</loc></url>
@@ -183,7 +184,6 @@
 <url><loc>http://lodash.think2011.net/subtract</loc></url>
 <url><loc>http://lodash.think2011.net/sum</loc></url>
 <url><loc>http://lodash.think2011.net/sumBy</loc></url>
-<url><loc>http://lodash.think2011.net/stringSize</loc></url>
 <url><loc>http://lodash.think2011.net/templateSettings-imports-_</loc></url>
 <url><loc>http://lodash.think2011.net/clamp</loc></url>
 <url><loc>http://lodash.think2011.net/inRange</loc></url>
@@ -265,6 +265,7 @@
 <url><loc>http://lodash.think2011.net/upperCase</loc></url>
 <url><loc>http://lodash.think2011.net/upperFirst</loc></url>
 <url><loc>http://lodash.think2011.net/words</loc></url>
+<url><loc>http://lodash.think2011.net/runInContext</loc></url>
 <url><loc>http://lodash.think2011.net/attempt</loc></url>
 <url><loc>http://lodash.think2011.net/bindAll</loc></url>
 <url><loc>http://lodash.think2011.net/cond</loc></url>
@@ -289,7 +290,6 @@
 <url><loc>http://lodash.think2011.net/propertyOf</loc></url>
 <url><loc>http://lodash.think2011.net/range</loc></url>
 <url><loc>http://lodash.think2011.net/rangeRight</loc></url>
-<url><loc>http://lodash.think2011.net/runInContext</loc></url>
 <url><loc>http://lodash.think2011.net/times</loc></url>
 <url><loc>http://lodash.think2011.net/toPath</loc></url>
 <url><loc>http://lodash.think2011.net/uniqueId</loc></url>
