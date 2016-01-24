@@ -1346,7 +1346,8 @@
      *
      * 链式方法是惰性计算的，直到隐式或者显式调用了 `_#value` 才会执行计算。
      *
-     * 惰性计算接受几种支持 shortcut fusion 的方法，shortcut fusion 是一种通过合并链式 iteratee 调用从而大大降低迭代的次数以提高执行性能的方式。
+     * 惰性计算接受几种支持 shortcut fusion 的方法，
+     * shortcut fusion 是一种通过合并链式 iteratee 调用从而大大降低迭代的次数以提高执行性能的方式。
      * Sections of a chain sequence qualify for shortcut fusion if the section is
      * applied to an array of at least two hundred elements and any iteratees
      * accept only one argument. The heuristic for whether a section qualifies
@@ -6875,7 +6876,7 @@
 
     /**
      *
-     * 这个方法类似 `_.zipObject`，除了支持属性路径。
+     * 这个方法类似 `_.zipObject`，除了它支持属性路径。
      * This method is like `_.zipObject` except that it supports property paths.
      *
      * @static
@@ -12642,7 +12643,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {Function} func 要调用的函数
      * @returns {*} 返回函数结果或者错误对象
      * @example
@@ -12671,7 +12672,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {Object} object 要绑定的对象
      * @param {...(string|string[])} methodNames 要绑定的方法名
      *  单独指定或指定在数组中。
@@ -12702,7 +12703,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {Array} pairs 判断函数对
      * @returns {Function} 返回新的函数
      * @example
@@ -12751,7 +12752,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {Object} source 包含 predicates 属性值的对象
      * @returns {Function} 返回新的函数
      * @example
@@ -12773,7 +12774,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {*} value 要返回的值
      * @returns {Function} 返回新的函数
      * @example
@@ -12797,7 +12798,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {...(Function|Function[])} [funcs] 要调用的函数
      * @returns {Function} 返回新的函数
      * @example
@@ -12817,7 +12818,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {...(Function|Function[])} [funcs] 要调用的函数
      * @returns {Function} 返回新的函数
      * @example
@@ -12837,7 +12838,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {*} value 任何值
      * @returns {*} 返回 value
      * @example
@@ -12859,7 +12860,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {*} [func=_.identity] 转换成 callback 的值
      * @returns {Function} 返回 callback.
      * @example
@@ -12900,7 +12901,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {Object} source 要匹配的源对象
      * @returns {Function} 返回新的函数
      * @example
@@ -12925,7 +12926,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {Array|string} path 给定对象的属性路径名
      * @param {*} srcValue 要匹配的值
      * @returns {Function} 返回新的函数
@@ -12949,7 +12950,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {Array|string} path 调用函数所在对象的路径
      * @param {...*} [args] 传递给调用函数的参数
      * @returns {Function} 返回新的函数
@@ -12979,7 +12980,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {Object} object 要检索的对象
      * @param {...*} [args] 传递给调用函数的参数
      * @returns {Function} 返回新的函数
@@ -13008,7 +13009,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {Function|Object} [object=lodash] 目标对象
      * @param {Object} source 来源对象
      * @param {Object} [options]  选项对象
@@ -13073,7 +13074,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @returns {Function} 返回 `lodash` 函数
      * @example
      *
@@ -13089,7 +13090,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @example
      *
      * var object = { 'user': 'fred' };
@@ -13106,7 +13107,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {number} [n=0] 要返回参数的索引
      * @returns {Function} 返回新的函数
      * @example
@@ -13128,7 +13129,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {...(Function|Function[])} iteratees 要调用的 iteratees
      * @returns {Function} 返回新的函数
      * @example
@@ -13145,7 +13146,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {...(Function|Function[])} predicates 要调用的 predicates
      * @returns {Function} 返回新的函数
      * @example
@@ -13168,7 +13169,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {...(Function|Function[])} predicates 要调用的 predicates
      * @returns {Function} 返回新的函数
      * @example
@@ -13191,7 +13192,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {Array|string} path 要得到值的属性路径
      * @returns {Function} 返回新的函数
      * @example
@@ -13217,7 +13218,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {Object} object 要检索的对象
      * @returns {Function} 返回新的函数
      * @example
@@ -13247,7 +13248,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {number} [start=0] 开始的范围
      * @param {number} end 结束的范围
      * @param {number} [step=1] 范围的增量 或者 减量
@@ -13283,7 +13284,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {number} [start=0] 开始的范围
      * @param {number} end 结束的范围
      * @param {number} [step=1] 范围的增量 或者 减量
@@ -13319,7 +13320,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {number} n 要调用  `iteratee` 的次数
      * @param {Function} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Array} 返回调用结果的数组
@@ -13354,7 +13355,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {*} value 要转换的值
      * @returns {Array} 返回包含属性路径的数组
      * @example
@@ -13384,7 +13385,7 @@
      *
      * @static
      * @memberOf _
-     * @category Utility
+     * @category Util
      * @param {string} [prefix] 要添加到ID前缀的值
      * @returns {string} 返回唯一ID
      * @example

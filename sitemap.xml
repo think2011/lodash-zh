@@ -265,7 +265,6 @@
 <url><loc>http://lodash.think2011.net/upperCase</loc></url>
 <url><loc>http://lodash.think2011.net/upperFirst</loc></url>
 <url><loc>http://lodash.think2011.net/words</loc></url>
-<url><loc>http://lodash.think2011.net/runInContext</loc></url>
 <url><loc>http://lodash.think2011.net/attempt</loc></url>
 <url><loc>http://lodash.think2011.net/bindAll</loc></url>
 <url><loc>http://lodash.think2011.net/cond</loc></url>
@@ -290,6 +289,7 @@
 <url><loc>http://lodash.think2011.net/propertyOf</loc></url>
 <url><loc>http://lodash.think2011.net/range</loc></url>
 <url><loc>http://lodash.think2011.net/rangeRight</loc></url>
+<url><loc>http://lodash.think2011.net/runInContext</loc></url>
 <url><loc>http://lodash.think2011.net/times</loc></url>
 <url><loc>http://lodash.think2011.net/toPath</loc></url>
 <url><loc>http://lodash.think2011.net/uniqueId</loc></url>
