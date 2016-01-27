@@ -37,7 +37,7 @@ var _hmt = _hmt || [];
 <div data-render-layout="main-layout"><nav id="nav" onclick=""><span class="fa fa-2x"></span>
 
     <header>
-        <a href="./" title="lodash"><img src="./images/logo.png" alt="lodash">v4.0.0正式版</a>
+        <a href="./" title="lodash"><img src="./images/logo.png" alt="lodash">v4.1.0正式版</a>
     </header>
 
     <div id="search">
@@ -121,21 +121,6 @@ var _hmt = _hmt || [];
 <li><a href="./zipObject" title="_.zipObject([props=[]], [values=[]])">zipObject</a></li>
 <li><a href="./zipObjectDeep" title="_.zipObjectDeep([props=[]], [values=[]])">zipObjectDeep</a></li>
 <li><a href="./zipWith" title="_.zipWith([arrays])">zipWith</a></li>
-</ul></li>
-<li id="page-tree-chain" class="folder"><span class="folderPage">Chain</span>
-<ul>
-<li><a href="./_" title="_(value)" class = "open">_</a></li>
-<li><a href="./chain" title="_.chain(value)">chain</a></li>
-<li><a href="./prototype-at" title="_.prototype.at([paths])">prototype.at</a></li>
-<li><a href="./prototype-chain" title="_.prototype.chain()">prototype.chain</a></li>
-<li><a href="./prototype-commit" title="_.prototype.commit()">prototype.commit</a></li>
-<li><a href="./prototype-next" title="_.prototype.next()">prototype.next</a></li>
-<li><a href="./prototype-plant" title="_.prototype.plant(value)">prototype.plant</a></li>
-<li><a href="./prototype-Symbol-iterator" title="_.prototype.Symbol.iterator()">prototype.Symbol.iterator</a></li>
-<li><a href="./prototype-value" title="_.prototype.value()">prototype.value <span class="aliases">run, toJSON, valueOf</span></a></li>
-<li><a href="./tap" title="_.tap(value, interceptor)">tap</a></li>
-<li><a href="./thru" title="_.thru(value, interceptor)">thru</a></li>
-<li><a href="./wrapperFlatMap" title="_.wrapperFlatMap([iteratee=_.identity])">wrapperFlatMap</a></li>
 </ul></li>
 <li id="page-tree-collection" class="folder"><span class="folderPage">Collection</span>
 <ul>
@@ -290,6 +275,7 @@ var _hmt = _hmt || [];
 <li><a href="./has" title="_.has(object, path)">has</a></li>
 <li><a href="./hasIn" title="_.hasIn(object, path)">hasIn</a></li>
 <li><a href="./invert" title="_.invert(object, [multiVal])">invert</a></li>
+<li><a href="./invertBy" title="_.invertBy(object, [iteratee=_.identity])">invertBy</a></li>
 <li><a href="./invoke" title="_.invoke(object, path, [args])">invoke</a></li>
 <li><a href="./keys" title="_.keys(object)">keys</a></li>
 <li><a href="./keysIn" title="_.keysIn(object)">keysIn</a></li>
@@ -320,6 +306,21 @@ var _hmt = _hmt || [];
 <li><a href="./templateSettings-interpolate" title="_.templateSettings.interpolate">templateSettings.interpolate</a></li>
 <li><a href="./templateSettings-variable" title="_.templateSettings.variable">templateSettings.variable</a></li>
 <li><a href="./VERSION" title="_.VERSION">VERSION</a></li>
+</ul></li>
+<li id="page-tree-seq" class="folder"><span class="folderPage">Seq</span>
+<ul>
+<li><a href="./_" title="_(value)" class = "open">_</a></li>
+<li><a href="./chain" title="_.chain(value)">chain</a></li>
+<li><a href="./prototype-at" title="_.prototype.at([paths])">prototype.at</a></li>
+<li><a href="./prototype-chain" title="_.prototype.chain()">prototype.chain</a></li>
+<li><a href="./prototype-commit" title="_.prototype.commit()">prototype.commit</a></li>
+<li><a href="./prototype-next" title="_.prototype.next()">prototype.next</a></li>
+<li><a href="./prototype-plant" title="_.prototype.plant(value)">prototype.plant</a></li>
+<li><a href="./prototype-Symbol-iterator" title="_.prototype.Symbol.iterator()">prototype.Symbol.iterator</a></li>
+<li><a href="./prototype-value" title="_.prototype.value()">prototype.value <span class="aliases">run, toJSON, valueOf</span></a></li>
+<li><a href="./tap" title="_.tap(value, interceptor)">tap</a></li>
+<li><a href="./thru" title="_.thru(value, interceptor)">thru</a></li>
+<li><a href="./wrapperFlatMap" title="_.wrapperFlatMap([iteratee=_.identity])">wrapperFlatMap</a></li>
 </ul></li>
 <li id="page-tree-string" class="folder"><span class="folderPage">String</span>
 <ul>
@@ -392,7 +393,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>_ <a class="fa-link" href="./_" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0正式版/lodash.src.js#L1440" title="View in source." target="github">source</a> </h2>
+        <div data-render-page="entry"><h2>_ <a class="fa-link" href="./_" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.1.0正式版/lodash.src.js#L1461" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash._" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_(value)</div>
 
 <div data-render-html="/_"><p>创建一个经 <code>lodash</code> 包装后的对象会启用隐式链。返回的数组、集合、方法相互之间能够链式调用。
@@ -461,7 +462,7 @@ shortcut fusion 是一种通过合并链式 iteratee 调用从而大大降低迭
 <code>differenceBy</code>, <code>differenceWith</code>,  <code>drop</code>, <code>dropRight</code>, <code>dropRightWhile</code>,
 <code>dropWhile</code>, <code>fill</code>, <code>filter</code>, <code>flatten</code>, <code>flattenDeep</code>, <code>flip</code>, <code>flow</code>,
 <code>flowRight</code>, <code>fromPairs</code>, <code>functions</code>, <code>functionsIn</code>, <code>groupBy</code>, <code>initial</code>,
-<code>intersection</code>, <code>intersectionBy</code>, <code>intersectionWith</code>, <code>invert</code>, <code>invokeMap</code>,
+<code>intersection</code>, <code>intersectionBy</code>, <code>intersectionWith</code>, <code>invert</code>, <code>invertBy</code>, <code>invokeMap</code>,
 <code>iteratee</code>, <code>keyBy</code>, <code>keys</code>, <code>keysIn</code>, <code>map</code>, <code>mapKeys</code>, <code>mapValues</code>,
 <code>matches</code>, <code>matchesProperty</code>, <code>memoize</code>, <code>merge</code>, <code>mergeWith</code>, <code>method</code>,
 <code>methodOf</code>, <code>mixin</code>, <code>negate</code>, <code>nthArg</code>, <code>omit</code>, <code>omitBy</code>, <code>once</code>, <code>orderBy</code>,
@@ -474,7 +475,7 @@ shortcut fusion 是一种通过合并链式 iteratee 调用从而大大降低迭
 <code>toArray</code>, <code>toPairs</code>, <code>toPairsIn</code>, <code>toPath</code>, <code>toPlainObject</code>, <code>transform</code>,
 <code>unary</code>, <code>union</code>, <code>unionBy</code>, <code>unionWith</code>, <code>uniq</code>, <code>uniqBy</code>, <code>uniqWith</code>,
 <code>unset</code>, <code>unshift</code>, <code>unzip</code>, <code>unzipWith</code>, <code>values</code>, <code>valuesIn</code>, <code>without</code>,
-<code>wrap</code>, <code>xor</code>, <code>xorBy</code>, <code>xorWith</code>, <code>zip</code>, <code>zipObject</code>, 以及 zipWith</p>
+<code>wrap</code>, <code>xor</code>, <code>xorBy</code>, <code>xorWith</code>, <code>zip</code>, <code>zipObject</code>, <code>zipObjectDeep</code>, 以及 zipWith</p>
 </div>
 
 <h3>参数</h3>

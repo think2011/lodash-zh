@@ -1,6 +1,6 @@
 /**
  * @license
- * lodash 4.0.0 (Custom Build) <https://lodash.com/>
+ * lodash 4.1.0 (Custom Build) <https://lodash.com/>
  * Build: `lodash -d -o ./lodash.js`
  * Copyright 2012-2016 The Dojo Foundation <http://dojofoundation.org/>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
@@ -12,7 +12,7 @@
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.0.0';
+  var VERSION = '4.1.0';
 
   /** Used to compose bitmasks for wrapper metadata. */
   var BIND_FLAG          = 1,
@@ -412,6 +412,27 @@
         return func.call(thisArg, args[0], args[1], args[2]);
     }
     return func.apply(thisArg, args);
+  }
+
+  /**
+   * A specialized version of `baseAggregator` for arrays.
+   *
+   * @private
+   * @param {Array} array The array to iterate over.
+   * @param {Function} setter The function to set `accumulator` values.
+   * @param {Function} iteratee The iteratee to transform keys.
+   * @param {Object} accumulator The initial aggregated object.
+   * @returns {Function} Returns `accumulator`.
+   */
+  function arrayAggregator(array, setter, iteratee, accumulator) {
+    var index = -1,
+        length = array.length;
+
+    while (++index < length) {
+      var value = array[index];
+      setter(accumulator, value, iteratee(value), array);
+    }
+    return accumulator;
   }
 
   /**
@@ -823,7 +844,7 @@
         result = result === undefined ? current : (result + current);
       }
     }
-    return result;
+    return length ? result : 0;
   }
 
   /**
@@ -1396,7 +1417,7 @@
      * `differenceBy`, `differenceWith`,  `drop`, `dropRight`, `dropRightWhile`,
      * `dropWhile`, `fill`, `filter`, `flatten`, `flattenDeep`, `flip`, `flow`,
      * `flowRight`, `fromPairs`, `functions`, `functionsIn`, `groupBy`, `initial`,
-     * `intersection`, `intersectionBy`, `intersectionWith`, `invert`, `invokeMap`,
+     * `intersection`, `intersectionBy`, `intersectionWith`, `invert`, `invertBy`, `invokeMap`,
      * `iteratee`, `keyBy`, `keys`, `keysIn`, `map`, `mapKeys`, `mapValues`,
      * `matches`, `matchesProperty`, `memoize`, `merge`, `mergeWith`, `method`,
      * `methodOf`, `mixin`, `negate`, `nthArg`, `omit`, `omitBy`, `once`, `orderBy`,
@@ -1409,11 +1430,11 @@
      * `toArray`, `toPairs`, `toPairsIn`, `toPath`, `toPlainObject`, `transform`,
      * `unary`, `union`, `unionBy`, `unionWith`, `uniq`, `uniqBy`, `uniqWith`,
      * `unset`, `unshift`, `unzip`, `unzipWith`, `values`, `valuesIn`, `without`,
-     * `wrap`, `xor`, `xorBy`, `xorWith`, `zip`, `zipObject`, 以及 zipWith　　　　　
+     * `wrap`, `xor`, `xorBy`, `xorWith`, `zip`, `zipObject`, `zipObjectDeep`, 以及 zipWith　　　　　
 
      * @name _
      * @constructor
-     * @category Chain
+     * @category Seq
      * @param {*} value 需要被包装为 `lodash` 实例的值.
      * @returns {Object} 返回 `lodash` 包装后的实例
      * @example
@@ -2119,6 +2140,24 @@
     }
 
     /**
+     * Aggregates elements of `collection` on `accumulator` with keys transformed
+     * by `iteratee` and values set by `setter`.
+     *
+     * @private
+     * @param {Array|Object} collection The collection to iterate over.
+     * @param {Function} setter The function to set `accumulator` values.
+     * @param {Function} iteratee The iteratee to transform keys.
+     * @param {Object} accumulator The initial aggregated object.
+     * @returns {Function} Returns `accumulator`.
+     */
+    function baseAggregator(collection, setter, iteratee, accumulator) {
+      baseEach(collection, function(value, key, collection) {
+        setter(accumulator, value, iteratee(value), collection);
+      });
+      return accumulator;
+    }
+
+    /**
      * The base implementation of `_.assign` without support for multiple sources
      * or `customizer` functions.
      *
@@ -2603,6 +2642,19 @@
     }
 
     /**
+     * The base implementation of `_.inRange` which doesn't coerce arguments to numbers.
+     *
+     * @private
+     * @param {number} number The number to check.
+     * @param {number} start The start of the range.
+     * @param {number} end The end of the range.
+     * @returns {boolean} Returns `true` if `number` is in the range, else `false`.
+     */
+    function baseInRange(number, start, end) {
+      return number >= nativeMin(start, end) && number < nativeMax(start, end);
+    }
+
+    /**
      * The base implementation of methods like `_.intersection`, without support
      * for callback shorthands, that accepts an array of arrays to inspect.
      *
@@ -2654,6 +2706,24 @@
           }
         }
       return result;
+    }
+
+    /**
+     * The base implementation of `_.invert` and `_.invertBy` which inverts
+     * `object` with values transformed by `iteratee` and set by `setter`.
+     *
+     * @private
+     * @param {Object} object The object to iterate over.
+     * @param {Function} setter The function to set `accumulator` values.
+     * @param {Function} iteratee The iteratee to transform values.
+     * @param {Object} accumulator The initial inverted object.
+     * @returns {Function} Returns `accumulator`.
+     */
+    function baseInverter(object, setter, iteratee, accumulator) {
+      baseForOwn(object, function(value, key, object) {
+        setter(accumulator, iteratee(value), key, object);
+      });
+      return accumulator;
     }
 
     /**
@@ -2972,9 +3042,10 @@
      * references to be merged.
      *
      * @private
-     * @param {Object} object 目标对象
-     * @param {Object} source 来源对象
+     * @param {Object} object The destination object.
+     * @param {Object} source The source object.
      * @param {string} key The key of the value to merge.
+     * @param {number} srcIndex The index of `source`.
      * @param {Function} mergeFunc The function to merge values.
      * @param {Function} [customizer] The function to customize assigned values.
      * @param {Object} [stack] Tracks traversed source values and their merged counterparts.
@@ -2982,7 +3053,7 @@
     function baseMergeDeep (object, source, key, srcIndex, mergeFunc, customizer, stack) {
       var objValue = object[key],
           srcValue = source[key],
-          stacked  = stack.get(srcValue) || stack.get(objValue);
+          stacked = stack.get(srcValue);
 
       if (stacked) {
         assignMergeValue(object, key, stacked);
@@ -3001,6 +3072,7 @@
             newValue = copyArray(objValue);
           }
           else {
+            isCommon = false;
             newValue = baseClone(srcValue);
           }
         }
@@ -3009,6 +3081,7 @@
             newValue = toPlainObject(objValue);
           }
           else if (!isObject(objValue) || (srcIndex && isFunction(objValue))) {
+            isCommon = false;
             newValue = baseClone(srcValue);
           }
           else {
@@ -3023,7 +3096,7 @@
 
       if (isCommon) {
         // Recursively merge objects and arrays (susceptible to call stack limits).
-        mergeFunc(newValue, srcValue, customizer, stack);
+        mergeFunc(newValue, srcValue, srcIndex, customizer, stack);
       }
       assignMergeValue(object, key, newValue);
     }
@@ -3801,7 +3874,7 @@
      * @param {Object} source The object to copy properties from.
      * @param {Array} props The property names to copy.
      * @param {Object} [object={}] The object to copy properties to.
-     * @returns {Object} 返回对象
+     * @returns {Object} Returns `object`.
      */
     function copyObject (source, props, object) {
       return copyObjectWith(source, props, object);
@@ -3816,7 +3889,7 @@
      * @param {Array} props The property names to copy.
      * @param {Object} [object={}] The object to copy properties to.
      * @param {Function} [customizer] The function to customize copied values.
-     * @returns {Object} 返回对象
+     * @returns {Object} Returns `object`.
      */
     function copyObjectWith (source, props, object, customizer) {
       object || (object = {});
@@ -3839,7 +3912,7 @@
      * @private
      * @param {Object} source The object to copy symbols from.
      * @param {Object} [object={}] The object to copy symbols to.
-     * @returns {Object} 返回对象
+     * @returns {Object} Returns `object`.
      */
     function copySymbols (source, object) {
       return copyObject(source, getSymbols(source), object);
@@ -3849,29 +3922,16 @@
      * Creates a function like `_.groupBy`.
      *
      * @private
-     * @param {Function} setter The function to set keys and values of the accumulator object.
-     * @param {Function} [initializer] The function to initialize the accumulator object.
+     * @param {Function} setter The function to set accumulator values.
+     * @param {Function} [initializer] The accumulator object initializer.
      * @returns {Function} Returns the new aggregator function.
      */
     function createAggregator (setter, initializer) {
       return function (collection, iteratee) {
-        var result = initializer ? initializer() : {};
-        iteratee   = getIteratee(iteratee);
+        var func = isArray(collection) ? arrayAggregator : baseAggregator,
+            accumulator = initializer ? initializer() : {};
 
-        if (isArray(collection)) {
-          var index  = -1,
-              length = collection.length;
-
-          while (++index < length) {
-            var value = collection[index];
-            setter(result, value, iteratee(value), collection);
-          }
-        } else {
-          baseEach(collection, function (value, key, collection) {
-            setter(result, value, iteratee(value), collection);
-          });
-        }
-        return result;
+        return func(collection, setter, getIteratee(iteratee), accumulator);
       };
     }
 
@@ -4024,7 +4084,7 @@
       return function () {
         // Use a `switch` statement to work with class constructors.
         // See http://ecma-international.org/ecma-262/6.0/#sec-ecmascript-function-objects-call-thisargument-argumentslist
-        // 了解详情
+        // for more details.
         var args = arguments;
         switch (args.length) {
           case 0:
@@ -4048,7 +4108,7 @@
             result      = Ctor.apply(thisBinding, args);
 
         // Mimic the constructor's `return` behavior.
-        // See https://es5.github.io/#x13.2.2 了解详情
+        // See https://es5.github.io/#x13.2.2 for more details.
         return isObject(result) ? result : thisBinding;
       };
     }
@@ -4213,6 +4273,20 @@
       }
 
       return wrapper;
+    }
+
+    /**
+     * Creates a function like `_.invertBy`.
+     *
+     * @private
+     * @param {Function} setter The function to set accumulator values.
+     * @param {Function} toIteratee The function to resolve iteratees.
+     * @returns {Function} Returns the new inverter function.
+     */
+    function createInverter(setter, toIteratee) {
+      return function(object, iteratee) {
+        return baseInverter(object, setter, toIteratee(iteratee), {});
+      };
     }
 
     /**
@@ -4864,7 +4938,9 @@
           result = hasFunc(object, path);
         }
       }
-      return result || (isLength(object && object.length) && isIndex(path, object.length) &&
+      var length = object ? object.length : undefined;
+      return result || (
+        !!length && isLength(length) && isIndex(path, length) &&
         (isArray(object) || isString(object) || isArguments(object)));
     }
 
@@ -4955,14 +5031,16 @@
      * `arguments` objects, and strings, otherwise `null` is returned.
      *
      * @private
-     * @param {Object} object 要检索的对象
+     * @param {Object} object The object to query.
      * @returns {Array|null} Returns index keys, else `null`.
      */
     function indexKeys (object) {
       var length = object ? object.length : undefined;
-      return (isLength(length) && (isArray(object) || isString(object) || isArguments(object)))
-        ? baseTimes(length, String)
-        : null;
+      if (isLength(length) &&
+          (isArray(object) || isString(object) || isArguments(object))) {
+        return baseTimes(length, String);
+      }
+      return null;
     }
 
     /**
@@ -6215,6 +6293,10 @@
         start = 0;
         end   = length;
       }
+      else {
+        start = start == null ? 0 : toInteger(start);
+        end = end === undefined ? length : toInteger(end);
+      }
       return baseSlice(array, start, end);
     }
 
@@ -6925,7 +7007,7 @@
      *
      * @static
      * @memberOf _
-     * @category Chain
+     * @category Seq
      * @param {*} value 要包装的值
      * @returns {Object} 返回 `lodash` 包装的实例
      * @example
@@ -6958,7 +7040,7 @@
      *
      * @static
      * @memberOf _
-     * @category Chain
+     * @category Seq
      * @param {*} value 提供给 `interceptor` 的值
      * @param {Function} interceptor 调用函数
      * @returns {*} 返回 `value`
@@ -6982,7 +7064,7 @@
      *
      * @static
      * @memberOf _
-     * @category Chain
+     * @category Seq
      * @param {*} value 提供给 `interceptor` 的值
      * @param {Function} interceptor 调用函数
      * @returns {*} 返回 `interceptor` 的返回结果
@@ -7006,7 +7088,7 @@
      *
      * @name at
      * @memberOf _
-     * @category Chain
+     * @category Seq
      * @param {...(string|string[])} [paths] 要选择元素的属性路径，
      * 单独指定或者数组
      * @returns {Object} 返回 `lodash` 的包装实例
@@ -7047,7 +7129,7 @@
      *
      * @name chain
      * @memberOf _
-     * @category Chain
+     * @category Seq
      * @returns {Object} 返回 `lodash` 的包装实例
      * @example
      *
@@ -7077,7 +7159,7 @@
      *
      * @name commit
      * @memberOf _
-     * @category Chain
+     * @category Seq
      * @returns {Object} 返回 `lodash` 的包装实例
      * @example
      *
@@ -7106,7 +7188,7 @@
      *
      * @static
      * @memberOf _
-     * @category Chain
+     * @category Seq
      * @param {Function|Object|string} [iteratee=_.identity] 这个函数会处理每一个元素
      * @returns {Object} 返回 `lodash` 的包装实例
      * @example
@@ -7128,7 +7210,7 @@
      *
      * @name next
      * @memberOf _
-     * @category Chain
+     * @category Seq
      * @returns {Object} 返回下一个 iterator 值
      * @example
      *
@@ -7158,7 +7240,7 @@
      *
      * @name Symbol.iterator
      * @memberOf _
-     * @category Chain
+     * @category Seq
      * @returns {Object} 返回包装对象
      * @example
      *
@@ -7179,7 +7261,7 @@
      *
      * @name plant
      * @memberOf _
-     * @category Chain
+     * @category Seq
      * @param {*} value 替换原值的值
      * @returns {Object} 返回 `lodash` 的包装实例
      * @example
@@ -7224,7 +7306,7 @@
      *
      * @name reverse
      * @memberOf _
-     * @category Chain
+     * @category Seq
      * @returns {Object} 返回 `lodash` 的包装实例
      * @example
      *
@@ -7256,7 +7338,7 @@
      * @name value
      * @memberOf _
      * @alias run, toJSON, valueOf
-     * @category Chain
+     * @category Seq
      * @returns {*} 返回解链后的值
      * @example
      *
@@ -7680,8 +7762,6 @@
      * @returns {Array} 排序排序后的新数组
      * @example
      *
-     * var resolve = _.partial(_.map, _, _.values);
-     *
      * var users = [
      *   { 'user': 'fred',   'age': 48 },
      *   { 'user': 'barney', 'age': 34 },
@@ -7690,7 +7770,7 @@
      * ];
      *
      * // 以 `user` 升序排序 再 以 `age` 降序排序。
-     * resolve( _.orderBy(users, ['user', 'age'], ['asc', 'desc']) );
+     * _.orderBy( _.orderBy(users, ['user', 'age'], ['asc', 'desc']) );
      * // => [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 42]]
      */
     function orderBy (collection, iteratees, orders, guard) {
@@ -7720,29 +7800,25 @@
      * @returns {Array} 返回分组元素的数组
      * @example
      *
-     * var resolve = function(result) {
-     *   return _.map(result, function(array) { return _.map(array, 'user'); });
-     * };
-     *
      * var users = [
      *   { 'user': 'barney',  'age': 36, 'active': false },
      *   { 'user': 'fred',    'age': 40, 'active': true },
      *   { 'user': 'pebbles', 'age': 1,  'active': false }
      * ];
      *
-     * resolve( _.partition(users, function(o) { return o.active; }) );
-     * // => [['fred'], ['barney', 'pebbles']]
+     * _.partition(users, function(o) { return o.active; });
+     * // => objects for [['fred'], ['barney', 'pebbles']]
      *
-     * // 使用了 `_.matches` 的回调结果
-     * resolve( _.partition(users, { 'age': 1, 'active': false }) );
-     * // => [['pebbles'], ['barney', 'fred']]
+     * // 使用了 `_.matches` iteratee 的回调结果
+     * _.partition(users, { 'age': 1, 'active': false });
+     * // =>  [['pebbles'], ['barney', 'fred']]
      *
-     * // 使用了 `_.matchesProperty` 的回调结果
-     * resolve( _.partition(users, ['active', false]) );
-     * // => [['barney', 'pebbles'], ['fred']]
+     * // 使用了 `_.matchesProperty` iteratee 的回调结果
+     * _.partition(users, ['active', false]);
+     * // =>  [['barney', 'pebbles'], ['fred']]
      *
-     * // 使用了 `_.property` 的回调结果
-     * resolve( _.partition(users, 'active') );
+     * // 使用了  `_.property` iteratee 的回调结果
+     * _.partition(users, 'active');
      * // => [['fred'], ['barney', 'pebbles']]
      */
     var partition = createAggregator(function (result, value, key) {
@@ -9369,9 +9445,16 @@
      * // => false
      */
     function isEmpty (value) {
-      return (!isObjectLike(value) || isFunction(value.splice))
-        ? !size(value)
-        : !keys(value).length;
+      if (isArrayLike(value) &&
+          (isArray(value) || isString(value) || isFunction(value.splice) || isArguments(value))) {
+        return !value.length;
+      }
+      for (var key in value) {
+        if (hasOwnProperty.call(value, key)) {
+          return false;
+        }
+      }
+      return true;
     }
 
     /**
@@ -10843,12 +10926,40 @@
      * _.invert(object);
      * // => { '1': 'c', '2': 'b' }
      */
-    function invert (object) {
-      return arrayReduce(keys(object), function (result, key) {
-        result[object[key]] = key;
-        return result;
-      }, {});
-    }
+    var invert = createInverter(function(result, value, key) {
+      result[value] = key;
+    }, constant(identity));
+
+    /**
+     * 这个方法类似 `_.invert`。
+     * 除了它接受 iteratee 调用每一个元素，可在返回值中定制key。
+     * iteratee 会传入1个参数：(value)。
+     *
+     * @static
+     * @memberOf _
+     * @category Object
+     * @param {Object} object 要倒置的对象
+     * @param {Function|Object|string} [iteratee=_.identity] 这个函数会调用每一个元素
+     * @returns {Object} 返回新的倒置的对象
+     * @example
+     *
+     * var object = { 'a': 1, 'b': 2, 'c': 1 };
+     *
+     * _.invertBy(object);
+     * // => { '1': ['a', 'c'], '2': ['b'] }
+     *
+     * _.invertBy(object, function(value) {
+     *   return 'group' + value;
+     * });
+     * // => { 'group1': ['a', 'c'], 'group2': ['b'] }
+     */
+    var invertBy = createInverter(function(result, value, key) {
+      if (hasOwnProperty.call(result, value)) {
+        result[value].push(key);
+      } else {
+        result[value] = [key];
+      }
+    }, getIteratee);
 
     /**
      * 调用对象路径的方法
@@ -10860,7 +10971,6 @@
      * @param {Array|string} path 要调用方法的路径
      * @param {...*} [args] 调用方法的参数
      * @returns {*} 返回调用方法的结果
-     * @example
      *
      * var object = { 'a': [{ 'b': { 'c': [1, 2, 3, 4] } }] };
      *
@@ -12868,20 +12978,15 @@
      *   { 'user': 'fred',   'age': 40 }
      * ];
      *
-     * // 使用 wrap 创建一个自定义回调速写
-     * _.iteratee = _.wrap(_.iteratee, function(callback, func, thisArg) {
-     *   var match = /^(.+?)__([gl]t)(.+)$/.exec(func);
-     *   if (!match) {
-     *     return callback(func, thisArg);
-     *   }
-     *   return function(object) {
-     *     return match[2] == 'gt'
-     *       ? object[match[1]] > match[3]
-     *       : object[match[1]] < match[3];
+     * // 创建一个自定义 iteratee
+     * _.iteratee = _.wrap(_.iteratee, function(callback, func) {
+     *   var p = /^(\S+)\s*([<>])\s*(\S+)$/.exec(func);
+     *   return !p ? callback(func) : function(object) {
+     *     return (p[2] == '>' ? object[p[1]] > p[3] : object[p[1]] < p[3]);
      *   };
      * });
      *
-     * _.filter(users, 'age__gt36');
+     * _.filter(users, 'age > 36');
      * // => [{ 'user': 'fred', 'age': 40 }]
      */
     function iteratee (func) {
@@ -13079,7 +13184,9 @@
      * var lodash = _.noConflict();
      */
     function noConflict () {
+      if (root._ === this) {
       root._ = oldDash;
+      }
       return this;
     }
 
@@ -13678,7 +13785,7 @@
     function sumBy (array, iteratee) {
       return (array && array.length)
         ? baseSum(array, getIteratee(iteratee))
-        : undefined;
+        : 0;
     }
 
     /*------------------------------------------------------------------------*/
@@ -13767,6 +13874,7 @@
     lodash.intersectionBy   = intersectionBy;
     lodash.intersectionWith = intersectionWith;
     lodash.invert           = invert;
+    lodash.invertBy = invertBy;
     lodash.invokeMap        = invokeMap;
     lodash.iteratee         = iteratee;
     lodash.keyBy            = keyBy;
@@ -13959,7 +14067,6 @@
     lodash.padEnd            = padEnd;
     lodash.padStart          = padStart;
     lodash.parseInt          = parseInt;
-    lodash._baseRandom       = baseRandom;
     lodash.random            = random;
     lodash.reduce            = reduce;
     lodash.reduceRight       = reduceRight;

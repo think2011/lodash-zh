@@ -37,7 +37,7 @@ var _hmt = _hmt || [];
 <div data-render-layout="main-layout"><nav id="nav" onclick=""><span class="fa fa-2x"></span>
 
     <header>
-        <a href="./" title="lodash"><img src="./images/logo.png" alt="lodash">v4.0.0正式版</a>
+        <a href="./" title="lodash"><img src="./images/logo.png" alt="lodash">v4.1.0正式版</a>
     </header>
 
     <div id="search">
@@ -121,21 +121,6 @@ var _hmt = _hmt || [];
 <li><a href="./zipObject" title="_.zipObject([props=[]], [values=[]])">zipObject</a></li>
 <li><a href="./zipObjectDeep" title="_.zipObjectDeep([props=[]], [values=[]])">zipObjectDeep</a></li>
 <li><a href="./zipWith" title="_.zipWith([arrays])">zipWith</a></li>
-</ul></li>
-<li id="page-tree-chain" class="folder"><span class="folderPage">Chain</span>
-<ul>
-<li><a href="./_" title="_(value)">_</a></li>
-<li><a href="./chain" title="_.chain(value)">chain</a></li>
-<li><a href="./prototype-at" title="_.prototype.at([paths])">prototype.at</a></li>
-<li><a href="./prototype-chain" title="_.prototype.chain()">prototype.chain</a></li>
-<li><a href="./prototype-commit" title="_.prototype.commit()">prototype.commit</a></li>
-<li><a href="./prototype-next" title="_.prototype.next()">prototype.next</a></li>
-<li><a href="./prototype-plant" title="_.prototype.plant(value)">prototype.plant</a></li>
-<li><a href="./prototype-Symbol-iterator" title="_.prototype.Symbol.iterator()">prototype.Symbol.iterator</a></li>
-<li><a href="./prototype-value" title="_.prototype.value()">prototype.value <span class="aliases">run, toJSON, valueOf</span></a></li>
-<li><a href="./tap" title="_.tap(value, interceptor)">tap</a></li>
-<li><a href="./thru" title="_.thru(value, interceptor)">thru</a></li>
-<li><a href="./wrapperFlatMap" title="_.wrapperFlatMap([iteratee=_.identity])">wrapperFlatMap</a></li>
 </ul></li>
 <li id="page-tree-collection" class="folder"><span class="folderPage">Collection</span>
 <ul>
@@ -290,6 +275,7 @@ var _hmt = _hmt || [];
 <li><a href="./has" title="_.has(object, path)">has</a></li>
 <li><a href="./hasIn" title="_.hasIn(object, path)">hasIn</a></li>
 <li><a href="./invert" title="_.invert(object, [multiVal])">invert</a></li>
+<li><a href="./invertBy" title="_.invertBy(object, [iteratee=_.identity])">invertBy</a></li>
 <li><a href="./invoke" title="_.invoke(object, path, [args])">invoke</a></li>
 <li><a href="./keys" title="_.keys(object)">keys</a></li>
 <li><a href="./keysIn" title="_.keysIn(object)">keysIn</a></li>
@@ -320,6 +306,21 @@ var _hmt = _hmt || [];
 <li><a href="./templateSettings-interpolate" title="_.templateSettings.interpolate">templateSettings.interpolate</a></li>
 <li><a href="./templateSettings-variable" title="_.templateSettings.variable">templateSettings.variable</a></li>
 <li><a href="./VERSION" title="_.VERSION">VERSION</a></li>
+</ul></li>
+<li id="page-tree-seq" class="folder"><span class="folderPage">Seq</span>
+<ul>
+<li><a href="./_" title="_(value)">_</a></li>
+<li><a href="./chain" title="_.chain(value)">chain</a></li>
+<li><a href="./prototype-at" title="_.prototype.at([paths])">prototype.at</a></li>
+<li><a href="./prototype-chain" title="_.prototype.chain()">prototype.chain</a></li>
+<li><a href="./prototype-commit" title="_.prototype.commit()">prototype.commit</a></li>
+<li><a href="./prototype-next" title="_.prototype.next()">prototype.next</a></li>
+<li><a href="./prototype-plant" title="_.prototype.plant(value)">prototype.plant</a></li>
+<li><a href="./prototype-Symbol-iterator" title="_.prototype.Symbol.iterator()">prototype.Symbol.iterator</a></li>
+<li><a href="./prototype-value" title="_.prototype.value()">prototype.value <span class="aliases">run, toJSON, valueOf</span></a></li>
+<li><a href="./tap" title="_.tap(value, interceptor)">tap</a></li>
+<li><a href="./thru" title="_.thru(value, interceptor)">thru</a></li>
+<li><a href="./wrapperFlatMap" title="_.wrapperFlatMap([iteratee=_.identity])">wrapperFlatMap</a></li>
 </ul></li>
 <li id="page-tree-string" class="folder"><span class="folderPage">String</span>
 <ul>
@@ -392,7 +393,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>iteratee <a class="fa-link" href="./iteratee" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0正式版/lodash.src.js#L12887" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.iteratee" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>iteratee <a class="fa-link" href="./iteratee" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.1.0正式版/lodash.src.js#L12992" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.iteratee" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.iteratee([func&#x3D;_.identity])</div>
 
 <div data-render-html="/iteratee"><p>创建一个调用 <code>func</code> 的函数。
@@ -415,20 +416,15 @@ var _hmt = _hmt || [];
   <span class="token punctuation" >{</span> <span class="token string" >'user'</span><span class="token punctuation" >:</span> <span class="token string" >'fred'</span><span class="token punctuation" >,</span>   <span class="token string" >'age'</span><span class="token punctuation" >:</span> <span class="token number" >40</span> <span class="token punctuation" >}</span>
 <span class="token punctuation" >]</span><span class="token punctuation" >;</span>
 
-<span class="token comment" spellcheck="true">// 使用 wrap 创建一个自定义回调速写</span>
-_<span class="token punctuation" >.</span>iteratee <span class="token operator" >=</span> _<span class="token punctuation" >.</span><span class="token function" >wrap</span><span class="token punctuation" >(</span>_<span class="token punctuation" >.</span>iteratee<span class="token punctuation" >,</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>callback<span class="token punctuation" >,</span> func<span class="token punctuation" >,</span> thisArg<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-  <span class="token keyword" >var</span> match <span class="token operator" >=</span> <span class="token regex" >/^(.+?)__([gl]t)(.+)$/</span><span class="token punctuation" >.</span><span class="token function" >exec</span><span class="token punctuation" >(</span>func<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-  <span class="token keyword" >if</span> <span class="token punctuation" >(</span><span class="token operator" >!</span>match<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-    <span class="token keyword" >return</span> <span class="token function" >callback</span><span class="token punctuation" >(</span>func<span class="token punctuation" >,</span> thisArg<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-  <span class="token punctuation" >}</span>
-  <span class="token keyword" >return</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>object<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-    <span class="token keyword" >return</span> match<span class="token punctuation" >[</span><span class="token number" >2</span><span class="token punctuation" >]</span> <span class="token operator" >==</span> <span class="token string" >'gt'</span>
-      <span class="token operator" >?</span> object<span class="token punctuation" >[</span>match<span class="token punctuation" >[</span><span class="token number" >1</span><span class="token punctuation" >]</span><span class="token punctuation" >]</span> <span class="token operator" >></span> match<span class="token punctuation" >[</span><span class="token number" >3</span><span class="token punctuation" >]</span>
-      <span class="token punctuation" >:</span> object<span class="token punctuation" >[</span>match<span class="token punctuation" >[</span><span class="token number" >1</span><span class="token punctuation" >]</span><span class="token punctuation" >]</span> <span class="token operator" >&lt;</span> match<span class="token punctuation" >[</span><span class="token number" >3</span><span class="token punctuation" >]</span><span class="token punctuation" >;</span>
+<span class="token comment" spellcheck="true">// 创建一个自定义 iteratee</span>
+_<span class="token punctuation" >.</span>iteratee <span class="token operator" >=</span> _<span class="token punctuation" >.</span><span class="token function" >wrap</span><span class="token punctuation" >(</span>_<span class="token punctuation" >.</span>iteratee<span class="token punctuation" >,</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>callback<span class="token punctuation" >,</span> func<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
+  <span class="token keyword" >var</span> p <span class="token operator" >=</span> <span class="token regex" >/^(\S+)\s*([&lt;>])\s*(\S+)$/</span><span class="token punctuation" >.</span><span class="token function" >exec</span><span class="token punctuation" >(</span>func<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  <span class="token keyword" >return</span> <span class="token operator" >!</span>p <span class="token operator" >?</span> <span class="token function" >callback</span><span class="token punctuation" >(</span>func<span class="token punctuation" >)</span> <span class="token punctuation" >:</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span>object<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
+    <span class="token keyword" >return</span> <span class="token punctuation" >(</span>p<span class="token punctuation" >[</span><span class="token number" >2</span><span class="token punctuation" >]</span> <span class="token operator" >==</span> <span class="token string" >'>'</span> <span class="token operator" >?</span> object<span class="token punctuation" >[</span>p<span class="token punctuation" >[</span><span class="token number" >1</span><span class="token punctuation" >]</span><span class="token punctuation" >]</span> <span class="token operator" >></span> p<span class="token punctuation" >[</span><span class="token number" >3</span><span class="token punctuation" >]</span> <span class="token punctuation" >:</span> object<span class="token punctuation" >[</span>p<span class="token punctuation" >[</span><span class="token number" >1</span><span class="token punctuation" >]</span><span class="token punctuation" >]</span> <span class="token operator" >&lt;</span> p<span class="token punctuation" >[</span><span class="token number" >3</span><span class="token punctuation" >]</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
   <span class="token punctuation" >}</span><span class="token punctuation" >;</span>
 <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 
-_<span class="token punctuation" >.</span><span class="token function" >filter</span><span class="token punctuation" >(</span>users<span class="token punctuation" >,</span> <span class="token string" >'age__gt36'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+_<span class="token punctuation" >.</span><span class="token function" >filter</span><span class="token punctuation" >(</span>users<span class="token punctuation" >,</span> <span class="token string" >'age > 36'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 <span class="token comment" spellcheck="true">// => [{ 'user': 'fred', 'age': 40 }]</span>
 </code></pre>
 </div>

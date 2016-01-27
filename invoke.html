@@ -37,7 +37,7 @@ var _hmt = _hmt || [];
 <div data-render-layout="main-layout"><nav id="nav" onclick=""><span class="fa fa-2x"></span>
 
     <header>
-        <a href="./" title="lodash"><img src="./images/logo.png" alt="lodash">v4.0.0正式版</a>
+        <a href="./" title="lodash"><img src="./images/logo.png" alt="lodash">v4.1.0正式版</a>
     </header>
 
     <div id="search">
@@ -121,21 +121,6 @@ var _hmt = _hmt || [];
 <li><a href="./zipObject" title="_.zipObject([props=[]], [values=[]])">zipObject</a></li>
 <li><a href="./zipObjectDeep" title="_.zipObjectDeep([props=[]], [values=[]])">zipObjectDeep</a></li>
 <li><a href="./zipWith" title="_.zipWith([arrays])">zipWith</a></li>
-</ul></li>
-<li id="page-tree-chain" class="folder"><span class="folderPage">Chain</span>
-<ul>
-<li><a href="./_" title="_(value)">_</a></li>
-<li><a href="./chain" title="_.chain(value)">chain</a></li>
-<li><a href="./prototype-at" title="_.prototype.at([paths])">prototype.at</a></li>
-<li><a href="./prototype-chain" title="_.prototype.chain()">prototype.chain</a></li>
-<li><a href="./prototype-commit" title="_.prototype.commit()">prototype.commit</a></li>
-<li><a href="./prototype-next" title="_.prototype.next()">prototype.next</a></li>
-<li><a href="./prototype-plant" title="_.prototype.plant(value)">prototype.plant</a></li>
-<li><a href="./prototype-Symbol-iterator" title="_.prototype.Symbol.iterator()">prototype.Symbol.iterator</a></li>
-<li><a href="./prototype-value" title="_.prototype.value()">prototype.value <span class="aliases">run, toJSON, valueOf</span></a></li>
-<li><a href="./tap" title="_.tap(value, interceptor)">tap</a></li>
-<li><a href="./thru" title="_.thru(value, interceptor)">thru</a></li>
-<li><a href="./wrapperFlatMap" title="_.wrapperFlatMap([iteratee=_.identity])">wrapperFlatMap</a></li>
 </ul></li>
 <li id="page-tree-collection" class="folder"><span class="folderPage">Collection</span>
 <ul>
@@ -290,6 +275,7 @@ var _hmt = _hmt || [];
 <li><a href="./has" title="_.has(object, path)">has</a></li>
 <li><a href="./hasIn" title="_.hasIn(object, path)">hasIn</a></li>
 <li><a href="./invert" title="_.invert(object, [multiVal])">invert</a></li>
+<li><a href="./invertBy" title="_.invertBy(object, [iteratee=_.identity])">invertBy</a></li>
 <li><a href="./invoke" title="_.invoke(object, path, [args])" class = "open">invoke</a></li>
 <li><a href="./keys" title="_.keys(object)">keys</a></li>
 <li><a href="./keysIn" title="_.keysIn(object)">keysIn</a></li>
@@ -320,6 +306,21 @@ var _hmt = _hmt || [];
 <li><a href="./templateSettings-interpolate" title="_.templateSettings.interpolate">templateSettings.interpolate</a></li>
 <li><a href="./templateSettings-variable" title="_.templateSettings.variable">templateSettings.variable</a></li>
 <li><a href="./VERSION" title="_.VERSION">VERSION</a></li>
+</ul></li>
+<li id="page-tree-seq" class="folder"><span class="folderPage">Seq</span>
+<ul>
+<li><a href="./_" title="_(value)">_</a></li>
+<li><a href="./chain" title="_.chain(value)">chain</a></li>
+<li><a href="./prototype-at" title="_.prototype.at([paths])">prototype.at</a></li>
+<li><a href="./prototype-chain" title="_.prototype.chain()">prototype.chain</a></li>
+<li><a href="./prototype-commit" title="_.prototype.commit()">prototype.commit</a></li>
+<li><a href="./prototype-next" title="_.prototype.next()">prototype.next</a></li>
+<li><a href="./prototype-plant" title="_.prototype.plant(value)">prototype.plant</a></li>
+<li><a href="./prototype-Symbol-iterator" title="_.prototype.Symbol.iterator()">prototype.Symbol.iterator</a></li>
+<li><a href="./prototype-value" title="_.prototype.value()">prototype.value <span class="aliases">run, toJSON, valueOf</span></a></li>
+<li><a href="./tap" title="_.tap(value, interceptor)">tap</a></li>
+<li><a href="./thru" title="_.thru(value, interceptor)">thru</a></li>
+<li><a href="./wrapperFlatMap" title="_.wrapperFlatMap([iteratee=_.identity])">wrapperFlatMap</a></li>
 </ul></li>
 <li id="page-tree-string" class="folder"><span class="folderPage">String</span>
 <ul>
@@ -392,7 +393,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>invoke <a class="fa-link" href="./invoke" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.0.0正式版/lodash.src.js#L10870" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.invoke" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>invoke <a class="fa-link" href="./invoke" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.1.0正式版/lodash.src.js#L10980" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.invoke" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.invoke(object, path, [args])</div>
 
 <div data-render-html="/invoke"><p>调用对象路径的方法</p>
@@ -409,14 +410,10 @@ var _hmt = _hmt || [];
     </ol>
 <h3>返回值 <span class="return-type">(*)</span></h3>
     <div class="returns"> <div data-render-html="/#synthetic"><p> 返回调用方法的结果</p>
+<p>var object = { &#39;a&#39;: [{ &#39;b&#39;: { &#39;c&#39;: [1, 2, 3, 4] } }] };</p>
+<p>_.invoke(object, &#39;a[0].b.c.slice&#39;, 1, 3);
+// =&gt; [2, 3]</p>
 </div></div>
-<h3>示例</h3>
-    <div data-render-html="/#synthetic"><pre><code class="lang-js"><span class="token keyword" >var</span> object <span class="token operator" >=</span> <span class="token punctuation" >{</span> <span class="token string" >'a'</span><span class="token punctuation" >:</span> <span class="token punctuation" >[</span><span class="token punctuation" >{</span> <span class="token string" >'b'</span><span class="token punctuation" >:</span> <span class="token punctuation" >{</span> <span class="token string" >'c'</span><span class="token punctuation" >:</span> <span class="token punctuation" >[</span><span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token number" >2</span><span class="token punctuation" >,</span> <span class="token number" >3</span><span class="token punctuation" >,</span> <span class="token number" >4</span><span class="token punctuation" >]</span> <span class="token punctuation" >}</span> <span class="token punctuation" >}</span><span class="token punctuation" >]</span> <span class="token punctuation" >}</span><span class="token punctuation" >;</span>
-
-_<span class="token punctuation" >.</span><span class="token function" >invoke</span><span class="token punctuation" >(</span>object<span class="token punctuation" >,</span> <span class="token string" >'a[0].b.c.slice'</span><span class="token punctuation" >,</span> <span class="token number" >1</span><span class="token punctuation" >,</span> <span class="token number" >3</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
-<span class="token comment" spellcheck="true">// => [2, 3]</span>
-</code></pre>
-</div>
 <div id="disqus_thread" style="margin-top:50px;"></div>
 <script>
 /**
