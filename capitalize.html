@@ -37,7 +37,7 @@ var _hmt = _hmt || [];
 <div data-render-layout="main-layout"><nav id="nav" onclick=""><span class="fa fa-2x"></span>
 
     <header>
-        <a href="./" title="lodash"><img src="./images/logo.png" alt="lodash">v4.1.0正式版</a>
+        <a href="./" title="lodash"><img src="./images/logo.png" alt="lodash">v4.5.0正式版</a>
     </header>
 
     <div id="search">
@@ -72,9 +72,9 @@ var _hmt = _hmt || [];
 <li><a href="./fill" title="_.fill(array, value, [start=0], [end=array.length])">fill</a></li>
 <li><a href="./findIndex" title="_.findIndex(array, [predicate=_.identity])">findIndex</a></li>
 <li><a href="./findLastIndex" title="_.findLastIndex(array, [predicate=_.identity])">findLastIndex</a></li>
-<li><a href="./flatMap" title="_.flatMap(array, [iteratee=_.identity])">flatMap</a></li>
 <li><a href="./flatten" title="_.flatten(array)">flatten</a></li>
 <li><a href="./flattenDeep" title="_.flattenDeep(array)">flattenDeep</a></li>
+<li><a href="./flattenDepth" title="_.flattenDepth(array, [depth=1])">flattenDepth</a></li>
 <li><a href="./fromPairs" title="_.fromPairs(pairs)">fromPairs</a></li>
 <li><a href="./head" title="_.head(array)">head <span class="aliases">first</span></a></li>
 <li><a href="./indexOf" title="_.indexOf(array, value, [fromIndex=0])">indexOf</a></li>
@@ -129,6 +129,7 @@ var _hmt = _hmt || [];
 <li><a href="./filter" title="_.filter(collection, [predicate=_.identity])">filter</a></li>
 <li><a href="./find" title="_.find(collection, [predicate=_.identity])">find</a></li>
 <li><a href="./findLast" title="_.findLast(collection, [predicate=_.identity])">findLast</a></li>
+<li><a href="./flatMap" title="_.flatMap(collection, [iteratee=_.identity])">flatMap</a></li>
 <li><a href="./forEach" title="_.forEach(collection, [iteratee=_.identity])">forEach <span class="aliases">each</span></a></li>
 <li><a href="./forEachRight" title="_.forEachRight(collection, [iteratee=_.identity])">forEachRight <span class="aliases">eachRight</span></a></li>
 <li><a href="./groupBy" title="_.groupBy(collection, [iteratee=_.identity])">groupBy</a></li>
@@ -180,6 +181,7 @@ var _hmt = _hmt || [];
 </ul></li>
 <li id="page-tree-lang" class="folder"><span class="folderPage">Lang</span>
 <ul>
+<li><a href="./castArray" title="_.castArray(value)">castArray</a></li>
 <li><a href="./clone" title="_.clone(value)">clone</a></li>
 <li><a href="./cloneDeep" title="_.cloneDeep(value)">cloneDeep</a></li>
 <li><a href="./cloneDeepWith" title="_.cloneDeepWith(value, [customizer])">cloneDeepWith</a></li>
@@ -189,9 +191,11 @@ var _hmt = _hmt || [];
 <li><a href="./gte" title="_.gte(value, other)">gte</a></li>
 <li><a href="./isArguments" title="_.isArguments(value)">isArguments</a></li>
 <li><a href="./isArray" title="_.isArray(value)">isArray</a></li>
+<li><a href="./isArrayBuffer" title="_.isArrayBuffer(value)">isArrayBuffer</a></li>
 <li><a href="./isArrayLike" title="_.isArrayLike(value)">isArrayLike</a></li>
 <li><a href="./isArrayLikeObject" title="_.isArrayLikeObject(value)">isArrayLikeObject</a></li>
 <li><a href="./isBoolean" title="_.isBoolean(value)">isBoolean</a></li>
+<li><a href="./isBuffer" title="_.isBuffer(value)">isBuffer</a></li>
 <li><a href="./isDate" title="_.isDate(value)">isDate</a></li>
 <li><a href="./isElement" title="_.isElement(value)">isElement</a></li>
 <li><a href="./isEmpty" title="_.isEmpty(value)">isEmpty</a></li>
@@ -202,6 +206,7 @@ var _hmt = _hmt || [];
 <li><a href="./isFunction" title="_.isFunction(value)">isFunction</a></li>
 <li><a href="./isInteger" title="_.isInteger(value)">isInteger</a></li>
 <li><a href="./isLength" title="_.isLength(value)">isLength</a></li>
+<li><a href="./isMap" title="_.isMap(value)">isMap</a></li>
 <li><a href="./isMatch" title="_.isMatch(object, source)">isMatch</a></li>
 <li><a href="./isMatchWith" title="_.isMatchWith(object, source, [customizer])">isMatchWith</a></li>
 <li><a href="./isNaN" title="_.isNaN(value)">isNaN</a></li>
@@ -214,10 +219,13 @@ var _hmt = _hmt || [];
 <li><a href="./isPlainObject" title="_.isPlainObject(value)">isPlainObject</a></li>
 <li><a href="./isRegExp" title="_.isRegExp(value)">isRegExp</a></li>
 <li><a href="./isSafeInteger" title="_.isSafeInteger(value)">isSafeInteger</a></li>
+<li><a href="./isSet" title="_.isSet(value)">isSet</a></li>
 <li><a href="./isString" title="_.isString(value)">isString</a></li>
 <li><a href="./isSymbol" title="_.isSymbol(value)">isSymbol</a></li>
 <li><a href="./isTypedArray" title="_.isTypedArray(value)">isTypedArray</a></li>
 <li><a href="./isUndefined" title="_.isUndefined(value)">isUndefined</a></li>
+<li><a href="./isWeakMap" title="_.isWeakMap(value)">isWeakMap</a></li>
+<li><a href="./isWeakSet" title="_.isWeakSet(value)">isWeakSet</a></li>
 <li><a href="./lt" title="_.lt(value, other)">lt</a></li>
 <li><a href="./lte" title="_.lte(value, other)">lte</a></li>
 <li><a href="./toArray" title="_.toArray(value)">toArray</a></li>
@@ -393,7 +401,7 @@ var _hmt = _hmt || [];
 
 <div id="main" onclick="">
     <div id="content" class="markdown-body">
-        <div data-render-page="entry"><h2>capitalize <a class="fa-link" href="./capitalize" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.1.0正式版/lodash.src.js#L11749" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.capitalize" title="See the npm package." target="npm">npm</a></h2>
+        <div data-render-page="entry"><h2>capitalize <a class="fa-link" href="./capitalize" title="Link to this entry.">&#xf0c1;</a> <a href="https://github.com/lodash/lodash/blob/4.5.0正式版/lodash.src.js#L12076" title="View in source." target="github">source</a> <a href="https://www.npmjs.com/package/lodash.capitalize" title="See the npm package." target="npm">npm</a></h2>
 <div class="signature">_.capitalize([string&#x3D;&#x27;&#x27;])</div>
 
 <div data-render-html="/capitalize"><p>转换字符串首字母为大写，剩下为小写。</p>

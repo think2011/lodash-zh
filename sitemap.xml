@@ -17,9 +17,9 @@
 <url><loc>http://lodash.think2011.net/fill</loc></url>
 <url><loc>http://lodash.think2011.net/findIndex</loc></url>
 <url><loc>http://lodash.think2011.net/findLastIndex</loc></url>
-<url><loc>http://lodash.think2011.net/flatMap</loc></url>
 <url><loc>http://lodash.think2011.net/flatten</loc></url>
 <url><loc>http://lodash.think2011.net/flattenDeep</loc></url>
+<url><loc>http://lodash.think2011.net/flattenDepth</loc></url>
 <url><loc>http://lodash.think2011.net/fromPairs</loc></url>
 <url><loc>http://lodash.think2011.net/head</loc></url>
 <url><loc>http://lodash.think2011.net/indexOf</loc></url>
@@ -71,6 +71,7 @@
 <url><loc>http://lodash.think2011.net/filter</loc></url>
 <url><loc>http://lodash.think2011.net/find</loc></url>
 <url><loc>http://lodash.think2011.net/findLast</loc></url>
+<url><loc>http://lodash.think2011.net/flatMap</loc></url>
 <url><loc>http://lodash.think2011.net/forEach</loc></url>
 <url><loc>http://lodash.think2011.net/forEachRight</loc></url>
 <url><loc>http://lodash.think2011.net/groupBy</loc></url>
@@ -113,6 +114,7 @@
 <url><loc>http://lodash.think2011.net/throttle</loc></url>
 <url><loc>http://lodash.think2011.net/unary</loc></url>
 <url><loc>http://lodash.think2011.net/wrap</loc></url>
+<url><loc>http://lodash.think2011.net/castArray</loc></url>
 <url><loc>http://lodash.think2011.net/clone</loc></url>
 <url><loc>http://lodash.think2011.net/cloneDeep</loc></url>
 <url><loc>http://lodash.think2011.net/cloneDeepWith</loc></url>
@@ -122,9 +124,11 @@
 <url><loc>http://lodash.think2011.net/gte</loc></url>
 <url><loc>http://lodash.think2011.net/isArguments</loc></url>
 <url><loc>http://lodash.think2011.net/isArray</loc></url>
+<url><loc>http://lodash.think2011.net/isArrayBuffer</loc></url>
 <url><loc>http://lodash.think2011.net/isArrayLike</loc></url>
 <url><loc>http://lodash.think2011.net/isArrayLikeObject</loc></url>
 <url><loc>http://lodash.think2011.net/isBoolean</loc></url>
+<url><loc>http://lodash.think2011.net/isBuffer</loc></url>
 <url><loc>http://lodash.think2011.net/isDate</loc></url>
 <url><loc>http://lodash.think2011.net/isElement</loc></url>
 <url><loc>http://lodash.think2011.net/isEmpty</loc></url>
@@ -135,6 +139,7 @@
 <url><loc>http://lodash.think2011.net/isFunction</loc></url>
 <url><loc>http://lodash.think2011.net/isInteger</loc></url>
 <url><loc>http://lodash.think2011.net/isLength</loc></url>
+<url><loc>http://lodash.think2011.net/isMap</loc></url>
 <url><loc>http://lodash.think2011.net/isMatch</loc></url>
 <url><loc>http://lodash.think2011.net/isMatchWith</loc></url>
 <url><loc>http://lodash.think2011.net/isNaN</loc></url>
@@ -147,10 +152,13 @@
 <url><loc>http://lodash.think2011.net/isPlainObject</loc></url>
 <url><loc>http://lodash.think2011.net/isRegExp</loc></url>
 <url><loc>http://lodash.think2011.net/isSafeInteger</loc></url>
+<url><loc>http://lodash.think2011.net/isSet</loc></url>
 <url><loc>http://lodash.think2011.net/isString</loc></url>
 <url><loc>http://lodash.think2011.net/isSymbol</loc></url>
 <url><loc>http://lodash.think2011.net/isTypedArray</loc></url>
 <url><loc>http://lodash.think2011.net/isUndefined</loc></url>
+<url><loc>http://lodash.think2011.net/isWeakMap</loc></url>
+<url><loc>http://lodash.think2011.net/isWeakSet</loc></url>
 <url><loc>http://lodash.think2011.net/lt</loc></url>
 <url><loc>http://lodash.think2011.net/lte</loc></url>
 <url><loc>http://lodash.think2011.net/toArray</loc></url>
