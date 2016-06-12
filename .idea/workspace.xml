@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a181027a-dd5b-4ba8-bb58-a7c71dd291c7" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VERSION.html" afterPath="" />
+    </list>
+    <ignored path="lodash-zh.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="lodash-zh" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="before.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/before.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.73220336">
+              <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="610" />
+    <option name="y" value="23" />
+    <option name="width" value="1310" />
+    <option name="height" value="1053" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lodash-zh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lodash-zh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lodash-zh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/VERSION.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/add.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/after.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/all.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ary.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/assign.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/assignIn.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/assignInWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/assignWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/at.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/attempt.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/before.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bind.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bindAll.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bindKey.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/camelCase.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/capitalize.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ceil.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/chain.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/chunk.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/clamp.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/clone.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/cloneDeep.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/cloneDeepWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/cloneWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/compact.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/concat.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/cond.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/conforms.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/constant.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/countBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/create.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/curry.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/curryRight.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/debounce.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/deburr.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/defaults.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/defaultsDeep.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/defer.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/delay.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/difference.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/differenceBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/differenceWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/drop.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dropRight.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dropRightWhile.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dropWhile.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/endsWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/eq.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/escape.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/escapeRegExp.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/every.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/fill.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/filter.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/find.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/findIndex.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/findKey.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/findLast.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/findLastIndex.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/findLastKey.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/flatMap.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/flatten.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/flattenDeep.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/flip.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/floor.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/flow.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/flowRight.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/forEach.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/forEachRight.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/forIn.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/forInRight.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/forOwn.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/forOwnRight.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/fromPairs.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/functions.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/functionsIn.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/get.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/groupBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/gt.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/gte.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/has.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/hasIn.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/head.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/identity.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/inRange.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/includes.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/indexOf.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/initial.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/intersection.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/intersectionBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/intersectionWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/invert.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/invoke.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/invokeMap.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isArguments.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isArray.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isArrayLike.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isArrayLikeObject.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isBoolean.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isDate.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isElement.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isEmpty.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isEqual.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isEqualWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isError.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isFinite.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isFunction.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isInteger.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isLength.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isMatch.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isMatchWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isNaN.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isNative.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isNil.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isNull.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isNumber.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isObject.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isObjectLike.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isPlainObject.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isRegExp.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isSafeInteger.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isString.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isSymbol.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isTypedArray.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/isUndefined.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/iteratee.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/join.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/js/lodash-zh.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/kebabCase.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/keyBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/keys.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/keysIn.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/last.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/lastIndexOf.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/lowerCase.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/lowerFirst.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/lt.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/lte.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/map.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mapKeys.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mapValues.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/matches.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/matchesProperty.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/max.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/maxBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mean.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/memoize.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/merge.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mergeWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/method.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/methodOf.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/min.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/minBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mixin.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/negate.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/noConflict.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/noop.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/now.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nthArg.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/omit.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/omitBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/once.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/orderBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/over.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/overArgs.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/overEvery.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/overSome.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pad.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/padEnd.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/padStart.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pages.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/parseInt.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/partial.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/partialRight.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/partition.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pick.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pickBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/property.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/propertyOf.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/prototype-Symbol-iterator.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/prototype-at.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/prototype-chain.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/prototype-commit.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/prototype-next.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/prototype-plant.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/prototype-reverse.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/prototype-value.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pull.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pullAll.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pullAllBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pullAt.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/random.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/range.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/rangeRight.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/rearg.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/reduce.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/reduceRight.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/reject.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/remove.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/repeat.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/replace.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/rest.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/result.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/round.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sample.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sampleSize.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/set.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/setWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/shuffle.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/size.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/slice.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/snakeCase.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/some.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sortBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sortedIndex.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sortedIndexBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sortedIndexOf.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sortedLastIndex.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sortedLastIndexBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sortedLastIndexOf.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sortedUniq.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sortedUniqBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/split.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/spread.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/startCase.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/startsWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/subtract.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sum.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sumBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/tail.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/take.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/takeRight.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/takeRightWhile.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/takeWhile.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/tap.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/template.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/throttle.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/thru.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/times.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/toArray.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/toInteger.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/toLength.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/toLower.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/toNumber.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/toPairs.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/toPairsIn.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/toPath.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/toPlainObject.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/toSafeInteger.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/toString.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/toUpper.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/transform.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/trim.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/trimEnd.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/trimStart.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/truncate.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/unary.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/unescape.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/union.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/unionBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/unionWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/uniq.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/uniqBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/uniqWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/uniqueId.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/unset.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/unzip.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/unzipWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/upperCase.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/upperFirst.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/values.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/valuesIn.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/without.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/words.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/wrap.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/wrapperFlatMap.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/xor.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/xorBy.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/xorWith.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/zip.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/zipObject.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/zipWith.html</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a181027a-dd5b-4ba8-bb58-a7c71dd291c7" name="Default" comment="" />
+      <created>1451975062705</created>
+      <option name="number" value="Default" />
+      <updated>1451975062705</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="610" y="23" width="1310" height="1053" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980605" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32882413" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/before.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73220336">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
